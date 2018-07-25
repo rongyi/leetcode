@@ -114,3 +114,5 @@
 #include <unordered_map>
 #include <unordered_set>
 #endif
+// I know this is *BAD*, I will not do this in production code
+using namespace std;
