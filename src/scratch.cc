@@ -1,6 +1,11 @@
 #include "one.h"
 // prove somthing in this scratch file
 int main() {
-  cout << string(3, 'c') << endl;
-  cout << "hello" << endl;
+  set<int> test;
+  test.insert(1);
+  test.insert(2);
+  test.insert(3);
+  for (auto i: test) {
+    cout << i << endl;
+  }
 }
