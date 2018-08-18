@@ -50,6 +50,7 @@ public:
     if ((xwin && turn == 0) || (owin && turn == 1)) {
       return false;
     }
+    //                                  要么只有一个赢的，要么平局，此时等于初始值false
     return (turn == 0 || turn == 1) && (!(xwin && owin));
   }
 };
