@@ -57,7 +57,7 @@ int main() {
     cout << s << endl;
   }
 
-  vector<string> input{"discuss.leetcode.com"};
+  vector<string> input{"9001 discuss.leetcode.com"};
   auto ret = so.subdomainVisits(input);
   for (auto s : ret) {
     cout << s << endl;
