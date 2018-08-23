@@ -60,7 +60,7 @@ private:
   bool valid(int r, int c) {
     return 0 <= r && r < row_num && 0 <= c && c < col_num;
   }
-  vector<vector<int>> dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+  vector<vector<int>> dir = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
   int visited[201][201];
   int row_num, col_num, id;
 };
