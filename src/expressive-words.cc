@@ -12,6 +12,7 @@ public:
     }
     return ret;
   }
+private:
   bool match(const string &s, const string &word) {
     int i = 0;
     int j = 0;
@@ -41,12 +42,3 @@ public:
     return (i == sn) && (j == wn);
   }
 };
-
-int main() {
-  Solution so;
-  string S("heeellooo");
-  vector<string> input{"hello"};
-  string test{"hello"};
-  auto ret = so.match(S, test);
-  cout << ret << endl;
-}
