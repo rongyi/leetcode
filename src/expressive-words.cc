@@ -18,6 +18,7 @@ public:
     const int sn = s.size();
     const int wn = word.size();
     while (i < sn && j < wn) {
+      // 要么相等
       if (s[i++] != word[j++]) {
         return false;
       }
@@ -31,6 +32,7 @@ public:
         ++countw;
         ++j;
       }
+      // 要么重复数字相等，要么重复的数字符合strechy的要求，即S重复要大于3，对比字符重复数字小于这个值
       if ((counts == countw) || (counts >= 3 && (countw < counts))) {
         continue;
       }
