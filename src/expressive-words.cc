@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-  int expressiveWords(string S, vector<string>& words) {
+  int expressiveWords(string S, vector<string> &words) {
     int ret = 0;
     for (auto w : words) {
       if (match(S, w)) {
@@ -13,7 +13,7 @@ public:
     return ret;
   }
   bool match(const string &s, const string &word) {
-    int i =0;
+    int i = 0;
     int j = 0;
     const int sn = s.size();
     const int wn = word.size();
@@ -21,18 +21,17 @@ public:
       if (s[i++] != word[j++]) {
         return false;
       }
-
       int counts = 1;
       int countw = 1;
       while (i < sn && s[i] == s[i - 1]) {
-        ++i;
         ++counts;
+        ++i;
       }
       while (j < wn && word[j] == word[j - 1]) {
-        ++j;
         ++countw;
+        ++j;
       }
-      if (counts == countw || (counts >= 3 && counts > countw)) {
+      if ((counts == countw) || (counts >= 3 && (countw < counts))) {
         continue;
       }
       return false;
@@ -40,7 +39,6 @@ public:
     return (i == sn) && (j == wn);
   }
 };
-
 
 int main() {
   Solution so;
