@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-  int numSubarrayBoundedMax(vector<int>& A, int L, int R) {
+  int numSubarrayBoundedMax(vector<int> &A, int L, int R) {
     int ret = 0;
     const int n = A.size();
     for (int i = 0; i < n; i++) {
