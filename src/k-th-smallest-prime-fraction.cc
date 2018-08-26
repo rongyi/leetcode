@@ -8,6 +8,7 @@ public:
   // 7/47   < 7/29    < 7/23
   // 23/47  < 23/29
   // 29/47
+  // 规律： 每一列递增，每一行递增
   vector<int> kthSmallestPrimeFraction(vector<int> &A, int K) {
     priority_queue<fraction, vector<fraction>, greater<fraction>> pq;
     const int n = A.size();
@@ -19,7 +20,10 @@ public:
     for (int i = 0; i < K - 1; i++) {
       auto cur = pq.top();
       // 为什么要pop？
-      // 每一列只允许有一个值存在
+      // 每一列只允许有一个值存在，为什么允许一个值存在？因为不弹出，结果就是第一行总是最先，这不符合要求你
+      // 类似让子弹飞中的那句台词：
+      // 人埋在哪，事情就发生在哪，事情发生在哪，人就埋在哪
+      // 弹出来是哪一行，最小值的序列就只能发生在那行
       pq.pop();
       --cur.demoninator_;
       pq.push({double(A[cur.numerator_]) / A[cur.demoninator_], cur.numerator_,
