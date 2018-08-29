@@ -8,7 +8,7 @@ struct TreeNode {
   TreeNode *right;
   TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-class Solution {
+class Solution2 {
 public:
   int minDiffInBST(TreeNode *root) {
     int ret = numeric_limits<int>::max();
@@ -28,6 +28,31 @@ private:
     }
     pre = root->val;
     inorder(root->right, ret, pre);
+  }
+};
+
+
+
+class Solution {
+public:
+  int minDiffInBST(TreeNode *root) {
+    vector<int> lst;
+    inorder(root, lst);
+    int ret = numeric_limits<int>::max();
+    for (int i = 1; i < lst.size(); ++i) {
+      ret = min(ret, lst[i] - lst[i - 1]);
+    }
+    return ret;
+  }
+
+private:
+  void inorder(TreeNode *root, vector<int> &lst) {
+    if (!root) {
+      return;
+    }
+    inorder(root->left, lst);
+    lst.push_back(root->val);
+    inorder(root->right, lst);
   }
 };
 
