@@ -31,7 +31,7 @@ public:
     return ret;
   }
 
-public:
+private:
   // allPossibles return all possible integer and float
   vector<string> allPossibles(const string &s) {
     vector<string> ret;
