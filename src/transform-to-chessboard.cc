@@ -5,6 +5,7 @@ class Solution {
 public:
   int movesToChessboard(vector<vector<int>> &board) {
     const int n = board.size();
+    // 判断条件1：
     // 任何四角都只能是四个1，四个0， 或者各一半
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < n; ++j) {
@@ -20,6 +21,7 @@ public:
       col_sum += board[i][0];
     }
 
+    // 条件2，n为偶数时，01各一半， n为奇数时，其中一个比另一个多1， 要么是1多出1个，要么是0多出1个
     if ((n >> 1) > row_sum || row_sum > ((n + 1) >> 1) || (n >> 1) > col_sum ||
         col_sum > ((n + 1) >> 1)) {
       return -1;
