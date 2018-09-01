@@ -7,18 +7,23 @@ public:
     if (answers.empty()) {
       return 0;
     }
-    unordered_map<int, int> dict;
+    unordered_map<int, int> canbemet;
     int ret = 0;
     for (auto an : answers) {
+      // the are the uniq color rabbit
       if (an == 0) {
         ++ret;
+        continue;
       }
-      if (dict.find(an) == dict.end()) {
-        dict[an] = an + 1;      // include himself
+      if (canbemet.find(an) == canbemet.end()) {
+        ret += an + 1;
+        canbemet[an] = an;
+      } else {
+        --canbemet[an];
+        if (canbemet[an] == 0) {
+          canbemet.erase(an);
+        }
       }
-    }
-    for (auto kv : dict) {
-      ret += kv.second;
     }
 
     return ret;
