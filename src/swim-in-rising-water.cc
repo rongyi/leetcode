@@ -13,6 +13,7 @@ public:
     q.push({grid[0][0], 0, 0});
     visited.insert(0);
 
+    // 尽可能从最小的点开始扩散，如果能到达终点，那么这条路中最大的那个节点值就是代价
     while (!q.empty()) {
       auto cur = q.top();
       q.pop();
@@ -48,8 +49,8 @@ private:
 
 int main() {
   Solution so;
-  vector<vector<int>> input{{0, 1, 2, 3, 4},
-                            {24, 23, 22, 21, 5},
+  vector<vector<int>> input{{0, 23, 2, 3, 4},
+                            {24, 1, 22, 21, 5},
                             {12, 13, 14, 15, 16},
                             {11, 17, 18, 19, 20},
                             {10, 9, 8, 7, 6}};
