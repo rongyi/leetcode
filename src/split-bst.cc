@@ -35,11 +35,17 @@ public:
 };
 
 int main() {
-  TreeNode n1(1), n2(2), n3(3);
+  TreeNode n1(1), n2(2), n3(3), n4(4), n5(5), n6(6), n7(7);
+  n4.left = &n2;
+  n4.right = &n6;
   n2.left = &n1;
   n2.right = &n3;
+  n6.left = &n5;
+  n6.right = &n7;
+
+
   Solution so;
-  auto ret = so.splitBST(&n2, 3);
+  auto ret = so.splitBST(&n4, 3);
   if (ret[0]) {
     cout << ret[0]->val << endl;
   }
