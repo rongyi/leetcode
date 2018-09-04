@@ -9,27 +9,26 @@ struct TreeNode {
 
 class Solution {
 public:
-
-  vector<TreeNode*> splitBST(TreeNode* root, int V) {
+  vector<TreeNode *> splitBST(TreeNode *root, int V) {
     if (!root) {
-      return vector<TreeNode*>{nullptr, nullptr};
+      return vector<TreeNode *>{nullptr, nullptr};
     }
     if (root->val == V) {
       auto right = root->right;
       root->right = nullptr;
-      return vector<TreeNode*>{root, right}; // 返回结果严格左子树右子树
-    } else if (root->val < V) {  // to right subtree
+      return vector<TreeNode *>{root, right}; // 返回结果严格左子树右子树
+    } else if (root->val < V) {               // to right subtree
       auto ret = splitBST(root->right, V);
       auto left = ret[0];
       auto right = ret[1];
       root->right = left;
-      return vector<TreeNode*>{root, right};
-    } else {                    // to left subtree
+      return vector<TreeNode *>{root, right};
+    } else { // to left subtree
       auto ret = splitBST(root->left, V);
       auto left = ret[0];
       auto right = ret[1];
       root->left = right;
-      return vector<TreeNode*>{left, root};
+      return vector<TreeNode *>{left, root};
     }
   }
 };
@@ -42,7 +41,6 @@ int main() {
   n2.right = &n3;
   n6.left = &n5;
   n6.right = &n7;
-
 
   Solution so;
   auto ret = so.splitBST(&n4, 3);
