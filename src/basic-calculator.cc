@@ -4,35 +4,18 @@ class Solution {
 public:
   // assume the give expression is always valid, yeah
   int calculate(string s) {
-    int ret = 0;
     stack<string> opstack;
     auto tks = tokenize(s);
     const int n = tks.size();
     for (int i = 0; i < n; ++i) {
       if (tks[i] == ")") {
-        // auto op2 = opstack.top();
-        // opstack.pop();
-
-        // auto opt = opstack.top();
-        // opstack.pop();
-
-        // auto op1 = opstack.top();
-        // opstack.pop();
-        // // and the left parenthesis
-        // opstack.pop();
-
-        // if (opt == "+") {
-        //   opstack.push(to_string(stoi(op1) + stoi(op2)));
-        // } else {
-        //   opstack.push(to_string(stoi(op1) - stoi(op2)));
-        // }
         vector<string> flat;
         while (opstack.top() != "(") {
           auto cur = opstack.top();
           opstack.pop();
           flat.insert(flat.begin(), cur);
         }
-        // pop the left
+        // pop the left parenthesis
         opstack.pop();
         // push the calculated result
         opstack.push(to_string(flatop(flat)));
@@ -41,27 +24,10 @@ public:
       }
     }
 
-    // now a flat
+    // now we have a flat
     vector<string> flat;
 
     while (!opstack.empty()) {
-      // auto op2 = opstack.top();
-      // opstack.pop();
-      // if (opstack.empty()) {
-      //   return stoi(op2);
-      // }
-
-      // auto opt = opstack.top();
-      // opstack.pop();
-
-      // auto op1 = opstack.top();
-      // opstack.pop();
-      // if (opt == "+") {
-      //   opstack.push(to_string(stoi(op1) + stoi(op2)));
-      // } else {
-      //   opstack.push(to_string(stoi(op1) - stoi(op2)));
-      // }
-
       flat.insert(flat.begin(), opstack.top());
       opstack.pop();
     }
@@ -108,11 +74,11 @@ public:
     if (ops.size() == 1) {
       return stoi(ops[0]);
     }
-    int prev = -1;
+    int prev = numeric_limits<int>::min();
     int ret = 0;
     const int n = ops.size();
     for (int i = 1; i < n;) {
-      if (prev == -1) {
+      if (prev == numeric_limits<int>::min()) {
         prev = stoi(ops[i - 1]);
       } else {
         prev = ret;
@@ -121,7 +87,7 @@ public:
         if (ops[i] == "+") {
           ret = prev + stoi(ops[i + 1]);
         } else {
-          ret = prev - stoi(ops[i - 1]);
+          ret = prev - stoi(ops[i + 1]);
         }
         i += 2;
       } else {
@@ -135,11 +101,15 @@ public:
 
 int main() {
   Solution so;
-  string input{"(1+(4+5+2)-3)+(6+8)"};
-  auto tks = so.tokenize(input);
-  for (auto t : tks) {
-    cout << t << endl;
-  }
-  auto ret = so.calculate(input);
+  // string input{"(1+(4+5+2)-3)+(6+8)"};
+  // auto tks = so.tokenize(input);
+  // for (auto t : tks) {
+  //   cout << t << endl;
+  // }
+  // auto ret = so.calculate(input);
+  // cout << ret << endl;
+
+  vector<string> input{"1", "+", "11", "-", "3"};
+  auto ret = so.flatop(input);
   cout << ret << endl;
 }
