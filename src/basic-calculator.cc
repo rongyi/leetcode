@@ -7,14 +7,20 @@ public:
     auto tks = tokenize(s);
     const int n = tks.size();
     auto ret = 0;
-    for (int i = 0; i < n; ++i) {
+    int prev = -1;
+    for (int i = 0; i < n;) {
       if (tks[i] == "+" || tks[i] == "-") {
-        auto op1 = stoi(tks[i - 1]);
-        auto op2 = stoi(tks[i + 1]);
-        if (tks[i] == "+") {
-          ret += (op1 + op2);
+        int op2 = 0;
+        if (prev == -1) {
+          prev = stoi(tks[i - 1]);
         } else {
-          ret += op1 - op2;
+          prev = ret;
+        }
+        op2 = stoi(tks[i + 1]);
+        if (tks[i] == "+") {
+          ret += prev + op2;
+        } else {
+          ret -= prev - op2;
         }
         i += 2;
       } else {
@@ -62,7 +68,7 @@ public:
 
 int main() {
   Solution so;
-  string input{"123      +    3"};
+  string input{" 2-1 + 2 "};
   auto tks = so.tokenize(input);
   for (auto t : tks) {
     cout << t << endl;
