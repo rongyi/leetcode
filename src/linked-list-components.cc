@@ -37,7 +37,7 @@ public:
         }
 
         // this is the last node
-        if (in_group && p->next == nullptr) {
+        if (p->next == nullptr && in_group) {
           ++ret;
         }
       } else { // not in this group
