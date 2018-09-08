@@ -4,7 +4,7 @@
 class Solution {
 public:
   // 除了暴力之外还有一种就是算各个方向上的当前值前面有几个1
-  // 向前，向后，向左，向右
+  // 前后左右四个方向上连续出现1的个数
   int orderOfLargestPlusSign(int N, vector<vector<int>> &mines) {
     vector<vector<int>> dp(N, vector<int>(N, 0));
     // construct sparse matrix
