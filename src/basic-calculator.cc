@@ -10,46 +10,62 @@ public:
     const int n = tks.size();
     for (int i = 0; i < n; ++i) {
       if (tks[i] == ")") {
-        auto op1 = opstack.top();
-        opstack.pop();
+        // auto op2 = opstack.top();
+        // opstack.pop();
 
-        auto opt = opstack.top();
-        opstack.pop();
+        // auto opt = opstack.top();
+        // opstack.pop();
 
-        auto op2 = opstack.top();
-        opstack.pop();
-        // and the left parenthesis
-        opstack.pop();
+        // auto op1 = opstack.top();
+        // opstack.pop();
+        // // and the left parenthesis
+        // opstack.pop();
 
-        if (opt == "+") {
-          opstack.push(to_string(stoi(op1) + stoi(op2)));
-        } else {
-          opstack.push(to_string(stoi(op1) - stoi(op2)));
+        // if (opt == "+") {
+        //   opstack.push(to_string(stoi(op1) + stoi(op2)));
+        // } else {
+        //   opstack.push(to_string(stoi(op1) - stoi(op2)));
+        // }
+        vector<string> flat;
+        while (opstack.top() != "(") {
+          auto cur = opstack.top();
+          opstack.pop();
+          flat.insert(flat.begin(), cur);
         }
+        // pop the left
+        opstack.pop();
+        // push the calculated result
+        opstack.push(to_string(flatop(flat)));
       } else {
         opstack.push(tks[i]);
       }
     }
 
+    // now a flat
+    vector<string> flat;
+
     while (!opstack.empty()) {
-      auto op1 = opstack.top();
-      opstack.pop();
-      if (opstack.empty()) {
-        return stoi(op1);
-      }
+      // auto op2 = opstack.top();
+      // opstack.pop();
+      // if (opstack.empty()) {
+      //   return stoi(op2);
+      // }
 
-      auto opt = opstack.top();
-      opstack.pop();
+      // auto opt = opstack.top();
+      // opstack.pop();
 
-      auto op2 = opstack.top();
+      // auto op1 = opstack.top();
+      // opstack.pop();
+      // if (opt == "+") {
+      //   opstack.push(to_string(stoi(op1) + stoi(op2)));
+      // } else {
+      //   opstack.push(to_string(stoi(op1) - stoi(op2)));
+      // }
+
+      flat.insert(flat.begin(), opstack.top());
       opstack.pop();
-      if (opt == "+") {
-        opstack.push(to_string(stoi(op1) + stoi(op2)));
-      } else {
-        opstack.push(to_string(stoi(op1) - stoi(op2)));
-      }
     }
-    return ret;
+    return flatop(flat);
   }
 
 public:
@@ -88,11 +104,38 @@ public:
 
     return ret;
   }
+  int flatop(vector<string> &ops) {
+    if (ops.size() == 1) {
+      return stoi(ops[0]);
+    }
+    int prev = -1;
+    int ret = 0;
+    const int n = ops.size();
+    for (int i = 1; i < n;) {
+      if (prev == -1) {
+        prev = stoi(ops[i - 1]);
+      } else {
+        prev = ret;
+      }
+      if (ops[i] == "+" || ops[i] == "-") {
+        if (ops[i] == "+") {
+          ret = prev + stoi(ops[i + 1]);
+        } else {
+          ret = prev - stoi(ops[i - 1]);
+        }
+        i += 2;
+      } else {
+        ++i;
+      }
+    }
+
+    return ret;
+  }
 };
 
 int main() {
   Solution so;
-  string input{"2-(5-6)"};
+  string input{"(1+(4+5+2)-3)+(6+8)"};
   auto tks = so.tokenize(input);
   for (auto t : tks) {
     cout << t << endl;
