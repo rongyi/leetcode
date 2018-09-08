@@ -4,27 +4,49 @@ class Solution {
 public:
   // assume the give expression is always valid, yeah
   int calculate(string s) {
+    int ret = 0;
+    stack<string> opstack;
     auto tks = tokenize(s);
     const int n = tks.size();
-    auto ret = 0;
-    int prev = -1;
-    for (int i = 0; i < n;) {
-      if (tks[i] == "+" || tks[i] == "-") {
-        int op2 = 0;
-        if (prev == -1) {
-          prev = stoi(tks[i - 1]);
+    for (int i = 0; i < n; ++i) {
+      if (tks[i] == ")") {
+        auto op1 = opstack.top();
+        opstack.pop();
+
+        auto opt = opstack.top();
+        opstack.pop();
+
+        auto op2 = opstack.top();
+        opstack.pop();
+        // and the left parenthesis
+        opstack.pop();
+
+        if (opt == "+") {
+          opstack.push(to_string(stoi(op1) + stoi(op2)));
         } else {
-          prev = ret;
+          opstack.push(to_string(stoi(op1) - stoi(op2)));
         }
-        op2 = stoi(tks[i + 1]);
-        if (tks[i] == "+") {
-          ret += prev + op2;
-        } else {
-          ret -= prev - op2;
-        }
-        i += 2;
       } else {
-        ++i;
+        opstack.push(tks[i]);
+      }
+    }
+
+    while (!opstack.empty()) {
+      auto op1 = opstack.top();
+      opstack.pop();
+      if (opstack.empty()) {
+        return stoi(op1);
+      }
+
+      auto opt = opstack.top();
+      opstack.pop();
+
+      auto op2 = opstack.top();
+      opstack.pop();
+      if (opt == "+") {
+        opstack.push(to_string(stoi(op1) + stoi(op2)));
+      } else {
+        opstack.push(to_string(stoi(op1) - stoi(op2)));
       }
     }
     return ret;
@@ -49,16 +71,18 @@ public:
         in_digit = true;
         start = j;
       }
-      if (s[j] == ' ' || s[j] == '+' || s[j] == '-') {
+      if (!isdigit(s[j])) {
         if (in_digit) {
           // not digit now
           in_digit = false;
           ret.push_back(s.substr(start, j - start));
         }
-        // not space, then must be + or -
-        if (s[j] != ' ') {
-          ret.push_back({s[j]});
+        // ignore spaces
+        if (s[j] == ' ') {
+          continue;
         }
+        // '(' ')' '+' '-'
+        ret.push_back({s[j]});
       }
     }
 
@@ -68,7 +92,7 @@ public:
 
 int main() {
   Solution so;
-  string input{" 2-1 + 2 "};
+  string input{"2-(5-6)"};
   auto tks = so.tokenize(input);
   for (auto t : tks) {
     cout << t << endl;
