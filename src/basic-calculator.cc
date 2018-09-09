@@ -2,8 +2,36 @@
 #include "one.h"
 class Solution {
 public:
-  // assume the give expression is always valid, yeah
   int calculate(string s) {
+    stack<int> stack;
+    auto tks = tokenize(s);
+    int ret = 0;
+    int sign = 1;
+    for (auto tk : tks) {
+      if (tk == "+") {
+        sign = 1;
+      } else if (tk == "-") {
+        sign = -1;
+      } else if (tk == "(") {
+        stack.push(ret);
+        stack.push(sign);
+        ret = 0;
+        sign = 1;
+      } else if (tk == ")") {
+        ret *= stack.top();
+        stack.pop();
+        ret += stack.top();
+        stack.pop();
+      } else { // number
+        // sign 是结合给后面的数字的,也就是现在用
+        ret += sign * stoi(tk);
+        sign = 1;
+      }
+    }
+    return ret;
+  }
+  // assume the give expression is always valid, yeah
+  int calculateRongYi(string s) {
     stack<string> opstack;
     auto tks = tokenize(s);
     const int n = tks.size();
