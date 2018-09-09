@@ -4,6 +4,48 @@ class Solution {
 public:
   int calculate(string s) {
     auto tks = tokenize(s);
+    stack<int> stack;
+    int ret = 0;
+    const int n = tks.size();
+
+    string prev_op{"+"};
+    for (int i = 0; i < n; ++i) {
+      if (tks[i] == "+") {
+        prev_op = "+";
+      } else if (tks[i] == "-") {
+        prev_op = "-";
+      } else if (tks[i] == "*" || tks[i] == "/") {
+        int cur = stack.top();
+        stack.pop();
+          int b = stoi(tks[i + 1]);
+        if (tks[i] == "*") {
+          stack.push(cur * b);
+        } else {
+          stack.push(cur / b);
+        }
+        // ignore next
+        ++i;
+      } else {
+        int cur = stoi(tks[i]);
+        if (prev_op == "+") {
+          stack.push(cur);
+        } else {
+          stack.push(-1*cur);
+        }
+      }
+    }
+    while (!stack.empty()) {
+      ret += stack.top();
+      stack.pop();
+    }
+
+    return ret;
+  }
+
+
+
+  int calculateTLE(string s) {
+    auto tks = tokenize(s);
     const int n = tks.size();
     stack<string> stack;
 
@@ -119,6 +161,6 @@ int main() {
   for (auto t : tks) {
     cout << t << endl;
   }
-  auto ret = so.calculate(input);
+  auto ret = so.calculateTLE(input);
   cout << ret << endl;
 }
