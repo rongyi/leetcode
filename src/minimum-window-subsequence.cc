@@ -4,27 +4,40 @@
 class Solution {
 public:
   string minWindow(string S, string T) {
-    int m = S.size(), n = T.size(), start = -1, minLen = numeric_limits<int>::max(), i = 0, j = 0;
+    const int m = S.size();
+    const int n = T.size();
+    int i = 0;
+    int j = 0;
+    int start = -1;
+    int min_len = numeric_limits<int>::max();
     while (i < m) {
+      // 一直往前找到能够包含T的子串
       if (S[i] == T[j]) {
-        if (++j == n) {
-          int end = i + 1;
+        j++;
+        // 找到一个全部了，往前走
+        if (j == n) {
+          int current = i + 1;
           while (--j >= 0) {
+            // 不相等就一直退，一直退到遇到一个与T[j]相等的，这样保证subseq 包含T最短
+            // 能去掉的重复都去掉了
             while (S[i--] != T[j]) {
               ;
             }
           }
+          // i也多减了
           ++i;
+          // j此时为-1
           ++j;
-          if (end - i < minLen) {
-            minLen = end - i;
+          if (current - i < min_len) {
+            min_len = current - i;
             start = i;
           }
         }
       }
-      ++i;
+      i++;
     }
-    return (start != -1) ? S.substr(start, minLen) : "";
+
+    return start == -1 ? "" : S.substr(start, min_len);
   }
 };
 int main() {
