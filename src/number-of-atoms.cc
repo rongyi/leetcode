@@ -3,7 +3,6 @@
 #include "one.h"
 class Solution {
 public:
-  // TODO: 这里的move还没有搞懂，需要再搞清楚一点
   string countOfAtoms(string formula) {
     stack<map<string, int>> stk;
     map<string, int> cur;
@@ -12,6 +11,7 @@ public:
     for (int i = 0; i < n;) {
       if (formula[i] == '(') {
         i++;
+        // 意思是把这一层统计压栈，同时清空cur
         stk.push(move(cur));
       } else if (formula[i] == ')') {
         // i++;
@@ -22,6 +22,7 @@ public:
         }
         int multi = stoi(formula.substr(i + 1, j - i - 1));
 
+        // 统计之后恢复cur，出栈
         for (auto c : cur) {
           stk.top()[c.first] += c.second * multi;
         }
@@ -158,7 +159,7 @@ public:
 int main() {
   Solution so;
   // string input{"Kabc4(OxaNii(SO3)2)2"};
-  string input{"H2O"};
+  string input{"(H2O(MKO3)30)10"};
   auto ret = so.countOfAtoms(input);
   cout << ret << endl;
 }
