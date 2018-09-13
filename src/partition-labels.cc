@@ -6,7 +6,11 @@ public:
   vector<int> partitionLabels(string S) {
     const int n = S.size();
     vector<int> ret;
-    unordered_set<char> cache;
+
+    unordered_map<char, int> last_index;
+    for (int i = 0; i < n; ++i) {
+      last_index[S[i]] = i;
+    }
 
 
     return ret;
