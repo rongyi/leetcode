@@ -7,6 +7,7 @@ public:
     const int n = S.size();
     vector<int> ret;
 
+    // try c++ find_last_of, but this way is awesome!
     unordered_map<char, int> last_index;
     for (int i = 0; i < n; ++i) {
       last_index[S[i]] = i;
