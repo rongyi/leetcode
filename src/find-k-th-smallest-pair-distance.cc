@@ -4,8 +4,10 @@ class Solution {
 public:
   // return the k-th smallest distance among all the pairs
   int smallestDistancePair(vector<int> &nums, int k) {
+    // 总共值区间在一百万以内，那就创建这么多桶，
+    // 然后差值往桶里丢，统计出来之后
+    // 从最小的差值往后找
     const int n = 1000000;
-    // 代表差绝对值为i的个数
     vector<int> cnt(n, 0);
     const int len = nums.size();
     for (int i = 0; i < len; ++i) {
@@ -17,6 +19,7 @@ public:
       if (cnt[i] >= k) {
         return i;
       }
+      // 精彩
       k -= cnt[i];
     }
     return -1;
