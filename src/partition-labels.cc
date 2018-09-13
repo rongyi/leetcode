@@ -11,6 +11,17 @@ public:
     for (int i = 0; i < n; ++i) {
       last_index[S[i]] = i;
     }
+    int last = 0;
+    int start = 0;
+    for (int i = 0; i < n; ++i) {
+      last = max(last, last_index[S[i]]);
+      // cout << last << endl;
+      if (last == i) {
+        ret.push_back(last - start + 1);
+        start = last + 1;
+        last = 0;
+      }
+    }
 
 
     return ret;
@@ -22,5 +33,8 @@ int main() {
   Solution so;
   // string input{"zababcbacadefegdehijhklij"};
   string input{"zaz"};
-  so.partitionLabels(input);
+  auto ret = so.partitionLabels(input);
+  for (auto l : ret) {
+    cout << l << endl;
+  }
 }
