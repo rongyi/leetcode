@@ -3,7 +3,7 @@
 class Solution {
 public:
   // return the k-th smallest distance among all the pairs
-  int smallestDistancePair(vector<int> &nums, int k) {
+  int smallestDistancePairBruteForce(vector<int> &nums, int k) {
     // 总共值区间在一百万以内，那就创建这么多桶，
     // 然后差值往桶里丢，统计出来之后
     // 从最小的差值往后找
@@ -23,5 +23,29 @@ public:
       k -= cnt[i];
     }
     return -1;
+  }
+  int smallestDistancePair(vector<int> &nums, int k) {
+    sort(nums.begin(), nums.end());
+
+    const int n = nums.size();
+    int left = 0;
+    int right = nums.back() - nums[0];
+    while (left < right) {
+      int mid = left + (right - left) / 2;
+      int cnt = 0;
+      int start = 0;
+      for (int i = 0; i < n; ++i) {
+        while (start < n && (nums[i] - nums[start] > mid)) {
+          ++start;
+        }
+        cnt += i - start;
+      }
+      if (cnt < k) {
+        left = mid + 1;
+      } else {
+        right = mid;
+      }
+    }
+    return right;
   }
 };
