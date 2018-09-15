@@ -24,6 +24,7 @@ public:
     }
 
     while (!left.empty() && !star.empty()) {
+      // *( 这种情况死都救不回来
       if (left.top() > star.top()) {
         return false;
       }
