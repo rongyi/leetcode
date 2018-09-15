@@ -3,8 +3,6 @@
 class Solution {
 public:
   bool backspaceCompare(string S, string T) {
-    stack<char> sstk;
-    stack<char> tstk;
     auto help = [](string &str) -> stack<char> {
       stack<char> ret;
       for (auto cur : str) {
