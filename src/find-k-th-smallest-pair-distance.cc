@@ -30,11 +30,16 @@ public:
     const int n = nums.size();
     int left = 0;
     int right = nums.back() - nums[0];
+    // 意思是让我们来假设当前第K个值为mid，然后我们来数一数前面有多少个数呢？
+    // 如果数下来恰好是第K个，那么就对了
+    // 多了，说明我们把K定大了，K要变小
+    // 少了，说明我们把K定小了, K要变大
     while (left < right) {
       int mid = left + (right - left) / 2;
       int cnt = 0;
       int start = 0;
       for (int i = 0; i < n; ++i) {
+        // 数前面有多少个的trick
         while (start < n && (nums[i] - nums[start] > mid)) {
           ++start;
         }
@@ -42,10 +47,18 @@ public:
       }
       if (cnt < k) {
         left = mid + 1;
-      } else {
+      } else {                  // 这个是前面数比K还多的情况，
         right = mid;
       }
     }
     return right;
   }
 };
+
+
+int main() {
+  Solution so;
+  vector<int> input{1, 2, 20, 70, 10};
+  auto ret = so.smallestDistancePair(input, 1);
+  cout << ret << endl;
+}
