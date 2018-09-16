@@ -6,7 +6,7 @@ public:
   int binaryGap(int N) {
     // has only one 1
     if ((N & (N - 1)) == 0) {
-      return false;
+      return 0;
     }
 
     string n = bitset<32>(N).to_string();
