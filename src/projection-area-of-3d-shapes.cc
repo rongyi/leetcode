@@ -25,12 +25,8 @@ public:
       }
     }
 
-    for (auto i : rowmax) {
-      ret += i;
-    }
-    for (auto i : colmax) {
-      ret += i;
-    }
+    ret = accumulate(rowmax.begin(), rowmax.end(), ret);
+    ret = accumulate(colmax.begin(), colmax.end(), ret);
 
     return ret;
   }
