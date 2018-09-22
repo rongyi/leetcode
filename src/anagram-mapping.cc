@@ -11,7 +11,7 @@ public:
     }
 
     for (int i = 0; i < A.size(); ++i) {
-      ret.push_back(dict[B[i]]);
+      ret.push_back(dict[A[i]]);
     }
     return ret;
   }
