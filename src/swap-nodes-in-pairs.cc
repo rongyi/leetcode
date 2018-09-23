@@ -16,10 +16,12 @@ public:
     ListNode dummy(-1);
     // save
     auto nexround = head->next->next;
+    // the two
     auto p = head;
     auto q = head->next;
     dummy.next = q;
     q->next = p;
+    // we don't care the next is, this is recursive, yo!
     p->next = swapPairs(nexround);
 
     return dummy.next;
