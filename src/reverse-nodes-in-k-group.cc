@@ -31,7 +31,6 @@ public:
     while (--i) {
       p = p->next;
     }
-    cout << p->val << endl;
     auto nexround = p->next;
     // cut here
     p->next = nullptr;
@@ -46,7 +45,7 @@ public:
     return rvred_group;
   }
 
-public:
+private:
   int len(ListNode *head) {
     int ret = 0;
     while (head) {
