@@ -12,14 +12,19 @@ public:
         continue;
       }
       // should also add shift '0'
+      // 我们从最高位的num2开始计算，所以这里对应的在后面添0，个数看后面还有几个数字
       curmul += string(n - i - 1, '0');
+
       mapmulti.push_back(curmul);
     }
+
     if (mapmulti.size() == 0) {
       return "0";
     } else if (mapmulti.size() == 1) {
       return mapmulti[0];
     }
+
+    // now reduce
     string ret = mapmulti[0];
     for (int i = 1; i < mapmulti.size(); ++i) {
       ret = add(ret, mapmulti[i]);
