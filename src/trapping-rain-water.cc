@@ -16,6 +16,7 @@ public:
     }
     right[n - 2] = height[n - 1];
     // 这里放的位置有点锉， 所以后面有个坐标对焦
+    // 总体上就是找两边的最大值，然后算差即可
     for (int i = n - 2; i >= 0; --i) {
       right[i] = max(height[i + 1], right[i + 1]);
     }
