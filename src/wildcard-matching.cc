@@ -12,6 +12,7 @@ public:
         ++scur;
         ++pcur;
       } else if (*pcur == '*') { // 表示有*加持，这里的条件先后也是有讲究的，遇到一个*，之前的 *匹配过程就结束了，翻过去了
+        // 为了下一轮不再匹配 '*' 这个条件所以这里把pcur移走了，但是位置通过pstar保留了，所以这里下一轮不是问题
         pstar = pcur++;
         sstar = scur;
       } else if (pstar) {
