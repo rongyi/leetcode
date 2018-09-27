@@ -15,6 +15,8 @@ public:
   }
 
 private:
+  // there's picture at this link show the process very well
+  // https://stackoverflow.com/questions/7537791/understanding-recursion-to-generate-permutations
   void doPermute(vector<int> &nums, vector<vector<int>> &ret, vector<int> &cur,
                  unsigned index) {
     if (index == nums.size()) {
