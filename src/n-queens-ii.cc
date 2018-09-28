@@ -62,9 +62,9 @@ private:
   // 标记哪一列上放置了皇后
   vector<int> columns_;
   // 标记占据哪些主对角线
-  // 在一个正斜线上有一个特征: row + col == 固定值
+  // 在一个正斜线上有一个特征: row + col == 固定值，比如（0， n - 1) (1, n - 2) ... (n - 1, 0)
   std::unordered_set<int> main_diag_;
   // 标记占据哪些辅对角线
-  // 同样在一个反斜线上有一个特征： row - col == 固定值
+  // 同样在一个反斜线上有一个特征： row - col == 固定值, 比如 (0, 0) (1, 1) (n - 1, n - 1);
   std::unordered_set<int> anti_diag_;
 };
