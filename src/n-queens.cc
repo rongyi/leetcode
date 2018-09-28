@@ -16,7 +16,6 @@ public:
 private:
   void dfs(vector<vector<string>> &ret, vector<int> &queen_col_vec, int row,
            const int n) {
-
     // 这里其实隐含一个意思，走到这里的都是OK的，因为最后一次还能继续递归进来说明连最后一个
     // 也是合法的位置
     if (row == n) {
@@ -50,6 +49,9 @@ private:
       columns_[j] = 0;
       main_diag_.erase(row + j);
       anti_diag_.erase(row - j);
+      // 这里为什么没有回退 queen_col_vec?
+      // 因为实际上不需要，每一轮都是重新写，如果直到最后一个也合法，就进最前面的 n条件匹配。
+      // 脏的也就走过去了，不会被记录，总体上走到 插入结果的判断中每一个 queen_col_vec 都被重置了
     }
   }
 
