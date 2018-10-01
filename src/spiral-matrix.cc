@@ -5,60 +5,45 @@ class Solution {
 public:
   vector<int> spiralOrder(vector<vector<int>> &matrix) {
     vector<int> ret;
-
     const int m = matrix.size();
     if (m == 0) {
       return ret;
     }
     const int n = matrix[0].size();
 
-    int beginx = 0;
-    int endx = n - 1;
+    auto beginx = 0;
+    auto endx = m - 1;
 
-    int beginy = 0;
-    int endy = m - 1;
+    auto beginy = 0;
+    auto endy = n - 1;
 
-    /**
-     ----------> 更新beginy
-update benginx       |
-    ^                |
-    |                |
-    |                |
-    |                |
-    |                v
- 更新endy<----------更新endx
-    */
     while (true) {
       // left --> right
-      for (int j = beginx; j <= endx; ++j) {
-        ret.push_back(matrix[beginy][j]);
+      for (int j = beginy; j <= endy; ++j) {
+        ret.push_back(matrix[beginx][j]);
       }
-      // 切掉这一行，beginy在下一行
-      if (++beginy > endy) {
+      if (++beginx > endx) {
         break;
       }
       // top --> down
-      for (int i = beginy; i <= endy; ++i) {
-        ret.push_back(matrix[i][endx]);
+      for (int i = beginx; i <= endx; ++i) {
+        ret.push_back(matrix[i][endy]);
       }
-      // 切掉最后这一列，endx缩小
-      if (beginx > --endx) {
+      if (--endy < beginy) {
         break;
       }
       // right --> left
-      for (int j = endx; j >= beginx; --j) {
-        ret.push_back(matrix[endy][j]);
+      for (int j = endy; j >= beginy; --j) {
+        ret.push_back(matrix[endx][j]);
       }
-      // 切掉这一行，endy缩小
-      if (beginy > --endy) {
+      if (--endx < beginx) {
         break;
       }
       // down --> top
-      for (int i = endy; i >= beginy; --i) {
-        ret.push_back(matrix[i][beginx]);
+      for (int i = endx; i >= beginx; --i) {
+        ret.push_back(matrix[i][beginy]);
       }
-      // 切掉这一列，beginx增加
-      if (++beginx > endx) {
+      if (++beginy > endy) {
         break;
       }
     }
