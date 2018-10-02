@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-  int lengthOfLastWord(string s) {
+  int lengthOfLastWord2(string s) {
     auto j = s.find_last_not_of(' ');
     if (j == string::npos) {
       return 0;
@@ -12,10 +12,23 @@ public:
 
     return j - i;
   }
+
+  int lengthOfLastWord(string str) {
+    const int n = str.size();
+    int ret = 0;
+    for (int i = 0; i < n;) {
+      if (str[i++] != ' ') {
+        ++ret;
+      } else if (i < n && str[i] == ' ') {
+        ret = 0;
+      }
+    }
+    return ret;
+  }
 };
 
 int main() {
   Solution so;
-  auto ret = so.lengthOfLastWord(" ");
+  auto ret = so.lengthOfLastWord("a ");
   cout << ret << endl;
 }
