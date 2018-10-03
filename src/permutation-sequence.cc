@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // http://bangbingsyb.blogspot.com/2014/11/leetcode-permutation-sequence.html
   // 最高位可以取{1, 2, 3, 4}，而每个数重复3! =
   // 6次。所以第k=9个permutation的s[0] 为{1, 2, 3, 4}中的第9/6+1 = 2个数字
   // s[0] = 2。
