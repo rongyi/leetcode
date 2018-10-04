@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 这道题被喷的非常厉害，细节题，确实没什么含量
   bool isNumber(string s) {
     bool num = false, numAfterE = true, dot = false, exp = false, sign = false;
 
