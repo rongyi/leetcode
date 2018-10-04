@@ -18,12 +18,15 @@ public:
       sum %= 2;
       ret.push_back(sum + '0');
     }
+
+    // add left, either a or b
     for (; i < m; ++i) {
       auto sum = carry + (a[i] - '0');
       carry = sum / 2;
       sum %= 2;
       ret.push_back(sum + '0');
     }
+
     for (; i < n; ++i) {
       auto sum = carry + (b[i] - '0');
       carry = sum / 2;
