@@ -5,6 +5,7 @@
 class Solution {
 public:
   int climbStairs(int n) {
+    // fibonacci yo!
     int prev = 1;
     int cur = 1;
     int ret = 1;
