@@ -19,8 +19,11 @@ public:
       if (i != index && nums[i] == nums[i - 1]) {
         continue;
       }
+      // 取当前节点
       cur.push_back(nums[i]);
       dfs(nums, i + 1, cur, ret);
+
+      // 不取当前节点，直接for循环下一个
       cur.pop_back();
     }
   }
