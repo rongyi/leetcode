@@ -7,6 +7,8 @@ public:
     const int m = matrix.size();
     const int n = matrix[0].size();
     // check first row and column should clear?
+    // 把第一列和第一行作为缓存，以此来清理后续行列，之前做个标记表示是否要清理第一行
+    // 和第一列
     bool clearrow = false;
     bool clearcol = false;
     for (int i = 0; i < m; ++i) {
@@ -30,14 +32,6 @@ public:
         }
       }
     }
-
-    // for (auto &v : matrix) {
-    //   for (auto i : v) {
-    //     cout << i << " ";
-    //   }
-    //   cout << endl;
-    // }
-    // cout << "====" << endl;
 
     for (int j = 1; j < n; ++j) {
       if (matrix[0][j] == 0) {
