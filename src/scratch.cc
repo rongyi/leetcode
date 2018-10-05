@@ -26,8 +26,17 @@ public:
 };
 
 int main() {
-  Solution so;
-  vector<vector<int>> input{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-  vector<string> path;
-  so.dfs(input, 0, 0, path);
+  // Solution so;
+  // vector<vector<int>> input{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+  // vector<string> path;
+  // so.dfs(input, 0, 0, path);
+
+  unordered_map<int, int> test;
+  test[1] = 1;
+  for (int i = 0; i < 2; i++) {
+    --test[i];
+  }
+  for (auto kv : test) {
+    cout << kv.first << "--> " << kv.second << endl;
+  }
 }
