@@ -126,7 +126,7 @@ public:
     return ret;
   }
 
-void search(string &word, const vector<vector<char>> &board, int i, int j,
+  void search(string &word, const vector<vector<char>> &board, int i, int j,
               vector<vector<bool>> &visited, unordered_set<string> &uret) {
 
     auto isBoundaryValid = [](int cur_row, int cur_col, int row_size,
@@ -163,7 +163,6 @@ void search(string &word, const vector<vector<char>> &board, int i, int j,
     // mark it back
     visited[i][j] = false;
   }
-
 
 private:
   detail::Trie trie_;
