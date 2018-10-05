@@ -10,8 +10,10 @@ public:
     dfs(nums, 0, cur, ret);
     return ret;
   }
+
 public:
-  void dfs(vector<int> &nums, int index, vector<int> &cur, vector<vector<int>> &ret) {
+  void dfs(vector<int> &nums, int index, vector<int> &cur,
+           vector<vector<int>> &ret) {
     ret.push_back(cur);
     for (int i = index; i < nums.size(); ++i) {
       if (i != index && nums[i] == nums[i - 1]) {
@@ -28,8 +30,8 @@ int main() {
   Solution so;
   vector<int> input{1, 2, 2};
   auto ret = so.subsetsWithDup(input);
-  for (auto &v: ret) {
-    for (auto i :v) {
+  for (auto &v : ret) {
+    for (auto i : v) {
       cout << i << " ";
     }
     cout << endl;
