@@ -38,7 +38,7 @@ public:
   }
 
   // Returns if the word is in the trie.
-  bool search(string word) {
+  bool contains(string word) {
     if (word.empty())
       return false;
     return search(word, root, 0);
@@ -97,8 +97,9 @@ public:
     if (board.empty() || board[0].empty() || words.empty())
       return ret;
 
-    const int m = board.size();
-    const int n = board[0].size();
+    m_ = board.size();
+    n_ = board[0].size();
+    directions_ = vector<vector<int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
     // uniq ret
     unordered_set<string> uniq_word;
@@ -108,16 +109,16 @@ public:
     }
 
     // the A.I part
-    vector<vector<bool>> visited(m, vector<bool>(n, false));
+    vector<vector<bool>> visited(m_, vector<bool>(n_, false));
 
     string s;
-    for (int i = 0; i < m; i++) {
-      for (int j = 0; j < n; j++) {
+    for (int i = 0; i < m_; i++) {
+      for (int j = 0; j < n_; j++) {
         s.push_back(board[i][j]);
-        if (trie_.search(s))
+        if (trie_.contains(s))
           uniq_word.insert(s);
         if (trie_.startsWith(s))
-          search(s, board, i, j, visited, uniq_word);
+          search(board, s, i, j, visited, uniq_word);
         s.pop_back();
       }
     }
@@ -126,36 +127,30 @@ public:
     return ret;
   }
 
-  void search(string &word, const vector<vector<char>> &board, int i, int j,
+  void search(const vector<vector<char>> &board, string &word, int i, int j,
               vector<vector<bool>> &visited, unordered_set<string> &uniq_word) {
 
-    auto isBoundaryValid = [](int cur_row, int cur_col, int row_size,
-                              int col_size, vector<vector<bool>> &visited) {
-      if (cur_row < 0 || cur_col < 0 || cur_row == row_size ||
-          cur_col == col_size || visited[cur_row][cur_col] == true) {
+    auto isBoundaryValid = [](int cur_row, int cur_col,
+                              vector<vector<bool>> &visited, int m, int n) {
+      if (cur_row < 0 || cur_col < 0 || cur_row == m || cur_col == n ||
+          visited[cur_row][cur_col] == true) {
         return false;
       }
       return true;
     };
-    // indicate four direction
-    const static int dx[4]{1, 0, -1, 0};
-    const static int dy[4]{0, 1, 0, -1};
 
     // mark as visited
     visited[i][j] = true;
 
-    int next_x;
-    int next_y;
-    for (int cur_dicrection = 0; cur_dicrection < 4; cur_dicrection++) {
-      next_x = i + dx[cur_dicrection];
-      next_y = j + dy[cur_dicrection];
-      if (isBoundaryValid(next_x, next_y, board.size(), board[0].size(),
-                          visited)) {
+    for (int d = 0; d < 4; d++) {
+      auto next_x = i + directions_[d][0];
+      auto next_y = j + directions_[d][1];
+      if (isBoundaryValid(next_x, next_y, visited, m_, n_)) {
         word.push_back(board[next_x][next_y]);
-        if (trie_.search(word))
+        if (trie_.contains(word))
           uniq_word.insert(word);
         if (trie_.startsWith(word))
-          search(word, board, next_x, next_y, visited, uniq_word);
+          search(board, word, next_x, next_y, visited, uniq_word);
         word.pop_back();
       }
     }
@@ -166,7 +161,11 @@ public:
 
 private:
   detail::Trie trie_;
+  vector<vector<int>> directions_;
+  int m_;
+  int n_;
 };
+
 int main() {
   Solution so;
   vector<char> row1{'a', 'b', 'c', 'e'};
