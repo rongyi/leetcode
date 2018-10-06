@@ -101,7 +101,7 @@ public:
     const int n = board[0].size();
 
     // uniq ret
-    unordered_set<string> uret;
+    unordered_set<string> uniq_word;
 
     for (auto &w : words) {
       trie_.insert(w);
@@ -115,19 +115,19 @@ public:
       for (int j = 0; j < n; j++) {
         s.push_back(board[i][j]);
         if (trie_.search(s))
-          uret.insert(s);
+          uniq_word.insert(s);
         if (trie_.startsWith(s))
-          search(s, board, i, j, visited, uret);
+          search(s, board, i, j, visited, uniq_word);
         s.pop_back();
       }
     }
-    for (auto &w : uret)
+    for (auto &w : uniq_word)
       ret.push_back(w);
     return ret;
   }
 
   void search(string &word, const vector<vector<char>> &board, int i, int j,
-              vector<vector<bool>> &visited, unordered_set<string> &uret) {
+              vector<vector<bool>> &visited, unordered_set<string> &uniq_word) {
 
     auto isBoundaryValid = [](int cur_row, int cur_col, int row_size,
                               int col_size, vector<vector<bool>> &visited) {
@@ -153,9 +153,9 @@ public:
                           visited)) {
         word.push_back(board[next_x][next_y]);
         if (trie_.search(word))
-          uret.insert(word);
+          uniq_word.insert(word);
         if (trie_.startsWith(word))
-          search(word, board, next_x, next_y, visited, uret);
+          search(word, board, next_x, next_y, visited, uniq_word);
         word.pop_back();
       }
     }
