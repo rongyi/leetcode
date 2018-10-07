@@ -11,8 +11,10 @@
 class Solution {
 public:
   ListNode *partition(ListNode *head, int x) {
+    // split with two group, and then chain greater group after little than group
     ListNode lt(-1);
     ListNode gt(-1);
+
     auto lcur = &lt;
     auto gcur = &gt;
     while (head) {
