@@ -20,7 +20,7 @@ private:
     // the last
     if (section == 4) {
       auto tmp = s.substr(i);
-      // too big
+      // too big or too small
       if (tmp.size() > 3 || tmp.size() < 1) {
         return;
       }
@@ -37,9 +37,9 @@ private:
       ret.push_back(cur);
       return;
     }
-    // then this must be the only digit in this section
     auto total = s.substr(i);
-    // single char
+
+    // test only char
     if (total.size() < 1) {
       return;
     }
