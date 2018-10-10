@@ -40,3 +40,19 @@ int main() {
     cout << kv.first << "--> " << kv.second << endl;
   }
 }
+// void inorder(TreeNode *root) {
+//   if (!root)
+//     return;
+//   inorder(root->left);
+//   if (!pre)
+//     pre = root;
+//   else {
+//     if (pre->val > root->val) {
+//       if (!first)
+//         first = pre;
+//       second = root;
+//     }
+//     pre = root;
+//   }
+//   inorder(root->right);
+// }
