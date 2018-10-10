@@ -29,6 +29,7 @@ private:
       vector<TreeNode *> left = do_gen(ld, i - 1);
       vector<TreeNode *> right = do_gen(i + 1, rd);
 
+      // 这里的两个for就类似上一题的乘积
       for (auto lx : left) {
         for (auto rx : right) {
           TreeNode *tmp = new TreeNode(i);
