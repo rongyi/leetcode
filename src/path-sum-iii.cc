@@ -8,7 +8,8 @@ public:
       return 0;
     }
 
-    return dfs(root, sum, 0) + pathSum(root->left, sum) + pathSum(root->right, sum);
+    return dfs(root, sum, 0) + pathSum(root->left, sum) +
+           pathSum(root->right, sum);
   }
 
 private:
