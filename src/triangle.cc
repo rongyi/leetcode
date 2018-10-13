@@ -24,6 +24,11 @@ public:
     }
     dp[0][0] = triangle[0][0];
     // reduce by level
+    //     0
+    //   1   2
+    // 3   4    5
+    // 注意看一下，走到3只能是从1过来，走到5只能是从2过来，走到4可能是1，也可能是2过来，
+    // 然后算一下上一层index和当前这个index关系即可
     for (int i = 1; i < m; ++i) {
       const auto cur_vec = triangle[i];
       for (int j = 0; j < cur_vec.size(); ++j) {
