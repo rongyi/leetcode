@@ -1,2 +1,6 @@
 * 简介
   主要用来锻炼自己，不让自己技术退化。
+
+* 一些懵逼的题目
+1. convert sorted list to bst
+2. distinct subsequences
