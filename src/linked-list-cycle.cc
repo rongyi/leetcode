@@ -4,7 +4,6 @@
 class Solution {
 public:
   bool hasCycle(ListNode *head) {
-
     if (!head)
       return false;
     if (!head->next || !head->next->next)
