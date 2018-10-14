@@ -17,6 +17,7 @@ public:
     if (!root) {
       return 0;
     }
+    // 对于每一个节点都这么来一下
     auto l = dfs(root->left, ret);
     auto r = dfs(root->right, ret);
     auto cur = root->val;
