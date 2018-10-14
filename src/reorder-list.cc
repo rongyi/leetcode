@@ -15,15 +15,14 @@ public:
     for (int i = 0; i < m / 2; ++i) {
       p = p->next;
     }
-    // cout << p->val << endl;
     ListNode *first_half_tail = p;
     // hold the center node
+    // 这里分奇偶数，奇数情况是把中间的一个节点放到最后，偶数则没有这种情况
     ListNode *odd_center = nullptr;
     ListNode *last_half = nullptr;
     if (m & 0x1) {
       odd_center = p->next;
       p = p->next;
-      // cout << odd_center->val << " center" << endl;
     }
     last_half = p->next;
     // unchain
@@ -42,6 +41,7 @@ public:
 
       first_half->next = last_half;
 
+      // 需要在循环里面判断这种case，否则出去了就没法做了
       if (!last_half->next) {
         if (odd_center) {
           last_half->next = odd_center;
