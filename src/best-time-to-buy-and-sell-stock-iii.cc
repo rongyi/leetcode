@@ -8,25 +8,25 @@ public:
       return 0;
     int ret = 0;
     const int m = prices.size();
-    vector<int> left(m, 0);
-    vector<int> right(m, 0);
+    vector<int> first_hand(m, 0);
+    vector<int> second_hand(m, 0);
 
-    // left
-    int min = prices[0];
+    // first_hand
+    int min_buy = prices[0];
     for (int i = 1; i < m; i++) {
-      left[i] = std::max(left[i - 1], prices[i] - min);
-      min = std::min(min, prices[i]);
+      first_hand[i] = std::max(first_hand[i - 1], prices[i] - min_buy);
+      min_buy = std::min(min_buy, prices[i]);
     }
 
-    // right
-    int max = prices[m - 1];
+    // second_hand
+    int max_sell = prices[m - 1];
     for (int i = m - 2; i >= 0; --i) {
-      right[i] = std::max(right[i + 1], max - prices[i]);
-      max = std::max(max, prices[i]);
+      second_hand[i] = std::max(second_hand[i + 1], max_sell - prices[i]);
+      max_sell = std::max(max_sell, prices[i]);
     }
 
     for (int i = 0; i < m; i++) {
-      ret = std::max(ret, left[i] + right[i]);
+      ret = std::max(ret, first_hand[i] + second_hand[i]);
     }
 
     return ret;
