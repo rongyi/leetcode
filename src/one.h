@@ -107,3 +107,9 @@ struct TreeLinkNode {
   TreeLinkNode *left, *right, *next;
   TreeLinkNode(int x) : val(x), left(nullptr), right(nullptr), next(nullptr) {}
 };
+
+struct UndirectedGraphNode {
+  int label;
+  vector<UndirectedGraphNode *> neighbors;
+  UndirectedGraphNode(int x) : label(x){};
+};
