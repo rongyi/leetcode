@@ -3,6 +3,11 @@
 
 class Solution {
 public:
+  // 1. 将每个单词看成图的一个节点。
+  // 2. 当单词s1改变一个字符可以变成存在于字典的单词s2时，则s1与s2之间有连接。
+  // 3. 给定s1和s2，
+  //    问题I转化成了求在图中从s1->s2的最短路径长度。
+  //    而问题II转化为了求所有s1->s2的最短路径。
   int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
     unordered_set<string> wset;
     for (auto s : wordList) {
