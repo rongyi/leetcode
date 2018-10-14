@@ -10,6 +10,7 @@ public:
 
     return ret;
   }
+  // 我们可以昨天买入，今日卖出，若明日价更高的话，还可以今日买入，明日再抛出
   int maxProfit(vector<int> &prices) {
     if (prices.empty()) {
       return 0;
