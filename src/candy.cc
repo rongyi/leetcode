@@ -23,6 +23,7 @@ public:
     candy = 1;
     for (int i = n - 2; i >= 0; i--) {
       if (ratings[i] > ratings[i + 1]) {
+        // 这里一方面candy继续加，一方面这个值要两边最高的才能两边都满足
         peak[i] = max(candy++, peak[i]);
       } else {
         candy = 1;
