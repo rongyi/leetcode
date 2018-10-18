@@ -17,6 +17,7 @@ public:
       while (cur->next && cur->next->val < p->val) {
         cur = cur->next;
       }
+      // chain together
       p->next = cur->next;
       cur->next = p;
 
