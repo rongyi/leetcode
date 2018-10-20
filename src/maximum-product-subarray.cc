@@ -39,3 +39,23 @@ private:
     return min(b, c);
   }
 };
+
+int main() {
+  Solution so;
+  vector<int> input{1, 2, 3, 4};
+  vector<vector<int>> ret;
+  for (int i = 0; i < input.size(); ++i) {
+  vector<int> tmp;
+    for (int j = i; j < input.size(); ++j) {
+      tmp.push_back(input[j]);
+      ret.push_back(tmp);
+    }
+  }
+  for (auto &vs: ret) {
+    for (auto i : vs) {
+      cout << i << " ";
+    }
+    cout << endl;
+    cout << "============" << endl;
+  }
+}
