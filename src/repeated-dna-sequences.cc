@@ -33,15 +33,14 @@ public:
     }
     unordered_map<int, int> count;
     int cur = 0;
+    // 27位固定，3位用来递进
+    const int mask = 0x7ffffff;
     int i = 0;
-    // 十个字符总共需要30位，这个用九位，然后那一位逐渐加进来
-    const int mask = 0x7ffffff; // 27bit
-
     while (i < 9) {
       cur = (cur << 3) | (s[i++] & 7);
     }
-    while ( i < s.size()) {
-      // 之前九位加上当前这一位，十位了
+
+    while (i < s.size()) {
       cur = ((cur & mask) << 3) | (s[i++] & 7);
       if (count.find(cur) != count.end()) {
         if (count[cur] == 1) {
