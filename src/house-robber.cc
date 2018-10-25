@@ -18,6 +18,7 @@ public:
     dp[0] = nums[0];
     dp[1] = max(dp[0], nums[1]);
     for (int i = 2; i < n; i++) {
+      // 抢了这个节点，最大值就是隔一个的前面的值加上当前值和，前面n - 1的值
       dp[i] = max(dp[i - 1], dp[i - 2] + nums[i]);
     }
     return dp[n - 1];
