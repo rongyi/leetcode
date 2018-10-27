@@ -7,9 +7,11 @@ public:
     int ret = numeric_limits<int>::max();
     int sum = 0;
     int left = 0;
+    // 先撒
     for (int i = 0; i < nums.size(); i++) {
       sum += nums[i];
       // shrink the left
+      // 收口
       if (sum >= s) {
         while(left <= i && sum >= s) {
           ret = min(ret, i - left + 1);
