@@ -8,6 +8,7 @@ public:
 
   /** Push element x onto stack. */
   void push(int x) {
+    // 让q2全部滚到q1里去
     while (!q2.empty()) {
       q1.push(q2.front());
       q2.pop();
@@ -25,7 +26,9 @@ public:
 
   /** Get the top element. */
   int top() {
+    // 保证q2里有东西
     if (q2.empty()) {
+      // q1转呀转,把最后一个元素暴露在最头面
       for (int i = 0; i < q1.size() - 1; ++i) {
         q1.push(q1.front());
         q1.pop();
@@ -39,9 +42,8 @@ public:
   }
 
   /** Returns whether the stack is empty. */
-  bool empty() {
-    return q1.empty() && q2.empty();
-  }
+  bool empty() { return q1.empty() && q2.empty(); }
+
 private:
   // help q2 to be a stack
   queue<int> q1;
