@@ -4,6 +4,9 @@
 class Solution {
 public:
   vector<int> productExceptSelf(vector<int> &nums) {
+    // 构造两个数组，分别缓存从左边s开会到左边隔壁的成绩，
+    // 和从最后一个元素开始到隔壁右边的成绩
+    // 这样要求的就是这两个数组乘积
     const int n = nums.size();
     vector<long long> left(n, 0);
     left[0] = 1;
