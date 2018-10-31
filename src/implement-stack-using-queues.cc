@@ -9,17 +9,17 @@ public:
   /** Push element x onto stack. */
   void push(int x) {
     // 让q2全部滚到q1里去
-    while (!q2.empty()) {
-      q1.push(q2.front());
-      q2.pop();
+    while (!q2_.empty()) {
+      q1_.push(q2_.front());
+      q2_.pop();
     }
-    q2.push(x);
+    q2_.push(x);
   }
 
   /** Removes the element on top of the stack and returns that element. */
   int pop() {
     auto i = top();
-    q2.pop();
+    q2_.pop();
 
     return i;
   }
@@ -27,29 +27,29 @@ public:
   /** Get the top element. */
   int top() {
     // 保证q2里有东西
-    if (q2.empty()) {
+    if (q2_.empty()) {
       // q1转呀转,把最后一个元素暴露在最头面
-      for (int i = 0; i < q1.size() - 1; ++i) {
-        q1.push(q1.front());
-        q1.pop();
+      for (int i = 0; i < q1_.size() - 1; ++i) {
+        q1_.push(q1_.front());
+        q1_.pop();
       }
 
-      q2.push(q1.front());
-      q1.pop();
+      q2_.push(q1_.front());
+      q1_.pop();
     }
 
-    return q2.front();
+    return q2_.front();
   }
 
   /** Returns whether the stack is empty. */
-  bool empty() { return q1.empty() && q2.empty(); }
+  bool empty() { return q1_.empty() && q2_.empty(); }
 
 private:
-  // help q2 to be a stack
-  queue<int> q1;
+  // help q2_ to be a stack
+  queue<int> q1_;
   // for insert
   // 有元素过来先插入q2，然后保证q2里面至多有一个，这样pop的时候直接出p2即可
-  queue<int> q2;
+  queue<int> q2_;
 };
 
 /**
