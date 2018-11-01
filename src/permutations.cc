@@ -9,12 +9,32 @@ public:
       return ret;
     }
     vector<int> cur;
-    doPermute(nums, ret, cur, 0);
+    // doPermute(nums, ret, cur, 0);
+    vector<bool> chosen(nums.size(), false);
+    doPermute2(nums, chosen, ret, cur);
 
     return ret;
   }
 
 private:
+
+  void doPermute2(vector<int> &nums, vector<bool> &chosen, vector<vector<int>> &ret, vector<int> &cur) {
+    if (cur.size() == nums.size()) {
+      ret.push_back(cur);
+      return;
+    }
+    for (int i = 0;i < nums.size(); i++) {
+      if (chosen[i]) {
+        continue;
+      }
+      chosen[i] = true;
+      cur.push_back(nums[i]);
+      doPermute2(nums, chosen, ret, cur);
+
+      chosen[i] = false;
+      cur.pop_back();
+    }
+  }
   // there's picture at this link show the process very well
   // https://stackoverflow.com/questions/7537791/understanding-recursion-to-generate-permutations
   void doPermute(vector<int> &nums, vector<vector<int>> &ret, vector<int> &cur,
