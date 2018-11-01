@@ -31,13 +31,20 @@ int main() {
   // vector<string> path;
   // so.dfs(input, 0, 0, path);
 
-  unordered_map<int, int> test;
-  test[1] = 1;
-  for (int i = 0; i < 2; i++) {
-    --test[i];
-  }
-  for (auto kv : test) {
-    cout << kv.first << "--> " << kv.second << endl;
+  // unordered_map<int, int> test;
+  // test[1] = 1;
+  // for (int i = 0; i < 2; i++) {
+  //   --test[i];
+  // }
+  // for (auto kv : test) {
+  //   cout << kv.first << "--> " << kv.second << endl;
+  // }
+
+
+  bool b1 = true;
+  bool b2 = false;
+  if (b1 ^ b2) {
+    cout << "yes" << endl;
   }
 }
 // void inorder(TreeNode *root) {
