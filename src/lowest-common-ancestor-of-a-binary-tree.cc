@@ -38,6 +38,10 @@ private:
       qfound = true;
     }
 
+    if (pfound && qfound) {
+      return;
+    }
+
     find(root->left, p, q, pfound, qfound);
     find(root->right, p, q, pfound, qfound);
   }
