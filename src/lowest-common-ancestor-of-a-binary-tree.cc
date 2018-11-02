@@ -4,7 +4,8 @@
 class Solution {
 public:
   // 与之前题目不一样的是： 这只是二叉树，而不是BST
-  TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
+  // 这个方法能过但是时间比较惨，倒数
+  TreeNode *lowestCommonAncestor2(TreeNode *root, TreeNode *p, TreeNode *q) {
     // p and q are different and both values will exist in this binary tree
     if (p == root) {
       return p;
@@ -24,6 +25,22 @@ public:
     return lowestCommonAncestor(root->right, p, q);
   }
 
+  // 这个效率最高
+  TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
+    if (!root || p == root || q == root) {
+      return root;
+    }
+    TreeNode *left = lowestCommonAncestor(root->left, p, q);
+    TreeNode *right = lowestCommonAncestor(root->right, p, q);
+    if (left && right) {
+      return root;
+    }
+    if (!left) {
+      return right;
+    }
+
+    return left;
+  }
 private:
   // target is not null
   void find(TreeNode *root, TreeNode *p, TreeNode *q, bool &pfound,
