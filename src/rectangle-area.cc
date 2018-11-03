@@ -18,6 +18,7 @@ public:
     return sum - (x[2] - x[1]) * (y[2] - y[1]);
   }
 };
+
 int main() {
   Solution so;
   auto ret = so.computeArea(-5, -3, 5, 0, -3, -3, 3, 3);
