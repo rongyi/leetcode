@@ -1,4 +1,4 @@
-// http://leetcode.com/problems/palindrome-linked-list/description/
+// http://leetcode.com/problems/contains-duplicate-iii/description/
 #include "simpleone.h"
 
 class Solution {

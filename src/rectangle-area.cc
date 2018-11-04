@@ -1,4 +1,5 @@
-// http://leetcode.com/problems/palindrome-linked-list/description/
+// http://leetcode.com/problems/rectangle-area/description/
+
 #include "simpleone.h"
 
 class Solution {
