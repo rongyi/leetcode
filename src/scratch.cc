@@ -1,4 +1,24 @@
 #include "one.h"
+class Solutionmq {
+public:
+  vector<int> maxSlidingWindow(vector<int> &nums, int k) {
+    deque<int> dq;
+    vector<int> ans;
+    for (int i = 0; i < nums.size(); i++) {
+      if (!dq.empty() && dq.front() == i - k) {
+        dq.pop_front();
+      }
+      while (!dq.empty() && nums[dq.back()] < nums[i]) {
+        dq.pop_back();
+      }
+      dq.push_back(i);
+      if (i >= k - 1) {
+        ans.push_back(nums[dq.front()]);
+      }
+    }
+    return ans;
+  }
+};
 
 class Solution {
 public:
@@ -50,36 +70,35 @@ public:
   }
 };
 
-
 class Solution2 {
 public:
-    vector<int> diffWaysToCompute(string input) {
-        vector<int> result;
-        int size = input.size();
-        for (int i = 0; i < size; i++) {
-            char cur = input[i];
-            if (cur == '+' || cur == '-' || cur == '*') {
-                // Split input string into two parts and solve them recursively
-                vector<int> result1 = diffWaysToCompute(input.substr(0, i));
-                vector<int> result2 = diffWaysToCompute(input.substr(i+1));
-                for (auto n1 : result1) {
-                  cout << n1 << "  n1" << endl;
-                    for (auto n2 : result2) {
-                        if (cur == '+')
-                            result.push_back(n1 + n2);
-                        else if (cur == '-')
-                            result.push_back(n1 - n2);
-                        else
-                            result.push_back(n1 * n2);
-                    }
-                }
-            }
+  vector<int> diffWaysToCompute(string input) {
+    vector<int> result;
+    int size = input.size();
+    for (int i = 0; i < size; i++) {
+      char cur = input[i];
+      if (cur == '+' || cur == '-' || cur == '*') {
+        // Split input string into two parts and solve them recursively
+        vector<int> result1 = diffWaysToCompute(input.substr(0, i));
+        vector<int> result2 = diffWaysToCompute(input.substr(i + 1));
+        for (auto n1 : result1) {
+          cout << n1 << "  n1" << endl;
+          for (auto n2 : result2) {
+            if (cur == '+')
+              result.push_back(n1 + n2);
+            else if (cur == '-')
+              result.push_back(n1 - n2);
+            else
+              result.push_back(n1 * n2);
+          }
         }
-        // if the input string contains only number
-        if (result.empty())
-            result.push_back(atoi(input.c_str()));
-        return result;
+      }
     }
+    // if the input string contains only number
+    if (result.empty())
+      result.push_back(atoi(input.c_str()));
+    return result;
+  }
 };
 
 int main() {
@@ -103,12 +122,19 @@ int main() {
   //   cout << "yes" << endl;
   // }
 
-  Solution2 so;
-  auto ret = so.diffWaysToCompute("2-1-1");
+  // Solution2 so;
+  // auto ret = so.diffWaysToCompute("2-1-1");
+  // for (auto i : ret) {
+  //   cout << i << endl;
+  // }
+  Solutionmq so;
+  vector<int> input{1, 3, -1, -3, 5, 3, 6, 7};
+  auto ret = so.maxSlidingWindow(input, 3);
   for (auto i : ret) {
     cout << i << endl;
   }
 }
+
 // void inorder(TreeNode *root) {
 //   if (!root)
 //     return;
