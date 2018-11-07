@@ -52,3 +52,12 @@ public:
     return skyline;
   }
 };
+
+int main() {
+  Solution so;
+  vector<vector<int>> input{{2, 9, 10}, {3, 7, 15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8}};
+  auto ret = so.getSkyline(input);
+  for (auto kv : ret) {
+    cout << kv.first << " . " << kv.second << endl;
+  }
+}
