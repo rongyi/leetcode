@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/h-index/discuss/70768/Java-bucket-sort-O(n)-solution-with-detail-explanation
   int hIndex(vector<int> &citations) {
     const int n = citations.size();
     // 先作个统计
