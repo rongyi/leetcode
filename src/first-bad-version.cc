@@ -11,6 +11,7 @@ public:
     int right = n;
     while (left < right) {
       const int mid = left + (right - left) / 2;
+      // 这里的处理函数是 fn[mid] ==> mid + 1
       if (isBadVersion(mid + 1)) {
         right = mid;
       } else {
