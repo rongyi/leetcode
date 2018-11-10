@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/expression-add-operators/discuss/71898/17-lines-solution-dfs-(C%2B%2B)
   vector<string> addOperators(string nums, int target) {
     vector<string> ret;
 
