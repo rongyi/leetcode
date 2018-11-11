@@ -127,12 +127,24 @@ int main() {
   // for (auto i : ret) {
   //   cout << i << endl;
   // }
-  Solutionmq so;
-  vector<int> input{1, 3, -1, -3, 5, 3, 6, 7};
-  auto ret = so.maxSlidingWindow(input, 3);
-  for (auto i : ret) {
-    cout << i << endl;
-  }
+
+  // Solutionmq so;
+  // vector<int> input{1, 3, -1, -3, 5, 3, 6, 7};
+  // auto ret = so.maxSlidingWindow(input, 3);
+  // for (auto i : ret) {
+  //   cout << i << endl;
+  // }
+
+  priority_queue<int, vector<int>, std::less<int>> max_heap;
+  max_heap.push(1);
+  max_heap.push(2);
+  cout << max_heap.top() << endl;
+
+  priority_queue<int, vector<int>, std::greater<int>> min_heap;
+  min_heap.push(1);
+  min_heap.push(2);
+  cout << min_heap.top() << endl;
+
 }
 
 // void inorder(TreeNode *root) {
