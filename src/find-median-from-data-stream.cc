@@ -7,12 +7,13 @@ public:
   MedianFinder() {}
 
   void addNum(int num) {
+    // max_heap 放小值
     if (max_heap.empty() || num <= max_heap.top()) {
       max_heap.push(num);
     } else {
       min_heap.push(num);
     }
-
+    // max_heap 可以多一个，但不能太多
     if (max_heap.size() > min_heap.size() + 1) {
       min_heap.push(max_heap.top());
       max_heap.pop();
@@ -23,9 +24,11 @@ public:
   }
 
   double findMedian() {
-    return max_heap.size() == min_heap.size()
-               ? (max_heap.top() + min_heap.top()) / 2.0
-               : max_heap.top();
+    if (min_heap.size() == max_heap.size()) {
+      return (min_heap.top() + max_heap.top()) / 2.0;
+    }
+
+    return max_heap.top();
   }
 
 private:
@@ -33,6 +36,7 @@ private:
   priority_queue<int, vector<int>, greater<int>> min_heap;
   // 放的都是比较小的数，这样综合起来，矮的里面挑高的，
   // 高的里面挑矮的，挑出来的就是中间的那些高度
+  // 否则如果大顶堆放大的数，小顶堆
   priority_queue<int, vector<int>, less<int>> max_heap;
 };
 
