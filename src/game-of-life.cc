@@ -11,6 +11,7 @@ public:
     const int n = board[0].size();
     directions_ = vector<vector<int>>{{-1, -1}, {-1, 0}, {-1, 1}, {0, -1},
                                       {0, 1},   {1, -1}, {1, 0},  {1, 1}};
+    // 懒得编码了，其实还可以在原来的位置设置值，然后不同的值标记为从 0 -> 1 或者从 1 -> 0这个过程
     vector<vector<int>> shadow = board;
 
     for (int i = 0; i < m; i++) {
