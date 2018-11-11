@@ -25,6 +25,7 @@ private:
 
     parent->left = left_child;
 
+    // 相当于 left = mid + 1
     list = list->next;
     parent->right = construct(list, mid + 1, end);
 
