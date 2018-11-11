@@ -23,12 +23,17 @@ public:
   }
 
   double findMedian() {
-    return max_heap.size() == min_heap.size() ? (max_heap.top() + min_heap.top()) / 2.0 : max_heap.top();
+    return max_heap.size() == min_heap.size()
+               ? (max_heap.top() + min_heap.top()) / 2.0
+               : max_heap.top();
   }
-private:
-  priority_queue<int, vector<int>, greater<int>> min_heap;
-  priority_queue<int, vector<int>, less<int>> max_heap;
 
+private:
+  // 放的都是比较大的数,高的里面挑矮的
+  priority_queue<int, vector<int>, greater<int>> min_heap;
+  // 放的都是比较小的数，这样综合起来，矮的里面挑高的，
+  // 高的里面挑矮的，挑出来的就是中间的那些高度
+  priority_queue<int, vector<int>, less<int>> max_heap;
 };
 
 /**
