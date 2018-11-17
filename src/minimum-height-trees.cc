@@ -13,31 +13,37 @@ public:
   // once, the complexity is O(n).
   vector<int> findMinHeightTrees(int n, vector<pair<int, int>> &edges) {
     vector<unordered_set<int>> graph(n);
-    for (auto e : edges) {
-      graph[e.first].insert(e.second);
-      graph[e.second].insert(e.first);
+    // construct the graph
+    for (auto kv : edges) {
+      graph[kv.first].insert(kv.second);
+      graph[kv.second].insert(kv.first);
     }
-
+    // calculate degree
     vector<int> degree(n, 0);
     for (int i = 0; i < n; i++) {
       degree[i] = graph[i].size();
     }
 
-    for (int i = 0, j, remain = n; i < n && remain > 2; i++) {
+    // shrink start from the node which gress is 1, until
+    // left is less than 2
+    int remain = n;
+    while (remain > 2) {
       vector<int> del;
-      for (j = 0; j < n; j++) {
-        if (degree[j] == 1) {
+      for (int i = 0; i < n; i++) {
+        if (degree[i] == 1) {
+          del.push_back(i);
           remain--;
-          del.push_back(j);
-          degree[j] =  -1;
         }
       }
-      for (auto k : del) {
-        for (auto neigh : graph[k]) {
-          degree[neigh]--;
+      // del action
+      for (auto d : del) {
+        degree[d] = -1;
+        for (auto k : graph[d]) {
+          degree[k]--;
         }
       }
     }
+
     vector<int> ret;
     for (int i = 0; i < n; i++) {
       if (degree[i] >= 0) {
