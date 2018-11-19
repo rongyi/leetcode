@@ -10,6 +10,7 @@ public:
 
     for (int i = 1; i <= amount; i++) {
       for (auto c : coins) {
+        // 表示i i - c这块找不开，所以基于这个点往后推得也找不开，所以直接不看了
         if (i - c >= 0 && dp[i - c] != numeric_limits<int>::max()) {
           dp[i] = min(dp[i], dp[i - c] + 1);
         }
