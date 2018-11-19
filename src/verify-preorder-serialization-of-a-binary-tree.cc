@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // When adding a non-NULL node, it means we obtains two more leafs, then capacity +=2
   bool isValidSerialization(string preorder) {
     if (preorder.empty()) {
       return false;
