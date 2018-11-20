@@ -2,6 +2,29 @@
 #include "simpleone.h"
 class Solution {
 public:
+  // 转化成整数然后取 & 操作看是否有重复，这个思路太赞了
+  int maxProduct(vector<string> &words) {
+    const int n = words.size();
+    if (n == 0) {
+      return 0;
+    }
+    vector<int> transform(n, 0);
+    for (int i = 0; i < n; i++) {
+      auto cur_word = words[i];
+      for (int j = 0; j < cur_word.size(); j++) {
+        transform[i] |= (1 << (cur_word[j] - 'a'));
+      }
+    }
+    int ret = 0;
+    for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+        if ((transform[i] & transform[j]) == 0 && (((int)words[i].size() * (int)words[j].size()) > ret)) {
+          ret = (int)words[i].size() * (int)words[j].size();
+        }
+      }
+    }
+    return ret;
+  }
   int maxProductTLEVersionHAHAHA(vector<string> &words) {
     const int n = words.size();
     unordered_map<char, unordered_set<int>> occr;
