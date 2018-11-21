@@ -13,19 +13,40 @@ public:
     }
 
     vector<int> ret(n, 0);
-    for (int i = n - 2; i >= 0; --i) {
-      for (int j = i + 1; j < n; j++) {
-        if (nums[i] > nums[j]) {
-          if (ret[j] == 0) {
-            ret[i]++;
-          } else {
-            ret[i] = ret[j] + 1;
-            break;
-          }
-        }
-      }
+    Node *root = nullptr;
+    for (int i = n - 1; i >= 0; --i) {
+      ret[i] = insert(&root, root, nums[i]);
     }
 
     return ret;
+  }
+
+private:
+  struct Node {
+    int val_;
+    int less_than_;
+    int count_;
+    int space_;
+    Node *left_;
+    Node *right_;
+    Node(int val)
+        : val_(val), less_than_(0), count_(1), left_(nullptr), right_(nullptr) {
+    }
+  };
+
+  int insert(Node **parent, Node *node, int val) {
+    if (!node) {
+      *parent = new Node(val);
+      return 0;
+    } else if (val < node->val_) {
+      node->less_than_++;
+      return insert(&node->left_, node->left_, val);
+    } else if (val == node->val_) {
+      node->count_++;
+      return node->less_than_;
+    } else {
+      return node->less_than_ + node->count_ +
+             insert(&node->right_, node->right_, val);
+    }
   }
 };
