@@ -39,6 +39,8 @@ private:
       *parent = new Node(val);
       return 0;
     } else if (val < node->val_) {
+      // 左子数的个数统计都在当前这个节点上，如果
+      // 左子数为空此field的值还是为零
       node->less_than_++;
       return insert(&node->left_, node->left_, val);
     } else if (val == node->val_) {
