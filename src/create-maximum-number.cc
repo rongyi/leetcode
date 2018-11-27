@@ -18,6 +18,7 @@ public:
     int drop = nums.size() - k;
     vector<int> ret;
     for (auto num : nums) {
+      // 如果我有机会删除一些数字，而且还遇到比自己更优秀的进来了，那就把机会让给更优秀的吧
       while (drop && ret.size() && ret.back() < num) {
         ret.pop_back();
         drop--;
@@ -43,9 +44,9 @@ public:
 };
 int main() {
   Solution so;
-  vector<int> input{4, 3, 2, 1};
+  vector<int> input{4, 3, 1, 9};
 
-  auto ret = so.maxNumber(input, 2);
+  auto ret = so.selectK(input, 3);
   for (auto i : ret) {
     cout << i << " ";
   }
