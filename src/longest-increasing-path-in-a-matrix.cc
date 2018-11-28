@@ -36,6 +36,7 @@ private:
       auto ni = i + directions_[d][0];
       auto nj = j + directions_[d][1];
       // out of boundry or just smaller than the origin
+      // 要求纯递增，所以相等也要排除
       if (ni < 0 || ni >= m_ || nj < 0 || nj >= n_ ||
           matrix[ni][nj] <= matrix[i][j]) {
         continue;
