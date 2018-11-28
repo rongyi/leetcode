@@ -4,6 +4,7 @@
 class Solution {
 public:
   int minPatches(vector<int> &nums, int n) {
+    // miss这里描述的是利用当前节点加起来能够到达的上边界， *不包括* 这个节点
     long miss = 1;
     int i = 0;
     int ret = 0;
