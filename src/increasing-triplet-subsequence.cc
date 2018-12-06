@@ -8,5 +8,7 @@ public:
     if (n < 3) {
       return false;
     }
+
+    return false;
   }
 };
