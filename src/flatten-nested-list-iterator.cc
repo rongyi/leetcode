@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/flatten-nested-list-iterator/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 /**
  * // This is the interface that allows for creating nested lists.

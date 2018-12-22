@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/peeking-iterator/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 // Below is the interface for Iterator, which is already defined for you.
 // **DO NOT** modify the interface for Iterator.

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/implement-stack-using-queues/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class MyStack {
 public:

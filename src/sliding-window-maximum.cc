@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sliding-window-maximum/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

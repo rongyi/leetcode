@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/increasing-triplet-subsequence/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-linked-list-elements/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

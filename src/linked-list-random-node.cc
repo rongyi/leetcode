@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/linked-list-random-node/description/
-#include "simpleone.h"
+#include "xxx.h"
 #include <random>
 
 class Solution {

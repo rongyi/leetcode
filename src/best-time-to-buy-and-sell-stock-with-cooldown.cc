@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

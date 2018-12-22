@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/word-pattern/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

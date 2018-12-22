@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/summary-ranges/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 // 就是概括一下区间，这里的summary时是总结不是和
 

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/wiggle-sort-ii/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

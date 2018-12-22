@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/fraction-to-recurring-decimal/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

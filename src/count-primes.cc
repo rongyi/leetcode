@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-primes/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

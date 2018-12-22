@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/maximal-square/description/
 
-#include "simpleone.h"
+#include "xxx.h"
 
 
 // This problem can be solved by dynamic programming. They key to DP is the state equation. In this problem, we define the state as the maximal size of the square that can be achieved at point (i, j), denoted as dp[i][j]. Remember that we use size instead of square as the state (square = size * size).

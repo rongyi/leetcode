@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/implement-trie-prefix-tree/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 struct TrieNode {
   static const int NUM = 26;

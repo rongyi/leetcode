@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/valid-perfect-square/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

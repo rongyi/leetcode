@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/range-sum-query-immutable/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class NumArray {
 public:

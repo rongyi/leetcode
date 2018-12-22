@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/the-skyline-problem/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 // taken from
 // https://leetcode.com/problems/the-skyline-problem/discuss/154793/Short-documented-C%2B%2B-code-(16ms-runtime)

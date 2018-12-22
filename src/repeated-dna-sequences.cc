@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/repeated-dna-sequences/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

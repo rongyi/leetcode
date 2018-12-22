@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-difference/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

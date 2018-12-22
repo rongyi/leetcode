@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/rectangle-area/description/
 
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

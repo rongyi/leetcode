@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/leetcode/ugly-number-ii/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

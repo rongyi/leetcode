@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/add-and-search-word-data-structure-design/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 struct TrieNode {
   static const int NUM = 26;

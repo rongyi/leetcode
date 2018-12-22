@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/leetcode/minimum-size-subarray-sum/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

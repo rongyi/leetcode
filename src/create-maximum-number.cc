@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/create-maximum-number/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

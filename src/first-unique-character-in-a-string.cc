@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/first-unique-character-in-a-string/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

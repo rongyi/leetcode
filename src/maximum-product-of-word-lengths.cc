@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-product-of-word-lengths/description/
-#include "simpleone.h"
+#include "xxx.h"
 class Solution {
 public:
   // 转化成整数然后取 & 操作看是否有重复，这个思路太赞了

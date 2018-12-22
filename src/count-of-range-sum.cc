@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-of-range-sum/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

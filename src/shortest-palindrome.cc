@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-palindrome/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 class Solution {
 public:

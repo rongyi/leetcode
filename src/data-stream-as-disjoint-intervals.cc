@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/data-stream-as-disjoint-intervals/description/
-#include "simpleone.h"
+#include "xxx.h"
 
 struct Interval {
   int start;
