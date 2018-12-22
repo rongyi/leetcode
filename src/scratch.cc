@@ -135,15 +135,28 @@ int main() {
   //   cout << i << endl;
   // }
 
-  priority_queue<int, vector<int>, std::less<int>> max_heap;
-  max_heap.push(1);
-  max_heap.push(2);
-  cout << max_heap.top() << endl;
+  // priority_queue<int, vector<int>, std::less<int>> max_heap;
+  // max_heap.push(1);
+  // max_heap.push(2);
+  // cout << max_heap.top() << endl;
 
-  priority_queue<int, vector<int>, std::greater<int>> min_heap;
-  min_heap.push(1);
-  min_heap.push(2);
-  cout << min_heap.top() << endl;
+  // priority_queue<int, vector<int>, std::greater<int>> min_heap;
+  // min_heap.push(1);
+  // min_heap.push(2);
+  // cout << min_heap.top() << endl;
+
+
+  string s{"324"};
+  int i = 0;
+  if (s[0] == '-') {
+    i++;
+  }
+  int j = i;
+  while (s[j] <= '9' && s[j] >= '0') {
+    j++;
+  }
+  string number = s.substr(i, j - i);
+  cout << number << endl;
 
 }
 
