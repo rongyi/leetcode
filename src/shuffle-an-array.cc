@@ -3,14 +3,10 @@
 
 class Solution {
 public:
-  Solution(vector<int> nums) {
-    origin_ = nums;
-  }
+  Solution(vector<int> nums) { origin_ = nums; }
 
   /** Resets the array to its original configuration and return it. */
-  vector<int> reset() {
-    return origin_;
-  }
+  vector<int> reset() { return origin_; }
 
   /** Returns a random shuffling of the array. */
   vector<int> shuffle() {
@@ -20,6 +16,7 @@ public:
     std::shuffle(cp.begin(), cp.end(), g);
     return cp;
   }
+
 private:
   vector<int> origin_;
 };
