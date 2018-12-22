@@ -67,9 +67,6 @@ private:
         d = "";
       }
     }
-    if (!d.empty()) {
-      ret.add(stoi(d));
-    }
 
     return ret;
   }
