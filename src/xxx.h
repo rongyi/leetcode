@@ -52,6 +52,7 @@
 #include <string>
 #include <vector>
 #include <numeric>
+#include <random>
 
 #if __cplusplus >= 201103L
 #include <array>

@@ -27,6 +27,7 @@ private:
     if (begin > end) {
       return;
     }
+
     ret.push_back(begin);
     recur(begin * 10, end, ret);
     if (begin % 10 != 9) {

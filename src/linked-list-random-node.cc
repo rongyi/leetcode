@@ -1,6 +1,5 @@
 // http://leetcode.com/problems/linked-list-random-node/description/
 #include "xxx.h"
-#include <random>
 
 class Solution {
 public:
