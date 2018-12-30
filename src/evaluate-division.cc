@@ -12,7 +12,8 @@ public:
     const int n = queries.size();
     for (int i = 0; i < n; i++) {
       unordered_set<string> visited;
-      auto tmp = get_weight(queries[i].first, queries[i].second, visited, graph);
+      auto tmp =
+          get_weight(queries[i].first, queries[i].second, visited, graph);
       if (tmp) {
         ret[i] = tmp;
       } else {
@@ -23,7 +24,11 @@ public:
   }
 
 private:
-  double get_weight(string up, string down, unordered_set<string> &visited, map<string, map<string, double>> &graph) {
+  double get_weight(string up, string down, unordered_set<string> &visited,
+                    map<string, map<string, double>> &graph) {
+    if (graph.find(up) == graph.end()) {
+      return 0;
+    }
     // 直联
     if (graph[up].find(down) != graph[up].end()) {
       return graph[up][down];
