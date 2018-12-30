@@ -24,10 +24,12 @@ public:
 
 private:
   double get_weight(string up, string down, unordered_set<string> &visited, map<string, map<string, double>> &graph) {
+    // 直联
     if (graph[up].find(down) != graph[up].end()) {
       return graph[up][down];
     }
 
+    // 通过分数相乘得到
     for (auto i : graph[up]) {
       if (visited.find(i.first) == visited.end()) {
         visited.insert(i.first);
