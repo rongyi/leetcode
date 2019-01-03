@@ -3,6 +3,15 @@
 
 class Solution {
 public:
+  // 这个方法不算最优，可以看下其他人是怎么做的
+  // 思路： 用两个栈， 一个记录前缀的count，一个记录要重复的单词，
+  // 3[a2[cbd]] 为例，栈的样子如下：
+  // |   |  | cbd |
+  // | 2 |  | [   |
+  // | 3 |  | a   |
+  //  ---   | [   |
+  //         ---
+  // 辅助这个栈看下面代码就要方便一点
   string decodeString(string s) {
     string ret{};
 
