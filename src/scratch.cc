@@ -146,18 +146,25 @@ int main() {
   // cout << min_heap.top() << endl;
 
 
-  string s{"324"};
-  int i = 0;
-  if (s[0] == '-') {
-    i++;
-  }
-  int j = i;
-  while (s[j] <= '9' && s[j] >= '0') {
-    j++;
-  }
-  string number = s.substr(i, j - i);
-  cout << number << endl;
+  // string s{"324"};
+  // int i = 0;
+  // if (s[0] == '-') {
+  //   i++;
+  // }
+  // int j = i;
+  // while (s[j] <= '9' && s[j] >= '0') {
+  //   j++;
+  // }
+  // string number = s.substr(i, j - i);
+  // cout << number << endl;
 
+
+  vector<int> i{1, 2, 3, 4};
+  i.erase(next(next(i.begin())));
+  cout << i.size() << endl;
+  for (int j = 0; j < i.size(); j++) {
+    cout << i[j] << endl;
+  }
 }
 
 // void inorder(TreeNode *root) {
