@@ -37,8 +37,10 @@ public:
     v_[target_index] = last_value;
     // also need to delete last index in the origin
     cache_[last_value].erase(v_.size() - 1);
+    // now the last can be deleted
     v_.pop_back();
 
+    // also need to check if the last is the only one to be delete
     if (it->second.size() == 0) {
       cache_.erase(it);
     }
