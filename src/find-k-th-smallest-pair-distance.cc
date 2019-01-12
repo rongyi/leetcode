@@ -47,14 +47,13 @@ public:
       }
       if (cnt < k) {
         left = mid + 1;
-      } else {                  // 这个是前面数比K还多的情况，
+      } else { // 这个是前面数比K还多的情况，
         right = mid;
       }
     }
     return right;
   }
 };
-
 
 int main() {
   Solution so;

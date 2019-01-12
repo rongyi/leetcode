@@ -101,6 +101,12 @@ public:
   }
 };
 
+struct mycompare {
+  bool operator()(pair<int, int> &p1, pair<int, int> &p2) {
+    return p1.first + p1.second < p2.first + p2.second;
+  }
+};
+
 int main() {
   // Solution so;
   // vector<vector<int>> input{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
@@ -145,7 +151,6 @@ int main() {
   // min_heap.push(2);
   // cout << min_heap.top() << endl;
 
-
   // string s{"324"};
   // int i = 0;
   // if (s[0] == '-') {
@@ -158,13 +163,20 @@ int main() {
   // string number = s.substr(i, j - i);
   // cout << number << endl;
 
+  // vector<int> i{1, 2, 3, 4};
+  // i.erase(next(next(i.begin())));
+  // cout << i.size() << endl;
+  // for (int j = 0; j < i.size(); j++) {
+  //   cout << i[j] << endl;
+  // }
 
-  vector<int> i{1, 2, 3, 4};
-  i.erase(next(next(i.begin())));
-  cout << i.size() << endl;
-  for (int j = 0; j < i.size(); j++) {
-    cout << i[j] << endl;
-  }
+  priority_queue<pair<int, int>, vector<pair<int, int>>, mycompare> pq;
+  pq.push({1, 3});
+  pq.push({1, 2});
+  cout << pq.top().first << "   :    " << pq.top().second << endl;
+  pq.pop();
+
+  cout << pq.top().first << "   :    " << pq.top().second << endl;
 }
 
 // void inorder(TreeNode *root) {
