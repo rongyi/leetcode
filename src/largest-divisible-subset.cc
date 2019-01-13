@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/largest-divisible-subset/discuss/84040/C%2B%2B-Solution-using-DP
   vector<int> largestDivisibleSubset(vector<int> &nums) {
     sort(nums.begin(), nums.end());
     vector<vector<int>> result(nums.size());
