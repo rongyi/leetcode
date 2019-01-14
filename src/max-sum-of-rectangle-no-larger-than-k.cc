@@ -20,14 +20,14 @@ public:
       for (int j = 0; j < n; j++) {
         auto tmp = matrix[i][j];
         if (i > 0) {
-          tmp += matrix[i - 1][j];
+          tmp += sum[i - 1][j];
         }
         if (j > 0) {
-          tmp += matrix[i][j - 1];
+          tmp += sum[i][j - 1];
         }
         // 多加的部分再减回去
         if (i > 0 && j > 0) {
-          tmp -= matrix[i - 1][j - 1];
+          tmp -= sum[i - 1][j - 1];
         }
         sum[i][j] = tmp;
 
