@@ -170,13 +170,38 @@ int main() {
   //   cout << i[j] << endl;
   // }
 
-  priority_queue<pair<int, int>, vector<pair<int, int>>, mycompare> pq;
-  pq.push({1, 3});
-  pq.push({1, 2});
-  cout << pq.top().first << "   :    " << pq.top().second << endl;
-  pq.pop();
+  // priority_queue<pair<int, int>, vector<pair<int, int>>, mycompare> pq;
+  // pq.push({1, 3});
+  // pq.push({1, 2});
+  // cout << pq.top().first << "   :    " << pq.top().second << endl;
+  // pq.pop();
 
-  cout << pq.top().first << "   :    " << pq.top().second << endl;
+  // cout << pq.top().first << "   :    " << pq.top().second << endl;
+
+  // set::lower_bound/upper_bound
+  std::set<int> myset;
+  std::set<int>::iterator itlow, itup;
+
+  for (int i = 1; i < 10; i++) {
+    myset.insert(i * 10); // 10 20 30 40 50 60 70 80 90
+  }
+
+  // >= 28里面找最小的
+  itlow = myset.lower_bound(29);
+  cout << *itlow << endl;
+  // 大于81的第一个
+  itup = myset.upper_bound(81);
+  cout << *itup << endl;
+
+  myset.erase(itlow, itup); // 10 20 70 80 90
+
+  std::cout << "myset contains:";
+  for (std::set<int>::iterator it = myset.begin(); it != myset.end(); ++it) {
+    std::cout << ' ' << *it;
+  }
+  std::cout << '\n';
+
+  return 0;
 }
 
 // void inorder(TreeNode *root) {
