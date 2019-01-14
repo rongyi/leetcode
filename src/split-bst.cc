@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/split-bst
-#include "one.h"
+#include "xxx.h"
 struct TreeNode {
   int val;
   TreeNode *left;

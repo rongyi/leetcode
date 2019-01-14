@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/binary-gap/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

@@ -1,6 +1,6 @@
 // http://www.lintcode.com/zh-cn/problem/swap-adjacent-in-lr-string
 
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

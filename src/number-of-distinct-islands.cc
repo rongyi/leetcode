@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-distinct-islands/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

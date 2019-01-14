@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/search-insert-position/description/
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   int searchInsert(vector<int> &nums, int target) {

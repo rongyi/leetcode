@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/mirror-reflection/description/
 
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   int mirrorReflection(int p, int q) {

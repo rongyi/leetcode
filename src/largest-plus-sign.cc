@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/largest-plus-sign
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

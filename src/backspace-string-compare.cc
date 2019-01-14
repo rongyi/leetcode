@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/backspace-string-compare/description/
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   bool backspaceCompare(string S, string T) {

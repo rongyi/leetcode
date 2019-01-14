@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/binary-tree-pruning
-#include "one.h"
+#include "xxx.h"
 
 
 // Definition for a binary tree node.

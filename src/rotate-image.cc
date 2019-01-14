@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/rotate-image
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

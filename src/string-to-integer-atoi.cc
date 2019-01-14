@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/string-to-integer-atoi/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

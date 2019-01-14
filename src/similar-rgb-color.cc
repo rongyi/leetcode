@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/similar-rgb-color/description/
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   string similarRGB(string color) {

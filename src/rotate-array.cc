@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/rotate-array/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

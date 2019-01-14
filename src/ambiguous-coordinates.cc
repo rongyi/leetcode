@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/ambiguous-coordinates/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

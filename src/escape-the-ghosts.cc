@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/escape-the-ghosts/description/
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   bool escapeGhosts(vector<vector<int>> &ghosts, vector<int> &target) {

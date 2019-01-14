@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
 
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   int peakIndexInMountainArray(vector<int> &A) {

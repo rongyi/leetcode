@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/bricks-falling-when-hit/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

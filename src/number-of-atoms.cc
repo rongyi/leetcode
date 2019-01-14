@@ -1,6 +1,6 @@
 // http://www.lintcode.com/zh-cn/problem/number-of-atoms
 
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   string countOfAtoms(string formula) {

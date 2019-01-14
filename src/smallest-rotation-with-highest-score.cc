@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/smallest-rotation-with-highest-score/description/
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   // https://leetcode.com/problems/smallest-rotation-with-highest-score/discuss/118725/Easy-and-Concise-5-lines-Solution-C++JavaPython?page=1

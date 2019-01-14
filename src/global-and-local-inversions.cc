@@ -1,6 +1,6 @@
 // http://www.lintcode.com/zh-cn/problem/global-and-local-inversions
 
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

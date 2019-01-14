@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/add-binary/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

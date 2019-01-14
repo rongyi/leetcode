@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/minimize-max-distance-to-gas-station
-#include "one.h"
+#include "xxx.h"
 
 // 换个思路，如果我们假设知道了答案会怎么样？因为知道了最大间隔，
 // 所以如果目前的两个station之间的gap没有符合最大间隔的约束，

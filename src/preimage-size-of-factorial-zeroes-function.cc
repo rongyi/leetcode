@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/preimage-size-of-factorial-zeroes-function/description/
-#include "one.h"
+#include "xxx.h"
 class Solution {
 public:
   int preimageSizeFZF(int K) {

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

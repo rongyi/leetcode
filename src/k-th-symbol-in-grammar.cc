@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/k-th-symbol-in-grammar/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/factorial-trailing-zeroes/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:

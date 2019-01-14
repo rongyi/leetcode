@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/length-of-last-word/description/
-#include "one.h"
+#include "xxx.h"
 
 class Solution {
 public:
