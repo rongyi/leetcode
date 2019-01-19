@@ -11,6 +11,7 @@ public:
       return "0";
     }
 
+    // why need a count? -1 shift is a dead loop
     int count = 0;
     while (num && count < 8) {
       int cur = num & 0xf;
