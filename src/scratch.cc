@@ -201,11 +201,16 @@ int main() {
   // }
   // std::cout << '\n';
 
-  unordered_map<int, unordered_set<int>> s;
-  s[1].insert(2);
-  for (auto i : s[1]) {
-    cout << i << endl;
-  }
+  // unordered_map<int, unordered_set<int>> s;
+  // s[1].insert(2);
+  // for (auto i : s[1]) {
+  //   cout << i << endl;
+  // }
+
+  unordered_map<int, int> test;
+  cout << 2 * test[0]++ << endl;
+  cout << 2 * test[0]++ << endl;
+  cout << test[0] << endl;
 }
 
 // void inorder(TreeNode *root) {
