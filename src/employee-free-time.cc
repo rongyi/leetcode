@@ -1,11 +1,6 @@
 // http://leetcode.com/problems/employee-free-time/description/
 
 #include "xxx.h"
-struct Interval {
-  int start;
-  int end;
-  Interval(int a, int b) : start(a), end(b) {}
-};
 
 class Solution {
 public:
