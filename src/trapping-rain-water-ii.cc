@@ -23,9 +23,7 @@ public:
     const int n = heightMap[0].size();
     // 小顶堆
     // pair格式： value, index
-    priority_queue<pair<int, int>, vector<pair<int, int>>,
-                   greater<pair<int, int>>>
-        pq;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
     vector<vector<bool>> visited(m, vector<bool>(n, false));
     // 把边界塞进来
@@ -72,8 +70,7 @@ public:
 
 int main() {
   Solution so;
-  vector<vector<int>> input{
-      {1, 4, 3, 1, 3, 2}, {3, 2, 1, 3, 2, 4}, {2, 3, 3, 2, 3, 1}};
+  vector<vector<int>> input{{1, 4, 3, 1, 3, 2}, {3, 2, 1, 3, 2, 4}, {2, 3, 3, 2, 3, 1}};
   auto ret = so.trapRainWater(input);
   cout << ret << endl;
 }
