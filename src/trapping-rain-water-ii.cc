@@ -3,6 +3,18 @@
 
 class Solution {
 public:
+  // 1 1 1 1
+  // 1 0 x 1
+  // 1 1 1 1
+  // 以这个为例，四周先入优先级队列，当要访问到0这个节点的时候其实
+  // x值是大是小都无所谓了，因为大了，正好作为围栏围起来，而且这个0
+  // 周围的木桶最矮的就是1, 如果小了不影响0这个点盛水，因为四周大范围
+  // 还有一个木桶。而这个就是用优先级队列的好处。
+
+  // 对于某一个当前的结点X, 如果它的四周有一个结点Y没有被访问过且elevation更低,
+  // 那说明什么? 说明Y四周不管是紧邻还是大范围总是存在一个木桶围住它
+  // 而Y所能盛水的量只能是上下左右里面最低的一个, 也就是X.
+  // 这也是为什么需要Heap的原因.
   int trapRainWater(vector<vector<int>> &heightMap) {
     const int m = heightMap.size();
     if (m == 0) {
@@ -57,3 +69,11 @@ public:
     return ret;
   }
 };
+
+int main() {
+  Solution so;
+  vector<vector<int>> input{
+      {1, 4, 3, 1, 3, 2}, {3, 2, 1, 3, 2, 4}, {2, 3, 3, 2, 3, 1}};
+  auto ret = so.trapRainWater(input);
+  cout << ret << endl;
+}
