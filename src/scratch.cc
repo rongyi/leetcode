@@ -207,10 +207,15 @@ int main() {
   //   cout << i << endl;
   // }
 
-  unordered_map<int, int> test;
-  cout << 2 * test[0]++ << endl;
-  cout << 2 * test[0]++ << endl;
-  cout << test[0] << endl;
+  // unordered_map<int, int> test;
+  // cout << 2 * test[0]++ << endl;
+  // cout << 2 * test[0]++ << endl;
+  // cout << test[0] << endl;
+
+
+  // return value test
+  unordered_map<int, bool> dp;
+  cout << (dp[1] = false) << endl;
 }
 
 // void inorder(TreeNode *root) {
