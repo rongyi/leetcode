@@ -3,10 +3,7 @@
 
 class Solution {
 public:
-  bool canCross(vector<int> &stones) { return canCross(stones, 0, 0); }
-
-public:
-  bool canCross(vector<int> &stones, int pos, int k) {
+  bool canCross(vector<int> &stones, int pos = 0, int k = 0) {
     // The number of stones is less than 1100 so pos will always be less than
     // 2^11 (2048).
     int key = pos | (k << 11);
