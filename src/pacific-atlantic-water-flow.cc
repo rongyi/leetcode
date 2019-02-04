@@ -28,7 +28,7 @@ public:
     return ret;
   }
 
-public:
+private:
   bool both(vector<vector<int>> &matrix, int x, int y) {
     unordered_set<int> c1;
     unordered_set<int> c2;
