@@ -3,14 +3,20 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/strong-password-checker/discuss/151333/Easy-O(n)-solution
   int strongPasswordChecker(string s) {
     int required_char = getRequiredChar(s);
     if (s.size() < 6) {
       return max(required_char, int(6 - s.size()));
     }
 
+    // total replacements for repeated chars. e.g. "aaa" needs 1 replacement to
+    // fix
     int replace = 0;
+    // total deletions for 3n repeated chars. e.g. "aaa" needs 1 deletion to fix
     int oned = 0;
+    // total deletions for 3n+1 repeated chars. e.g. "aaaa" needs 2 deletions to
+    // fix.
     int twod = 0;
 
     for (int i = 0; i < s.size();) {
@@ -29,6 +35,7 @@ public:
       }
       i += len;
     }
+    // no need deletion when s.Length <= 20
     if (s.size() <= 20) {
       return max(required_char, replace);
     }
