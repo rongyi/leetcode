@@ -45,14 +45,14 @@
 #include <limits>
 #include <list>
 #include <map>
+#include <numeric>
 #include <queue>
+#include <random>
 #include <set>
 #include <sstream>
 #include <stack>
 #include <string>
 #include <vector>
-#include <numeric>
-#include <random>
 
 #if __cplusplus >= 201103L
 #include <array>
@@ -94,4 +94,17 @@ struct Interval {
   int end;
   Interval() : start(0), end(0) {}
   Interval(int s, int e) : start(s), end(e) {}
+};
+
+class Node {
+public:
+  int val;
+  vector<Node *> children;
+
+  Node() {}
+
+  Node(int _val, vector<Node *> _children) {
+    val = _val;
+    children = _children;
+  }
 };
