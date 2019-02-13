@@ -18,7 +18,19 @@ public:
 */
 class Solution {
 public:
-    int maxDepth(Node* root) {
-
+  int maxDepth(Node *root) {
+    if (!root) {
+      return 0;
     }
+    const int n = root->children.size();
+
+    int max_child = 0;
+
+    for (int i = 0; i < n; i++) {
+      int cur_depth = maxDepth(root->children[i]);
+      max_child = max(max_child, cur_depth);
+    }
+
+    return max_child + 1;
+  }
 };
