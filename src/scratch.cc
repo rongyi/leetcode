@@ -217,9 +217,14 @@ int main() {
   // unordered_map<int, bool> dp;
   // cout << (dp[1] = false) << endl;
 
-  list<int> l;
-  auto ret = l.insert(l.begin(), 1);
-  cout << (ret == l.begin()) << endl;
+  // list<int> l;
+  // auto ret = l.insert(l.begin(), 1);
+  // cout << (ret == l.begin()) << endl;
+
+  int i = -4;
+  cout << i % 3 << endl;
+  i = -3;
+  cout << i % 3 << endl;
 }
 
 // void inorder(TreeNode *root) {
