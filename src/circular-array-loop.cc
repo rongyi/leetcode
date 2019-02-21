@@ -13,9 +13,11 @@ public:
         continue;
       }
       long sign = nums[i] > 0 ? 1 : -1;
-      int j = i;
-      int k = i;
       // 快慢指针的方式来解决
+      // j是慢指针
+      int j = i;
+      // k是快指针
+      int k = i;
       while (true) {
         k = getIndex(nums, k);
         if (nums[k] * sign <= 0) {
