@@ -5,6 +5,7 @@ class Solution {
 public:
   bool circularArrayLoop(vector<int> &nums) {
     const int n = nums.size();
+    // 貌似只要全是正数，或者全是负数都会始终会碰撞的
     for (auto &i : nums) {
       i %= n;
     }
@@ -51,7 +52,7 @@ private:
 
 int main() {
   Solution so;
-  vector<int> input{1, 1, 2};
+  vector<int> input{-1, -4, -2, -2, -1, -2};
   auto ret = so.circularArrayLoop(input);
   cout << ret << endl;
 }
