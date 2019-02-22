@@ -61,8 +61,11 @@ private:
   int capacity_;
   int size_;
   int min_lfu_;
+  // key -> {value, freq}
   unordered_map<int, pair<int, int>> values_;
+  // freq -> {key...}
   unordered_map<int, list<int>> freqs_;
+  // key -> { ... pos ...}
   unordered_map<int, list<int>::iterator> key_in_freqs_;
 };
 
