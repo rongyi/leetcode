@@ -3,15 +3,13 @@
 
 class LFUCache {
 public:
-  LFUCache(int capacity) : capacity_(capacity), size_(0) {
-    // capacity_ = capacity;
-    // size_ = 0;
-  }
+  LFUCache(int capacity) : capacity_(capacity), size_(0) {}
 
   int get(int key) {
     if (values_.find(key) == values_.end()) {
       return -1;
     }
+
     update(key);
     return values_[key].first;
   }
@@ -21,52 +19,51 @@ public:
       return;
     }
     if (values_.find(key) != values_.end()) {
+      // update value
       values_[key].first = value;
       update(key);
     } else {
+      // need evict the smallest freq?
       if (size_ == capacity_) {
-        int evict = keys_[lfu_].front();
-        keys_[lfu_].pop_front();
-        values_.erase(evict);
-        iters_.erase(evict);
+        int delkey = freqs_[min_lfu_].front();
+        values_.erase(delkey);
+        freqs_[min_lfu_].pop_front();
+        key_in_freqs_.erase(delkey);
       } else {
         size_++;
       }
       values_[key] = {value, 1};
-      keys_[1].push_back(key);
-      iters_[key] = --keys_[1].end();
-      lfu_ = 1;
+      freqs_[1].push_back(key);
+      key_in_freqs_[key] = prev(freqs_[1].end());
+      min_lfu_ = 1;
     }
   }
 
 private:
   void update(int key) {
     int old_freq = values_[key].second;
-    auto iter = iters_[key];
+    // delete old freq
+    freqs_[old_freq].erase(key_in_freqs_[key]);
+    key_in_freqs_.erase(key);
 
-    // delete old
+    // update
     values_[key].second++;
-    keys_[old_freq].erase(iter);
+    freqs_[old_freq + 1].push_back(key);
+    key_in_freqs_[key] = prev(freqs_[old_freq + 1].end());
 
-    // update new
-    keys_[old_freq + 1].push_back(key);
-    iters_[key] = --keys_[old_freq + 1].end();
-
-    if (keys_[lfu_].empty()) {
-      lfu_++;
+    // low freq is deleted
+    if (freqs_[min_lfu_].empty()) {
+      min_lfu_++;
     }
   }
 
 private:
   int capacity_;
-  int size_; // 当前元素多少个？
-  int lfu_;  // 标记最小频率是多少
-  // key -> {value, freq}
+  int size_;
+  int min_lfu_;
   unordered_map<int, pair<int, int>> values_;
-  // freq -> key list
-  unordered_map<int, list<int>> keys_;
-  // 标记 key 在 list<int>中的位置，为的是删除O(1)
-  unordered_map<int, list<int>::iterator> iters_;
+  unordered_map<int, list<int>> freqs_;
+  unordered_map<int, list<int>::iterator> key_in_freqs_;
 };
 
 /**
