@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/can-i-win/discuss/95320/7-liner-C%2B%2B-beat-98.4-DFS-with-early-termination-check-(detailed-explanation)
   bool canIWin(int maxChoosableInteger, int desiredTotal) {
     // 第一个随便取一个数字就赢了
     if (desiredTotal < 2) {
