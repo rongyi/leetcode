@@ -3,3 +3,4 @@
 /dist/leetcode-cli
 /*.node
 /dist/node_sqlite3.node
+/src/seeifyouunderstand.cc
