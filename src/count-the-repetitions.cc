@@ -40,7 +40,7 @@ public:
           int round = (s1len * n1 - p1) / (p1 - mark);
           //  直接飞过去
           p1 += round * (p1 - mark);
-          // 生成mark那一轮，也即第一轮要减掉
+          // 生成mark那一轮，也即第一轮p1走到了mark,p2走到s2长度，所以要减掉
           p2 += round * (p2 - s2len);
         }
       }
