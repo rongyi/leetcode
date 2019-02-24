@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/count-the-repetitions/discuss/119679/brutal-force-%2B-optimization-easy-understanding-c%2B%2B
   int getMaxRepetitions(string s1, int n1, string s2, int n2) {
     // s2中找到一个不存在于s1中的字符，那么怎么也凑不起来
     for (auto c : s2) {
@@ -27,6 +28,7 @@ public:
 
       // 完整匹配一轮s2
       if (p2 % s2.length() == 0) {
+        // 第一次匹配OK的时候记录下此时p1中的位置
         if (p2 == (int)s2.length()) {
           mark = p1;
         } else if (p1 % s1.length() == mark % s1.length()) {
@@ -34,6 +36,7 @@ public:
           // p1 - mark是这段重复规律的长度
           // s1.length() * n1是总长， 减去已经走掉的 p1
           int round = (s1.length() * n1 - p1) / (p1 - mark);
+          //  直接飞过去
           p1 += round * (p1 - mark);
           // 生成mark那一轮，也即第一轮要减掉
           p2 += round * (p2 - s2.length());
@@ -41,6 +44,7 @@ public:
       }
     }
 
+    // 如果s2在S1中重复了R次，那么S2(s2重复n2次构成)则肯定重复了 R / n2 次。
     return p2 / s2.length() / n2;
   }
 };
