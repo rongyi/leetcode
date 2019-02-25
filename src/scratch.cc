@@ -212,7 +212,6 @@ int main() {
   // cout << 2 * test[0]++ << endl;
   // cout << test[0] << endl;
 
-
   // return value test
   // unordered_map<int, bool> dp;
   // cout << (dp[1] = false) << endl;
@@ -221,10 +220,18 @@ int main() {
   // auto ret = l.insert(l.begin(), 1);
   // cout << (ret == l.begin()) << endl;
 
-  int i = -4;
-  cout << i % 3 << endl;
-  i = -3;
-  cout << i % 3 << endl;
+  // int i = -4;
+  // cout << i % 3 << endl;
+  // i = -3;
+  // cout << i % 3 << endl;
+
+  stringstream ss("119.118.113.110");
+  string section;
+  getline(ss, section, '.');
+  getline(ss, section, '.');
+  getline(ss, section, '.');
+  getline(ss, section, '.');
+  cout << section << endl;
 }
 
 // void inorder(TreeNode *root) {
