@@ -36,7 +36,7 @@ private:
     int sum = 0;
     for (int i = 0; i < block.size(); i++) {
       auto c = block[i];
-      if (!isalnum(c) || (i == 0 && c == '0' && block.size() > 1)) {
+      if (!isdigit(c) || (i == 0 && c == '0' && block.size() > 1)) {
         return false;
       }
       sum *= 10;
