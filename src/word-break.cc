@@ -1,14 +1,12 @@
-// http://leetcode.com/problems/leetcode/word-break/description/
+// http://leetcode.com/problems/word-break/description/
+
 #include "xxx.h"
 class Solution {
 public:
   bool wordBreak(string s, vector<string> &wordDict) {
     const int n = s.size();
     // the real word dict
-    unordered_set<string> ws;
-    for (auto &w : wordDict) {
-      ws.insert(w);
-    }
+    unordered_set<string> ws(wordDict.begin(), wordDict.end());
     vector<bool> dp(n + 1, false);
     // empty string case
     dp[0] = true;
