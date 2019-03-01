@@ -4,7 +4,9 @@
 class Solution {
 public:
   // 意思是从一堆单词里找到一些复合词，这些复合词是有这个集合里某些单词拼起来的
+  // 结合wordbreak看
   vector<string> findAllConcatenatedWordsInADict(vector<string> &words) {
+    const int n = words.size();
     vector<string> ret;
     sort(words.begin(), words.end(),
          [](const string &l1, const string &l2) -> bool {
@@ -12,7 +14,7 @@ public:
          });
     unordered_set<string> pre_words;
 
-    for (int i = 0; i < words.size(); ++i) {
+    for (int i = 0; i < n; ++i) {
       if (canForm(words[i], pre_words)) {
         ret.push_back(words[i]);
       }
@@ -24,6 +26,7 @@ public:
 
 public:
   bool canForm(string &s, unordered_set<string> &dict) {
+    const int n = s.size();
     if (dict.empty()) {
       return false;
     }
@@ -33,7 +36,7 @@ public:
     // 任何字符都可以由 "" + 自己构成，所以切最左边第一刀，总是可以。
     dp[0] = true;
     // 因为必须是非空字符构成，从1开始
-    for (int i = 1; i <= s.size(); i++) {
+    for (int i = 1; i < n + 1; i++) {
       for (int j = 0; j < i; ++j) {
         if (!dp[j]) {
           continue;
@@ -45,6 +48,7 @@ public:
         }
       }
     }
+
     return dp[s.size()];
   }
 };
