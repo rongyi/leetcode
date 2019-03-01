@@ -27,8 +27,12 @@ public:
     if (dict.empty()) {
       return false;
     }
+    // "abcd" 4 个字符 有5 个gap
+    // |a|b|c|d|  竖线地方就是下刀的地方
     vector<bool> dp(s.size() + 1, false);
+    // 任何字符都可以由 "" + 自己构成，所以切最左边第一刀，总是可以。
     dp[0] = true;
+    // 因为必须是非空字符构成，从1开始
     for (int i = 1; i <= s.size(); i++) {
       for (int j = 0; j < i; ++j) {
         if (!dp[j]) {
