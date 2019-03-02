@@ -225,13 +225,15 @@ int main() {
   // i = -3;
   // cout << i % 3 << endl;
 
-  stringstream ss("119.118.113.110");
-  string section;
-  getline(ss, section, '.');
-  getline(ss, section, '.');
-  getline(ss, section, '.');
-  getline(ss, section, '.');
-  cout << section << endl;
+  // stringstream ss("119.118.113.110");
+  // string section;
+  // getline(ss, section, '.');
+  // getline(ss, section, '.');
+  // getline(ss, section, '.');
+  // getline(ss, section, '.');
+  // cout << section << endl;
+
+  cout << ((double)rand() / RAND_MAX) << endl;
 }
 
 // void inorder(TreeNode *root) {
