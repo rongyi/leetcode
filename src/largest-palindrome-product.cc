@@ -17,6 +17,7 @@ public:
     while (first_half >= start) {
       long par = mkpar(first_half);
       for (int i = end; i >= start && par <= max_product && (long)i * (long)i >= par; --i) {
+        // 找到一个数， i * j == par
         if (par % i == 0) {
           return par % 1337;
         }
