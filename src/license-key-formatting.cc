@@ -13,6 +13,7 @@ public:
     if (normal == 0) {
       return "";
     }
+    // 总共1个字符分成两段？
     if (k > normal) {
       k = normal;
     }
@@ -31,17 +32,7 @@ public:
 
     // 正好
     if (normal % k == 0) {
-      stringstream ss;
-
-      auto round = normal / k;
-      for (int i = 0; i < round; i++) {
-        ss << pure.substr(i * k, k);
-
-        if (i != round - 1) {
-          ss << '-';
-        }
-      }
-      return ss.str();
+      return injectDash(pure, k);
     }
     // 否则第一排的就是零头
     stringstream ss;
@@ -49,7 +40,16 @@ public:
     ss << pure.substr(0, left) << '-';
     pure = pure.substr(left);
 
-    auto round = normal / k;
+    ss << injectDash(pure, k);
+
+    return ss.str();
+  }
+
+private:
+  string injectDash(string &pure, const int k) {
+    stringstream ss;
+
+    const int round = pure.size() / k;
     for (int i = 0; i < round; i++) {
       ss << pure.substr(i * k, k);
 
@@ -57,12 +57,11 @@ public:
         ss << '-';
       }
     }
-
     return ss.str();
   }
 };
 int main() {
   Solution so;
-  auto ret = so.licenseKeyFormatting("2", 2);
+  auto ret = so.licenseKeyFormatting("5F3Z-2e-9-w", 4);
   cout << ret << endl;
 }
