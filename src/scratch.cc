@@ -141,6 +141,8 @@ int main() {
   //   cout << i << endl;
   // }
 
+  // 默认是大顶堆
+  // priority_queue<int, vector<int>> max_heap;
   // priority_queue<int, vector<int>, std::less<int>> max_heap;
   // max_heap.push(1);
   // max_heap.push(2);
@@ -233,7 +235,7 @@ int main() {
   // getline(ss, section, '.');
   // cout << section << endl;
 
-  cout << ((double)rand() / RAND_MAX) << endl;
+  // cout << ((double)rand() / RAND_MAX) << endl;
 }
 
 // void inorder(TreeNode *root) {
