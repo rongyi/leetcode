@@ -8,11 +8,14 @@ public:
 
     // array layout
     // --------------max_heap-----------|----------------min_heap--------------
+    // 高的里面去挑矮的，所以这里面要放大值
     Heap<less<int>> min_heap;
+    // 矮的里面去挑高的，所以这里面要放小值
     Heap<greater<int>> max_heap;
 
     for (int i = 0; i < nums.size(); ++i) {
       min_heap.Add(nums[i]);
+      // 通过 min_heap 弹出来的都是小值
       max_heap.Add(min_heap.Pop());
 
       if (i >= k) {
@@ -22,8 +25,11 @@ public:
           max_heap.Remove(nums[i - k]);
         }
       }
-      for (; max_heap.size_ > min_heap.size_; min_heap.Add(max_heap.Pop()));
-      for (; min_heap.size_ > max_heap.size_; max_heap.Add(min_heap.Pop()));
+      for (; max_heap.size_ > min_heap.size_; min_heap.Add(max_heap.Pop()))
+        ;
+      // 其实这保证了 max_heap 和  min_heap 要么相等，要么 max_heap 大 1
+      for (; min_heap.size_ > max_heap.size_; max_heap.Add(min_heap.Pop()))
+        ;
 
       if (i >= k - 1) {
         if (max_heap.size_ == min_heap.size_) {
@@ -36,7 +42,19 @@ public:
     return ret;
   }
 
-private:
+  void test() {
+    Heap<less<int>> heap;
+    heap.Add(1);
+    heap.Add(2);
+    cout << heap.Top() << endl;
+
+    Heap<greater<int>> heap2;
+    heap2.Add(1);
+    heap2.Add(2);
+    cout << heap2.Top() << endl;
+  }
+
+public:
   template <class Cmp> struct Heap {
     int size_;
     map<int, int, Cmp> h;
@@ -68,3 +86,12 @@ private:
     int Top() { return h.begin()->first; }
   };
 };
+int main() {
+  Solution so;
+  // so.test();
+  vector<int> input{1, 3, -1, -3, 5, 3, 6, 7};
+  auto ret = so.medianSlidingWindow(input, 3);
+  for (auto d : ret) {
+    cout << d << endl;
+  }
+}
