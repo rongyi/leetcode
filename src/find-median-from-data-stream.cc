@@ -7,7 +7,7 @@ public:
   MedianFinder() {}
 
   void addNum(int num) {
-    // max_heap 放小值
+    // max_heap 放小值，这样top出来的是一堆矮的里面挑高的
     if (max_heap.empty() || num <= max_heap.top()) {
       max_heap.push(num);
     } else {
