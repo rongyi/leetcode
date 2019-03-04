@@ -16,12 +16,17 @@ public:
     for (int i = 0; i < nums.size(); ++i) {
       min_heap.Add(nums[i]);
       // 通过 min_heap 弹出来的都是小值
+      // max_heap 里尽放小矮个
       max_heap.Add(min_heap.Pop());
 
+      // 走出window了，要移除一个数，那么这个数在哪呢？
       if (i >= k) {
+        // min_heap.Top()是min里最小的，如果滑动窗口要移除的那个数字比
+        // 这个最小的还大，那么这个删除的target就在 min_heap里无疑
         if (min_heap.size_ > 0 && nums[i - k] >= min_heap.Top()) {
           min_heap.Remove(nums[i - k]);
         } else {
+          // 否则，删除目标在 max_heap 里
           max_heap.Remove(nums[i - k]);
         }
       }
