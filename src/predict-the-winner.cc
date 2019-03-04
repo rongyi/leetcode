@@ -20,7 +20,7 @@ public:
     if (i > j) {
       return 0;
     }
-    if (dp[i][j] == -1) {
+    if (dp[i][j] != -1) {
       return dp[i][j];
     }
     // (i, j) 此时轮到自己走，分两种情况
