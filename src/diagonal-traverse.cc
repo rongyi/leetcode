@@ -39,6 +39,7 @@ public:
         if (x < 0 || x >= m || y < 0 || y >= n) {
           is_up = false;
           // not to the end
+          // move right if possible else move down
           if (j < n - 1) {
             x = i;
             y = j + 1;
@@ -57,7 +58,7 @@ public:
         // ouch, we can not go down anymore
         if (x < 0 || x >= m || y < 0 || y >= n) {
           is_up = true;
-          // down we can
+          // move down if possible else move right
           if (i < m - 1) {
             x = i + 1;
             y = j;
