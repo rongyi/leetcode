@@ -33,7 +33,8 @@ private:
 
     // 当前12:00位置是ring[rpos], 从这个字符开始旋转key的kpos上的那个字符
     for (auto next_index : index[key[kpos]]) {
-      // 这里计算 (i - j + ring_size) % ring_size 或者是 (j - i + ring_size) % ring_size
+      // 这里计算 (i - j + ring_size) % ring_size 或者是 (j - i + ring_size) %
+      // ring_size
       int diff = abs(next_index - rpos);
       int step = min(diff, (int)ring.size() - diff);
 
