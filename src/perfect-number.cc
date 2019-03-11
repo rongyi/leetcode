@@ -8,13 +8,13 @@ public:
       return false;
     }
 
-    vector<int> divisor{1};
+    vector<int> divisors{1};
     for (int i = 2; i < num; i++) {
       if ((num % i) == 0) {
-        divisor.push_back(i);
+        divisors.push_back(i);
       }
     }
 
-    return accumulate(divisor.begin(), divisor.end(), 0) == num;
+    return accumulate(divisors.begin(), divisors.end(), 0) == num;
   }
 };
