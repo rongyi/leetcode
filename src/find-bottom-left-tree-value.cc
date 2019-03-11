@@ -20,7 +20,7 @@ private:
     if (level > ret.size()) {
       ret.push_back({});
     }
-    ret.back().push_back(root->val);
+    ret[level - 1].push_back(root->val);
 
     levelOrder(root->left, ret, level + 1);
     levelOrder(root->right, ret, level + 1);
