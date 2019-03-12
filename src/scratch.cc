@@ -235,9 +235,10 @@ int main() {
   // getline(ss, section, '.');
   // cout << section << endl;
 
-  // cout << ((double)rand() / RAND_MAX) << endl;
+  cout << ((double)rand() / RAND_MAX) << endl;
 
 
+  cout << rand() << endl;
 
 }
 
