@@ -67,6 +67,7 @@ public:
       // 1 2 3 4 5 6 7 8
       // 摇到7的位置，flip之后变成
       // 1 2 3 4 5 6 8 7
+      // 所以再摇到相同位置选择的应该是8不是7
       swap_history_[pos] = swap_history_[size_];
     }
 
