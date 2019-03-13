@@ -4,21 +4,31 @@
 class Solution {
 public:
   int findMaxLength(vector<int> &nums) {
-    int ctg_zero = 0;
-    int ctg_one = 0;
+    if (nums.empty()) {
+      return 0;
+    }
+    int sum = 0;
+    // sum --> index map
+    unordered_map<int, int> sum_index;
+    sum_index[0] = -1;
     int ret = 0;
+
     for (int i = 0; i < nums.size(); i++) {
-      if (nums[i]) {
-        ctg_one++;
-        ret = max(ret, min(ctg_one, ctg_zero));
-        // ctg_zero = 0;
+      sum += nums[i] == 0 ? -1 : 1;
+      if (sum_index.find(sum) != sum_index.end()) {
+        ret = max(ret, i - sum_index[sum]);
       } else {
-        ctg_zero++;
-        ret = max(ret, min(ctg_one, ctg_zero));
-        // ctg_one = 0;
+        sum_index[sum] = i;
       }
     }
 
     return ret;
   }
 };
+
+int main() {
+  Solution so;
+  vector<int> input{0, 1, 0, 1};
+  auto ret = so.findMaxLength(input);
+  cout << ret << endl;
+}
