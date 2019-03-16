@@ -235,11 +235,14 @@ int main() {
   // getline(ss, section, '.');
   // cout << section << endl;
 
-  cout << ((double)rand() / RAND_MAX) << endl;
+  // cout << ((double)rand() / RAND_MAX) << endl;
 
 
-  cout << rand() << endl;
+  // cout << rand() << endl;
 
+  vector<int> ut{3, 7, 10};
+  auto it = lower_bound(ut.begin(), ut.end(), 8);
+  cout << it - ut.begin() << endl;
 }
 
 // void inorder(TreeNode *root) {
