@@ -13,16 +13,19 @@ public:
 
     int x = click[0];
     int y = click[1];
-    // boom!
+    // if we click on a mine, boom!
     if (board[x][y] == 'M') {
       board[x][y] = 'X';
       return board;
     }
+    // then we must click on Empty:
+    // The click position will only be an unrevealed square ('M' or 'E'), which
+    // also means the input board contains at least one clickable square.
+
     // count neighbor mine
     vector<vector<int>> mines(m_, vector<int>(n_, 0));
     countMines(board, mines);
     // then the click position must be 'E' empty
-    // board[x][y] = 'B';
     vector<vector<bool>> visited(m_, vector<bool>(n_, false));
     // dfs
     dfs(board, mines, x, y, visited);
@@ -46,13 +49,14 @@ private:
       }
     } else {
       board[i][j] = '0' + count[i][j];
-      // and we stop here
+      // and we stop here, don't blend in
     }
   }
 
   void countMines(vector<vector<char>> &board, vector<vector<int>> &count) {
     for (int i = 0; i < m_; i++) {
       for (int j = 0; j < n_; j++) {
+        // add one to all its neighbors
         if (board[i][j] == 'M') {
           for (auto dir : dirs_) {
             int ni = i + dir[0];
