@@ -10,6 +10,7 @@ public:
     auto c = realPart(c2);
     auto d = virtualPart(c2);
 
+    // 乘法展开即可
     auto real_part = a * c - b * d;
     auto virtual_part = a * d + b * c;
     stringstream ss;
