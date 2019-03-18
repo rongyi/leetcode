@@ -34,6 +34,12 @@ uint32_t toint(string &ip) {
       i++;
     } else {
       // do nothing
+      if (isspace(ip[i])) {
+        if (i > 0 && i < ip.size() - 1 && isdigit(ip[i - 1]) &&
+            isdigit(ip[i + 1])) {
+          return 0;
+        }
+      }
       i++;
     }
   }
@@ -279,7 +285,6 @@ int main() {
 
   // cout << ((double)rand() / RAND_MAX) << endl;
 
-
   // cout << rand() << endl;
 
   // vector<int> ut{3, 7, 10};
@@ -288,7 +293,7 @@ int main() {
 
   // cout << rand() << endl;
 
-  string input{"172.168.5.1"};
+  string input{"1 72.168. 5 .1"};
   cout << toint(input) << endl;
 }
 
