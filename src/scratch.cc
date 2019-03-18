@@ -1,4 +1,46 @@
 #include "xxx.h"
+
+uint32_t toint(string &ip) {
+  // vector<uint32_t> sum;
+  // uint32_t field = 0;
+  // int i = 0;
+  // while (i < ip.size()) {
+  //   if (ip[i] == '.') {
+  //     sum.push_back(field);
+  //     field = 0;
+  //     i++;
+  //   } else if (isdigit(ip[i])) {
+  //     field = field * 10 + (ip[i] - '0');
+  //     i++;
+  //   } else {
+  //     // do nothing
+  //     i++;
+  //   }
+  // }
+  // sum.push_back(field);
+  // return (sum[0] << 24) | (sum[1] << 16) | (sum[2] << 8 ) | sum[3];
+
+  uint32_t sum = 0;
+  uint32_t field = 0;
+  int i = 0;
+  while (i < ip.size()) {
+    if (ip[i] == '.') {
+      sum += field;
+      sum <<= 8;
+      field = 0;
+      i++;
+    } else if (isdigit(ip[i])) {
+      field = field * 10 + (ip[i] - '0');
+      i++;
+    } else {
+      // do nothing
+      i++;
+    }
+  }
+  sum += field;
+  return sum;
+}
+
 class Solutionmq {
 public:
   vector<int> maxSlidingWindow(vector<int> &nums, int k) {
@@ -240,9 +282,14 @@ int main() {
 
   // cout << rand() << endl;
 
-  vector<int> ut{3, 7, 10};
-  auto it = lower_bound(ut.begin(), ut.end(), 8);
-  cout << it - ut.begin() << endl;
+  // vector<int> ut{3, 7, 10};
+  // auto it = lower_bound(ut.begin(), ut.end(), 8);
+  // cout << it - ut.begin() << endl;
+
+  // cout << rand() << endl;
+
+  string input{"172.168.5.1"};
+  cout << toint(input) << endl;
 }
 
 // void inorder(TreeNode *root) {
