@@ -19,7 +19,7 @@ public:
     return ss.str();
   }
 
-public:
+private:
   int virtualPart(string &a) {
     // jump over real part
     int i = 0;

@@ -38,7 +38,7 @@ public:
     return matrix;
   }
 
-public:
+private:
   // is (x, y) in range?
   bool valid(int x, int y) {
     if (x < 0 || x >= m_ || y < 0 || y >= n_) {
