@@ -6,6 +6,8 @@ public:
   // https://leetcode.com/problems/remove-boxes/discuss/101310/Java-top-down-and-bottom-up-DP-solutions
   int removeBoxes(vector<int> &boxes) {
     const int m = boxes.size();
+    // dp[i][j][k] : from i to j and the left of i has k elements which have
+    // same color with boxes[i]
     vector<vector<vector<int>>> dp(m,
                                    vector<vector<int>>(m, vector<int>(m, 0)));
 
