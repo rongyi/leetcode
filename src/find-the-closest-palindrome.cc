@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/find-the-closest-palindrome/discuss/147949/Logical-Thinking-with-Java-Code-Beats-98.80
   // For a palindrome number, e.g., 12321, the next bigger palindrome should be
   // 12421, and the next smaller one should be 12221. That is, if we define 123
   // as palindromeRoot of 12321, the next bigger palindrome number's
