@@ -293,8 +293,11 @@ int main() {
 
   // cout << rand() << endl;
 
-  string input{"1 72.168. 5 .1"};
-  cout << toint(input) << endl;
+  // string input{"1 72.168. 5 .1"};
+  // cout << toint(input) << endl;
+  string zero{"0011"};
+  auto i = stoi(zero);
+  cout << i << endl;
 }
 
 // void inorder(TreeNode *root) {
