@@ -295,9 +295,16 @@ int main() {
 
   // string input{"1 72.168. 5 .1"};
   // cout << toint(input) << endl;
-  string zero{"0011"};
-  auto i = stoi(zero);
-  cout << i << endl;
+  // string zero{"0011"};
+  // auto i = stoi(zero);
+  // cout << i << endl;
+
+
+  string s{"aba"};
+  sort(s.begin(), s.end());
+  do {
+    cout << s << endl;
+  } while (next_permutation(s.begin(), s.end()));
 }
 
 // void inorder(TreeNode *root) {
