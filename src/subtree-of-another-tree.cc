@@ -3,9 +3,13 @@
 
 class Solution {
 public:
-  bool isSubtree(TreeNode *s, TreeNode *t) { return recur(s, t, true); }
+  bool isSubtree(TreeNode *s, TreeNode *t) {
+    return recur(s, t, true);
+  }
 
 private:
+  // start_from_root: doest this t node is a root node or original t
+  // if no, when we meet values not equal we return false imediately
   bool recur(TreeNode *s, TreeNode *t, bool start_from_root) {
     bool hass = !!s;
     bool hast = !!t;
