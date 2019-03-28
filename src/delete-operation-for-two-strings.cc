@@ -43,6 +43,17 @@ public:
     // 应该是 subsequence
     const int m = word1.size();
     const int n = word2.size();
+    // probelm: lcs(s1, s2) i.e. longest common subsequence
+    // s1 = sub1 + e1 (e1 is the last char)
+    // s2 = sub2 + e2 (e2 is the last char)
+    // when e1 == e2 ==> problem can be recursived to lcs(sub1, sub2) + e1
+    // else when e1 != e2 ==> 1. or 2. or 3. which 1. 2. and 3. is below
+    // 1. lcs(sub1, s2)
+    // 2. lcs(s1, sub2)
+    // 3. lcs(sub1, sub2)
+    // when come to the length we can just ignore lcs(sub1, sub2)
+    // because lcs(sub1, sub2) can never be larger than(max(lcs(sub1, s2), lcs(s1, sub2)))
+    // (using less char to generate longer subsequence? ==> no way)
     vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
     for (int i = 1; i <= m; i++) {
       for (int j = 1; j <= n; j++) {
