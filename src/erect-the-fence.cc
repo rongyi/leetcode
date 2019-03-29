@@ -27,7 +27,8 @@ public:
         if (cur_index == i) {
           continue;
         }
-        // i到cur_index的斜率高一点吗？
+        // cross > 0意味着什么？ 意味着在固定最左侧节点后我们可以找到一个
+        // 屁股还能往上翘吗？能就继续撅
         auto cross = crossProduct(cur_index, i, next_index);
         if (next_index == i || cross > 0 ||
             (cross == 0 &&
@@ -60,7 +61,20 @@ private:
   int distance(Point &p1, Point &p2) {
     return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
   }
-  // 如果大于0代表a ==> b的斜率比 a==> c的斜率高一点
+  // 1. > 0
+  //     b
+  //    / \
+  //   /   \
+  //  v     v
+  //  a      c
+  // 2. == 0 (collinea)
+  // a -- b -- c
+  // 3. < 0
+  //  a      c
+  //  ^      ^
+  //  \     /
+  //   \   /
+  //     c
   int crossProduct(int ai, int bi, int ci) {
     int bax = ps_[bi].x - ps_[ai].x;
     int bay = ps_[bi].y - ps_[ai].y;
