@@ -23,14 +23,14 @@ public:
     uniq.insert(points[first_index]);
     while (cur_index != first_index || next_index == -1) {
       next_index = 0;
-      for (int i = 0; i < n; i++) {
+      for (int i = 1; i < n; i++) {
         if (cur_index == i) {
           continue;
         }
         // cross > 0意味着什么？ 意味着在固定最左侧节点后我们可以找到一个
         // 屁股还能往上翘吗？能就继续撅
         auto cross = crossProduct(cur_index, i, next_index);
-        if (next_index == i || cross > 0 ||
+        if (cross > 0 ||
             (cross == 0 &&
              distance(points[cur_index], points[i]) >
                  distance(points[cur_index], points[next_index]))) {
