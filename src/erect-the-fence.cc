@@ -42,6 +42,7 @@ public:
         if (cur_index == i) {
           continue;
         }
+        // if i and next_index is same, just insert this point
         if (crossProduct(cur_index, i, next_index) == 0) {
           uniq.insert(points[i]);
         }
