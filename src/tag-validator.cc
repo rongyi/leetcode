@@ -9,7 +9,7 @@ public:
   }
 
 private:
-  bool validTag(string s, int &i) {
+  bool validTag(string &s, int &i) {
     int j = i;
     string tag = parseTagName(s, j);
     if (tag.empty()) {
@@ -27,7 +27,7 @@ private:
     i = k + 1;
     return true;
   }
-  string parseTagName(string s, int &i) {
+  string parseTagName(string &s, int &i) {
     if (s[i] != '<') {
       return "";
     }
@@ -47,7 +47,7 @@ private:
     return tag;
   }
 
-  bool validContent(string s, int &i) {
+  bool validContent(string &s, int &i) {
     int j = i;
     while (j < s.size()) {
       if (!validText(s, j) && !validCData(s, j) && !validTag(s, j)) {
@@ -57,14 +57,14 @@ private:
     i = j;
     return true;
   }
-  bool validText(string s, int &i) {
+  bool validText(string &s, int &i) {
     int j = i;
     while (i < s.size() && s[i] != '<') {
       i++;
     }
     return i != j;
   }
-  bool validCData(string s, int &i) {
+  bool validCData(string &s, int &i) {
     if (s.find("<![CDATA[", i) != i) {
       return false;
     }
