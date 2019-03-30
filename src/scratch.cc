@@ -300,11 +300,15 @@ int main() {
   // cout << i << endl;
 
 
-  string s{"aba"};
-  sort(s.begin(), s.end());
-  do {
-    cout << s << endl;
-  } while (next_permutation(s.begin(), s.end()));
+  // string s{"aba"};
+  // sort(s.begin(), s.end());
+  // do {
+  //   cout << s << endl;
+  // } while (next_permutation(s.begin(), s.end()));
+
+  cout << 9 % (-2) << endl;
+  cout << -8 % 3 << endl;
+  cout << 0 % 3 << endl;
 }
 
 // void inorder(TreeNode *root) {
