@@ -3,6 +3,8 @@
 
 class Solution {
 public:
+  // 也是被喷的很惨的题目，讨论区说面试如果有这道题意味着人家不想要你
+  // 而你也不想在这样的公司干活
   bool isValid(string code) {
     int i = 0;
     return validTag(code, i) && i == code.size();
