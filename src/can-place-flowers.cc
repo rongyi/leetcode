@@ -19,9 +19,13 @@ public:
           break;
         }
         // we have start partial plant
+        // 00001 or 10000 start or end
+        // 如上，我们有四个空位放花去掉与1相邻的地方不能放，我们有三个空位 j - i
+        // - 1 而三个不带限制条件所能放的最多的花的方法是 f(n) = (n + 1) / 2
+        // 代入(j - i - 1 + 1) / 2 ==> (j - i) / 2
         if (i == 0 || j == n) {
           plant += max(0, (j - i) / 2);
-        } else {
+        } else { // 分析同上,空位有 j - i - 2个
           plant += max(0, (j - i - 1) / 2);
         }
 
