@@ -11,12 +11,6 @@
  };
 */
 
-struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
 
 class Solution {
 public:
@@ -33,7 +27,7 @@ public:
     return vec.front();
   }
 
-public:
+private:
   void inorder(TreeNode *cur, vector<TreeNode *> &vec) {
     if (!cur) {
       return;

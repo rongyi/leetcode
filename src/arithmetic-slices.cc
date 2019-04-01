@@ -23,7 +23,7 @@ public:
     return ret;
   }
 
-public:
+private:
   // i, j included
   bool isArithmetic(vector<int> &nums, int i, int j) {
     // 哥给你打个样

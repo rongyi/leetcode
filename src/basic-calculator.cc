@@ -62,7 +62,7 @@ public:
     return flatop(flat);
   }
 
-public:
+private:
   vector<string> tokenize(string &s) {
     // try to parse the last digit
     s.push_back(' ');

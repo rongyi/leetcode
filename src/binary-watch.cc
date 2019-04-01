@@ -39,7 +39,7 @@ public:
     return ret;
   }
 
-public:
+private:
   int countzero(int i) {
     int ret = 0;
     while (i) {

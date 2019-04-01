@@ -26,7 +26,7 @@ public:
     return ret;
   }
 
-public:
+private:
   int mycouple(int i) {
     if (i & 1) {
       return i - 1;

@@ -83,7 +83,7 @@ public:
     return ret;
   }
 
-public:
+private:
   string repeat(string s, int n) {
     stringstream ss;
     for (int i = 0; i < n; i++) {
