@@ -15,6 +15,7 @@ public:
 
     return ret.substr(1);
   }
+private:
   void recur(TreeNode *t, stringstream &ss) {
     if (!t) {
       return;
