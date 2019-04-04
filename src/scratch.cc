@@ -306,9 +306,18 @@ int main() {
   //   cout << s << endl;
   // } while (next_permutation(s.begin(), s.end()));
 
-  cout << 9 % (-2) << endl;
-  cout << -8 % 3 << endl;
-  cout << 0 % 3 << endl;
+  // cout << 9 % (-2) << endl;
+  // cout << -8 % 3 << endl;
+  // cout << 0 % 3 << endl;
+
+  unordered_map<char, int> count;
+  count['A'] = 3;
+  count['D'] = 4;
+  vector<char> target{'A', 'D'};
+  for (auto t : target) {
+    count.erase(t);
+  }
+  cout << count.size() << endl;
 }
 
 // void inorder(TreeNode *root) {
