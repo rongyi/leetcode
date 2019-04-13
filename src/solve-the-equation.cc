@@ -22,6 +22,9 @@ public:
       return "No solution";
     }
 
+    // ax + b = cx + d
+    // ==> (a - c)x = (d - b)
+    // ==> x = (d - b) / (a - c)
     auto co = leqt.co_ - reqt.co_;
     auto sum = reqt.sum_ - leqt.sum_;
     return "x=" + to_string(sum / co);
