@@ -18,8 +18,10 @@ public:
     return ret;
   }
   vector<int> can(const vector<int> &needs, const vector<int> &offer) {
+    // remain list
     vector<int> r(needs.size(), 0);
     for (int i = 0, n = needs.size(); i < n; ++i) {
+      // 只能买exactly，所以只要有多的情况就不能买了，因为消费不掉
       if (offer[i] > needs[i]) {
         return vector<int>{};
       }
