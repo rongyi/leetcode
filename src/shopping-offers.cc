@@ -8,7 +8,7 @@ public:
                      vector<int> &needs) {
     // 本身分开买所需要的最大值
     int ret = inner_product(price.begin(), price.end(), needs.begin(), 0);
-    for (const vector<int> &offer : special) {
+    for (const auto &offer : special) {
       vector<int> r = can(needs, offer);
       if (r.empty()) {
         continue;
