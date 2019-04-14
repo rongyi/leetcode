@@ -51,6 +51,7 @@ public:
     if (readable_ == 0) {
       return -1;
     }
+    // readable_ + beg_是下一个可写的位置，所以当前可读的rear在这个位置之前
     return data_[(readable_ + beg_ - 1) % n_];
   }
 
