@@ -17,6 +17,10 @@ public:
       }
       uniq.insert(num);
     }
+    // 1 2 3 4 ==> 1 2 2 4
+    // we know 2 is add to cur_sum, so we minus 2
+    // which we get sum of 1 2 4
+    // the delta is the missing number
     cur_sum -= target;
     return {target, (int)(expect_sum - cur_sum)};
   }
