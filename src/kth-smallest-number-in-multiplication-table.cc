@@ -21,6 +21,7 @@ public:
       // 一般二叉查找树找到会立即返回，这里没有，这里还是一直碾下去
       // 为什么？因为可能停留的值不在乘法表里
 
+      // https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/discuss/262279/Python-Binary-Search-Need-to-Return-the-Smallest-Candidate
       // So why the smallest candidate is in M table?
       // Because if the smallest candidate(no smaller than k numbers in M
       // table), saying x, is not in M table, then x-1 will also be a
