@@ -18,18 +18,18 @@ public:
       ret = p.first;
 
       int cell = p.second;
-      int r = cell / m;
-      int c = cell % m;
+      int r = cell / n;
+      int c = cell % n;
 
       int nextr = r + 1;
       int nextc = c + 1;
       if (c == 0 && nextr < m) {
         // 这里再把 (nextr, c) 坐标换算成值
-        pq.push({matrix[nextr][c], nextr * m + c});
+        pq.push({matrix[nextr][c], nextr * n + c});
       }
       if (nextc < n) {
         // 同样把(r, nextc)坐标换算成值
-        pq.push({matrix[r][nextc], r * m + nextc});
+        pq.push({matrix[r][nextc], r * n + nextc});
       }
     }
 
