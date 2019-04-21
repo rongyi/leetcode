@@ -8,7 +8,7 @@ public:
       return 0;
     }
     // preapare
-    dirs_ = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+    dirs_ = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
     m_ = forest.size();
     n_ = forest[0].size();
 
@@ -50,21 +50,24 @@ private:
     int step = 0;
     while (!q.empty()) {
       step++;
-      auto x = q.front().first;
-      auto y = q.front().second;
-      q.pop();
-      for (int i = 0; i < 4; i++) {
-        int nx = x + dirs_[i][0];
-        int ny = y + dirs_[i][1];
-        if (nx < 0 || nx >= m_ || ny < 0 || ny >= n_ || visited[nx][ny] ||
-            forest[nx][ny] == 0) {
-          continue;
+      int sz = q.size();
+      for (int i = 0; i < sz; i++) {
+        auto x = q.front().first;
+        auto y = q.front().second;
+        q.pop();
+        for (int i = 0; i < 4; i++) {
+          int nx = x + dirs_[i][0];
+          int ny = y + dirs_[i][1];
+          if (nx < 0 || nx >= m_ || ny < 0 || ny >= n_ || visited[nx][ny] ||
+              forest[nx][ny] == 0) {
+            continue;
+          }
+          if (nx == ex && ny == ey) {
+            return step;
+          }
+          visited[nx][ny] = true;
+          q.push({nx, ny});
         }
-        if (nx == ex && ny == ey) {
-          return step;
-        }
-        visited[nx][ny] = true;
-        q.push({nx, ny});
       }
     }
     // not found
