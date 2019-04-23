@@ -16,7 +16,7 @@ public:
 private:
   bool valid(double a, double b) {
     if (fabs(a + b - 24.0) < 0.0001 || fabs(a - b - 24.0) < 0.0001 ||
-        fabs(a * b - 24.0) < 0.0001 || (b && fabs(a / b - 24.0)) < 0.0001) {
+        fabs(a * b - 24.0) < 0.0001 || (b && fabs(a / b - 24.0) < 0.0001)) {
       return true;
     }
     return false;
