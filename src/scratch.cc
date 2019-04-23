@@ -299,7 +299,6 @@ int main() {
   // auto i = stoi(zero);
   // cout << i << endl;
 
-
   // string s{"aba"};
   // sort(s.begin(), s.end());
   // do {
@@ -310,14 +309,47 @@ int main() {
   // cout << -8 % 3 << endl;
   // cout << 0 % 3 << endl;
 
-  unordered_map<char, int> count;
-  count['A'] = 3;
-  count['D'] = 4;
-  vector<char> target{'A', 'D'};
-  for (auto t : target) {
-    count.erase(t);
-  }
-  cout << count.size() << endl;
+  // unordered_map<char, int> count;
+  // count['A'] = 3;
+  // count['D'] = 4;
+  // vector<char> target{'A', 'D'};
+  // for (auto t : target) {
+  //   count.erase(t);
+  // }
+  // cout << count.size() << endl;
+
+  // string test{"a\nb\nc\n"};
+  // stringstream ss(test);
+  // auto ret = count(istreambuf_iterator<char>(ss),
+  // istreambuf_iterator<char>(), '\n');
+  // cout << ret << endl;
+  // ret = count(test.begin(), test.end(), '\n');
+  // cout << ret << endl;
+
+  // vector<int> test{1, 7, 7};
+  // auto ret = accumulate(test.begin(), test.end(), 0);
+  // cout << ret << endl;
+  // ret = accumulate(test.begin(), test.end(), 1, multiplies<int>());
+  // cout << ret << endl;
+
+  // string test{"a\nb\nc\n"};
+  // auto f = [](int prev, char c) { return (c != '\n' ? prev : prev + 1); };
+  // // 0就是传到 f 的第一个参数
+  // auto ret = accumulate(test.begin(), test.end(), 0, f);
+  // cout << ret << endl;
+
+  // auto is_not_space = [](const char &c) { return c != ' '; };
+  // auto trim_left = [=](string s) {
+  //   s.erase(s.begin(), find_if(s.begin(), s.end(), is_not_space));
+  //   return s;
+  // };
+  // auto trim_right = [=](string s) {
+  //   s.erase(find_if(s.rbegin(), s.rend(), is_not_space).base(), s.end());
+  //   return s;
+  // };
+  // string test{"     a     "};
+  // cout << "|" << trim_left(test) << endl;
+  // cout << "|" << trim_right(test) << "|" << endl;
 }
 
 // void inorder(TreeNode *root) {
