@@ -350,6 +350,54 @@ int main() {
   // string test{"     a     "};
   // cout << "|" << trim_left(test) << endl;
   // cout << "|" << trim_right(test) << "|" << endl;
+
+  // can not see the stable or unstable
+  // vector<bool> input{false, true, false, true, true, false};
+  // partition(input.begin(), input.end(), [](bool v) { return !v; });
+  // for (auto v : input) {
+  //   cout << v << " ";
+  // }
+  // cout << endl;
+
+  // vector<int> input{4, 3, 2, 1, 7, 8, 9, 1};
+  // // partition(input.begin(), input.end(), [](int v) { return v < 5; });
+  // stable_partition(input.begin(), input.end(),
+  //                  [](int v) -> bool { return v < 5; });
+  // // if you need order intact
+  // for (auto v : input) {
+  //   cout << v << " ";
+  // }
+  // cout << endl;
+
+  // struct people {
+  //   string name_;
+  //   int aget_;
+  //   bool is_man_;
+  // };
+  // vector<people> input{{"rongyi", 99, true},
+  //                      {"xxx", 88, false},
+  //                      {"yyy", 99, true},
+  //                      {"zzz", 909, false}};
+  // vector<people> female;
+  // copy_if(input.begin(), input.end(), back_inserter(female),
+  //         [](const people &p) { return !p.is_man_; });
+
+  // // 记得这里要先分配好size， 否则coredump
+  // vector<string> female_name(female.size());
+  // transform(female.cbegin(), female.cend(), female_name.begin(),
+  //           [](const people &p) { return p.name_; });
+  // for (auto s : female_name) {
+  //   cout << s << " ";
+  // }
+  // cout << endl;
+
+  // vector<int> input{1, 2, 3, 4, 7};
+  // auto end = remove_if(input.begin(), input.end(), [](const int &i) { return i < 3; });
+  // input.erase(end, input.end());
+  // for (auto i : input) {
+  //   cout << i << " ";
+  // }
+  // cout << endl;
 }
 
 // void inorder(TreeNode *root) {
