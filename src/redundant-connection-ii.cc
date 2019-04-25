@@ -1,10 +1,13 @@
 // http://leetcode.com/problems/redundant-connection-ii/description/
 #include "xxx.h"
+
+
 class Solution {
 public:
   // 分析： 有两种情况：
   // 1. 一个环，所有node都只有一个parent
   // 2. 有个node有两个parent, 另外一个没有parent，可能有一个环也可能没有环
+  // https://leetcode.com/problems/redundant-connection-ii/discuss/138593/C%2B%2B-very-straight-forward-solution-either-node-has-two-parents-no-parent
   vector<int> findRedundantDirectedConnection(vector<vector<int>> &edges) {
 
     vector<int> parent(edges.size() + 1, 0);
