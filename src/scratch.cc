@@ -1,25 +1,6 @@
 #include "xxx.h"
 
 uint32_t toint(string &ip) {
-  // vector<uint32_t> sum;
-  // uint32_t field = 0;
-  // int i = 0;
-  // while (i < ip.size()) {
-  //   if (ip[i] == '.') {
-  //     sum.push_back(field);
-  //     field = 0;
-  //     i++;
-  //   } else if (isdigit(ip[i])) {
-  //     field = field * 10 + (ip[i] - '0');
-  //     i++;
-  //   } else {
-  //     // do nothing
-  //     i++;
-  //   }
-  // }
-  // sum.push_back(field);
-  // return (sum[0] << 24) | (sum[1] << 16) | (sum[2] << 8 ) | sum[3];
-
   uint32_t sum = 0;
   uint32_t field = 0;
   int i = 0;
@@ -398,21 +379,5 @@ int main() {
   //   cout << i << " ";
   // }
   // cout << endl;
-}
 
-// void inorder(TreeNode *root) {
-//   if (!root)
-//     return;
-//   inorder(root->left);
-//   if (!pre)
-//     pre = root;
-//   else {
-//     if (pre->val > root->val) {
-//       if (!first)
-//         first = pre;
-//       second = root;
-//     }
-//     pre = root;
-//   }
-//   inorder(root->right);
-// }
+}
