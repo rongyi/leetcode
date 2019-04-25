@@ -373,11 +373,27 @@ int main() {
   // cout << endl;
 
   // vector<int> input{1, 2, 3, 4, 7};
-  // auto end = remove_if(input.begin(), input.end(), [](const int &i) { return i < 3; });
+  // auto end = remove_if(input.begin(), input.end(), [](const int &i) { return
+  // i < 3; });
   // input.erase(end, input.end());
   // for (auto i : input) {
   //   cout << i << " ";
   // }
   // cout << endl;
 
+  // function wrapper
+  function<float(float, float)> test_func;
+  test_func = multiplies<float>();
+  cout << test_func(3.14, 2) << endl;
+  float d{3.33};
+  test_func = [d](float a, float b) { return a + d + b; };
+  cout << test_func(3.14, 1) << endl;
+
+  string input{""};
+  // string input{"hello"};
+  function<bool(const string &)> f;
+  f = &string::empty;
+  cout << f(input) << endl;
+
+  // partial application
 }
