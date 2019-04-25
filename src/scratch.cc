@@ -382,18 +382,31 @@ int main() {
   // cout << endl;
 
   // function wrapper
-  function<float(float, float)> test_func;
-  test_func = multiplies<float>();
-  cout << test_func(3.14, 2) << endl;
-  float d{3.33};
-  test_func = [d](float a, float b) { return a + d + b; };
-  cout << test_func(3.14, 1) << endl;
+  // function<float(float, float)> test_func;
+  // test_func = multiplies<float>();
+  // cout << test_func(3.14, 2) << endl;
+  // float d{3.33};
+  // test_func = [d](float a, float b) { return a + d + b; };
+  // cout << test_func(3.14, 1) << endl;
 
-  string input{""};
-  // string input{"hello"};
-  function<bool(const string &)> f;
-  f = &string::empty;
-  cout << f(input) << endl;
+  // string input{""};
+  // // string input{"hello"};
+  // function<bool(const string &)> f;
+  // f = &string::empty;
+  // cout << f(input) << endl;
 
   // partial application
+  // auto thunk = bind(greater<int>(), 10, 9);
+  // cout << thunk() << endl;
+  // auto thunk2 = bind(greater<int>(), std::placeholders::_1, 9);
+  // cout << thunk2(2) << endl;
+  // cout << thunk2(10) << endl;
+
+  vector<int> input{1, 3, 7, 4, 5};
+  // sort(input.begin(), input.end(), bind(greater<int>(),
+  // std::placeholders::_2, std::placeholders::_1));
+  // same effect as above
+  sort(input.begin(), input.end());
+  for_each(input.begin(), input.end(), [](int i) { cout << i << " "; });
+  cout << endl;
 }
