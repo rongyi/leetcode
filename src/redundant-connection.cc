@@ -4,6 +4,8 @@
 class Solution {
 public:
   vector<int> findRedundantConnection(vector<vector<int>> &edges) {
+    // 单向无环图的全连接边有n - 1，题目说多一条，所以 edges.size() 就是节点数
+    // 因为1 based，所以 + 1， 最前面的那个0没有用。
     vector<int> parent(edges.size() + 1, 0);
     for (int i = 0; i < parent.size(); i++) {
       parent[i] = i;
