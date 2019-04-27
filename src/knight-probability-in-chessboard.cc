@@ -6,7 +6,7 @@ public:
   double knightProbability(int N, int K, int r, int c) {
     vector<vector<vector<double>>> dp(
         K + 1, vector<vector<double>>(N, vector<double>(N, -1)));
-    return recur(dp, N, K, r, c) / pow(8, K);
+    return recur(dp, N, K, r, c) / pow(8, K); // 样本空间这么大
   }
 
 private:
