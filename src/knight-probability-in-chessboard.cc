@@ -6,6 +6,7 @@ public:
   double knightProbability(int N, int K, int r, int c) {
     vector<vector<vector<double>>> dp(
         K + 1, vector<vector<double>>(N, vector<double>(N, -1)));
+    // 能有多少次在棋盘里
     return recur(dp, N, K, r, c) / pow(8, K); // 样本空间这么大
   }
 
@@ -17,6 +18,7 @@ private:
     if (k == 0) {
       return 1.0;
     }
+    // cache命中就返回cache
     if (dp[k][r][c] != -1.0) {
       return dp[k][r][c];
     }
