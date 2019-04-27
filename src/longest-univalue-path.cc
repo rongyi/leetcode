@@ -30,7 +30,10 @@ private:
     auto left = recur(root->left, target, max_count);
     auto right = recur(root->right, target, max_count);
     // ret += left + right;
+    // side effect
+    // 经过此节点的路径长度是不是最长
     max_count = max(max_count, 1 + left + right);
+    // 作为子节点返回给上面的节点的时候，从上面下来的路径只能是二选一
     return max(left, right) + 1;
   }
 };
