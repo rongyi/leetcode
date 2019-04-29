@@ -18,6 +18,7 @@ public:
       } else {
         ret += min(cur, prev);
         prev = cur;
+
         cur = 1;
       }
     }
