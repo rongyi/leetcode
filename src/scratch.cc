@@ -402,11 +402,14 @@ int main() {
   // cout << thunk2(2) << endl;
   // cout << thunk2(10) << endl;
 
-  vector<int> input{1, 3, 7, 4, 5};
-  // sort(input.begin(), input.end(), bind(greater<int>(),
-  // std::placeholders::_2, std::placeholders::_1));
-  // same effect as above
-  sort(input.begin(), input.end());
-  for_each(input.begin(), input.end(), [](int i) { cout << i << " "; });
-  cout << endl;
+  // vector<int> input{1, 3, 7, 4, 5};
+  // // sort(input.begin(), input.end(), bind(greater<int>(),
+  // // std::placeholders::_2, std::placeholders::_1));
+  // // same effect as above
+  // sort(input.begin(), input.end());
+  // for_each(input.begin(), input.end(), [](int i) { cout << i << " "; });
+  // cout << endl;
+
+
+
 }
