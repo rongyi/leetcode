@@ -21,6 +21,7 @@ public:
 
     int h = 0;
     for (auto &p : positions) {
+      // (left, side_length)
       Interval cur(p[0], p[0] + p[1] - 1, p[1]);
       h = max(h, getHeight(intervals, cur));
       ret.push_back(h);
