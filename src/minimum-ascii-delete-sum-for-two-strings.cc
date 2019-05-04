@@ -20,15 +20,18 @@ public:
     vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
     // first row
     for (int j = 1; j <= n; j++) {
+      // 把s2删到空字符串和s1相等，就是全加起来
       dp[0][j] = dp[0][j - 1] + s2[j - 1];
     }
 
     for (int i = 1; i <= m; i++) {
+      // 一样，删空的全部和
       dp[i][0] = dp[i - 1][0] + s1[i - 1];
       for (int j = 1; j <= n; j++) {
         if (s1[i - 1] == s2[j - 1]) {
           dp[i][j] = dp[i - 1][j - 1];
         } else {
+          // delete s1[i - 1] or s2[j - 1]
           dp[i][j] = min(dp[i - 1][j] + s1[i - 1], dp[i][j - 1] + s2[j - 1]);
         }
       }
