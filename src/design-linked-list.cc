@@ -28,13 +28,16 @@ public:
     if (tail_ == &dummy_.next) {
       addAtTail(val);
     } else {
+      // tmp->next = dummy_.next; already contained
       ListNode *tmp = new ListNode{val, dummy_.next};
+      // 头插
       dummy_.next = tmp;
     }
   }
 
   /** Append a node of value val to the last element of the linked list. */
   void addAtTail(int val) {
+    // tmp->next = nullptr already contained
     ListNode *tmp = new ListNode{val, nullptr};
     *tail_ = tmp;
     tail_ = &tmp->next;
@@ -66,6 +69,7 @@ public:
     while (index-- && (*it)) {
       it = &(*it)->next;
     }
+    // it 停在删除target上
 
     if (*it) {
       if (&(*it)->next == tail_) {
@@ -80,7 +84,9 @@ public:
   }
 
 private:
+  // dummy_.next指向第一个真实元素
   ListNode dummy_;
+  // 指向最后一个元素next指针的地址
   ListNode **tail_;
 };
 
@@ -93,4 +99,9 @@ private:
  * obj->addAtIndex(index,val);
  * obj->deleteAtIndex(index);
  */
-int main() {}
+int main() {
+  MyLinkedList l;
+  l.addAtHead(2);
+  l.addAtHead(3);
+  l.deleteAtIndex(1);
+}
