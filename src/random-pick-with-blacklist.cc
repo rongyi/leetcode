@@ -12,6 +12,14 @@ public:
     distribution_ = uniform_int_distribution<int>(0, N - 1 - black_.size());
   }
 
+  // Let's call the original domain in [1..N) and reduced domain in [1..M) where M=N-|B|.
+  // We need to return X in the original domain, but can only generate a number r in the reduced domain.
+  // The mapping from the original domain to the reduced domain is the relation:
+  // "X - {number of elements smaller than X in B} = r" // from original domain to the reduced domain
+
+  // The line of bl[i]-=i is to map the (impossible) X into the reduced domain.
+  // So, one can find how many elements smaller than r quickly. (upper_bound()-begin()), since both r and bl[i] now in the same domain.
+  // Then, map r back to the original domain, by r + {skipped elements in B}
   int pick() {
     auto r = distribution_(gen_);
 
