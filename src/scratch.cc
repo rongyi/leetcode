@@ -410,11 +410,26 @@ int main() {
   // for_each(input.begin(), input.end(), [](int i) { cout << i << " "; });
   // cout << endl;
 
-  unordered_set<string> s1;
-  s1.insert("hello");
-  s1.insert("world");
-  // it's not iterater, just the element
-  for (auto it : s1) {
-    cout << it <<endl;
-  }
+  // unordered_set<string> s1;
+  // s1.insert("hello");
+  // s1.insert("world");
+  // // it's not iterater, just the element
+  // for (auto it : s1) {
+  //   cout << it <<endl;
+  // }
+
+
+  string s{"*/aaa/* xxx */"};
+  auto start = s.find("/*");
+  cout << start << endl;
+
+  auto end = s.rfind("*/");
+
+  cout << end << endl;
+  cout << s.size() - end - 1 << endl;
+
+  // string s{"    /** / more comments here"};
+  // auto idx = s.find_last_of("*/");
+  // cout << idx << endl;
+  // cout << s.substr(idx+2) << endl;
 }
