@@ -410,6 +410,11 @@ int main() {
   // for_each(input.begin(), input.end(), [](int i) { cout << i << " "; });
   // cout << endl;
 
-
-
+  unordered_set<string> s1;
+  s1.insert("hello");
+  s1.insert("world");
+  // it's not iterater, just the element
+  for (auto it : s1) {
+    cout << it <<endl;
+  }
 }
