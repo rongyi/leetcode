@@ -55,13 +55,11 @@ public:
 
     return ret;
   }
+
+private:
   void dfs(unordered_set<int> &visited, unordered_set<string> &eater,
            vector<unordered_set<string>> &emails,
            unordered_map<int, vector<int>> &chain, int cur_id) {
-    // already visited
-    // if (visited.find(cur_id) != visited.end()) {
-    //   return;
-    // }
     // no route come or from this node
     if (chain.find(cur_id) == chain.end()) {
       return;
