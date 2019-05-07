@@ -59,9 +59,9 @@ public:
            vector<unordered_set<string>> &emails,
            unordered_map<int, vector<int>> &chain, int cur_id) {
     // already visited
-    if (visited.find(cur_id) != visited.end()) {
-      return;
-    }
+    // if (visited.find(cur_id) != visited.end()) {
+    //   return;
+    // }
     // no route come or from this node
     if (chain.find(cur_id) == chain.end()) {
       return;
@@ -77,6 +77,7 @@ public:
         eater.insert(e);
       }
       visited.insert(nid);
+      dfs(visited, eater, emails, chain, nid);
     }
   }
   bool intersect(unordered_set<string> &set1, unordered_set<string> &set2) {
@@ -96,5 +97,6 @@ int main() {
                                {"David", "David4@m.co", "David5@m.co"},
                                {"David", "David2@m.co", "David3@m.co"},
                                {"David", "David1@m.co", "David2@m.co"}};
-  so.accountsMerge(input);
+  auto ret = so.accountsMerge(input);
+  cout << ret.size() << endl;
 }
