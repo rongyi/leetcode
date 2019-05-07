@@ -27,6 +27,7 @@ public:
           }
         } else {
           if (i + 1 == line.size()) {
+            // just ignore
             i++;
           } else {
             string m = line.substr(i, 2);
@@ -34,6 +35,7 @@ public:
               in_block = false;
               i += 2;
             } else {
+              // just ignore
               i++;
             }
           }
