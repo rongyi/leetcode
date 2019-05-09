@@ -18,6 +18,8 @@ class MyCalendarTwo {
 public:
   MyCalendarTwo() {}
 
+  // 为什么自己用冲突标记次数不行呢？
+  // 因为要把冲突区间细化下来，不能单纯的标记
   bool book(int start, int end) {
     MyCalendar non_colision;
     for (auto &p : data_) {
