@@ -12,6 +12,7 @@ public:
   }
 
 private:
+  // so ugly
   vector<int> colision(vector<int> &nums) {
     if (nums.size() < 2) {
       return nums;
@@ -21,8 +22,6 @@ private:
     // 第一个元素左走，完全无害
     if (nums[0] > 0) {
       // 同向，完全无害
-      if (nums[1] > 0) {
-      }
       if (nums[1] < 0) {
         has_colision = true;
         auto n0 = abs(nums[0]);
