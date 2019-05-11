@@ -37,7 +37,7 @@ public:
       }
     }
 
-    int ret = 0;
+    long long ret = 0ll;
     int exp_type = 0;
     int i = 0;
     int let_last_exp_idx = -1;
@@ -74,7 +74,7 @@ public:
           cout << "oh last express is:" << let_last_exp_idx << endl;
         } else if (tmp == "(mult") {
           // process multiply
-          ret = 1;
+          ret = 1ll;
           exp_type = Solution::kMult;
         } else if (tmp == "(add") {
           // process add
@@ -111,11 +111,14 @@ public:
             if (value[0] == '(') {
               string sub_exp = s.substr(k, parens[k] - k + 1);
               cur_scope.vars_[var] = withScope(sub_exp, cur_scope);
-            } else {
+              i = parens[k] + 1;
+            } else if (value[0] == '-' || isdigit(value[0])) {
               cur_scope.vars_[var] = stoi(value);
+              i = j + 1;
+            } else {
+              cur_scope.vars_[var] = closureFind(value, cur_scope);
+              i = j + 1;
             }
-
-            i = j + 1;
           }
           // 处理完变量，就进行最后的执行了
           i = let_last_exp_idx;
@@ -151,6 +154,26 @@ public:
           }
           i = exp_end_idx + 1;
         } else if (exp_type == Solution::kMult) {
+          int end = exp_end_idx;
+          while (i < end) {
+            int j = i;
+            while (j < end && s[j] != ' ') {
+              j++;
+            }
+            string cur_exp = s.substr(i, j - i);
+            // cout << "(Add " << cur_exp << endl;
+            if (cur_exp[0] == '(') {
+              string sub_exp = s.substr(i, parens[i] - i + 1);
+              ret *= withScope(sub_exp, cur_scope);
+            } else if (cur_exp[0] == '-' || isdigit(cur_exp[0])) {
+              ret *= stoi(cur_exp);
+            } else {
+              ret *= closureFind(cur_exp, cur_scope);
+            }
+
+            i = j + 1;
+          }
+          i = exp_end_idx + 1;
         }
       } // parse 非首个function
     }   // 最外层
@@ -176,8 +199,12 @@ private:
 int main() {
   Solution so;
   // string input{"(let x 2 (add (let x 3 (let x 4 x)) x))"};
-  string input{"(let x 2 (add 10 x))"};
+  // string input{"(let x 2 (add 10 x))"};
+  // string input{"(let x 1 y 2 x (add x y) (add x y))"};
+  string input{"(let x -2 y x y)"};
   auto ret = so.evaluate(input);
   cout << "----" << endl;
   cout << ret << endl;
 }
+
+// (let x 1 y 2 x (add x y) (add x y))"
