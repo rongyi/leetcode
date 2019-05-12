@@ -37,7 +37,7 @@ public:
       }
     }
 
-    long long ret = 0ll;
+    int ret = 0;
     int exp_type = 0;
     int i = 0;
     int let_last_exp_idx = -1;
@@ -74,7 +74,7 @@ public:
           // cout << "oh last express is:" << let_last_exp_idx << endl;
         } else if (tmp == "(mult") {
           // process multiply
-          ret = 1ll;
+          ret = 1;
           exp_type = Solution::kMult;
         } else if (tmp == "(add") {
           // process add
@@ -207,7 +207,9 @@ int main() {
   // string input{"(let x 2 (add 10 x))"};
   // string input{"(let x 1 y 2 x (add x y) (add x y))"};
   // string input{"(let x -2 y x y)"};
-  // string input{"(let x0 4 x1 -2 x2 3 x3 -5 x4 -3 x5 -1 x6 3 x7 -2 x8 4 x9 -5 (mult x2 (mult (let x0 -3 x4 -2 x8 4 (mult (let x0 -2 x6 4 (add x5 x2)) x3)) (mult (mult -7 (mult -9 (let x0 -2 x7 3 (add -10 x0)))) x6))))"};
+  // string input{"(let x0 4 x1 -2 x2 3 x3 -5 x4 -3 x5 -1 x6 3 x7 -2 x8 4 x9 -5
+  // (mult x2 (mult (let x0 -3 x4 -2 x8 4 (mult (let x0 -2 x6 4 (add x5 x2))
+  // x3)) (mult (mult -7 (mult -9 (let x0 -2 x7 3 (add -10 x0)))) x6))))"};
   // string input{"(mult (let x 1 (add x 110)) 2)"};
   string input{"(let a (add 1 2) b (mult a 3) c 4 d (add a b) (mult d d))"};
   auto ret = so.evaluate(input);
