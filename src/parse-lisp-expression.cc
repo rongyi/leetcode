@@ -49,7 +49,7 @@ public:
         j++;
       }
       string tmp = s.substr(i, j - i);
-      cout << "parse section: " << tmp << endl;
+      // cout << "parse section: " << tmp << endl;
       // 处理第一个位置上的行为
       if (!func_parsed) {
         func_parsed = true;
@@ -71,7 +71,7 @@ public:
             }
             k++;
           }
-          cout << "oh last express is:" << let_last_exp_idx << endl;
+          // cout << "oh last express is:" << let_last_exp_idx << endl;
         } else if (tmp == "(mult") {
           // process multiply
           ret = 1ll;
@@ -97,7 +97,7 @@ public:
               j++;
             }
             string var = s.substr(i, j - i);
-            cout << var << endl;
+            // cout << var << endl;
 
             // pass over space between var and value
             j++;
@@ -107,11 +107,12 @@ public:
               j++;
             }
             string value = s.substr(k, j - k);
-            cout << value << endl;
+            // cout << value << endl;
             if (value[0] == '(') {
               string sub_exp = s.substr(k, parens[k] - k + 1);
               cur_scope.vars_[var] = withScope(sub_exp, cur_scope);
-              i = parens[k] + 1;
+              // jump over ) and ' '
+              i = parens[k] + 2;
             } else if (value[0] == '-' || isdigit(value[0])) {
               cur_scope.vars_[var] = stoi(value);
               i = j + 1;
@@ -144,13 +145,15 @@ public:
             if (cur_exp[0] == '(') {
               string sub_exp = s.substr(i, parens[i] - i + 1);
               ret += withScope(sub_exp, cur_scope);
+              // jump over this exp
+              i = parens[i] + 2;
             } else if (cur_exp[0] == '-' || isdigit(cur_exp[0])) {
               ret += stoi(cur_exp);
+              i = j + 1;
             } else {
               ret += closureFind(cur_exp, cur_scope);
+              i = j + 1;
             }
-
-            i = j + 1;
           }
           i = exp_end_idx + 1;
         } else if (exp_type == Solution::kMult) {
@@ -165,13 +168,15 @@ public:
             if (cur_exp[0] == '(') {
               string sub_exp = s.substr(i, parens[i] - i + 1);
               ret *= withScope(sub_exp, cur_scope);
+              // jump over this exp: 2 means ) and ' '
+              i = parens[i] + 2;
             } else if (cur_exp[0] == '-' || isdigit(cur_exp[0])) {
               ret *= stoi(cur_exp);
+              i = j + 1;
             } else {
               ret *= closureFind(cur_exp, cur_scope);
+              i = j + 1;
             }
-
-            i = j + 1;
           }
           i = exp_end_idx + 1;
         }
@@ -201,10 +206,16 @@ int main() {
   // string input{"(let x 2 (add (let x 3 (let x 4 x)) x))"};
   // string input{"(let x 2 (add 10 x))"};
   // string input{"(let x 1 y 2 x (add x y) (add x y))"};
-  string input{"(let x -2 y x y)"};
+  // string input{"(let x -2 y x y)"};
+  // string input{"(let x0 4 x1 -2 x2 3 x3 -5 x4 -3 x5 -1 x6 3 x7 -2 x8 4 x9 -5 (mult x2 (mult (let x0 -3 x4 -2 x8 4 (mult (let x0 -2 x6 4 (add x5 x2)) x3)) (mult (mult -7 (mult -9 (let x0 -2 x7 3 (add -10 x0)))) x6))))"};
+  // string input{"(mult (let x 1 (add x 110)) 2)"};
+  string input{"(let a (add 1 2) b (mult a 3) c 4 d (add a b) (mult d d))"};
   auto ret = so.evaluate(input);
   cout << "----" << endl;
   cout << ret << endl;
 }
 
 // (let x 1 y 2 x (add x y) (add x y))"
+// (let x0 4 x1 -2 x2 3 x3 -5 x4 -3 x5 -1 x6 3 x7 -2 x8 4 x9 -5 (mult x2 (mult
+// (let x0 -3 x4 -2 x8 4 (mult (let x0 -2 x6 4 (add x5 x2)) x3)) (mult (mult -7
+// (mult -9 (let x0 -2 x7 3 (add -10 x0)))) x6))))
