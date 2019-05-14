@@ -18,6 +18,7 @@ public:
     ttl[k - 1] = 0;
     // first is weight, second is node
     using pii = pair<int, int>;
+    // using pq to always go to min path
     priority_queue<pii, vector<pii>, greater<pii>> pq;
     pq.push({0, k - 1});
 
