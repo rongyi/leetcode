@@ -45,5 +45,3 @@ private:
     return true;
   }
 };
-
-int main() { Solution so; }
