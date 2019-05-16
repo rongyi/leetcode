@@ -31,7 +31,7 @@ public:
           if (visited.find(s) != visited.end()) {
             continue;
           }
-          // 没找着
+          // 没找着，这条路可以往下走
           if (dds.find(s) == dds.end()) {
             q.push(s);
             visited.insert(s);
