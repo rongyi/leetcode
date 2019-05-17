@@ -10,6 +10,7 @@ public:
     }
     return dfs(bottom, tris, 0, "");
   }
+private:
   bool dfs(string bottom, unordered_map<string, vector<char>> &tris, int start,
            string next) {
     if (bottom.size() == 1) {
@@ -26,3 +27,10 @@ public:
     return false;
   }
 };
+
+int main() {
+  Solution so;
+  string bottom{"BCD"};
+  vector<string> allowed{"BCG", "CDE", "GEA", "FFF"};
+  so.pyramidTransition(bottom, allowed);
+}
