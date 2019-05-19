@@ -6,6 +6,7 @@ class Solution {
 public:
   bool isNumber(string &s) { return s.back() >= '0' && s.back() <= '9'; }
 
+  // A variable is a string of lowercase letters
   bool isVariable(string &s) { return s[0] >= 'a' && s[0] <= 'z'; }
 
   int priority(string &s) {
@@ -69,7 +70,7 @@ public:
       sort(s.begin() + 1, s.end());
     }
     // 2. sort the "*" expressions
-    sort(c.begin(), c.end(), [](auto &p, auto &q) {
+    sort(c.begin(), c.end(), [](vector<string> &p, vector<string> &q) {
       if (p.size() != q.size())
         return p.size() > q.size();
       for (int i = 1; i < p.size(); i++) {
