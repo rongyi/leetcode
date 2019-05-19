@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/chalkboard-xor-game/discuss/165396/Detailed-math-explanation-Easy-to-understand
   //   Math:
   // Corner Case: If the XOR of all nums is 0, then A wins.
 
