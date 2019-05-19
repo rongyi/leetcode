@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/largest-sum-of-averages/discuss/126003/C%2B%2B-DP-Simple-Solution-use-O(N*K)-Space-and-O(K*N2)-Time-With-Detailed-Explanation
   double largestSumOfAverages(vector<int> &A, int K) {
     const int n = A.size();
     vector<int> sum(n + 1, 0);
