@@ -1,4 +1,4 @@
-// http://leetcode.com/problems/leetcode/letter-combinations-of-a-phone-number/description/
+// http://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
 #include "xxx.h"
 class Solution {
 public:
@@ -26,8 +26,7 @@ public:
       return reduce(cd_map_[digits[0] - '0'], tmp);
 
     } else if (digits.size() == 2) {
-      return map(cd_map_[digits[0] - '0'],
-                 cd_map_[digits[1] - '0']);
+      return map(cd_map_[digits[0] - '0'], cd_map_[digits[1] - '0']);
     } else {
       // lisp name convention
       string cdr = digits.substr(1);
@@ -57,16 +56,13 @@ private:
   vector<string> reduce(const vector<char> &left, vector<string> &acc) {
     vector<string> ret;
     for (const auto &l : left) {
-      string cur{l};
       if (acc.empty()) {
-        ret.push_back(cur);
-        cur.pop_back();
+        ret.push_back({l});
       } else {
         for (const auto &s : acc) {
+          string cur{l};
           cur += s;
           ret.push_back(cur);
-          cur.clear();
-          cur.push_back(l);
         }
       }
     }
