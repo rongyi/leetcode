@@ -32,7 +32,8 @@ public:
       for (int i = k; i <= n; i++) {
         // >= k - 1的由来， j如果小于k - 1，那还分得出来k - 1块吗？不可能
         for (int j = i - 1; j >= k - 1; --j) {
-          // 余下的 j + 1 --> i这段的平均值是 (sum [i] - sum[j + 1 - 1]) / (i - j - 1 + 1)
+          // 余下的 j + 1 --> i这段的平均值是 (sum [i] - sum[j + 1 - 1]) / (i -
+          // j - 1 + 1)
           dp[i][k] =
               max(dp[i][k], dp[j][k - 1] + 1.0 * (sum[i] - sum[j]) / (i - j));
         }
