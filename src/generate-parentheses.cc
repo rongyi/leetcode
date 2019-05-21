@@ -18,6 +18,7 @@ private:
     if (left > 0) {
       rec(left - 1, right, cur + "(", ret);
     }
+    // 表示 ')' 不可以先进来
     if (right > 0 && left < right) {
       rec(left, right - 1, cur + ")", ret);
     }

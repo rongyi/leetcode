@@ -1,16 +1,6 @@
 // http://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 #include "xxx.h"
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-
-
 class Solution {
 public:
   ListNode *removeNthFromEnd(ListNode *head, int n) {
