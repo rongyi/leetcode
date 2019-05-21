@@ -26,7 +26,7 @@ public:
           while (nums[j] == nums[j - 1] && j < k) {
             ++j;
           }
-        } else if ( cur > target) {
+        } else if (cur > target) {
           --k;
           while (nums[k] == nums[k + 1] && j < k) {
             --k;

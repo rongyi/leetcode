@@ -1,4 +1,4 @@
-// http://leetcode.com/problems/leetcode/3sum-closest/description/
+// https://leetcode.com/problems/3sum-closest/
 #include "xxx.h"
 
 class Solution {
@@ -26,7 +26,6 @@ public:
         }
       }
     }
-
 
     return ret;
   }
