@@ -1,4 +1,4 @@
-// http://leetcode.com/problems/leetcode/first-missing-positive/description/
+// http://leetcode.com/problems/first-missing-positive/description/
 #include "xxx.h"
 
 class Solution {
