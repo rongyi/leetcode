@@ -18,6 +18,7 @@ public:
     for (int i = 0; i <= len - n * m; ++i) {
       unordered_map<string, int> cur;
       int j = 0;
+      // n 是表示多少个单词
       for (; j < n; ++j) {
         auto tmp = s.substr(i + j * m, m);
         if (cnt.find(tmp) == cnt.end()) {

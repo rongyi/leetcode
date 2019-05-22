@@ -12,7 +12,7 @@ public:
     if (m == 0 || n > m) {
       return -1;
     }
-    for (int i = 0; i < m; ) {
+    for (int i = 0; i < m;) {
       int start = i;
       int j = 0;
       while (i < m && j < n && needle[j] == haystack[i]) {
