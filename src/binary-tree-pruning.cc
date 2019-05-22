@@ -1,4 +1,4 @@
-// http://www.lintcode.com/zh-cn/problem/binary-tree-pruning
+// https://leetcode.com/problems/binary-tree-pruning/
 #include "xxx.h"
 
 class Solution {
