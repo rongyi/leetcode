@@ -1,21 +1,6 @@
 // https://leetcode.com/problems/leaf-similar-trees/description/
 #include "xxx.h"
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
 class Solution {
 public:
   bool leafSimilar(TreeNode *root1, TreeNode *root2) {
@@ -27,6 +12,7 @@ public:
 
     return std::equal(vec1.begin(), vec1.end(), vec2.begin());
   }
+
 private:
   vector<int> leaf(TreeNode *root) {
     vector<int> ret;
@@ -42,6 +28,5 @@ private:
       ret.push_back(root->val);
     }
     inorder(root->right, ret);
-
   }
 };
