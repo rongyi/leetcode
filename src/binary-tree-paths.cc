@@ -23,11 +23,16 @@ private:
     stringstream ss;
     for (int i = 0; i < lst.size(); i++) {
       ss << lst[i];
-      if (i != lst.size() - 1) {
-        ss << "->";
-      }
+      ss << "->";
     }
-    return ss.str();
+
+    auto ret = ss.str();
+    // drop the last '>'
+    ret.pop_back();
+    // drop the last '-'
+    ret.pop_back();
+
+    return ret;
   }
   void dfs(TreeNode *root, vector<vector<int>> &ret, vector<int> cur) {
     if (!root) {
