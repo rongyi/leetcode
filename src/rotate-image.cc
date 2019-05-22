@@ -1,4 +1,4 @@
-// http://www.lintcode.com/zh-cn/problem/rotate-image
+// https://leetcode.com/problems/rotate-image/
 #include "xxx.h"
 
 class Solution {
@@ -6,6 +6,7 @@ public:
   void rotate(vector<vector<int>> &matrix) {
     const int n = matrix.size();
     int k = n - 1;
+    // 辅对角线翻转
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < k; j++) {
         auto ri = n - j - 1;
