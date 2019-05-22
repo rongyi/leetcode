@@ -18,7 +18,7 @@ public:
 
 int main() {
   Solution so;
-  vector<int> input{3,2,1,0,4};
+  vector<int> input{3, 2, 1, 0, 4};
   auto ret = so.canJump(input);
   cout << ret << endl;
 }
