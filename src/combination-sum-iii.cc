@@ -3,27 +3,28 @@
 
 class Solution {
 public:
-  vector<vector<int>> combinationSum3(int k, int n) {
+  vector<vector<int>> combinationSum3(int k, int target) {
     vector<vector<int>> ret;
     vector<int> cur;
 
-    dfs(k, n, 1, cur, ret);
+    dfs(k, target, 1, cur, ret);
 
     return ret;
   }
 
 private:
-  void dfs(int k, int n, int index, vector<int> &cur,
+  void dfs(int k, int target, int index, vector<int> &cur,
            vector<vector<int>> &ret) {
-    if (n < 0) {
+    // 加速条件
+    if (target < 0 || cur.size() > k) {
       return;
     }
-    if (n == 0 && cur.size() == k) {
+    if (target == 0 && cur.size() == k) {
       ret.push_back(cur);
     }
     for (int i = index; i <= 9; i++) {
       cur.push_back(i);
-      dfs(k, n - i, i + 1, cur, ret);
+      dfs(k, target - i, i + 1, cur, ret);
       cur.pop_back();
     }
   }
