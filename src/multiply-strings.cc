@@ -6,6 +6,12 @@ public:
   string multiply(string num1, string num2) {
     const int n = num2.size();
     vector<string> mapmulti;
+    // 1234 * 2 ==>
+    // 1 * 2 then shift 000
+    // 2 * 2 then shift 00
+    // 3 * 2 then shift 0
+    // 4 * 2 then shift ''
+    // then add these string
     for (int i = 0; i < n; ++i) {
       auto curmul = multiplysingle(num1, num2[i]);
       if (curmul == "") {
