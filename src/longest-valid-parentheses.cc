@@ -17,8 +17,10 @@ public:
         } else {
           stk.pop();
           if (stk.empty()) {
+            // 处理单层括号的情况
             ret = max(ret, i - start + 1);
           } else {
+            // 处理括号嵌套情况
             ret = max(ret, i - stk.top());
           }
         }

@@ -8,7 +8,7 @@ public:
 
 private:
   bool next_permutation(vector<int> &nums, int begin, int end) {
-    // from right to left fint the first digit which violates the increase trend
+    // from right to left find the first digit which violates the increase trend
     int p = end - 2;
     while (p > -1 && nums[p] >= nums[p + 1])
       --p;
