@@ -20,6 +20,9 @@ private:
     if (iidx >= size)
       return;
     root = new TreeNode(postorder[pi]);
+    // 找到当前根节点在中序中的位置
+    // 这个位置劈开，左边到iidex就是左子树的节点
+    // 右边到pi - 1都是右子树的节点
     int cur_in;
     for (int i = iidx; i < size; i++) {
       if (inorder[i] == postorder[pi]) {
@@ -28,11 +31,16 @@ private:
       }
     }
 
-    // 差代表着左半边或者是右半边的数量的多少, 减去等于对应另一半
-    doBuild(root->left, postorder, inorder,
-            pi - (size - cur_in), iidx, cur_in);
+    // 差代表着右半边的数量的多少, 减去等于对应另一半
+    //       1
+    //      2  3
+    //    4   5
+    // post ==> 4 5 2 3 1
+    // in ==>   2 2 5 1 3
+    // 算2的在post中的位置: 右子树包括根节点的个数 (size - cur_in) == 2
+    // post 中对应从pi偏移这么多即可
+    doBuild(root->left, postorder, inorder, pi - (size - cur_in), iidx, cur_in);
     // 右子树顺在post order中紧挨着根节点
-    doBuild(root->right, postorder, inorder, pi - 1, cur_in + 1,
-            size);
+    doBuild(root->right, postorder, inorder, pi - 1, cur_in + 1, size);
   }
 };
