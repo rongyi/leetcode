@@ -5,7 +5,7 @@ class Solution {
 public:
   vector<vector<int>> largeGroupPositions(string S) {
     vector<vector<int>> ret;
-    // 和最后一个不一样即可
+    // 和最后一个不一样即可，用来触发最后一个case
     S.push_back((S[S.size() - 1] - 'a' + 1) % 26 + 'a');
     const int n = S.size();
     int prev = 0;
