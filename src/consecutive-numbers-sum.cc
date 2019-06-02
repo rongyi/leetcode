@@ -15,6 +15,7 @@ public:
     int ret = 0;
     for (int m = 1;; m++) {
       int mx = N - m * (m - 1) / 2;
+      // mx 要大于0，题目要求
       if (mx <= 0) {
         break;
       }
