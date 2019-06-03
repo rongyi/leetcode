@@ -1,6 +1,7 @@
 // http://leetcode.com/problems/new-21-game/description/
 #include "xxx.h"
 
+// https://leetcode.com/problems/new-21-game/discuss/132334/One-Pass-DP-O(N)
 class Solution {
 public:
   double new21Game(int N, int K, int W) {
@@ -20,8 +21,11 @@ public:
         // 游戏>= k就停止了
         ret += dp[i];
       }
+
       if (i - W >= 0) {
-        // i - W滑动窗口
+        // i - W滑动窗口, 为毛不是 i - W - 1
+        // 因为这里的减是为下一次做准备的
+        // 所以这里的差1隐含了
         Wsum -= dp[i - W];
       }
     }
