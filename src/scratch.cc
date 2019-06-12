@@ -418,18 +418,24 @@ int main() {
   //   cout << it <<endl;
   // }
 
+  // string s{"*/aaa/* xxx */"};
+  // auto start = s.find("/*");
+  // cout << start << endl;
 
-  string s{"*/aaa/* xxx */"};
-  auto start = s.find("/*");
-  cout << start << endl;
+  // auto end = s.rfind("*/");
 
-  auto end = s.rfind("*/");
-
-  cout << end << endl;
-  cout << s.size() - end - 1 << endl;
+  // cout << end << endl;
+  // cout << s.size() - end - 1 << endl;
 
   // string s{"    /** / more comments here"};
   // auto idx = s.find_last_of("*/");
   // cout << idx << endl;
   // cout << s.substr(idx+2) << endl;
+
+  // for (int i = 10; i < 100; i++) {
+  //   if (i % 10 + i / 10 == 7) {
+  //     cout << i << endl;
+  //     break;
+  //   }
+  // }
 }
