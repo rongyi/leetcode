@@ -9,6 +9,7 @@ public:
     // 当前方向，初始向东
     int cur_dir = 0;
     // 当前长度, move to east or west, len++
+    // 长度规律是 1 1 2 2 3 3 4 4 5 5
     int cur_len = 0;
 
     vector<vector<int>> ret{{r0, c0}};
@@ -19,6 +20,7 @@ public:
       for (int i = 0; i < cur_len; i++) {
         r0 += dirs[cur_dir][0];
         c0 += dirs[cur_dir][1];
+        // 就这么转，发现在这个矩形空间里的元素就添加上来
         if (r0 >= 0 && r0 < R && c0 >= 0 && c0 < C) {
           ret.push_back({r0, c0});
         }
