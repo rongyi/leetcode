@@ -1,13 +1,21 @@
-// http://leetcode.com/problems/is-graph-bipartite/description/
+// http://leetcode.com/problems/possible-bipartition/description/
 #include "xxx.h"
 
 class Solution {
 public:
-  bool isBipartite(vector<vector<int>> &graph) {
-    // lets say graph node can be painted by two color
+  bool possibleBipartition(int N, vector<vector<int>> &dislikes) {
+    // 本质上还是着色问题
+    vector<vector<int>> graph(N + 1, vector<int>{});
+
+    for (auto &hate_pair : dislikes) {
+      graph[hate_pair[0]].push_back(hate_pair[1]);
+      graph[hate_pair[1]].push_back(hate_pair[0]);
+    }
+
+    // 问题的答案在于能不能用两个颜色着色
     unordered_map<int, bool> paint;
-    const int n = graph.size();
-    for (int i = 0; i < n; i++) {
+    // const int n = graph.size();
+    for (int i = 1; i <= N; i++) {
       if (paint.find(i) == paint.end()) {
         if (!dfs(graph, i, paint, true)) {
           return false;
@@ -43,9 +51,3 @@ private:
     return true;
   }
 };
-
-int main() {
-  Solution so;
-  vector<vector<int>> input{{1}, {0, 3}, {3}, {1, 2}};
-  cout << so.isBipartite(input) << endl;
-}
