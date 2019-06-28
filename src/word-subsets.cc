@@ -3,8 +3,42 @@
 
 class Solution {
 public:
+  vector<string> wordSubsets(vector<string> &A, vector<string> &B) {
+    vector<string> ret;
+    vector<int> count(26, 0);
+    for (auto &b : B) {
+      auto tmp = counter(b);
+      for (int i = 0; i < 26; i++) {
+        count[i] = max(count[i], tmp[i]);
+      }
+    }
+    for (auto &s : A) {
+      auto tmp = counter(s);
+      int i = 0;
+      for (i = 0; i < 26; i++) {
+        if (tmp[i] < count[i]) {
+          break;
+        }
+      }
+      if (i == 26) {
+        ret.push_back(s);
+      }
+    }
+    return ret;
+  }
+  vector<int> counter(const string &s) {
+    vector<int> ret(26, 0);
+    for (auto c : s) {
+      ret[c - 'a']++;
+    }
+
+    return ret;
+  }
+
+  // ========================
   vector<string> wordSubsetsTLE(vector<string> &A, vector<string> &B) {
-    vector<unordered_map<char, int>> counts(A.size(), unordered_map<char, int>{});
+    vector<unordered_map<char, int>> counts(A.size(),
+                                            unordered_map<char, int>{});
     for (int i = 0; i < A.size(); i++) {
       unordered_map<char, int> cur_count;
       for (auto c : A[i]) {
