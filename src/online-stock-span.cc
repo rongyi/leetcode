@@ -19,6 +19,7 @@ public:
   }
 
 private:
+  // pair ==> 当前的数字以及比他小包含他自己的个数
   stack<pair<int, int>> stk_;
 };
 
