@@ -11,3 +11,4 @@
 7. https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/
 8. https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/  why binary search works?
 9. https://leetcode.com/problems/race-car/
+10. https://leetcode.com/problems/valid-permutations-for-di-sequence/
