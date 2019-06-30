@@ -16,6 +16,7 @@ public:
 
     return ret;
   }
+private:
   void recur(string cur, int &ret, long &l, long &r) {
     if (cur.size() > 9) {
       return;
