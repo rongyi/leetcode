@@ -41,6 +41,7 @@ public:
     return -1;
   }
 private:
+  // 序列号与坐标的对应关系
   vector<int> calc(int nxt, int n) {
     int x = (nxt - 1) / n;
     int y = (nxt - 1) % n;
