@@ -443,13 +443,11 @@ int main() {
   m.insert({1, 2});
   m.insert({3, 3});
   m.insert({4, 7});
-  // auto it = m.upper_bound(3);
-  // cout << (it == m.end()) << endl;
+  auto it = m.upper_bound(3);
+  cout << (it == m.end()) << endl;
   // // point to 4
-  // cout << it->first << endl;
+  cout << it->first << endl;
   // it = m.upper_bound(7);
   // cout << (it == m.end()) << endl;
-  // auto it = m.lower_bound(3);
-  // cout << (it == m.end()) << endl;
-  // cout << it->first << endl;
+
 }
