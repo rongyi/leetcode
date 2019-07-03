@@ -19,6 +19,7 @@ public:
 
   int q(int t) {
     // 找到第一个大于这个时间的点，退一步等也好不等也好，反正符合要求
+    // 还是upper_bound / lower_bound没有使用好
     return (--time_winner_.upper_bound(t))->second;
   }
 
