@@ -10,6 +10,7 @@ public:
 
   int insert(int v) {
     // 小蝌蚪找妈妈
+    // 尽量找到一个空位置然后插进去
     TreeNode *mom = nullptr;
     while (!mom) {
       auto cur = q_.front();
