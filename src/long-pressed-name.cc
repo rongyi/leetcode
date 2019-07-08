@@ -4,36 +4,37 @@
 class Solution {
 public:
   bool isLongPressedName(string name, string typed) {
+
+    // aabbccdd ==> abcd, [2, 2, 2, 2]
+    // ret put in uniq and count
+    auto order_and_count = [](string &input, string &uniq, vector<int> &count) {
+      int prev = input[0];
+      int prev_index = 0;
+      uniq.push_back(prev);
+      int i = 0;
+      const int n = input.size();
+      for (; i < n; i++) {
+        if (input[i] != prev) {
+          uniq.push_back(input[i]);
+          count.push_back(i - prev_index);
+
+          prev = input[i];
+          prev_index = i;
+        }
+      }
+      count.push_back(i - prev_index);
+    };
+
     string uniq_name;
-    string uniq_typed;
-    char prev = '0';
-    int prev_index = -1;
-
     vector<int> count_name;
+
+    string uniq_typed;
     vector<int> count_typed;
-    for (int i = 0; i < name.size(); i++) {
-      if (name[i] != prev) {
-        uniq_name.push_back(name[i]);
-        count_name.push_back(i - prev_index);
 
-        prev = name[i];
-        prev_index = i;
-      }
-    }
+    order_and_count(name, uniq_name, count_name);
+    order_and_count(typed, uniq_typed, count_typed);
 
-    prev = '0';
-    prev_index = -1;
-    for (int i = 0; i < typed.size(); i++) {
-      if (typed[i] != prev) {
-        uniq_typed.push_back(typed[i]);
-        count_typed.push_back(i - prev_index);
-
-        prev = typed[i];
-        prev_index = i;
-      }
-    }
-
-    // 首先书序必须是一样的
+    // 首先顺序必须是一样的
     if (uniq_name != uniq_typed) {
       return false;
     }
@@ -51,5 +52,5 @@ public:
 
 int main() {
   Solution so;
-  so.isLongPressedName("alex", "aaleex");
+  so.isLongPressedName("alex", "aaleeeexxxx");
 }
