@@ -6,7 +6,7 @@ public:
   int numUniqueEmails(vector<string> &emails) {
     auto fn = [](string &e) -> string {
       string local{};
-      string domain = e.substr(e.find('@')); // '@' included
+      // string domain = e.substr(e.find('@')); // '@' included
       for (auto c : e) {
         if (c == '+' || c == '@') {
           break;
@@ -16,7 +16,7 @@ public:
         }
         local.push_back(c);
       }
-      return local + domain;
+      return local + e.substr(e.find('@'));
     };
 
     unordered_set<string> uniq;
