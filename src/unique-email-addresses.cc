@@ -6,6 +6,7 @@ public:
   int numUniqueEmails(vector<string> &emails) {
     auto fn = [](string &e) -> string {
       string local{};
+      // 这样少一次拷贝
       // string domain = e.substr(e.find('@')); // '@' included
       for (auto c : e) {
         if (c == '+' || c == '@') {
