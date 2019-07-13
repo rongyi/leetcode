@@ -16,6 +16,11 @@ public:
       xequals[p[0]].insert(p[1]);
       yequals[p[1]].insert(p[0]);
     }
+
+    // 关系如下
+    //   (x, y2)-------------- (curx,  y2)
+    //      |                  |
+    //   (x, y1) -------------(curx, y1)
     for (auto xkv : xequals) {
       if (xkv.second.size() < 2) {
         continue;
