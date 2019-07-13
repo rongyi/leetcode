@@ -9,6 +9,7 @@ public:
     int right = n;
     vector<int> ret{};
     int last = 0;
+
     for (auto c : S) {
       if (c == 'I') {
         ret.push_back(left);
@@ -20,7 +21,7 @@ public:
         last = right;
       }
     }
-    // now left+ 1 == right
+
     ret.push_back(last);
 
     return ret;
