@@ -33,6 +33,7 @@ public:
         if (cur_out == pushed[next_push]) {
           next_push++;
         } else {
+          // 有点递归的意思，可以想怎么用递归来做
           while (next_push < n && pushed[next_push] != cur_out) {
             stk.push(pushed[next_push]);
             next_push++;
