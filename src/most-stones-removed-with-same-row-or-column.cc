@@ -5,7 +5,7 @@ class Solution {
 public:
   int removeStones(vector<vector<int>> &stones) {
     set<pair<int, int>> visited;
-    int island;
+    int island = 0;
     for (auto &stone : stones) {
       if (visited.find({stone[0], stone[1]}) == visited.end()) {
         island++;
