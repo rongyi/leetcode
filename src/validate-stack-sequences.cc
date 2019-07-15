@@ -26,6 +26,7 @@ public:
       // else this is not valid
       auto cur_out = popped[i];
 
+      // if clause, order matters!!
       if (!stk.empty() && cur_out == stk.top()) {
         stk.pop();
       } else if (next_push < n) {
