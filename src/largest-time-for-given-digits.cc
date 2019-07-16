@@ -8,15 +8,16 @@ public:
     sort(A.begin(), A.end());
     bool found = false;
     int max_hour = 0;
+    // 伴随着的分钟
     int body_min = 0;
-    // int max_minute = 0;
+
     do {
       auto hour = A[0] * 10 + A[1];
       auto min = A[2] * 10 + A[3];
       if (hour > 23 || min > 59) {
         continue;
       }
-      // cout << hour << ":" << min << endl;
+
       found = true;
       if (hour > max_hour) {
         max_hour = hour;
