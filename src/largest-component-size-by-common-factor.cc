@@ -14,6 +14,7 @@ public:
   int Find(int x) {
     if (_parent[x] != x) {
       auto par = Find(_parent[x]);
+      // 否则会TLE，直接缓存最终的parent，不要一层层去搜索了
       _parent[x] = par;
       return par;
     }
