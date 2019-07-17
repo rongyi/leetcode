@@ -439,15 +439,17 @@ int main() {
   //   }
   // }
 
-  map<int, int> m;
-  m.insert({1, 2});
-  m.insert({3, 3});
-  m.insert({4, 7});
-  auto it = m.upper_bound(3);
-  cout << (it == m.end()) << endl;
-  // // point to 4
-  cout << it->first << endl;
-  // it = m.upper_bound(7);
+  // map<int, int> m;
+  // m.insert({1, 2});
+  // m.insert({3, 3});
+  // m.insert({4, 7});
+  // auto it = m.upper_bound(3);
   // cout << (it == m.end()) << endl;
+  // // // point to 4
+  // cout << it->first << endl;
+  // // it = m.upper_bound(7);
+  // // cout << (it == m.end()) << endl;
 
+  string s{"1234"};
+  cout << s.substr(2, 1) << endl;
 }
