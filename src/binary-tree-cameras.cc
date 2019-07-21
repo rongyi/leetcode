@@ -11,6 +11,7 @@ public:
 
     return sum;
   }
+  // 尽量把节点往上放，所以身上没有相机的时候，被照顾到应该只能是子节点来照顾
   // 0: there is no camera at this node, and it's not monitored by camera at
   // either of its children, which means neither of child nodes has camera.
   // 1: there is no camera at this node; however, this node is monitored by at
