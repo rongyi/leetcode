@@ -4,6 +4,10 @@
 class Solution {
 public:
   int subarraysDivByK(vector<int> &A, int K) {
+    // About the problems - sum of contiguous subarray , prefix sum is a common technique.
+    // Another thing is if sum[0, i] % K == sum[0, j] % K, sum[i + 1, j] is divisible by by K.
+    // So for current index j, we need to find out how many index i (i < j) exit that has the same mod of K.
+    // Now it easy to come up with HashMap <mod, frequency>
     vector<int> count(K, 0);
     // if first sum == 0, it match K % sum == 0
     count[0] = 1;
