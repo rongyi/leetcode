@@ -13,7 +13,8 @@ private:
     auto i = s.find("(");
     if (i != string::npos) {
       string base = s.substr(0, i);
-      string rep = s.substr(i + 1, s.find(')') - i - 1);
+      // string rep = s.substr(i + 1, s.find(')') - i - 1);
+      string rep = s.substr(i + 1, s.size() - i - 2);
       for (int j = 0; j < 20; ++j) {
         base += rep;
       }
