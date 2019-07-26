@@ -8,6 +8,7 @@ public:
     string cur{};
     dfs(root, cur, paths);
     sort(paths.begin(), paths.end());
+
     return paths[0];
   }
   void dfs(TreeNode *root, string cur, vector<string> &paths) {
