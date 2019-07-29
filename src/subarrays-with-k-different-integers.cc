@@ -11,15 +11,23 @@ public:
     int ret = 0;
     unordered_map<int, int> count;
     for (int j = 0; j < A.size(); ++j) {
-      if (!count[A[j]]++) {
+      // 新的数字入伙
+      if (!count[A[j]]) {
         K--;
       }
+      ++count[A[j]];
+      // 等于0表示从i到j总共有
       while (K < 0) {
-        if (!--count[A[i]]) {
+        int l = A[i];
+        i++;
+        // uniq的值少了一个,
+        --count[l];
+        // 左边挤走了一个
+        if (!count[l]) {
           K++;
         }
-        i++;
       }
+
       ret += j - i + 1;
     }
     return ret;
