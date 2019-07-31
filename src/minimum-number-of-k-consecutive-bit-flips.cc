@@ -25,6 +25,7 @@ public:
           return -1;
         }
         flipped[i] = 1;
+        // 翻转当前标记位
         cur_flip ^= 1;
         ret++;
       }
