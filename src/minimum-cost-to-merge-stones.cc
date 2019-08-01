@@ -17,7 +17,7 @@ public:
       for (int i = 0; i + m <= n; ++i) {
         int j = i + m - 1;
         dp[i][j] = numeric_limits<int>::max();
-        for (int mid = 1; mid < j; mid += K - 1) {
+        for (int mid = i; mid < j; mid += K - 1) {
           dp[i][j] = min(dp[i][j], dp[i][mid] + dp[mid + 1][j]);
         }
         if ((j - i) % (K - 1) == 0) {
