@@ -450,6 +450,21 @@ int main() {
   // // it = m.upper_bound(7);
   // // cout << (it == m.end()) << endl;
 
-  string s{"1234"};
-  cout << s.substr(2, 1) << endl;
+  // string s{"1234"};
+  // cout << s.substr(2, 1) << endl;
+
+
+  vector<int> input{3, 4, 5, 6, 7, 8, 9};
+  int n = input.size();
+  for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
+      for (int k = j + 1; k < n; k++) {
+        for (int l = k + 1; l < n; l++) {
+          if (input[i] + input[j] + input[k] + input[l] == 23) {
+            cout << input[i] << " + " << input[j] << " + " << input[k] << " + " << input[l] << "  "<< endl;
+          }
+        }
+      }
+    }
+  }
 }
