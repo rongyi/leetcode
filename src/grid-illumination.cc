@@ -7,9 +7,12 @@ public:
                                vector<vector<int>> &queries) {
     vector<int> ret;
     unordered_map<int, unordered_set<int>> ls;
+    // 代表这个方向上还有多少盏灯在支撑着
     unordered_map<int, int> x;
     unordered_map<int, int> y;
+    // 对角线(左下 -- 右上)
     unordered_map<int, int> a_d;
+    // 对角线(左上 -- 右下)
     unordered_map<int, int> d_d;
     for (auto l : lamps) {
       auto i = l[0];
