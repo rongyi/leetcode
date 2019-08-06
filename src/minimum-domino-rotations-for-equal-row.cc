@@ -7,6 +7,7 @@ public:
     const int n = A.size();
     // 3 ...
     // 5 ...
+    // 如果最后旋转的目的数字不是3或者5,那么第一个数字就完不成，就直接返回-1了
     for (int i = 0, flipa = 0, flipb = 0;
          i < n && (A[i] == A[0] || B[i] == A[0]); i++) {
       if (A[i] != A[0]) {
