@@ -6,6 +6,7 @@ public:
   int maxAncestorDiff(TreeNode *root) {
     return dfs(root, 0, 100000);
   }
+private:
   int dfs(TreeNode *root, int cur_max, int cur_min) {
     if (!root) {
       return cur_max - cur_min;
