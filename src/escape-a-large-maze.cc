@@ -33,6 +33,10 @@ public:
     if (ret == 0) {
       return false;
     }
+    // 为什么等于1不能直接返回？
+    // 因为现在只是证明了src可以突出重围，可万一重围
+    // 围的就不是src呢？围的是dst，这个时候仍然是不可行的，
+    // 所以还需要反向再试一下
 
     blocks_.clear();
     for (auto b : blocked) {
@@ -44,6 +48,9 @@ public:
 private:
   // one demension
   long long od(int x, int y) { return (long long)x * 1000000 + y; }
+  // 2 ==> src --> target within 200 steps
+  // 1 ==> src can break the "block"
+  // 0 ==> src is blocked
   int bfs(vector<int> &src, vector<int> &dst) {
     queue<pair<int, int>> q;
     q.push({src[0], src[1]});
