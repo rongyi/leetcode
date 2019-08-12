@@ -8,6 +8,7 @@ public:
     return root;
   }
 
+private:
   int inorder(TreeNode *root, int right_sum) {
     if (!root) {
       return right_sum;
@@ -21,6 +22,7 @@ public:
     //   return root->left->val;
     // }
     // return root->val;
+
     // 返回最左节点的那个值
     TreeNode *p = root;
     while (p->left) {
