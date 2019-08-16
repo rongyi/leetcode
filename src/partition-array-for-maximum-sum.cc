@@ -3,9 +3,11 @@
 
 class Solution {
 public:
+  // at most K
   int maxSumAfterPartitioning(vector<int> &A, int K) {
     const int n = A.size();
 
+    // dp[i] 表示这里不管多少个K一组，到这里的和
     vector<int> dp(n, 0);
     for (int i = 0; i < n; ++i) {
       int cur_max = 0;
@@ -18,3 +20,10 @@ public:
     return dp[n - 1];
   }
 };
+
+int main() {
+  Solution so;
+  vector<int> input{1, 7, 3, 4};
+  auto ret = so.maxSumAfterPartitioning(input, 3);
+  cout << ret << endl;
+}

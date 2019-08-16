@@ -454,17 +454,33 @@ int main() {
   // cout << s.substr(2, 1) << endl;
 
 
-  vector<int> input{3, 4, 5, 6, 7, 8, 9};
-  int n = input.size();
-  for (int i = 0; i < n; i++) {
-    for (int j = i + 1; j < n; j++) {
-      for (int k = j + 1; k < n; k++) {
-        for (int l = k + 1; l < n; l++) {
-          if (input[i] + input[j] + input[k] + input[l] == 23) {
-            cout << input[i] << " + " << input[j] << " + " << input[k] << " + " << input[l] << "  "<< endl;
-          }
-        }
-      }
-    }
-  }
+  // vector<int> input{3, 4, 5, 6, 7, 8, 9};
+  // int n = input.size();
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = i + 1; j < n; j++) {
+  //     for (int k = j + 1; k < n; k++) {
+  //       for (int l = k + 1; l < n; l++) {
+  //         if (input[i] + input[j] + input[k] + input[l] == 23) {
+  //           cout << input[i] << " + " << input[j] << " + " << input[k] << " + " << input[l] << "  "<< endl;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  vector<int> input{1, 7, 3, 10, 0};
+  const int n = input.size();
+  // sort, quick sort
+  // for (int i = 1; i < n; ++i) {
+  //   int tmp = input[i];
+  //   int j = i - 1;
+  //   for (; j >= 0 && input[j] > tmp; --j) {
+  //     input[j + 1] = input[j];
+  //   }
+  //   input[j + 1] = tmp;
+  // }
+  // for (auto num : input) {
+  //   cout << num << " ";
+  // }
+  // cout << endl;
 }
