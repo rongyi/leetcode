@@ -31,16 +31,17 @@ private:
     const int n = s.size();
     int ret = 1;
     for (int i = 0; i < n; ++i) {
+      // 去掉当前i字符的一个chain
       string next_chain = s.substr(0, i);
       if (i < n - 1) {
         next_chain += s.substr(i + 1);
       }
-      // cout << next_chain << endl;
       if (words.find(next_chain) != words.end()) {
         ret = max(ret, 1 + chain(next_chain, cache, words));
       }
     }
 
+    // 记得缓存哦，下一次遇到就不算了
     cache[s] = ret;
     return ret;
   }
