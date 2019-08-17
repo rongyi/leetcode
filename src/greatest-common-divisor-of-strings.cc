@@ -16,7 +16,4 @@ public:
 
     return gcdOfStrings(str1.substr(str2.size()), str2);
   }
-
-
-
 };
