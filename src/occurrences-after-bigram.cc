@@ -15,6 +15,7 @@ private:
     auto it = text.find(key);
     if (it != string::npos && it + key.size() < text.size()) {
       // key有可能是作为单词的部分出现
+      // 这地方非常恶心 a good will match: he is aaaa good
       if (it > 0 && text[it - 1] != ' ') {
         // 从下一个单词开始
         return recur(text.substr(text.find(' ', it)), key, ret);
