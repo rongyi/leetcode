@@ -24,6 +24,7 @@ public:
     return ret + str1.substr(i) + str2.substr(j);
   }
 
+private:
   string lcs(string &A, string &B) {
     const int m = A.size();
     const int n = B.size();
