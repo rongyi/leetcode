@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 纯计算题，没什么编程难度
   vector<double> sampleStats(vector<int> &count) {
     double ret[5] = {255, 0, 0, 0, 0};
     int total = accumulate(count.begin(), count.end(), 0);
