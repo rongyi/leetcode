@@ -11,6 +11,7 @@ public:
         ret[vec[1]] -= vec[2];
       }
     }
+
     for (int i = 1; i < n; ++i) {
       ret[i] += ret[i - 1];
     }
