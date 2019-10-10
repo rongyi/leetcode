@@ -468,8 +468,8 @@ int main() {
   //   }
   // }
 
-  vector<int> input{1, 7, 3, 10, 0};
-  const int n = input.size();
+  // vector<int> input{1, 7, 3, 10, 0};
+  // const int n = input.size();
   // sort, quick sort
   // for (int i = 1; i < n; ++i) {
   //   int tmp = input[i];
