@@ -25,6 +25,8 @@ private:
       ret.push_back(root);
     }
 
+    // if the current node is to be deleted, then the left node(if exist should
+    // be root node)
     root->left = doDel(root->left, ret, targets, should_delete);
     root->right = doDel(root->right, ret, targets, should_delete);
 
