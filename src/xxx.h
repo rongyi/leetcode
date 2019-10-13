@@ -53,6 +53,7 @@
 #include <stack>
 #include <string>
 #include <vector>
+#include <mutex>
 
 #if __cplusplus >= 201103L
 #include <array>

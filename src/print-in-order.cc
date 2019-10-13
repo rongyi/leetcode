@@ -1,6 +1,5 @@
 // http://leetcode.com/problems/print-in-order/description/
 #include "xxx.h"
-#include <mutex>
 
 class Foo {
 public:
