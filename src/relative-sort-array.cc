@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 按照index排序，没找着的都放在后面，然后从第一个没找着的那个位置按大小排序
   vector<int> relativeSortArray(vector<int> &arr1, vector<int> &arr2) {
     unordered_map<int, int> index;
     for (int i = 0; i < arr2.size(); ++i) {
