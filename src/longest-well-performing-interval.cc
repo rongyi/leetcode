@@ -14,6 +14,7 @@ public:
         ret = i + 1; // current prefix sum is valid
       } else {
         if (seen.count(sum - 1)) {
+          // sum[j, i]这一段
           ret = max(ret, i - seen[sum - 1]);
         }
       }
