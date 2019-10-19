@@ -24,14 +24,24 @@ public:
 
     for (int i = m - 1; i >= 0; --i) {
       for (int j = n - 1; j >= 0; --j) {
-        int small = min(horizon_incre[i][j], vertical_incre[i][j]);
-        while (small > max_edge) {
-          if (vertical_incre[i][j - small + 1] >= small &&
-              horizon_incre[i - small + 1][j] >= small) {
-            max_edge = small;
+
+        // a---------b
+        // |       |
+        // |       |
+        // |       |
+        // c--------d (i, j)
+        // start from d, get min(cd, bd), if we get a square
+        // ac and ab must be checked either.
+        // ac == vertical_incre[i][j - cur_edge + 1]
+        // ab == horizon_incre[i - cur_edge + 1][j]
+        int cur_edge = min(horizon_incre[i][j], vertical_incre[i][j]);
+        while (cur_edge > max_edge) {
+          if (vertical_incre[i][j - cur_edge + 1] >= cur_edge &&
+              horizon_incre[i - cur_edge + 1][j] >= cur_edge) {
+            max_edge = cur_edge;
             break;
           }
-          small--;
+          cur_edge--;
         }
       }
     }
