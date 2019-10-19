@@ -14,6 +14,7 @@ public:
 
     return ss.str();
   }
+private:
   string route(char from, char to) {
     if (from == to) {
       return "";
@@ -25,6 +26,7 @@ public:
     if (to == 'z') {
       return route(from, 'u') + "D";
     }
+
     int cold = (to - 'a') % 5 - (from - 'a') % 5;
     int rowd = (to - 'a') / 5 - (from - 'a') / 5;
     if (rowd != 0) {
