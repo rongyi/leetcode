@@ -5,6 +5,7 @@ class Solution {
 public:
   bool btreeGameWinningMove(TreeNode *root, int n, int x) {
     countNode(root, x);
+    // eighter left child of x/right child of x / parent child of x
     return lcount_ > n / 2 || rcount_ > n / 2 || lcount_ + rcount_ < n / 2;
   }
   int countNode(TreeNode *root, int x) {
