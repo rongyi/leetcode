@@ -7,6 +7,7 @@ public:
     const int n = grid.size();
     queue<pair<int, int>> q;
     queue<pair<int, int>> q2;
+
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
         if (grid[i][j] == 1) {
@@ -18,7 +19,9 @@ public:
         }
       }
     }
+
     int steps = 0;
+
     while (!q.empty()) {
       ++steps;
       while (!q.empty()) {
@@ -35,6 +38,7 @@ public:
       }
       swap(q, q2);
     }
+
     return steps == 1 ? -1 : steps - 1;
   }
 };
