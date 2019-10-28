@@ -453,7 +453,6 @@ int main() {
   // string s{"1234"};
   // cout << s.substr(2, 1) << endl;
 
-
   // vector<int> input{3, 4, 5, 6, 7, 8, 9};
   // int n = input.size();
   // for (int i = 0; i < n; i++) {
@@ -461,7 +460,8 @@ int main() {
   //     for (int k = j + 1; k < n; k++) {
   //       for (int l = k + 1; l < n; l++) {
   //         if (input[i] + input[j] + input[k] + input[l] == 23) {
-  //           cout << input[i] << " + " << input[j] << " + " << input[k] << " + " << input[l] << "  "<< endl;
+  //           cout << input[i] << " + " << input[j] << " + " << input[k] << " +
+  //           " << input[l] << "  "<< endl;
   //         }
   //       }
   //     }
@@ -483,4 +483,15 @@ int main() {
   //   cout << num << " ";
   // }
   // cout << endl;
+
+  string t{"alice,20,800,mtv"};
+  istringstream ss(t);
+  //  name, time (in minutes), amount, and city
+  vector<string> part(5, "");
+
+  int i = 0;
+  while (getline(ss, part[i++], ',')) {
+    ;
+  }
+  cout << part[3] << endl;
 }
