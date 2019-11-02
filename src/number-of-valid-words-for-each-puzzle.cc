@@ -8,6 +8,7 @@ public:
     const int wlen = words.size();
     const int plen = puzzles.size();
 
+    // set a mask for one letter
     vector<int> letter_mask(26, 0);
     for (int i = 0, mask = 1; i < 26; ++i, mask <<= 1) {
       letter_mask[i] = mask;
