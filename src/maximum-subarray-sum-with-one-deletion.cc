@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/discuss/377507/c%2B%2B-dp-with-constant-space
   int maximumSum(vector<int> &arr) {
     const int n = arr.size();
     if (n == 1) {
