@@ -484,14 +484,18 @@ int main() {
   // }
   // cout << endl;
 
-  string t{"alice,20,800,mtv"};
-  istringstream ss(t);
-  //  name, time (in minutes), amount, and city
-  vector<string> part(5, "");
+  // string t{"alice,20,800,mtv"};
+  // istringstream ss(t);
+  // //  name, time (in minutes), amount, and city
+  // vector<string> part(5, "");
 
-  int i = 0;
-  while (getline(ss, part[i++], ',')) {
-    ;
-  }
-  cout << part[3] << endl;
+  // int i = 0;
+  // while (getline(ss, part[i++], ',')) {
+  //   ;
+  // }
+  // cout << part[3] << endl;
+
+  cout << sizeof(int) << endl;
+  cout << sizeof(long) << endl;
+  cout << sizeof(long long) << endl;
 }
