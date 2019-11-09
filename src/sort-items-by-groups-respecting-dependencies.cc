@@ -58,6 +58,7 @@ public:
   }
 
 private:
+  // elegant and beauty!
   bool topo_sort(unordered_map<int, vector<int>> &g, list<int> &topo) {
     unordered_map<int, int> visited;
     for (const auto &kv : g) {
