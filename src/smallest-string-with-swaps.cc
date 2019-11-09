@@ -22,11 +22,10 @@ public:
       group[find(ds, i)].push_back(i);
     }
     for (auto cur_group : group) {
-      ostringstream ss;
+      string tmp{};
       for (auto id : cur_group) {
-        ss << s[id];
+        tmp += s[id];
       }
-      string tmp = ss.str();
       sort(tmp.begin(), tmp.end());
       for (auto i = 0; i < cur_group.size(); ++i) {
         s[cur_group[i]] = tmp[i];
