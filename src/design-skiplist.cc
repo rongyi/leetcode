@@ -1,6 +1,7 @@
 // http://leetcode.com/problems/design-skiplist/description/
 #include "xxx.h"
 
+// https://leetcode.com/problems/design-skiplist/discuss/400028/C%2B%2B-SkipList.-2-pointer-for-each-node.-64ms.
 class Skiplist {
 public:
   struct Node {
