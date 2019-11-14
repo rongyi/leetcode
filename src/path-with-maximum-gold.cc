@@ -35,6 +35,7 @@ private:
       if (nx < 0 || nx >= m_ || ny < 0 || ny >= n_ || grid[nx][ny] == 0) {
         continue;
       }
+      // 这里就不能直接递归下去了，选一个最大值
       int cur_branch = 0;
       dfs(grid, nx, ny, cur_branch);
       max_branch = max(max_branch, cur_branch);
