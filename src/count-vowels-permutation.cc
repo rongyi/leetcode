@@ -15,8 +15,23 @@ public:
     // 0 1 2 3 4
     // a e i o u
     for (int i = 1; i < n; ++i) {
-      // 'a' can be reached by e i u
+      // a can be reached by e i u
       dp[i + 1][0] = (dp[i][1] + dp[i][2] + dp[i][4]) % mod;
+      // e <== a i
+      dp[i + 1][1] = (dp[i][0] + dp[i][2]) % mod;
+      // i <== e o
+      dp[i + 1][2] = (dp[i][1] + dp[i][3]) % mod;
+      // o <== i
+      dp[i + 1][3] = dp[i][2];
+      // u <== i o
+      dp[i + 1][4] = (dp[i][2] + dp[i][3]) % mod;
     }
+
+    int ret = 0;
+
+    for (int i = 0; i < 5; ++i) {
+      ret = (ret + dp[n][i]) % mod;
+    }
+    return ret;
   }
 };
