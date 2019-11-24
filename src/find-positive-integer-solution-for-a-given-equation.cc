@@ -15,6 +15,7 @@
 
 class Solution {
 public:
+  // 喷的很厉害
   vector<vector<int>> findSolution(CustomFunction &customfunction, int z) {
     vector<vector<int>> ret;
     for (int i = 1; i <= 1000; ++i) {
