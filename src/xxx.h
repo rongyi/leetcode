@@ -54,6 +54,7 @@
 #include <string>
 #include <vector>
 #include <mutex>
+#include <cstring>
 
 #if __cplusplus >= 201103L
 #include <array>
