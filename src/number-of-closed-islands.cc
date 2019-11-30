@@ -21,7 +21,9 @@ public:
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
         if (grid[i][j] == 0) {
+          // 这一坨只会遇到一次
           ++ret;
+          // 因为这里会清空这个iland
           fill(grid, i, j);
         }
       }
