@@ -84,6 +84,7 @@ private:
     }
     return true;
   }
+  // from (x, y) ==> (tx, ty) ?
   bool canWalk(vector<vector<char>> &grid, int x, int y, int tx, int ty,
                vector<vector<int>> &walk) {
     if (x == tx && y == ty) {
