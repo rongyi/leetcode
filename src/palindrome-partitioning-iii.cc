@@ -34,6 +34,8 @@ public:
     for (int k = 2; k <= K; ++k) {
       for (int i = k - 1; i < n; ++i) {
         for (int j = i - 1; j >= k - 2; --j) {
+          // i 是终点， j是中间劈开的点, j往左移， i慢慢放开
+          // j劈开的左边部分是 dp[k - 1][j], 右边是change[j + 1][i]
           dp[k][i] = min(dp[k][i], change[j + 1][i] + dp[k - 1][j]);
         }
       }
