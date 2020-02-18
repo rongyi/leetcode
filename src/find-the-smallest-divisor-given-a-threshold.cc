@@ -13,6 +13,7 @@ public:
       mid = (left + right) / 2;
       sum = 0;
       for (auto num : nums) {
+        // small trick to calculate ceil(n)
         sum += (num + mid - 1) / mid;
       }
       if (sum > threshold) {
