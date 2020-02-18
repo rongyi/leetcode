@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 1. group same size together and slice each group by group size
   vector<vector<int>> groupThePeople(vector<int> &groupSizes) {
     unordered_map<int, vector<int>> groups;
     for (int i = 0; i < groupSizes.size(); i++) {
