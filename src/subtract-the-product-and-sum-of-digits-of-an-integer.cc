@@ -5,14 +5,13 @@ class Solution {
 public:
   int subtractProductAndSum(int n) {
     vector<int> digits;
-    while (n) {
-      digits.push_back(n % 10);
-      n /= 10;
-    }
-    auto sum = accumulate(digits.begin(), digits.end(), 0);
+    int sum = 0;
     long long multi = 1;
-    for (auto d : digits) {
-      multi *= d;
+    while (n) {
+      auto cur = n % 10;
+      sum += cur;
+      multi *= cur;
+      n /= 10;
     }
 
     return multi - (long long)sum;
