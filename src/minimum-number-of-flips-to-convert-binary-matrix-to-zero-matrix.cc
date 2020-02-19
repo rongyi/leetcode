@@ -43,6 +43,7 @@ private:
     return true;
   }
 
+  // notice the first argument, copy, not reference
   int flipOrNotFlip(vector<vector<int>> mat, int x, int y) {
     if (y == n_) {
       x++;
