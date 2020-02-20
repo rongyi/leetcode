@@ -5,6 +5,7 @@ class Solution {
 public:
   int minFallingPathSum(vector<vector<int>> &arr) {
     const int n = arr.size();
+    // 从最后面开始倒推
     for (int r = n - 2; r >= 0; r--) {
       for (int j = 0; j < n; j++) {
         int m = numeric_limits<int>::max();
