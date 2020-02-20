@@ -27,7 +27,7 @@ public:
     return ret;
   }
 
-public:
+private:
   int gennum(int start, int dc) {
     vector<int> digits{};
     for (int i = 0; i < dc; i++) {
