@@ -25,6 +25,8 @@ private:
     // total distance is m_ + n_ - 2
     // still -1 because grid[m_- 1][n_ - 1] always == 0
     // and we can check at each step
+    // more verbose description can be found at:
+    // https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/discuss/453652/Manhattan-distance-instead-of-normal-goal-check
     if (k >= m_ + n_ - 3 - x - y) {
       fpath = min(fpath, cur_path + m_ + n_ - 2 - x - y);
       return;
