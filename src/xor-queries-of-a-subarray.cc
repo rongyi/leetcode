@@ -6,6 +6,7 @@ public:
   vector<int> xorQueries(vector<int> &arr, vector<vector<int>> &queries) {
     const int n = arr.size();
     // every bit sum
+    // prefixsum的思路用在位上
     vector<vector<int>> dp(n + 1, vector<int>(31, 0));
     for (int i = 0; i < 31; i++) {
       for (int j = 0; j < n; j++) {
