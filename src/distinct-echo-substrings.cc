@@ -20,6 +20,7 @@ public:
     // split point
     for (auto split = 1; split < text.size() - 1; ++split) {
       for (auto sz = 1; split - sz >= 0 && split + sz - 1 < text.size(); ++sz) {
+        // no substr, or we can use string_view but it's c++17
         if (text.compare(split - sz, sz, text, split, sz) == 0) {
           ret.insert(text.substr(split, sz));
         }
