@@ -12,7 +12,7 @@ public:
   }
 
 private:
-  // just like 1124
+  // just like problem 1124
   int videoStitching(vector<vector<int>> &clips, int T) {
     int ret = 0;
     sort(clips.begin(), clips.end());
