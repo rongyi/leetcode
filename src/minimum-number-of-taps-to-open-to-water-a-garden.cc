@@ -18,6 +18,7 @@ private:
     sort(clips.begin(), clips.end());
     for (auto i = 0, st = 0, end = 0; st < T; st = end, ++ret) {
       while (i < clips.size() && clips[i][0] <= st) {
+        //后面的check保证了区间连续，必须是起点在当前st的左边和当前位置往后面就有gap了
         end = max(end, clips[i++][1]);
       }
       if (st == end) {
