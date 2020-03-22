@@ -3,9 +3,49 @@
 
 class Solution {
 public:
+  int findTheCity(int n, vector<vector<int>> &edges, int distanceThreshold) {
+    int INF = 1e6;
+    vector<vector<int>> dist = vector<vector<int>>(n, vector<int>(n, INF));
+    for (int i = 0; i < n; i++) {
+      dist[i][i] = 0;
+    }
+    for (auto &e : edges) {
+      auto v0 = e[0];
+      auto v1 = e[1];
+      auto w = e[2];
+      dist[v0][v1] = w;
+      dist[v1][v0] = w;
+    }
+
+    for (int k = 0; k < n; k++) {
+      for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+          dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+        }
+      }
+    }
+
+    int min_reach = n;
+    int ret = 0;
+    for (int i = 0; i < n; i++) {
+      int cur_reach = 0;
+      for (int j = 0; j < n; j++) {
+        if (dist[i][j] <= distanceThreshold) {
+          cur_reach++;
+        }
+      }
+
+      if (cur_reach <= min_reach) {
+        min_reach = cur_reach;
+        ret = i;
+      }
+    }
+
+    return ret;
+  }
   // BFS will not work, see here:
   // https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/discuss/490555/The-Reason-of-DFS-Not-Working-(Explain-Graph-and-Example)
-  int findTheCity(int n, vector<vector<int>> &edges, int distanceThreshold) {
+  int findTheCity2(int n, vector<vector<int>> &edges, int distanceThreshold) {
     for (auto &v : edges) {
       weights_[key(v[0], v[1])] = v[2];
       neibs_[v[0]].push_back(v[1]);
