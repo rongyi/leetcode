@@ -37,6 +37,7 @@ public:
         auto opt = numeric_limits<int>::max();
         // 同样是i - 1天需要至少做i - 1个任务，所以k最小值为i - 1
         for (int k = i - 1; k < j; k++) {
+          // 剩下来的任务选一个难度最大的
           auto sum = dp[i - 1][k] + cost[k + 1][j];
           opt = min(opt, sum);
         }
