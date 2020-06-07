@@ -495,7 +495,7 @@ int main() {
   // }
   // cout << part[3] << endl;
 
-  cout << sizeof(int) << endl;
-  cout << sizeof(long) << endl;
-  cout << sizeof(long long) << endl;
+  // cout << sizeof(int) << endl;
+  // cout << sizeof(long) << endl;
+  // cout << sizeof(long long) << endl;
 }
