@@ -32,6 +32,8 @@ public:
             q.push(j);
           }
         }
+        // 所有相等的value只进入队列一次
+        // 后面就只选相邻的节点了
         next.clear();
       }
       step++;
