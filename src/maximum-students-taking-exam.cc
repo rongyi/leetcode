@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/maximum-students-taking-exam/discuss/503686/A-simple-tutorial-on-this-bitmasking-problem
   int maxStudents(vector<vector<char>> &seats) {
     const int m = seats.size();
     const int n = seats[0].size();
