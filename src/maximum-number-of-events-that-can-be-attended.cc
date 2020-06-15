@@ -16,12 +16,14 @@ public:
         // 下一轮的第一个元素
         d = events[i][0];
       }
+      // 把所有的开始日期符合条件的都拉进来
       while (i < n && events[i][0] <= d) {
         pq.push(events[i++][1]);
       }
       pq.pop();
       d++;
       ret++;
+      // 明天的时间来算，这些都已经过期了，参加不了
       while (!pq.empty() && pq.top() < d) {
         pq.pop();
       }
