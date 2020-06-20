@@ -16,7 +16,7 @@ public:
     for (int i = 0; i < n; i++) {
       total += prices_[product[i]] * amount[i];
     }
-    if ((sn_ / n_ >= 1) && (sn_ % n_) == 0) {
+    if ((sn_ % n_) == 0) {
       total -= discount_ * total / 100;
     }
 
