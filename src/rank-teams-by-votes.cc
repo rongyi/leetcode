@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/rank-teams-by-votes/discuss/525768/C%2B%2B-Short-solution-with-self-defined-lambda
   string rankTeams(vector<string> &votes) {
     string ret{votes[0]};
     const int n = votes[0].size();
