@@ -11,6 +11,7 @@ public:
     int cur_sum = 0;
     int ret = 0;
 
+    // 全部点亮，和与预期的prefixsum肯定相同
     for (int i = 0; i < light.size(); ++i) {
       cur_sum += light[i];
       if (cur_sum == prefix_sum[i + 1]) {
