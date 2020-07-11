@@ -31,7 +31,6 @@ public:
       ret++;
     }
 
-
     return -1;
   }
 
