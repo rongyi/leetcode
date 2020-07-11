@@ -20,10 +20,11 @@ public:
 
 private:
   // acc 累积的时间
-  // invert 实际上就是累积的child数量
+  // invert 实际上就是累积的child数量，取反则得到概率
   void dfs(int start, int parent, int acc, int invert) {
     int child_size = 0;
     for (auto &v : table_[start]) {
+      // 剔除节点往上的那个edge
       if (v != parent) {
         child_size++;
       }
@@ -37,6 +38,7 @@ private:
       return;
     }
     for (auto &v : table_[start]) {
+      // 剔除节点往上的那个edge
       if (v != parent) {
         dfs(v, start, acc + 1, invert * child_size);
       }
