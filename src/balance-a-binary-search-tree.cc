@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 重建貌似比较方便
   TreeNode *balanceBST(TreeNode *root) {
     inOrder(root);
     return reconstruct(0, sorted_.size() - 1);
