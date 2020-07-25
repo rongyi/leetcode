@@ -10,9 +10,10 @@ public:
 
     return ret;
   }
+
 private:
-  void combine(vector<vector<int>> &ret, vector<int> cur, int index,
-               int n, int k){
+  void combine(vector<vector<int>> &ret, vector<int> cur, int index, int n,
+               int k) {
     if (cur.size() == k) {
       ret.push_back(cur);
       return;

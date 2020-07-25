@@ -498,4 +498,20 @@ int main() {
   // cout << sizeof(int) << endl;
   // cout << sizeof(long) << endl;
   // cout << sizeof(long long) << endl;
+
+  vector<int> input{1, 4, 7, 9};
+  unordered_set<int> uniq{1, 4, 7, 9};
+
+  unordered_set<int> cur;
+  for (int i = 0; i < input.size(); ++i) {
+    for (int j = i + 1; j < input.size(); ++j) {
+      cout << input[i] * 10 + input[j] << endl;
+      cout << input[j] * 10 + input[i] << endl;
+
+
+
+    }
+    cur.clear();
+  }
+
 }
