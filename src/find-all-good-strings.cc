@@ -25,6 +25,7 @@ public:
 
     int ret = 0;
 
+    // KMP prefix is used to check if we reach the end of the substring(we found evil)
     for (char c = from; c <= to; c++) {
       int j = evilMatched;
       while (j > 0 && evil[j] != c) {
