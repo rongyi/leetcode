@@ -8,11 +8,13 @@ public:
     for (auto &num : arr) {
       ++count[num];
     }
+
     for (auto it = count.rbegin(); it != count.rend(); ++it) {
       if (it->first == it->second) {
         return it->first;
       }
     }
+
     return -1;
   }
 };
