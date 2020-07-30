@@ -12,6 +12,7 @@ public:
     for (auto &c : s) {
       ++count[c];
     }
+
     int odd_count = 0;
     int even_pair = 0;
     for (auto &kv : count) {
@@ -20,12 +21,14 @@ public:
       }
       even_pair += kv.second / 2;
     }
+
     // 奇数的那些个是要独立成一组的
     if (k < odd_count) {
       return false;
     }
     auto left = k - odd_count;
 
+    // 剩下的全部由偶数pair来凑
     return (left >= 0) && (left <= even_pair * 2);
   }
 };
