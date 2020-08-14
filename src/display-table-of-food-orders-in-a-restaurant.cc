@@ -7,11 +7,11 @@ public:
   vector<vector<string>> displayTable(vector<vector<string>> &orders) {
     set<string> foods;
     // table --> foods
-    map<string, vector<string>> tords;
+    map<int, vector<string>> tords;
 
     for (auto &o : orders) {
       foods.insert(o[2]);
-      tords[o[1]].push_back(o[2]);
+      tords[stoi(o[1])].push_back(o[2]);
     }
     const int n = foods.size();
     unordered_map<string, int> food_index;
@@ -25,9 +25,11 @@ public:
       header.push_back(f);
     }
     vector<vector<string>> ret;
+    ret.push_back(header);
+
     for (auto &kv : tords) {
       vector<string> cur;
-      cur.push_back(kv.first);
+      cur.push_back(to_string(kv.first));
       vector<int> count(n, 0);
       for (auto &tf : kv.second) {
         count[food_index[tf]]++;
