@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // think from jump over croak转轮
   int minNumberOfFrogs(string cs) {
     vector<int> circle(5, 0);
     for (auto c : cs) {
