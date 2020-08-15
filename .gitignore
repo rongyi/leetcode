@@ -6,3 +6,4 @@
 /src/seeifyouunderstand.cc
 /.ccls-cache/
 /.cquery_cached_index/
+/rust/target/
