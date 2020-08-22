@@ -21,7 +21,7 @@ public:
           relation = 1;
         }
       } else {
-        // 确认已有的关系，不符合那就不行了，有cross的
+        // 确认已有的关系，不符合那就不行了，有cross的，有cross就排不了座次了
         if (relation == -1 && s1[i] > s2[i]) {
           return false;
         }
