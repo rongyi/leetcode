@@ -51,34 +51,49 @@ pub fn find_diagonal_order(nums: Vec<Vec<i32>>) -> Vec<i32> {
 }
 
 use std::collections::VecDeque;
-impl Solution {
-    pub fn constrained_subset_sum(nums: Vec<i32>, k: i32) -> i32 {
-        let mut dp: Vec<i32> = vec![0; nums.len()];
-        let mut q: VecDeque<i32> = VecDeque::new();
+pub fn constrained_subset_sum(nums: Vec<i32>, k: i32) -> i32 {
+    let mut dp: Vec<i32> = vec![0; nums.len()];
+    let mut q: VecDeque<i32> = VecDeque::new();
 
-        let mut ret = std::i32::MIN;
+    let mut ret = std::i32::MIN;
 
-        for i in 0..nums.len() {
-            let mut tmp = 0;
-            if !q.is_empty() {
-                let idx: i32 = *q.front().unwrap();
-                tmp = dp[idx as usize];
-            }
-            let cur_max = std::cmp::max(0, tmp);
-            dp[i] = nums[i] + cur_max;
-            ret = std::cmp::max(ret, dp[i]);
-
-            while !q.is_empty() && dp[i] >= dp[*q.back().unwrap() as usize] {
-                q.pop_back();
-            }
-            q.push_back(i as i32);
-            if i - *q.front().unwrap() as usize + 1 > k as usize {
-                q.pop_front();
-            }
+    for i in 0..nums.len() {
+        let mut tmp = 0;
+        if !q.is_empty() {
+            let idx: i32 = *q.front().unwrap();
+            tmp = dp[idx as usize];
         }
+        let cur_max = std::cmp::max(0, tmp);
+        dp[i] = nums[i] + cur_max;
+        ret = std::cmp::max(ret, dp[i]);
 
-        ret
+        while !q.is_empty() && dp[i] >= dp[*q.back().unwrap() as usize] {
+            q.pop_back();
+        }
+        q.push_back(i as i32);
+        if i - *q.front().unwrap() as usize + 1 > k as usize {
+            q.pop_front();
+        }
     }
+
+    ret
+}
+
+pub fn kids_with_candies(candies: Vec<i32>, extra_candies: i32) -> Vec<bool> {
+    let mut ret: Vec<bool> = Vec::new();
+    let mut max_candi: i32 = 0;
+    for c in candies.iter() {
+        max_candi = std::cmp::max(max_candi, *c);
+    }
+    for c in candies.iter() {
+        if *c + extra_candies >= max_candi {
+            ret.push(true);
+        } else {
+            ret.push(false);
+        }
+    }
+
+    ret
 }
 
 #[cfg(test)]
