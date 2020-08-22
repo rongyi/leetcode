@@ -40,10 +40,10 @@ pub fn find_diagonal_order(nums: Vec<Vec<i32>>) -> Vec<i32> {
         i -= 1;
     }
 
-    let mut ret: Vec<i32> = Vec::new();
+    let mut ret = Vec::new();
     for i in 0..=max_sum {
-        for v in &group[&i] {
-            ret.push(*v);
+        for v in &group[i] {
+            ret.push(v);
         }
     }
 
