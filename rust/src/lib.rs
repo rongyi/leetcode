@@ -108,7 +108,10 @@ pub fn dest_city(paths: Vec<Vec<String>>) -> String {
         let c0 = p[0].clone();
         let c1 = p[1].clone();
 
-        count.entry(p[0].clone()).or_insert(Vec::new()).push(p[1].clone());
+        count
+            .entry(p[0].clone())
+            .or_insert(Vec::new())
+            .push(p[1].clone());
         cits.insert(c0);
         cits.insert(c1);
     }
@@ -119,6 +122,25 @@ pub fn dest_city(paths: Vec<Vec<String>>) -> String {
         }
     }
     return "".to_string();
+}
+
+pub fn k_length_apart(nums: Vec<i32>, k: i32) -> bool {
+    let mut prev_one_index: i32 = -1;
+    for i in 0..nums.len() as i32 {
+        if nums[i as usize] == 0 {
+            continue;
+        }
+        if prev_one_index == -1 {
+            prev_one_index = i;
+        } else {
+            if i - prev_one_index - 1 < k {
+                return false;
+            }
+            prev_one_index = i;
+        }
+    }
+
+    return true;
 }
 
 #[cfg(test)]
