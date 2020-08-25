@@ -1,3 +1,6 @@
+use std::collections::HashMap;
+use std::collections::HashSet;
+
 #[allow(dead_code)]
 pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
     if k == card_points.len() as i32 {
@@ -23,7 +26,6 @@ pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
     ret
 }
 
-use std::collections::HashMap;
 pub fn find_diagonal_order(nums: Vec<Vec<i32>>) -> Vec<i32> {
     let mut max_sum: i32 = 0;
     let mut group: HashMap<i32, Vec<i32>> = HashMap::new();
@@ -94,6 +96,29 @@ pub fn kids_with_candies(candies: Vec<i32>, extra_candies: i32) -> Vec<bool> {
     }
 
     ret
+}
+
+pub fn dest_city(paths: Vec<Vec<String>>) -> String {
+    let mut count: HashMap<String, Vec<String>> = HashMap::new();
+    let mut cits: HashSet<String> = HashSet::new();
+
+    let ret: String = "".to_string();
+
+    for p in paths.iter() {
+        let c0 = p[0].clone();
+        let c1 = p[1].clone();
+
+        count.entry(p[0].clone()).or_insert(Vec::new()).push(p[1].clone());
+        cits.insert(c0);
+        cits.insert(c1);
+    }
+
+    for c in cits.iter() {
+        if !count.contains_key(c) {
+            return c.clone();
+        }
+    }
+    return "".to_string();
 }
 
 #[cfg(test)]
