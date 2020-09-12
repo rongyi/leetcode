@@ -23,6 +23,7 @@ public:
 
     return ret;
   }
+
 private:
   void dfs(int start, int cur, vector<vector<bool>> &graph,
            vector<bool> &visited, unordered_map<int, vector<int>> &table) {
