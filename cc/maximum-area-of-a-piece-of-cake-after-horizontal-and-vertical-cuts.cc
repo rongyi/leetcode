@@ -7,8 +7,10 @@ public:
               vector<int> &verticalCuts) {
     sort(horizontalCuts.begin(), horizontalCuts.end());
     sort(verticalCuts.begin(), verticalCuts.end());
+    // 拣最大的那块
     int max_ho = max(horizontalCuts[0], h - horizontalCuts.back());
     int max_vo = max(verticalCuts[0], w - verticalCuts.back());
+
 
     for (int i = 1; i < horizontalCuts.size(); ++i) {
       max_ho = max(max_ho, horizontalCuts[i] - horizontalCuts[i - 1]);
