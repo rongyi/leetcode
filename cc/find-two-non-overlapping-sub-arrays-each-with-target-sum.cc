@@ -14,6 +14,7 @@ public:
     const int n = arr.size();
     int min_val = n + 1;
     for (int i = 0; i < n - 1; ++i) {
+      // i + 1的在逆序中的位置
       min_val = min(min_val, left[i] + right[n - 1 - i - 1]);
     }
 
