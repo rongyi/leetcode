@@ -30,6 +30,7 @@ private:
     dp[i][j][k] = dfs(h, i + 1, i + 1, k - 1, dp);
     if (dp[i][j][k] != numeric_limits<int>::max()) {
       for (auto p = j; p <= i; ++p) {
+        // 距离公式
         dp[i][j][k] += abs(h[(i + j) / 2] - h[p]);
       }
     }
