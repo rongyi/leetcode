@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-  int findLeastNumOfUniqueInts(vector<int> &arr, int k) {
+  int findLeastNumOfUniqueIntsRaw(vector<int> &arr, int k) {
     unordered_map<int, int> count;
     for (auto num : arr) {
       count[num]++;
@@ -25,5 +25,26 @@ public:
     }
 
     return uniq.size() - i;
+  }
+  // or using heap
+  int findLeastNumOfUniqueInts(vector<int> &arr, int k) {
+    unordered_map<int, int> count;
+    for (auto &num : arr) {
+      count[num]++;
+    }
+    vector<int> heap;
+    for (auto &kv : count) {
+      heap.push_back(kv.second);
+    }
+    make_heap(heap.begin(), heap.end(), greater<int>());
+    while (k > 0) {
+      k -= heap.front();
+      pop_heap(heap.begin(), heap.end(), greater<int>());
+      if (k >= 0) {
+        heap.pop_back();
+      }
+    }
+
+    return heap.size();
   }
 };
