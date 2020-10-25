@@ -3,6 +3,7 @@
 
 class TreeAncestor {
 public:
+  // ref: https://leetcode.com/problems/kth-ancestor-of-a-tree-node/discuss/686291/C%2B%2B-Jump-Array
   TreeAncestor(int n, vector<int> &parent) {
     vector<vector<int>> tree(n);
     jumps_ = vector<vector<int>>(n);
