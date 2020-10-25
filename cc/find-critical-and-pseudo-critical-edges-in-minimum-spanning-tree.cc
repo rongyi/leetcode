@@ -3,6 +3,8 @@
 
 class Solution {
 public:
+  // ref:
+  // https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/discuss/697761/C%2B%2B-Solution-enumerating-edges-with-explanation
   vector<vector<int>>
   findCriticalAndPseudoCriticalEdges(int n, vector<vector<int>> &edges) {
     // add the edge
@@ -12,9 +14,12 @@ public:
 
     vector<int> critical;
     vector<int> pseudo;
+    // Sort from smallest weight -> biggest weight of edge according to Kruskal
     sort(edges.begin(), edges.end(),
          [](auto &a, auto &b) { return a[2] < b[2]; });
 
+    // Find smallest MST weight, with no restrictions on what edge to keep &
+    // what edge to exclude.
     int optimal = mst(n, edges, -1, -1);
 
     for (int i = 0; i < edges.size(); ++i) {
@@ -31,6 +36,20 @@ public:
 private:
   // minimum spanning tree
   // edge[i] ==> from, to, weight, index
+  // This function allows us to create a MST, while "taking" certain edges, and
+  // "ignoring" certain edges.
+  // edges is <to, from, cost of edge, index in original array of bookkeeping
+  // for return statement>
+  //
+  // Ignored edge is the edge indicated by a 0-based index in the sorted edges
+  // from smallest to greatest in cost.  This represents an edge that CANNOT be
+  // used, and helps us find if an edge is critical.  If it is critical, leaving
+  // out this edge will give us a bigger mst cost.
+  //
+  // Taken edge is the edge indicated by a 0-based index in the sorted edges
+  // from smallest to greatest in cost. If this edge is taken, and we can get
+  // the same mst cost, AND THIS EDGE IS NOT CRITICAL, this means it is
+  // pseudo-critical.
   int mst(int n, vector<vector<int>> &edges, int ignore_edge, int taken_edge) {
     auto u = UnionFind(n);
     int ret = 0;
