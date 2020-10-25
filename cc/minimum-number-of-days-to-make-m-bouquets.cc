@@ -22,6 +22,7 @@ public:
   }
 
 private:
+  // 每束花有k支相邻的花朵组成，有m束花, 看看满足条件的是否有m束
   bool canHavest(vector<int> &bday, int curday, int m, int k) {
     int count = 0;
     for (auto &d : bday) {
@@ -35,6 +36,7 @@ private:
         count = 0;
       }
     }
+
     return m <= 0;
   }
 };
