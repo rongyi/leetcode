@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/discuss/709227/JavaC%2B%2BPython-Two-Sum
   // Almost same as problem two sum.
   // If we want to know the count of subarray in sorted array A,
   // then it's exactly the same.
