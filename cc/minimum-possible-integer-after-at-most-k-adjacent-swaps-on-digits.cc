@@ -61,12 +61,18 @@ public:
           // 穿过的层层阻碍：
           // 1. 自己当前队列前面的那些值
           // 2. 其他队列里排在自己前面的，用binary search来查找
+
+          // Since few numbers already shifted to left, this `pos` might be
+          // outdated. we try to find how many number already got shifted that
+          // were to the left of pos.
           int idx = 0;
 
           for (int l = 0; l < 10; ++l) {
             if (l != j) {
+              // 找在当前这个值左边的那些值，只有这些值才会被移动
               idx += bs(v[l], 0, head[l] - 1, v[j][head[j]]);
             } else {
+              // 前面的个数就是当前的index
               idx += head[l];
             }
           }
@@ -91,7 +97,8 @@ public:
     return ret;
   }
 
-private:
+public:
+  // 返回在排好序的v中，从[l..v] (v included)中 <= key的个数
   int bs(vector<int> &v, int l, int r, int key) {
     if (l > r) {
       return l;
@@ -105,3 +112,10 @@ private:
     return bs(v, mid + 1, r, key);
   }
 };
+
+int main() {
+  Solution so;
+  vector<int> input{1, 3, 5, 7};
+  cout << so.bs(input, 0, 2, 3) << endl;
+  // so.minInteger("9438957234785635408", 23);
+}
