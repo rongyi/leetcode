@@ -62,7 +62,7 @@ public:
           // 1. 自己当前队列前面的那些值
           // 2. 其他队列里排在自己前面的，用binary search来查找
           int idx = 0;
-          // binary search on all the 10 queues
+
           for (int l = 0; l < 10; ++l) {
             if (l != j) {
               idx += bs(v[l], 0, head[l] - 1, v[j][head[j]]);
@@ -71,6 +71,7 @@ public:
             }
           }
 
+          // 步长在约束之内
           if (k >= (v[j][head[j]] - idx)) {
             ret.push_back((char)(j + '0'));
             visit[v[j][head[j]]] = true;
