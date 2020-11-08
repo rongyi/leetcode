@@ -53,17 +53,12 @@ private:
   }
 
   double sum_dis(double x, double y, const vector<vector<int>> &positions) {
-    // double ret = 0;
+    double ret = 0;
 
-    // for (auto &v : positions) {
-    //   ret += sqrt(pow(x - v[0], 2) + pow(y - v[1], 2));
-    // }
+    for (auto &v : positions) {
+      ret += sqrt(pow(x - v[0], 2) + pow(y - v[1], 2));
+    }
 
-    // return ret;
-
-    double sum = 0;
-    for (auto &v : positions)
-      sum += sqrt(pow(x - v[0], 2) + pow(y - v[1], 2));
-    return sum;
+    return ret;
   }
 };
