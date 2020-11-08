@@ -46,6 +46,7 @@ private:
       }
     }
 
+    // 更新当前节点，这些值是给父节点用的
     freq[node][label[node] - 'a']++;
   }
 };
