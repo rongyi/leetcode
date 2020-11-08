@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/stone-game-iv/discuss/909380/Recurrence-Tree-Diagram-or-Top-Down-DP-or-Bottom-Up-DP-Visual
   bool winnerSquareGame(int n) {
     vector<bool> dp(n + 1, false);
     // 枚举所有可能，然后看这一步走完对方怎么样？
