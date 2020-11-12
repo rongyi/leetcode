@@ -30,6 +30,7 @@ public:
         if (i > right) {
           ret.push_back("");
         }
+        // 否则只是更新最后一个
         right = new_right;
         ret.back() = s.substr(i, right - i + 1);
       }
