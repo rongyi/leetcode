@@ -26,13 +26,15 @@ public:
       int new_right = check(s, i, l, r);
       // 有戏
       if (new_right != -1) {
-        // 满足新开一个字符串的需求
-        if (i > right) {
-          ret.push_back("");
+        // 从i开始的位置有一个更小的选择，在里面的要出来
+        // 上一个取的字符串的右边界在当前这个字符之后，
+        if (i <= right) {
+          ret.pop_back();
         }
-        // 否则只是更新最后一个
+
+        ret.push_back(s.substr(i, new_right - i + 1));
+        // 更新右边界
         right = new_right;
-        ret.back() = s.substr(i, right - i + 1);
       }
     }
 
@@ -54,3 +56,11 @@ private:
     return right;
   }
 };
+
+int main() {
+  Solution so;
+  auto ret = so.maxNumOfSubstrings("abca");
+  for (auto &num : ret) {
+    cout << num << endl;
+  }
+}
