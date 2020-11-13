@@ -3,10 +3,12 @@
 
 class Solution {
 public:
+  // 主要就是subarray的
   int closestToTarget(vector<int> &arr, int target) {
     int ret = numeric_limits<int>::max();
     const int n = arr.size();
     // and_nums[i] i开始位置的与的uniq的那些数字
+    // contains AND values of subarrays starting from ith index
     set<int> and_nums[n];
     and_nums[n - 1].insert(arr[n - 1]);
 
