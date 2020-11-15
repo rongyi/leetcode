@@ -6,6 +6,7 @@ public:
   int numSplits(string s) {
     const int n = s.size();
     vector<int> left(n - 1, 0);
+    // 出于效率考虑把右边的那个省了
     // vector<int> right(n - 1, 0);
     set<char> uniq;
     set<char> uniq2;
