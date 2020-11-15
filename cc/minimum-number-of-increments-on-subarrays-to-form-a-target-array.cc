@@ -5,6 +5,7 @@ class Solution {
 public:
   // 连不到一起的时候就不能一起减了，连不到一起的成立条件就是
   // 出现了递增的情况
+  // https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/discuss/754682/Wall-of-bricks
   int minNumberOperations(vector<int> &target) {
     int ret = target[0];
     for (int i = 1; i < target.size(); ++i) {
