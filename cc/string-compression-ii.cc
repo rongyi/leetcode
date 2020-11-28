@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/string-compression-ii/discuss/756022/C%2B%2B-Top-Down-DP-with-explanation-64ms-short-and-clear
   int getLengthOfOptimalCompression(string s, int k) {
     const int n = s.size();
     vector<vector<int>> dp(n, vector<int>(n, -1));
@@ -28,6 +29,7 @@ private:
     for (int j = left, most = 0; j < s.size(); ++j) {
       most = max(most, ++cnt[s[j] - 'a']);
       ret = min(ret, 1 + digitcount(most) +
+                         // 减去使用掉的整个substring减去most就是使用的
                          recur(s, dp, j + 1, k - (j - left + 1 - most)));
     }
 
