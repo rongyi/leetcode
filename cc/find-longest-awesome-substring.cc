@@ -16,7 +16,7 @@ public:
       mask ^= 1 << (s[i] - '0');
       ret = max(ret, i - dp[mask]);
 
-      // 差一位的情况
+      // 差一位的情况，palindrom允许出现一个奇数次数，这个就是来凑那个case
       for (int j = 0; j < 10; ++j) {
         ret = max(ret, i - dp[mask ^ (1 << j)]);
       }
