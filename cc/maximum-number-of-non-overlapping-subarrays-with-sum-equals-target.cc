@@ -11,6 +11,7 @@ public:
     int ret = 0;
     for (int i = 0; i < nums.size(); ++i) {
       cur_sum += nums[i];
+      // 证明从这个记录的位置 *下一个* 位置开始到当前的位置的元素的和等于target
       if (sum_idx.count(cur_sum - target)) {
         int next_left = sum_idx[cur_sum - target] + 1;
         if (next_left > prev_right) {
