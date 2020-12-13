@@ -10,7 +10,7 @@ public:
     for (int i = s.size() - 1, t = 0; i >= 0; --i) {
       ++t;
       ret.push_back(s[i]);
-      if (t > 0 && t % 3 == 0) {
+      if (t % 3 == 0) {
         ret.push_back('.');
       }
     }
