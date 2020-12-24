@@ -10,12 +10,12 @@ public:
     for (int i = 0; i < n; ++i) {
       prefix_sum_[i + 1] = prefix_sum_[i] + stoneValue[i];
     }
-    return recur(stoneValue, 0, n - 1);
+    return recur(0, n - 1);
   }
 
 private:
   // start / end inclusive
-  int recur(vector<int> &v, int start, int end) {
+  int recur(int start, int end) {
     if (start == end) {
       return 0;
     }
@@ -23,18 +23,20 @@ private:
       return cache_[start][end];
     }
     cache_[start][end] = 0;
+    // 这里从prefixsum的角度去看要好些
     for (int i = start + 1; i <= end; ++i) {
       int l = prefix_sum_[i] - prefix_sum_[start];
       int r = prefix_sum_[end + 1] - prefix_sum_[i];
       if (l < r) {
-        cache_[start][end] =
-            max(cache_[start][end], recur(v, start, i - 1) + l);
+        // 右边被扔掉
+        cache_[start][end] = max(cache_[start][end], recur(start, i - 1) + l);
       } else if (l > r) {
-        cache_[start][end] = max(cache_[start][end], recur(v, i, end) + r);
+        // 左边被扔掉
+        cache_[start][end] = max(cache_[start][end], recur(i, end) + r);
       } else {
-        cache_[start][end] =
-            max(cache_[start][end],
-                l + max(recur(v, i, end), recur(v, start, i - 1)));
+        // 这两边都计算下去看谁最高
+        cache_[start][end] = max(cache_[start][end],
+                                 l + max(recur(i, end), recur(start, i - 1)));
       }
     }
 
