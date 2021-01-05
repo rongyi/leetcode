@@ -9,13 +9,16 @@ public:
 
     int count =
         count_if(s.begin(), s.end(), [](char &c) -> bool { return c == '1'; });
+
     if (count % 3 != 0) {
       return 0;
     }
+
     if (count == 0) {
-      // n - 2 + 1
+      // sum from 1 ==> n - 2
       return ((n - 1) * (n - 2) / 2) % mod;
     }
+
     const int part_total = count / 3;
     // left part ends
     int le = 0;
@@ -31,12 +34,14 @@ public:
       rs--;
       cur_count += s[rs] == '1';
     }
+    // 然后从第一个set有边界开始到第一个1之间的0都可以任意切
     int left_cut = 1;
     for (int i = le + 1; i < s.size() && s[i] == '0'; ++i) {
       ++left_cut;
     }
-    // cout << left_cut << endl;
+
     int right_cut = 1;
+    // 同左边界，这些0都可以切
     for (int i = rs - 1; i >= 0 && s[i] == '0'; --i) {
       ++right_cut;
     }
@@ -44,6 +49,7 @@ public:
     return (left_cut % mod) * (right_cut % mod) % mod;
   }
 };
+
 int main() {
   Solution so;
   cout << so.numWays("01101") << endl;
