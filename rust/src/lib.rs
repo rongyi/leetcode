@@ -1,9 +1,9 @@
+#[allow(dead_code)]
 use std::collections::HashMap;
 use std::collections::HashSet;
 
-struct Solution;
+pub struct Solution;
 
-#[allow(dead_code)]
 pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
     if k == card_points.len() as i32 {
         return card_points.iter().sum();
@@ -123,7 +123,7 @@ pub fn dest_city(paths: Vec<Vec<String>>) -> String {
             return c.clone();
         }
     }
-    return "".to_string();
+    return ret;
 }
 
 pub fn k_length_apart(nums: Vec<i32>, k: i32) -> bool {
@@ -149,7 +149,7 @@ impl Solution {
     pub fn sum_odd_length_subarrays(arr: Vec<i32>) -> i32 {
         let mut psum: Vec<i32> = vec![0; arr.len() + 1];
         for (i, num) in arr.iter().enumerate() {
-            psum[i + 1] = arr[i] + psum[i];
+            psum[i + 1] = num + psum[i];
         }
         let mut i: usize = 0;
         let mut ret: i32 = 0;
@@ -170,8 +170,12 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        let input: Vec<i32> = vec![1, 4, 2, 5, 3];
+        let ret = Solution::sum_odd_length_subarrays(input);
+        assert_eq!(ret, 58);
     }
 }
