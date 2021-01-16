@@ -1,6 +1,8 @@
 use std::collections::HashMap;
 use std::collections::HashSet;
 
+struct Solution;
+
 #[allow(dead_code)]
 pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
     if k == card_points.len() as i32 {
@@ -141,6 +143,29 @@ pub fn k_length_apart(nums: Vec<i32>, k: i32) -> bool {
     }
 
     return true;
+}
+
+impl Solution {
+    pub fn sum_odd_length_subarrays(arr: Vec<i32>) -> i32 {
+        let mut psum: Vec<i32> = vec![0; arr.len() + 1];
+        for (i, num) in arr.iter().enumerate() {
+            psum[i + 1] = arr[i] + psum[i];
+        }
+        let mut i: usize = 0;
+        let mut ret: i32 = 0;
+        while i < arr.len() {
+            let mut j: usize = i;
+            while j < arr.len() {
+                if (j - i + 1) % 2 == 1 {
+                    ret += psum[j + 1] - psum[i];
+                }
+                j += 1;
+            }
+            i += 1;
+        }
+
+        return ret;
+    }
 }
 
 #[cfg(test)]
