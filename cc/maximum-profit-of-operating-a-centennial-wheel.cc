@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 喷的很
   int minOperationsMaxProfit(vector<int> &customers, int boardingCost,
                              int runningCost) {
     int wait = 0;
