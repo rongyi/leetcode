@@ -14,12 +14,16 @@ public:
       for (int i = 0; i < reqn; ++i) {
         // 当前组合有这个request
         if ((cur_comb & (1 << i)) != 0) {
+          cur_tour++;
+
           outdeg[requests[i][0]]++;
           indeg[requests[i][1]]++;
-          cur_tour++;
         }
       }
+
+      // 节点出度以及入度相同
       int num_even = 0;
+      // 统计参与的节点数量
       int num_node = 0;
       for (int i = 0; i < n; ++i) {
         if (indeg[i] > 0) {
@@ -29,6 +33,8 @@ public:
           num_even++;
         }
       }
+
+      // 所有节点都是even节点
       if (num_even == num_node) {
         ret = max(ret, cur_tour);
       }
