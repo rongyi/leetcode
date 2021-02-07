@@ -12,19 +12,18 @@ impl Solution {
             count.entry(name.clone()).or_insert(Vec::new()).push(t);
         }
 
-        let mut ret: Vec<String> = Vec::new();
-
-        for (k, v) in count.iter_mut() {
-            if !Solution::check(v) {
-                ret.push(k.clone());
-            }
+        for (_, v) in count.iter_mut() {
+            v.sort();
         }
 
-        ret
+        count
+            .iter_mut()
+            .filter(|(_, v)| !Solution::check(v))
+            .map(|(k, _)| k.clone())
+            .collect::<Vec<String>>()
     }
 
-    fn check(ts: &mut [i32]) -> bool {
-        ts.sort();
+    fn check(ts: &[i32]) -> bool {
         let mut start_index: usize = 0;
         for (i, curts) in ts.iter().enumerate() {
             if curts - ts[start_index] <= 60 {
