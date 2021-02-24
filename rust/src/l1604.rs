@@ -23,6 +23,7 @@ impl Solution {
             .collect::<Vec<String>>()
     }
 
+    // 检测一小时内有没有三次
     fn check(ts: &[i32]) -> bool {
         let mut start_index: usize = 0;
         for (i, curts) in ts.iter().enumerate() {
@@ -37,6 +38,7 @@ impl Solution {
         true
     }
 
+    // 都换算成分钟和check里面的60是联动的
     fn time_to_int(s: &str) -> i32 {
         let comma = s.find(':').unwrap();
         let h = &s[..comma];

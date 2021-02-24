@@ -10,6 +10,7 @@
 // mod l1601;
 // mod l1603;
 // mod l1604;
+// mod l1605;
 
 pub(crate) struct Solution;
 #[cfg(test)]
