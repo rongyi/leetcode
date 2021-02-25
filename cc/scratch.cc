@@ -499,19 +499,27 @@ int main() {
   // cout << sizeof(long) << endl;
   // cout << sizeof(long long) << endl;
 
-  vector<int> input{1, 4, 7, 9};
-  unordered_set<int> uniq{1, 4, 7, 9};
+  // vector<int> input{1, 4, 7, 9};
+  // unordered_set<int> uniq{1, 4, 7, 9};
 
-  unordered_set<int> cur;
-  for (int i = 0; i < input.size(); ++i) {
-    for (int j = i + 1; j < input.size(); ++j) {
-      cout << input[i] * 10 + input[j] << endl;
-      cout << input[j] * 10 + input[i] << endl;
+  // unordered_set<int> cur;
+  // for (int i = 0; i < input.size(); ++i) {
+  //   for (int j = i + 1; j < input.size(); ++j) {
+  //     cout << input[i] * 10 + input[j] << endl;
+  //     cout << input[j] * 10 + input[i] << endl;
 
 
 
-    }
-    cur.clear();
+  //   }
+  //   cur.clear();
+  // }
+  map<int, int> m;
+  m[2] = 3;
+  m[4] = 6;
+  auto it = m.lower_bound(3);
+  if (it == m.end()) {
+    cout << "not found" << endl;
+  } else {
+    cout << it->first << endl;
   }
-
 }
