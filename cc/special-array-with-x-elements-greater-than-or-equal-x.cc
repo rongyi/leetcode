@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // 考察的就是lowerbound
   int specialArray(vector<int> &nums) {
     map<int, int> cache;
     for (auto &num : nums) {
