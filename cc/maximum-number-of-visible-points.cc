@@ -16,7 +16,7 @@ public:
       if (p[0] == me[0] && p[1] == me[1]) {
         ++overlap;
       } else {
-        angs.push_back(atan2(p[1] - me[1], p[0] - me[0]) * 180 / M_PI);
+        angs.push_back(atan2(p[1] - me[1], p[0] - me[0]) * 180 / M_PI); // 转成角度值
       }
     }
     sort(angs.begin(), angs.end());
