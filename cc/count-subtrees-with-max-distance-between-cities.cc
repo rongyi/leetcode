@@ -3,6 +3,12 @@
 
 class Solution {
 public:
+  // Using Floyd-Warshall algorithm to calculate minimum distance between any
+  // node to any other node. Since n <= 15, there is a maximum 2^15 subset of
+  // cities numbered from 1 to n. For each of subset of cities: Our subset forms
+  // a subtree if and only if number of edges = number of cities - 1 Iterate all
+  // pair of cities to calculate number of edges, number of cities, maximum
+  // distance between any 2 cities
   vector<int> countSubgraphsForEachDiameter(int n, vector<vector<int>> &edges) {
     // 节点间的距离最大是n - 1，因为是棵树
     const int inf = n;
