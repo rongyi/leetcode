@@ -508,18 +508,25 @@ int main() {
   //     cout << input[i] * 10 + input[j] << endl;
   //     cout << input[j] * 10 + input[i] << endl;
 
-
-
   //   }
   //   cur.clear();
   // }
-  map<int, int> m;
-  m[2] = 3;
-  m[4] = 6;
-  auto it = m.lower_bound(3);
-  if (it == m.end()) {
-    cout << "not found" << endl;
-  } else {
-    cout << it->first << endl;
-  }
+  // map<int, int> m;
+  // m[2] = 3;
+  // m[4] = 6;
+  // auto it = m.lower_bound(3);
+  // if (it == m.end()) {
+  //   cout << "not found" << endl;
+  // } else {
+  //   cout << it->first << endl;
+  // }
+  string s("aabc   ");
+  auto it = std::find_if_not(s.rbegin(), s.rend(), [](int c) -> bool {
+    if (isspace(c)) {
+      return true;
+    }
+    return false;
+  });
+  cout << *it << endl;
+  cout << s.rend() - it << endl;
 }
