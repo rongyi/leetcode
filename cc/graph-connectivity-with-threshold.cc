@@ -22,6 +22,7 @@ public:
           }
           // union find 如果这里不理解请参考:
           // remove-max-number-of-edges-to-keep-graph-fully-traversable.cc:28
+          // 这个group节点代表了 -size 个元素
           ds[p1] += ds[p2];
           ds[p2] = p1;
         }
