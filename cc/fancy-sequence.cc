@@ -4,6 +4,7 @@
 class Fancy {
 public:
   // 这种方式比较好理解一点，分段的处理
+  // https://leetcode.com/problems/fancy-sequence/discuss/910235/Focus-on-having-multiple-solutions-for-same-problem.-O(root-N)-Update-and-O(1)-Query-solution.
   Fancy() : mod_(1e9 + 7), bucket_len_(225) {}
 
   void append(int val) {
