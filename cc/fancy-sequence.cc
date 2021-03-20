@@ -3,6 +3,7 @@
 
 class Fancy {
 public:
+  // 这种方式比较好理解一点，分段的处理
   Fancy() : mod_(1e9 + 7), bucket_len_(225) {}
 
   void append(int val) {
@@ -66,18 +67,3 @@ private:
  * obj->multAll(m);
  * int param_4 = obj->getIndex(idx);
  */
-int main() {
-  Fancy fancy;
-
-  fancy.append(2);   // fancy sequence: [2]
-  fancy.addAll(3);   // fancy sequence: [2+3] -> [5]
-  fancy.append(7);   // fancy sequence: [5, 7]
-  fancy.multAll(2);  // fancy sequence: [5*2, 7*2] -> [10, 14]
-  fancy.getIndex(0); // return 10
-  fancy.addAll(3);   // fancy sequence: [10+3, 14+3] -> [13, 17]
-  fancy.append(10);  // fancy sequence: [13, 17, 10]
-  fancy.multAll(2);  // fancy sequence: [13*2, 17*2, 10*2] -> [26, 34, 20]
-  fancy.getIndex(0); // return 26
-  fancy.getIndex(1); // return 34
-  fancy.getIndex(2); // return 20
-}
