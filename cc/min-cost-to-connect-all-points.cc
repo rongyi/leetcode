@@ -31,7 +31,7 @@ public:
         // 连起来
         ds[i] += ds[j];
         ds[j] = i;
-        // 如果这里不理解请参考:
+        // union find 如果这里不理解请参考:
         // remove-max-number-of-edges-to-keep-graph-fully-traversable.cc:28
         if (ds[i] == -n) {
           break;
