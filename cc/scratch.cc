@@ -520,13 +520,14 @@ int main() {
   // } else {
   //   cout << it->first << endl;
   // }
-  string s("aabc   ");
-  auto it = std::find_if_not(s.rbegin(), s.rend(), [](int c) -> bool {
-    if (isspace(c)) {
-      return true;
-    }
-    return false;
-  });
-  cout << *it << endl;
-  cout << s.rend() - it << endl;
+  // string s("aabc   ");
+  // auto it = std::find_if_not(s.rbegin(), s.rend(), [](int c) -> bool {
+  //   if (isspace(c)) {
+  //     return true;
+  //   }
+  //   return false;
+  // });
+  // cout << *it << endl;
+  // cout << s.rend() - it << endl;
+  cout << min({1, 2, -1}) << endl;
 }
