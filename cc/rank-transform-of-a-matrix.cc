@@ -67,6 +67,7 @@ private:
     return ds[i] = find(ds, ds[i]);
   }
 };
+
 int main() {
   Solution so;
   vector<vector<int>> input{{1, 1}, {1, 1}};
