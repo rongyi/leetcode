@@ -8,6 +8,7 @@ public:
     if (k == 0) {
       return vector<int>(n, 0);
     }
+    // 到prefixsum中的index要加一
     vector<int> psum(n + 1, 0);
     for (int i = 0; i < n; ++i) {
       psum[i + 1] = psum[i] + code[i];
