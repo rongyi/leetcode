@@ -13,6 +13,7 @@ public:
         dp[i + 1] = min(dp[i] + 1, bcount);
       } else {
         bcount++;
+        // 随便，前面是多少这个就是多少
         dp[i + 1] = dp[i];
       }
     }
