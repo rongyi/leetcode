@@ -136,6 +136,17 @@ struct mycompare {
   }
 };
 
+namespace rongyi {
+// Ternary get ith bit value (0, 1 or 2)
+int get(int prevN, int i) {
+  prevN /= ((int)pow(3, i));
+  return prevN % 3;
+}
+
+// Ternary set new-coming bit to value
+int set(int currRow, int value) { return (currRow * 3 + value) % 243; }
+} // namespace rongyi
+
 int main() {
   // Solution so;
   // vector<vector<int>> input{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
@@ -529,5 +540,15 @@ int main() {
   // });
   // cout << *it << endl;
   // cout << s.rend() - it << endl;
-  cout << min({1, 2, -1}) << endl;
+  // cout << min({1, 2, -1}) << endl;
+
+  int n = 5;
+  int prevn = 0;
+  prevn = rongyi::set(prevn, 1);
+  prevn = rongyi::set(prevn, 0);
+  prevn = rongyi::set(prevn, 0);
+  prevn = rongyi::set(prevn, 0);
+  prevn = rongyi::set(prevn, 0);
+  cout << prevn << endl;
+  cout << rongyi::get(prevn, 1) << endl;
 }
