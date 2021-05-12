@@ -89,15 +89,17 @@ private:
 
     return ret;
   }
-  // 3进制的左移加新进的一位，然后总共5位，高位截取掉
+  // 3进制的左移加新进的一位，然后至多5位
   int shiftWith(int prev, int cur) { return (prev * 3 + cur) % 243; }
 
+  // 三进制取某一位的值
   int getVal(int cur, int i) {
     cur /= (int)pow(3, i);
     return cur % 3;
   }
 
 private:
+  // m/n最大5，内向外向最多6, prev最长243
   int cache_[6][6][7][7][243];
 };
 
