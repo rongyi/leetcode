@@ -7,6 +7,8 @@
   -- https://news.ycombinator.com/item?id=14115826
   #+END_QUOTE
 
+  git commit message写的很烂，不要学我。
+
 * 一些懵逼的题目
 1. convert sorted list to bst
 2. distinct subsequences
