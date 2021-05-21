@@ -542,13 +542,22 @@ int main() {
   // cout << s.rend() - it << endl;
   // cout << min({1, 2, -1}) << endl;
 
-  int n = 5;
-  int prevn = 0;
-  prevn = rongyi::set(prevn, 1);
-  prevn = rongyi::set(prevn, 0);
-  prevn = rongyi::set(prevn, 0);
-  prevn = rongyi::set(prevn, 0);
-  prevn = rongyi::set(prevn, 0);
-  cout << prevn << endl;
-  cout << rongyi::get(prevn, 1) << endl;
+  // int n = 5;
+  // int prevn = 0;
+  // prevn = rongyi::set(prevn, 1);
+  // prevn = rongyi::set(prevn, 0);
+  // prevn = rongyi::set(prevn, 0);
+  // prevn = rongyi::set(prevn, 0);
+  // prevn = rongyi::set(prevn, 0);
+  // cout << prevn << endl;
+  // cout << rongyi::get(prevn, 1) << endl;
+
+  deque<int> q;
+  q.push_back(1);
+  q.push_back(7);
+  q.push_back(9);
+  q.insert(q.begin() + 1, 2);
+  q.pop_front();
+  auto cur = q.front();
+  cout << cur << endl;
 }
