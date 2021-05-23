@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/minimize-deviation-in-array/discuss/955262/C%2B%2B-intuitions-and-flip
   int minimumDeviation(vector<int> &nums) {
     int ret = numeric_limits<int>::max();
     int cur_min = numeric_limits<int>::max();
