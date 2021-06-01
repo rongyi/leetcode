@@ -552,12 +552,21 @@ int main() {
   // cout << prevn << endl;
   // cout << rongyi::get(prevn, 1) << endl;
 
-  deque<int> q;
-  q.push_back(1);
-  q.push_back(7);
-  q.push_back(9);
-  q.insert(q.begin() + 1, 2);
-  q.pop_front();
-  auto cur = q.front();
-  cout << cur << endl;
+  // deque<int> q;
+  // q.push_back(1);
+  // q.push_back(7);
+  // q.push_back(9);
+  // q.insert(q.begin() + 1, 2);
+  // q.pop_front();
+  // auto cur = q.front();
+  // cout << cur << endl;
+
+
+  // vector<int> input(4, 0);
+  // std::iota(input.begin(), input.end(), 2);
+  vector<vector<int>> input{{1, 2}, {3, 4}};
+  for (auto &i : input) {
+    cout << i[3] << " ";
+  }
+  cout << endl;
 }
