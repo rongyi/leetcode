@@ -13,7 +13,7 @@ public:
 
       total_wait += (chef_finished_at - cur_entry);
 
-      // 后面来的客人厨子已经忙完了
+      // 后面来的客人厨子已经忙完了，把时间提到客人来的时间
       if (i < n - 1 && customers[i + 1][0] > chef_finished_at) {
         chef_finished_at = customers[i + 1][0];
       }
