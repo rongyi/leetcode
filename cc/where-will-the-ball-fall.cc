@@ -13,21 +13,13 @@ public:
       for (; i < m; ++i) {
         // right direction
         if (grid[i][j] == 1) {
-          if (j == n - 1) {
-            break;
-          }
-          // vshape?
-          if (grid[i][j + 1] != grid[i][j]) {
+          if (j == n - 1 || grid[i][j + 1] != grid[i][j]) {
             break;
           }
           j++;
         } else {
           // left direction case
-          if (j == 0) {
-            break;
-          }
-          // vshape?
-          if (grid[i][j - 1] != grid[i][j]) {
+          if (j == 0 || grid[i][j - 1] != grid[i][j]) {
             break;
           }
           j--;
