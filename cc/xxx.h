@@ -36,6 +36,7 @@
 // C++
 #include <algorithm>
 #include <bitset>
+#include <cstring>
 #include <deque>
 #include <functional>
 #include <ios>
@@ -45,6 +46,7 @@
 #include <limits>
 #include <list>
 #include <map>
+#include <mutex>
 #include <numeric>
 #include <queue>
 #include <random>
@@ -53,15 +55,13 @@
 #include <stack>
 #include <string>
 #include <vector>
-#include <mutex>
-#include <cstring>
 
 #if __cplusplus >= 201103L
 #include <array>
 #include <unordered_map>
 #include <unordered_set>
 #endif
-// I know this is *BAD*, I will not do this in production code
+// yes, this is *BAD*
 using namespace std;
 // one include to rule them all!
 
