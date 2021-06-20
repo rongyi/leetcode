@@ -34,6 +34,7 @@ public:
 
     for (int i = 0; i < n; ++i) {
       if (source[i] != target[i]) {
+        // 在所在的集合里找target，对的上就用，对不上距离加1
         auto &cur = cycles[find(uf, i)];
         auto it = cur.find(target[i]);
         if (it == cur.end()) {

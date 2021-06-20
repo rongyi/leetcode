@@ -9,7 +9,7 @@
 
   git commit message写的很烂，不要学我。
 
-* 一些懵逼的题目
+* 一些 +懵逼+ 值得回味的题目
 1. convert sorted list to bst
 2. distinct subsequences
 3. binary tree max path sum
