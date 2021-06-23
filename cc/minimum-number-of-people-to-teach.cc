@@ -51,6 +51,7 @@ public:
   }
 
 private:
+  // 不加cache会超时
   bool haveCommonLang(vector<vector<int>> &cache,
                       vector<unordered_set<int>> &langs, int u, int v) {
     if (cache[u][v] != 0) {
