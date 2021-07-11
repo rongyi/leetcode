@@ -8,16 +8,3 @@
   #+END_QUOTE
 
   git commit message写的很烂，不要学我。
-
-* 一些 +懵逼+ 值得回味的题目
-1. convert sorted list to bst
-2. distinct subsequences
-3. binary tree max path sum
-4. best-time-to-buy-and-sell-stock-iv
-5. shortest-palindrome
-6. countRangeSum
-7. https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/
-8. https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/  why binary search works?
-9. https://leetcode.com/problems/race-car/
-10. https://leetcode.com/problems/valid-permutations-for-di-sequence/
-11. http://leetcode.com/problems/minimum-cost-to-merge-stones/description/
