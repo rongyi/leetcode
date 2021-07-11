@@ -26,6 +26,7 @@ public:
         ret_ = s;
         break;
       }
+      // 这里递归下去，下一层去判断
       if (cur > ret_.size()) {
         longestNiceSubstring(s.substr(i, cur));
       }
