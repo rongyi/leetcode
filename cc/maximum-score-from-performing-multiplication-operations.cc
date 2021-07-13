@@ -32,5 +32,25 @@ private:
   }
 
 private:
+  // Three States define the state of Memoization
+
+  // 1. index of multiplication array (a)
+  // 2. start index of nums array (l)
+  // 3. end index of nums array(r)
+  // But if We know the start index(l) and end(r) index we can easily get index
+  // of muliplication array a=l+(n-1-r)
+  // 也即用掉了多少，那么乘法的idx就在哪里
+
+  // so number of states reduced to two, But we cannot make a 10^5 X 10^5 arrray
+  // to store result of (l,r) but one thing to be notice that number of elements
+  // in muliplication array if 10^3 so instead of using l and r as states we can
+  // use distance of l from starting and distance of r from end as the states
+  // 够刁钻
+
+  // as m<=10^3 so distance will be less than 10^3
+
+  // i=l and j=n-1-r
+  // i and j are distance from the start and end respectively and the new states
+  // of the dp array.
   int dp_[1001][1001];
 };
