@@ -44,7 +44,7 @@ private:
     }
     dp[node] = 0;
     for (auto [nei, d] : em[node]) {
-      // 后面的节点与n的距离都是很近的
+      // 后面的节点与n的距离都要比当前节点近才可以
       if (dist[node] > dist[nei]) {
         dp[node] = (dp[node] + dfs(nei, end, dp, dist, em)) % mod_;
       }
