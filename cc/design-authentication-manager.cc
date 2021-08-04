@@ -17,6 +17,7 @@ public:
     }
     auto cur_duration = tokens_[tokenID];
     // expired token, nothing happens
+    // 等于会先过期
     if (cur_duration.second <= currentTime) {
       return;
     }
@@ -27,6 +28,7 @@ public:
   int countUnexpiredTokens(int currentTime) {
     int unexp = 0;
     for (auto &kv : tokens_) {
+      // 等于会先过期
       if (kv.second.second > currentTime) {
         unexp++;
       }
