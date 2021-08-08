@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-ascending-subarray-sum/description/
-#include_next "xxx.h"
+#include "xxx.h"
 
 class Solution {
 public:

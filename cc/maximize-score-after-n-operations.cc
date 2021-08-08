@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximize-score-after-n-operations/description/
-#include_next "xxx.h"
+#include "xxx.h"
 
 class Solution {
 public:

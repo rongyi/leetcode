@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/description/
-#include_next "xxx.h"
+#include "xxx.h"
 
 class Solution {
 public:
