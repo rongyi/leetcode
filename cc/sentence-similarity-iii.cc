@@ -17,6 +17,7 @@ public:
       ws1.pop_back();
       ws2.pop_back();
     }
+
     if (ws1.size() == 0 || ws2.size() == 0) {
       return true;
     }
