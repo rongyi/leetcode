@@ -561,12 +561,18 @@ int main() {
   // auto cur = q.front();
   // cout << cur << endl;
 
-
   // vector<int> input(4, 0);
   // std::iota(input.begin(), input.end(), 2);
-  vector<vector<int>> input{{1, 2}, {3, 4}};
-  for (auto &i : input) {
-    cout << i[3] << " ";
-  }
-  cout << endl;
+  // vector<vector<int>> input{{1, 2}, {3, 4}};
+  // for (auto &i : input) {
+  //   cout << i[3] << " ";
+  // }
+  // cout << endl;
+
+  multiset<int> ms;
+  ms.insert(1);
+  ms.insert(1);
+  cout << ms.size() << endl;
+  ms.erase(ms.find(1));
+  cout << ms.size() << endl;
 }
