@@ -17,6 +17,7 @@ public:
       count++;
       coins -= cur_price;
     }
+
     return count;
   }
 };
