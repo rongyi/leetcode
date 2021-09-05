@@ -33,6 +33,29 @@ mod l1833 {
     }
 }
 
+mod l1837 {
+    struct Solution;
+    impl Solution {
+        pub fn sum_base(n: i32, k: i32) -> i32 {
+            let mut n = n;
+            let mut base = k;
+            while base <= n {
+                base *= k;
+            }
+            base /= k;
+
+            let mut ret = 0;
+            while n != 0 {
+                ret += n / base;
+                n %= base;
+                base /= k;
+            }
+
+            ret
+        }
+    }
+}
+
 pub(crate) struct Solution;
 #[cfg(test)]
 mod tests {
