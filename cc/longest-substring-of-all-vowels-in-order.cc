@@ -50,8 +50,7 @@ public:
         continue;
       }
       while (j < n && word[j] == 'u') {
-        j++;
-      }
+              }
       ret = max(ret, j - i);
       i = j;
     }
