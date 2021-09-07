@@ -85,6 +85,25 @@ mod l1838 {
     }
 }
 
+mod lxxx {
+    struct Solution;
+    impl Solution {
+        pub fn replace_digits(s: String) -> String {
+            let mut ret: String = String::new();
+            for (i, c) in s.chars().enumerate() {
+                if c.is_digit(10) {
+                    let change =
+                        (s.chars().nth(i - 1).unwrap() as u8 + (c as u8 - '0' as u8) as u8) as char;
+                    ret.push(change);
+                } else {
+                    ret.push(c);
+                }
+            }
+            ret
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
