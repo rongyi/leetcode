@@ -7,3 +7,4 @@
 /.ccls-cache/
 /.cquery_cached_index/
 /rust/target/
+/cc/.idea/
