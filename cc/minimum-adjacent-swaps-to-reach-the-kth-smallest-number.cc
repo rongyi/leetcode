@@ -23,6 +23,7 @@ private:
     while (i < size) {
       j = i;
 
+      // 找到差异，然后一路swap过来
       while (s1[i] != s2[j]) {
         j++;
       }
