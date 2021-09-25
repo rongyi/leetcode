@@ -29,3 +29,11 @@ public:
     return max_one > max_zero;
   }
 };
+
+int main() {
+  for (int i = 6300; i < 6400; ++i) {
+    if (i % 2 == 0 && i % 3 == 0 && i % 4 == 0 && i % 5 == 0 && i % 9 == 0) {
+      cout << i << endl;
+    }
+  }
+}
