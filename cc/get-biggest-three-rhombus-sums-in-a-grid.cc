@@ -22,15 +22,17 @@ public:
     for (int l = 1; l < len; ++l) {
       for (int row = l; row < m - l; row++) {
         for (int col = l; col < n - l; col++) {
+          int sum = 0;
+
+          // left to top
           int i = row;
           int j = col - l;
-          int sum = 0;
-          // left to top
           while (j <= col) {
             sum += grid[i][j];
             i--;
             j++;
           }
+
           // right to bottom
           i = row;
           j = col + l;
@@ -39,7 +41,9 @@ public:
             i++;
             j--;
           }
+
           // top to right
+          // ignore the corner, which is alredy added
           i = row - l + 1;
           j = col + 1;
           while (i < row) {
@@ -47,7 +51,9 @@ public:
             i++;
             j++;
           }
+
           // bottom to left
+          // ignore the corner, which is alredy added
           i = row + l - 1;
           j = col - 1;
           while (i > row) {
