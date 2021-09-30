@@ -12,3 +12,5 @@
   #+END_QUOTE
 
   git commit message写的很烂，不要学我。
+* TODO [/]
+  - [ ] make all comments in english
