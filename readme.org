@@ -1,9 +1,10 @@
 * 简介
   #+BEGIN_QUOTE
   若能钻木出火，淤泥定生红莲
+
   -- 《坛经》
   #+END_QUOTE
-  主要用来锻炼自己，不让自己技术退化。语言： C++
+  主要用来锻炼自己，不让自己技术退化。语言： C++, 部分rust，但很不专业，处在练手阶段可以忽略
 
   #+BEGIN_QUOTE
   Learning algorithms per se is only a small part of training. Much bigger part of training is learning how to recognize these algorithms in problems.
