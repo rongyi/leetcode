@@ -221,19 +221,21 @@ int main() {
   // cout << pq.top().first << "   :    " << pq.top().second << endl;
 
   // set::lower_bound/upper_bound
-  // std::set<int> myset;
-  // std::set<int>::iterator itlow, itup;
+  std::set<int> myset;
+  std::set<int>::iterator itlow, itup;
 
-  // for (int i = 1; i < 10; i++) {
-  //   myset.insert(i * 10); // 10 20 30 40 50 60 70 80 90
-  // }
+  for (int i = 1; i < 10; i++) {
+    myset.insert(i * 10); // 10 20 30 40 50 60 70 80 90
+  }
 
-  // // >= 28里面找最小的
-  // itlow = myset.lower_bound(29);
-  // cout << *itlow << endl;
-  // // 大于81的第一个
-  // itup = myset.upper_bound(81);
-  // cout << *itup << endl;
+  // >= 28里面找最小的
+  // >=
+  itlow = myset.lower_bound(30);
+  cout << *itlow << endl;         // 30
+  // 大于81的第一个
+  // >
+  itup = myset.upper_bound(80);
+  cout << *itup << endl;          // 90
 
   // myset.erase(itlow, itup); // 10 20 70 80 90
 
@@ -569,10 +571,29 @@ int main() {
   // }
   // cout << endl;
 
-  multiset<int> ms;
-  ms.insert(1);
-  ms.insert(1);
-  cout << ms.size() << endl;
-  ms.erase(ms.find(1));
-  cout << ms.size() << endl;
+  // multiset<int> ms;
+  // ms.insert(1);
+  // ms.insert(1);
+  // cout << ms.size() << endl;
+  // ms.erase(ms.find(1));
+  // cout << ms.size() << endl;
+
+  // bool reverse = false;
+  vector<vector<int>> group(4);
+  for (int i = 1; i <= 279; i++) {
+    int index = (i + 3) / 4;
+    // odd normal
+    if (index & 1) {
+      group[(i - 1) % 4].push_back(i);
+    } else {
+      // even reverse
+      group[4 - (i - 1) % 4 - 1].push_back(i);
+    }
+  }
+  for (int i = 0; i < 4; ++i) {
+    for (auto n : group[i]) {
+      cout << n << " ";
+    }
+    cout << endl;
+  }
 }
