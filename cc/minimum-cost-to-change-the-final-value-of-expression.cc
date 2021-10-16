@@ -36,6 +36,7 @@ public:
           // need to change 1 to 0 or change 0 to 1
           right_mybe = {cur, 1};
         }
+        // we get right openrand from input or the eval of sub expr
 
         // need to eval, yes right_mybe is a right openrand
         if (!s.empty() && (s.top().first == '&' || s.top().first == '|')) {
@@ -84,7 +85,7 @@ public:
             }
           }
         }
-        // otherwise just push to stack
+        // this value is eighter right or finaly value applied stack top op
         s.push(right_mybe);
       }
     }
@@ -92,3 +93,53 @@ public:
     return s.top().second;
   }
 };
+
+int main() {
+  string input{"1&(0&1)"};
+  stack<char> s;
+
+  auto apply = [&](char right) {
+    if (!s.empty() && (s.top() == '|' || s.top() == '&')) {
+      auto op = s.top();
+      s.pop();
+      auto val1 = s.top();
+      s.pop();
+      if (op == '&') {
+        if (right == '1' && val1 == '1') {
+          s.push('1');
+        } else {
+          s.push('0');
+        }
+      } else {
+        // op |
+        if (right == '1' || val1 == '1') {
+          s.push('1');
+        } else {
+          s.push('0');
+        }
+      }
+    } else {
+      s.push(right);
+    }
+  };
+  for (int i = 0; i < input.size(); ++i) {
+    auto cur = input[i];
+    if (cur == '(' || cur == '|' || cur == '&') {
+      s.push(cur);
+    } else {
+      if (cur == ')') {
+        cur = s.top();
+        s.pop();
+        s.pop(); // drop (
+        apply(cur);
+
+      } else {
+        // 0 or 1,this may be the right openrand, so
+        // if so, we eval
+        // else just push to stack
+        apply(cur);
+      }
+    }
+  }
+  cout << s.top() << endl;
+}
