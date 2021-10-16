@@ -49,28 +49,36 @@ public:
           s.pop();
 
           if (op == '&') {
+            // change one of 1 to 0
             if (val1 == '1' && val2 == '1') {
               right_mybe = {'1', min(cost1, cost2)};
             }
+            // 1 & 0 change & ==> |
             if (val1 == '1' && val2 == '0') {
               right_mybe = {'0', 1};
             }
+            // 0 & 1 change & ==> |
             if (val1 == '0' && val2 == '1') {
               right_mybe = {'0', 1};
             }
+            // 0 & 0 change & ==> | and change one of them to 1
             if (val1 == '0' && val2 == '0') {
               right_mybe = {'0', min(1 + cost1, 1 + cost2)};
             }
           } else {
+            // 1 | 1 change | ==> 0 and change one of them to 1
             if (val1 == '1' && val2 == '1') {
               right_mybe = {'1', min(1 + cost1, 1 + cost2)};
             }
+            // 1 | 0 change | ==> &
             if (val1 == '1' && val2 == '0') {
               right_mybe = {'1', 1};
             }
+            // 0 | 1 change | ==> &
             if (val1 == '0' && val2 == '1') {
               right_mybe = {'1', 1};
             }
+            // 0 | 0 change one of them to 1
             if (val1 == '0' && val2 == '0') {
               right_mybe = {'0', min(cost1, cost2)};
             }
