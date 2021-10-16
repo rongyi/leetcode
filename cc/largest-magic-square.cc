@@ -39,11 +39,13 @@ private:
         bool match = (diag == anti_diag);
         // check every row
         for (int i = r; i < r + k && match; ++i) {
-          match = (diag == (row_prefix_[i][c + k - 1 + 1] - row_prefix_[i][c]));
+          match =
+              (diag == (row_prefix_[i][c + k /*-1 + 1 */] - row_prefix_[i][c]));
         }
         // check every col
         for (int j = c; j < c + k && match; ++j) {
-          match = (diag == (col_prefix_[j][r + k - 1 + 1] - col_prefix_[j][r]));
+          match = (diag ==
+                   (col_prefix_[j][r + k /* -1 + 1 */] - col_prefix_[j][r]));
         }
         if (match) {
           return true;
