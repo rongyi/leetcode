@@ -21,7 +21,7 @@ private:
       return;
     }
     int sz = arr.size() / 2;
-    //they meet?
+    //does two player meet?
     for (int i = 0; i < sz; ++i) {
       if (arr[i] == first_player_ && arr[arr.size() - i - 1] == second_player_) {
         min_round_ = min(min_round_, round);
