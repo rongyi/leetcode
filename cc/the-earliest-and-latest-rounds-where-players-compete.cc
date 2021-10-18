@@ -47,7 +47,7 @@ private:
     vector<int> nextarr(sz + (arr.size()) % 2);
     int m = (1 << sz);
     // try all the winning combination for the left size player
-    // 1 win, 0 lose, e.g right side player win
+    // 1 win, 0 lose, i.e. right side player win
     for (int i = 0; i < m; ++i) {
       int left = 0;
       int right = nextarr.size() - 1;
@@ -61,7 +61,7 @@ private:
           nextarr[right--] = arr[arr.size() - j - 1];
         }
       }
-      // has middle elements?
+      // has middle elements? just copy to the left
       if (arr.size() % 2) {
         nextarr[left] = arr[arr.size() / 2];
       }
