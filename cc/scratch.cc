@@ -230,7 +230,7 @@ int main() {
 
   // >= 28里面找最小的
   // >=
-  itlow = myset.lower_bound(30);
+  itlow = myset.lower_bound(21);
   cout << *itlow << endl;         // 30
   // 大于81的第一个
   // >
@@ -579,21 +579,21 @@ int main() {
   // cout << ms.size() << endl;
 
   // bool reverse = false;
-  vector<vector<int>> group(4);
-  for (int i = 1; i <= 279; i++) {
-    int index = (i + 3) / 4;
-    // odd normal
-    if (index & 1) {
-      group[(i - 1) % 4].push_back(i);
-    } else {
-      // even reverse
-      group[4 - (i - 1) % 4 - 1].push_back(i);
-    }
-  }
-  for (int i = 0; i < 4; ++i) {
-    for (auto n : group[i]) {
-      cout << n << " ";
-    }
-    cout << endl;
-  }
+  // vector<vector<int>> group(4);
+  // for (int i = 1; i <= 279; i++) {
+  //   int index = (i + 3) / 4;
+  //   // odd normal
+  //   if (index & 1) {
+  //     group[(i - 1) % 4].push_back(i);
+  //   } else {
+  //     // even reverse
+  //     group[4 - (i - 1) % 4 - 1].push_back(i);
+  //   }
+  // }
+  // for (int i = 0; i < 4; ++i) {
+  //   for (auto n : group[i]) {
+  //     cout << n << " ";
+  //   }
+  //   cout << endl;
+  // }
 }
