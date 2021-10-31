@@ -31,9 +31,11 @@ public:
     int s_diff = s1 - s2;
     // equation right side
     int q_diff = q_count2 - q_count1;
-    // ???? == 18
+    // e.g. ???? == 18
     // whatever alice pick, bob just pick 9 - x
     // and the sum will be (4 / 2 *  9) == 18
+    // in this case bob will always win, other than that
+    // bob lose
     bool bob_win = (q_diff % 2 == 0) && (q_diff / 2 * 9 == s_diff);
 
     return !bob_win;
