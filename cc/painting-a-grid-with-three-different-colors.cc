@@ -24,14 +24,17 @@ private:
       return dp_[c][prev_col_mask];
     }
     int ret = 0;
-    for (auto nei : neighbors(prev_col_mask)) {
+    for (auto nei : all_possible_column(prev_col_mask)) {
       ret = (ret + dp(c + 1, nei)) % mod_;
     }
     return dp_[c][prev_col_mask] = ret;
   }
 
   // give prev col mask , generate all *valid* color columen for current col
-  vector<int> neighbors(int prev_col_mask) {
+  // and we also cache this result if we meet prev_col_mask before, we won't
+  // calculate again, just use this cached lst
+  // vector<int> [mask...]
+  vector<int> all_possible_column(int prev_col_mask) {
     if (!nei_memo_[prev_col_mask].empty()) {
       return nei_memo_[prev_col_mask];
     }
@@ -44,8 +47,11 @@ private:
       return;
     }
     for (int i = 1; i <= 3; ++i) {
-      if (getColor(prev_col_mask, r) != i &&
-          (r == 0 || (getColor(cur_col_mask, r - 1) != i))) {
+      // current color can not be the same as left, and up
+      if (getColor(prev_col_mask, r) !=
+              i /*left side color reside in prev_col_mask*/
+          && (r == 0 || (getColor(cur_col_mask, r - 1) !=
+                         i)) /*upside color reside in cur_col_mask*/) {
         dfs(r + 1, prev_col_mask, setColor(cur_col_mask, r, i), out);
       }
     }
