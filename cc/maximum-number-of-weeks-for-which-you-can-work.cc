@@ -35,8 +35,8 @@ public:
     if (mega_job > rest) {
       return rest * 2 + 1;
     }
-    // why we can finish all?
-    // Why the greedy strategy works?
+    // for me the hardest part is this:
+    // why we can finish all when rest >= mega_job ?
     // Let's consider the case if n >= 3. (because if n == 1 -> only can finish
     // 1, if n == 2, we can only take turn working on it and _sum - _max must <
     // _max ) Let's say we have:
