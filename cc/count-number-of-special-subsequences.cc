@@ -9,6 +9,7 @@ public:
     dp[0] = 1;
     for (auto num : nums) {
       int next_num = num + 1;
+      // either same or just num - 1
       dp[next_num] += (dp[next_num] + dp[next_num - 1]);
       dp[next_num] %= mod_;
     }
