@@ -10,6 +10,9 @@ public:
     for (auto num : nums) {
       int next_num = num + 1;
       // either same or just num - 1
+      // 0 0              0 0
+      // 1 1              1 2
+      // ...
       dp[next_num] += (dp[next_num] + dp[next_num - 1]);
       dp[next_num] %= mod_;
     }
@@ -54,4 +57,3 @@ private:
 private:
   static constexpr int mod_ = 1e9 + 7;
 };
-
