@@ -48,3 +48,9 @@ public:
     return ways[0][0];
   }
 };
+
+int main() {
+  Solution so;
+  int i = so.numberOfCombinations("327");
+  cout << i << endl;
+}
