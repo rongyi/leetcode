@@ -8,6 +8,7 @@ public:
     sort(nums.begin(), nums.end());
     // i - k + 1 >= 0
     // i >= k - 1
+    // just pick the small and largest in k size window
     for (int i = 0; i + k <= nums.size(); ++i) {
       ret = min(ret, nums[i + k - 1] - nums[i]);
     }
