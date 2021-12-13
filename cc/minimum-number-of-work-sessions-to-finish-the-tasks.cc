@@ -1,6 +1,40 @@
 // http://leetcode.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/description/
 #include "xxx.h"
 
+class SolutionTLE {
+
+public:
+  int minSessions(vector<int> &tasks, int sessionTime) {
+    int n = tasks.size();
+    return dfs(tasks, n, sessionTime, 0);
+  }
+
+private:
+  int dfs(vector<int> &tasks, int n, int sessionTime, int cur_pos) {
+    if (cur_pos >= n) {
+      return 0;
+    }
+    // add current to a new sessions
+    sessions_.push_back(tasks[cur_pos]);
+    int ret = 1 + dfs(tasks, n, sessionTime, cur_pos + 1);
+    sessions_.pop_back();
+
+    // trying to put current in prev and make it still a valid session
+    for (int i = 0; i < sessions_.size(); ++i) {
+      if (sessions_[i] + tasks[cur_pos] <= sessionTime) {
+        sessions_[i] += tasks[cur_pos];
+        ret = min(ret, dfs(tasks, n, sessionTime, cur_pos + 1));
+        sessions_[i] -= tasks[cur_pos];
+      }
+    }
+
+    return ret;
+  }
+
+private:
+  vector<int> sessions_;
+};
+
 class Solution {
 public:
   int minSessions(vector<int> &tasks, int sessionTime) {
@@ -27,6 +61,8 @@ private:
 
     for (int i = 0; i < tasks.size(); ++i) {
       // current task not runng yet
+      // every un running task can be put in current or next
+      // just keep this way and cache the result
       if ((cur_mask & (1 << i)) == 0) {
         int include_in_current =
             help(tasks, cur_mask | (1 << i), curr_time + tasks[i]);
@@ -38,6 +74,9 @@ private:
   }
 
 private:
+  // dp[i][j] i -> task bitmask, 1 mask done
+  //                             0 mask not running
+  //          j -> current session running time
   int dp_[1 << 14][16];
   int done_mask_;
   int session_time_;
