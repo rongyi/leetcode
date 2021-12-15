@@ -5,7 +5,6 @@ class LockingTree {
 public:
   LockingTree(vector<int> &parent) {
     parent_ = parent;
-    node_nums_ = parent.size();
     for (int i = 1; i < parent.size(); ++i) {
       child_[parent[i]].push_back(i);
     }
@@ -37,14 +36,22 @@ public:
       return false;
     }
     // 2. at lease one desendant locked by *any* user
-    // 3. ancestor have not locked(all)
-    if (!ancestorHasNoLocked(parent_[num])) {
-      return false;
+    // 3. It does not have any locked ancestors.
+    // ancestorAllFree first make code a bit faster
+    if (ancestorAllFree(parent_[num]) && childHasOneLocked(num)) {
+      lock_user_[num] = user;
+      unlockChildOf(num);
+
+      return true;
     }
+
+    return false;
   }
 
 private:
-  bool ancestorHasNoLocked(int num) {
+  bool ancestorAllFree(int num) {
+    // we find to the root, so no one is locked
+    // yes, all node is free
     if (num == -1) {
       return true;
     }
@@ -52,7 +59,9 @@ private:
     if (lock_user_.find(num) != lock_user_.end()) {
       return false;
     }
-    return ancestorHasNoLocked(parent_[num]);
+
+    // check node's parent
+    return ancestorAllFree(parent_[num]);
   }
 
   bool childHasOneLocked(int num) {
@@ -65,12 +74,21 @@ private:
         return true;
       }
     }
+
     return false;
+  }
+
+  void unlockChildOf(int num) {
+    for (auto c : child_[num]) {
+      // erase the child, not current num!
+      lock_user_.erase(c); // writing c -> num cost me half hour to debug, shit!
+      // and its child
+      unlockChildOf(c);
+    }
   }
 
 private:
   vector<int> parent_;
-  int node_nums_;
   map<int, int> lock_user_;
   map<int, vector<int>> child_;
 };
@@ -82,3 +100,15 @@ private:
  * bool param_2 = obj->unlock(num,user);
  * bool param_3 = obj->upgrade(num,user);
  */
+
+int main() {
+  vector<int> input{-1, 0, 0, 1, 1, 2, 2};
+  LockingTree lt(input);
+  bool b = lt.lock(2, 2);
+  b = lt.unlock(2, 3);
+  b = lt.unlock(2, 2);
+  b = lt.lock(4, 5);
+  b = lt.upgrade(0, 1);
+  b = lt.lock(0, 1);
+}
+
