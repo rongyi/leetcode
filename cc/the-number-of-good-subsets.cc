@@ -33,7 +33,9 @@ public:
         }
       }
       tmp.assign(1 << 10, 0);
+      // already booked prime mask
       for (int mask = 0; mask < (1 << 10); ++mask) {
+        // do not collide with current num, ok, put current on
         if ((cur_mask & mask) == 0) {
           tmp[mask | cur_mask] = (dp[mask] * kv.second) % mod;
         }
