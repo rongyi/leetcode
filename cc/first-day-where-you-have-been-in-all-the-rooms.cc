@@ -8,7 +8,7 @@ public:
     using ll = long long;
     int mod = 1e9 + 7;
     int n = nextVisit.size();
-    // first time to reach i
+    // first day to reach i
     vector<ll> f(n, 0);
     // second time to reach i
     // f[i] = (g[i - 1] + 1) % mod;
@@ -21,16 +21,16 @@ public:
     // d reprent the day from visited[i] to i
     // ==> f[i] - f[visited[i]]
     vector<ll> g(n, 0);
-    f[0] = 1;
+    f[0] = 0;
     // because visited[i] <= i so visited[i] must be 0
-    g[0] = 2;
+    g[0] = 1;
 
     for (int i = 1; i < n; ++i) {
       f[i] = (g[i - 1] + 1) % mod;
       g[i] = (f[i] * 2 + mod - f[nextVisit[i]] + 1) % mod;
     }
 
-    return (f[n - 1] + mod - 1) % mod;
+    return f[n - 1] % mod;
   }
 
   // ofcause TLE! :(
