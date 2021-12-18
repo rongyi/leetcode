@@ -11,10 +11,14 @@ public:
     int ret = 0;
     int prime[10] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
 
-    vector<ll> dp(1 << 10, 0);
-    // empty subsequence
-    dp[0] = 1;
-    vector<ll> tmp;
+    // sum all the possible prime combination count
+    // 10 prime total under 30, and we count all the possible
+    // combination count, at last, we sum all combination exception
+    // 0, because we must at least choose one
+    vector<ll> sum(1 << 10, 0);
+    // empty prime count 1
+    sum[0] = 1;
+    vector<ll> cur;
     for (auto x : nums) {
       if (x % 4 == 0 || x % 9 == 0 || x % 25 == 0) {
         continue;
@@ -32,21 +36,27 @@ public:
           cur_mask += (1 << i);
         }
       }
-      tmp.assign(1 << 10, 0);
+      cur.assign(1 << 10, 0);
       // already booked prime mask
+      // this loop means:
+      // for all the possible mask, can we add this this num's
+      // prime factor?
+      // if we can, we logic or this mask and get the new mask count
+      // by multiply this num's count
       for (int mask = 0; mask < (1 << 10); ++mask) {
         // do not collide with current num, ok, put current on
+        // yes, we can add this mask to current mask
         if ((cur_mask & mask) == 0) {
-          tmp[mask | cur_mask] = (dp[mask] * kv.second) % mod;
+          cur[mask | cur_mask] = (sum[mask] * kv.second) % mod;
         }
       }
       for (int i = 0; i < (1 << 10); ++i) {
-        dp[i] = (dp[i] + tmp[i]) % mod;
+        sum[i] = (sum[i] + cur[i]) % mod;
       }
     }
     // exclude empty set
     for (int i = 1; i < (1 << 10); ++i) {
-      ret = (ret + dp[i]) % mod;
+      ret = (ret + sum[i]) % mod;
     }
     // the one case, pick one or not
     // e.g. [2] [1, 2]
