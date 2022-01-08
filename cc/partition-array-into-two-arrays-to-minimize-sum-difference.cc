@@ -9,6 +9,8 @@ public:
     int sum = accumulate(nums.begin(), nums.end(), 0);
     const int half = n / 2;
 
+    // prepare all the combination sum of left half
+    // and right half
     vector<vector<int>> left(half + 1);
     vector<vector<int>> right(half + 1);
     for (int mask = 0; mask < (1 << half); ++mask) {
@@ -26,7 +28,7 @@ public:
       right[sz].push_back(r);
     }
 
-    // binary search for the right part
+    // prepare binary search for the right part
     for (int sz = 0; sz < half + 1; ++sz) {
       sort(right[sz].begin(), right[sz].end());
     }
