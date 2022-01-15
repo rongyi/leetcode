@@ -57,6 +57,9 @@ private:
           return false;
         }
         hypen_count++;
+        if (hypen_count >= 2) {
+          return false;
+        }
       } else if (s[i] == '!' || s[i] == ',' || s[i] == '.') {
         if (i != sz - 1) {
           return false;
@@ -64,6 +67,6 @@ private:
       }
     }
 
-    return hypen_count < 2;
+    return true;
   }
 };
