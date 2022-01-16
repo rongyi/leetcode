@@ -31,6 +31,7 @@ public:
             max(total_time[next_course],
                 total_time[cur_course] + course_time[next_course]);
         --indegree[next_course];
+        // only when no prerequisite, can we push them to visit list
         if (indegree[next_course] == 0) {
           q.push(next_course);
         }
