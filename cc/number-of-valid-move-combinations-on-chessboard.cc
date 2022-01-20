@@ -58,6 +58,7 @@ public:
           ret += countCombinations(pieces, pos, cur + 1);
         }
         // this is the steps cur get through (nx, ny)
+        // transitional number of steps
         b[cur][nx][ny] = step;
       }
 
