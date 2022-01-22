@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/convert-1d-array-into-2d-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

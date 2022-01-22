@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/display-table-of-food-orders-in-a-restaurant/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

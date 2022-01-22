@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/minimum-window-subsequence
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

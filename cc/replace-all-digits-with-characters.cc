@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/replace-all-digits-with-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

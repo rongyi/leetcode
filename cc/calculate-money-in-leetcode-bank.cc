@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/calculate-money-in-leetcode-bank/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

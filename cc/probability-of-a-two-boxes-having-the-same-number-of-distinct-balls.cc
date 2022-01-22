@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

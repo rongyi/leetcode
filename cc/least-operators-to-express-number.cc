@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/least-operators-to-express-number/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

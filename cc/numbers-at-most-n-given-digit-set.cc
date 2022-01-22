@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/numbers-at-most-n-given-digit-set/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

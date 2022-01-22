@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/delete-duplicate-folders-in-system/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 private:

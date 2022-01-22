@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/valid-sudoku/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool isValidSudoku(vector<vector<char>> &board) {

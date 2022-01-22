@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/two-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<int> twoSum(vector<int> &nums, int target) {

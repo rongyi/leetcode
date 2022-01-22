@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/non-negative-integers-without-consecutive-ones/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

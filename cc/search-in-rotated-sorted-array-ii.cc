@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/leetcode/search-in-rotated-sorted-array-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

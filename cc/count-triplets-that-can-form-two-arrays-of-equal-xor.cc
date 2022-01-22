@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

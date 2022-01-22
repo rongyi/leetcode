@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

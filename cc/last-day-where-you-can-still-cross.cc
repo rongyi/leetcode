@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/last-day-where-you-can-still-cross/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

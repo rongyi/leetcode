@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/cracking-the-safe/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

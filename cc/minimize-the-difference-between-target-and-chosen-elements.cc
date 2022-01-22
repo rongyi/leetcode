@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimize-the-difference-between-target-and-chosen-elements/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

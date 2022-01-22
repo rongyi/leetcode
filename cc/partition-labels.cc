@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/partition-labels/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

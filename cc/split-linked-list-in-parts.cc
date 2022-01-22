@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/split-linked-list-in-parts/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

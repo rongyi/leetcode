@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

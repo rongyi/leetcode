@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-score-triangulation-of-polygon/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

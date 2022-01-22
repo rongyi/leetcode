@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-subsequence-of-distinct-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

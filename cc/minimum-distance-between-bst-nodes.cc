@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-distance-between-bst-nodes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // * Definition for a binary tree node.
 struct TreeNode {

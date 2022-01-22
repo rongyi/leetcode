@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sum-of-digits-of-string-after-convert/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/masking-personal-information/description/
-#include "xxx.h"
+#include "xxx.hpp"
 #include <regex>
 
 class Solution {

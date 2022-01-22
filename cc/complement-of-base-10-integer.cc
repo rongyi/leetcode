@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/complement-of-base-10-integer/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

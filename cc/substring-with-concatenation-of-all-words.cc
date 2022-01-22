@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/substring-with-concatenation-of-all-words/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<int> findSubstring(string s, vector<string> &words) {

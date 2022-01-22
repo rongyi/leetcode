@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/copy-list-with-random-pointer/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for singly-linked list with a random pointer.

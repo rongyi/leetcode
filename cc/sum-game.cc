@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sum-game/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

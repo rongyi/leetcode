@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/form-array-by-concatenating-subarrays-of-another-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-circular-deque/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MyCircularDeque {
 public:

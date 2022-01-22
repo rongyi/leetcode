@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/most-common-word/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/determine-if-two-strings-are-close/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

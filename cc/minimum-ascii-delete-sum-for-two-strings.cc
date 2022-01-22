@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

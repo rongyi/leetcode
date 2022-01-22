@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-shortest-superstring/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

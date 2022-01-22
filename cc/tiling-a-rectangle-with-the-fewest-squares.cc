@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-palindromic-subsequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

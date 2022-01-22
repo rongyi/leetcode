@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-adjacent-swaps-for-k-consecutive-ones/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-valid-parentheses/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int longestValidParentheses(string s) {

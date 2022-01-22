@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-increment-to-make-array-unique/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

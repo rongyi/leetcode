@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/data-stream-as-disjoint-intervals/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 
 class SummaryRanges {

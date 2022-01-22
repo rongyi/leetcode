@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/parallel-courses-iii/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

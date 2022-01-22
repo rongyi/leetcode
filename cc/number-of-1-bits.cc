@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-1-bits/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int hammingWeight(uint32_t n) {

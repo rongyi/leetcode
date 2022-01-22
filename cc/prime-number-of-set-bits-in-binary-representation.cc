@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/prime-number-of-set-bits-in-binary-representation
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

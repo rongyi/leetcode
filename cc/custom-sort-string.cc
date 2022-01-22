@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/custom-sort-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

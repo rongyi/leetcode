@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-number-of-words-you-can-type/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/middle-of-the-linked-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 /**
  * Definition for singly-linked list.
  * struct ListNode {

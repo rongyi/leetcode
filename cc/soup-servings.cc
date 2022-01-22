@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/soup-servings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   double soupServings(int N) {

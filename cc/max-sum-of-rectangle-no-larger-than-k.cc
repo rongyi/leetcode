@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

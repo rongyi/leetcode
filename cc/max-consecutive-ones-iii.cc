@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/max-consecutive-ones-iii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

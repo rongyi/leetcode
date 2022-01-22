@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/first-missing-positive/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

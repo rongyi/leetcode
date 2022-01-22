@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/complete-binary-tree-inserter/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class CBTInserter {
 public:

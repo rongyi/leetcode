@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-swaps-to-make-strings-equal/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

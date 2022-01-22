@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-sub-arrays-with-odd-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

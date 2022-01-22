@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

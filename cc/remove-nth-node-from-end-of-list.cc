@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

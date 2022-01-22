@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/find-array-given-subset-sums/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // https://leetcode.com/problems/find-array-given-subset-sums/discuss/1437739/Recursive-Disambiguation
 class Solution {

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

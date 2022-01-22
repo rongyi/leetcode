@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/pizza-with-3n-slices/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

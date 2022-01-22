@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-speed-to-arrive-on-time/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

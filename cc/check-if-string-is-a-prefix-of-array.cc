@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/check-if-string-is-a-prefix-of-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

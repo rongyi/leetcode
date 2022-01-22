@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/kth-largest-element-in-a-stream/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class KthLargest {
 public:

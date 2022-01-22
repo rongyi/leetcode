@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-student-that-will-replace-the-chalk/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

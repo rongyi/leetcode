@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/all-oone-data-structure/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class AllOne {
 public:

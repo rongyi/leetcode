@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/delete-characters-to-make-fancy-string/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

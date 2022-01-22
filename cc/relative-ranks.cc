@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/relative-ranks/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 struct mycompare {
   bool operator()(pair<int, int> &p1, pair<int, int> &p2) {

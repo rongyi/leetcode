@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longer-contiguous-segments-of-ones-than-zeros/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

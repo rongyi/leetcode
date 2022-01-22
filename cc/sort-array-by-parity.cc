@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sort-array-by-parity/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<int> sortArrayByParity(vector<int> &A) {

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/water-and-jug-problem/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

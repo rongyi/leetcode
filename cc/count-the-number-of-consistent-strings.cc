@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-the-number-of-consistent-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

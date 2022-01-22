@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/domino-and-tromino-tiling/description/
 // ../image/domino.png
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   // dp[n] = dp[n-1] + dp[n-2] + 2 * (dp[n-3] + ... + dp[0])

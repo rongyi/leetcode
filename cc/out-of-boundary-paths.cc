@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/out-of-boundary-paths/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

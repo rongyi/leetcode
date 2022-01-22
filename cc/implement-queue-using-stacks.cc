@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/implement-queue-using-stacks/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MyQueue {
 public:

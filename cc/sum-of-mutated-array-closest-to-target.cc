@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-mutated-array-closest-to-target/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

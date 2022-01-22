@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/ways-to-make-a-fair-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

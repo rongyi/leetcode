@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

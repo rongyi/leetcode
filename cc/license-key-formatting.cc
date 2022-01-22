@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/license-key-formatting/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

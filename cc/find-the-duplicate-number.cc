@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-duplicate-number/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

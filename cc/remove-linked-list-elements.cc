@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-linked-list-elements/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

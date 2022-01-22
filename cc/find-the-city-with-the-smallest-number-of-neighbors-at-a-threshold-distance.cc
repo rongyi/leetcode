@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

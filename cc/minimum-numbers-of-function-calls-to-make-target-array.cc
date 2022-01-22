@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

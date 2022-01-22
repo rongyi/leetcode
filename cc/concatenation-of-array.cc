@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/concatenation-of-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // what a shabi question!
 class Solution {

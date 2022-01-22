@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/next-permutation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   void nextPermutation(vector<int> &nums) {

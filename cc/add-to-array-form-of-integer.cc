@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/add-to-array-form-of-integer/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

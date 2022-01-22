@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

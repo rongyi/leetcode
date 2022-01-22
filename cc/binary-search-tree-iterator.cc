@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-search-tree-iterator/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class BSTIterator {
 public:

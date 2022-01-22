@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

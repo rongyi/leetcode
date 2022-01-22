@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimize-maximum-pair-sum-in-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

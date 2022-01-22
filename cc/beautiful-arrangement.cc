@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/beautiful-arrangement/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

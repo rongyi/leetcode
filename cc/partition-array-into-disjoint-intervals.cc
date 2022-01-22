@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/partition-array-into-disjoint-intervals/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

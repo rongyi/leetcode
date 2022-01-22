@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/seat-reservation-manager/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class SeatManager {
 public:

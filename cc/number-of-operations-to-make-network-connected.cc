@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-operations-to-make-network-connected/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

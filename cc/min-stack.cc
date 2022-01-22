@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/min-stack/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MinStack {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-visible-people-in-a-queue/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

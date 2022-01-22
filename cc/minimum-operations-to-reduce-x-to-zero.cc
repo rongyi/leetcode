@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

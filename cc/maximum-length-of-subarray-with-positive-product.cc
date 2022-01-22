@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int getMaxLen(vector<int> &nums) {

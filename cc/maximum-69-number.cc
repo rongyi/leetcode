@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-69-number/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

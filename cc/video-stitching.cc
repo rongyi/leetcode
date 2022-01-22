@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/video-stitching/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

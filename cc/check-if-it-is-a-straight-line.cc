@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-it-is-a-straight-line/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimize-hamming-distance-after-swap-operations/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

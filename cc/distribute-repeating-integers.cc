@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/distribute-repeating-integers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/unique-number-of-occurrences/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
   using pii = pair<int, int>;

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/detect-squares/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class DetectSquares {
 public:

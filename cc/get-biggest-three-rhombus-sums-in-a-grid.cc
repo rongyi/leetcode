@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/get-biggest-three-rhombus-sums-in-a-grid/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

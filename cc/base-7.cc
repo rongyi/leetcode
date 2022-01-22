@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/base-7/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

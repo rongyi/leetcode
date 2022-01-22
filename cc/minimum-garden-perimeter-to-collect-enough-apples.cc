@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-garden-perimeter-to-collect-enough-apples/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

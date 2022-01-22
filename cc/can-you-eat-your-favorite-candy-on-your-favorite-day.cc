@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

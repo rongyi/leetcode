@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/cat-and-mouse-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

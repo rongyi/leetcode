@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

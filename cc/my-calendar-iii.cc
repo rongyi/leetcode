@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/my-calendar-iii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MyCalendarThree {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximize-distance-to-closest-person/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

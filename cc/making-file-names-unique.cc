@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/making-file-names-unique/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

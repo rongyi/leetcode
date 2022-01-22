@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/fancy-sequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Fancy {
 public:

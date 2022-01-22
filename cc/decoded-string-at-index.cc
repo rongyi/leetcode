@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/decoded-string-at-index/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

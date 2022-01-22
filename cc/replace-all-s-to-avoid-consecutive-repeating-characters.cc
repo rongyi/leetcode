@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

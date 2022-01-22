@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/valid-anagram/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool isAnagram(string s, string t) {

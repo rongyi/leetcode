@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

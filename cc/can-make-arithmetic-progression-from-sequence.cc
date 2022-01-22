@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

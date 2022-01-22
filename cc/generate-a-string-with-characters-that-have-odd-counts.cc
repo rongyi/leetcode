@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

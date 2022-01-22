@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/walking-robot-simulation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-square-submatrices-with-all-ones/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

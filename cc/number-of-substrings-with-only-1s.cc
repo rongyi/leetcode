@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-substrings-with-only-1s/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

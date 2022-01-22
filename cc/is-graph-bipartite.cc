@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/is-graph-bipartite/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

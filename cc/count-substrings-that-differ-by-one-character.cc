@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-substrings-that-differ-by-one-character/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

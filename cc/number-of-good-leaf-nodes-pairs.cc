@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-good-leaf-nodes-pairs/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a binary tree node.

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/running-sum-of-1d-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

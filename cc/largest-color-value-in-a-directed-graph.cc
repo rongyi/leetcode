@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-color-value-in-a-directed-graph/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

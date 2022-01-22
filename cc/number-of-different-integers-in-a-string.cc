@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-different-integers-in-a-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

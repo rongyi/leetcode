@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-tree-from-leaf-values/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

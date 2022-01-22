@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/valid-tic-tac-toe-state/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool validTicTacToe(vector<string> &board) {

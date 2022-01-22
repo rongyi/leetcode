@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-an-ordered-stream/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // 喷的很惨
 // 看描述完全不知道在讲啥，看那张动图

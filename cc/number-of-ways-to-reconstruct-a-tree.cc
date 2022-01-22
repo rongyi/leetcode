@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-to-reconstruct-a-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

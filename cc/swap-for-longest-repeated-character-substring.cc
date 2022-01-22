@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/swap-for-longest-repeated-character-substring/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

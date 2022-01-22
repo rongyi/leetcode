@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/kth-smallest-product-of-two-sorted-arrays/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // for you to understand this question
 class SolutionTTL {

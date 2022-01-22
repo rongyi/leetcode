@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-operations-to-make-a-uni-value-grid/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int minOperations(vector<vector<int>> &grid, int x) {

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-front-middle-back-queue/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class FrontMiddleBackQueue {
 public:

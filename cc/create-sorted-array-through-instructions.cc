@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/create-sorted-array-through-instructions/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

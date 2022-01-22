@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/tuple-with-same-product/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

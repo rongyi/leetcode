@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

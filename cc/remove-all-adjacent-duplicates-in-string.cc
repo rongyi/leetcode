@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

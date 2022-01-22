@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-distance-to-the-target-element/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

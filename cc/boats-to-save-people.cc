@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/boats-to-save-people/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

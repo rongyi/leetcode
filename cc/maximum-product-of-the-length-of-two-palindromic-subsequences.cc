@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-subsequences/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

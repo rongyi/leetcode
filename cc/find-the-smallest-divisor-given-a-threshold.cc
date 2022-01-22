@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,4 +1,4 @@
-#include "xxx.h"
+#include "xxx.hpp"
 
 uint32_t toint(string &ip) {
   uint32_t sum = 0;

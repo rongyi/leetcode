@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/adding-two-negabinary-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

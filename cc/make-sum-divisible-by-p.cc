@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/make-sum-divisible-by-p/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-pairs-of-strings-with-concatenation-equal-to-target/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

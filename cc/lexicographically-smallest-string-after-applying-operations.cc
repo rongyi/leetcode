@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/lexicographically-smallest-string-after-applying-operations/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 private:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/critical-connections-in-a-network/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

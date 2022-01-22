@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/validate-binary-tree-nodes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

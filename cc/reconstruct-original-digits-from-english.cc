@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/reconstruct-original-digits-from-english/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

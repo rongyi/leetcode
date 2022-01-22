@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/finding-mk-average/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MKAverage {
 public:

@@ -1,6 +1,6 @@
 // http://www.lintcode.com/zh-cn/problem/projection-area-of-3d-shapes
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

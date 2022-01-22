@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-length-of-repeated-subarray/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

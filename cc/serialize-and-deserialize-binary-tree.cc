@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a binary tree node.

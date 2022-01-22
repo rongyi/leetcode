@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sudoku-solver/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   void solveSudoku(vector<vector<char>> &board) { dfs(board, 0, 0); }

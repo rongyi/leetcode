@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-coins-you-can-get/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

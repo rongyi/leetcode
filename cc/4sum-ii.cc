@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/4sum-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

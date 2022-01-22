@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/trapping-rain-water/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

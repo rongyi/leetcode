@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

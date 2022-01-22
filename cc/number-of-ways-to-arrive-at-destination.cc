@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/
-#include "xxx.h"
+#include "xxx.hpp"
 
 using pll = pair<long long, long long>;
 using ll = long long;

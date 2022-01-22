@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

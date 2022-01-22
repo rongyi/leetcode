@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-watch/description/
-#include "xxx.h"
+#include "xxx.hpp"
 // page 9 start: 2019年01月18日 星期五 18时59分59秒
 
 class Solution {

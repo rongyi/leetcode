@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-authentication-manager/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class AuthenticationManager {
 public:

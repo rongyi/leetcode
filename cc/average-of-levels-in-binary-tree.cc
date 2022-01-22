@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/average-of-levels-in-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

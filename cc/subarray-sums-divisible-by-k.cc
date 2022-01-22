@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/subarray-sums-divisible-by-k/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

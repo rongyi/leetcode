@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

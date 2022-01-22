@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-univalue-path/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

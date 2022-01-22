@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-duplicate-file-in-system/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

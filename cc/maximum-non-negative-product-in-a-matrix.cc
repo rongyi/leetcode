@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

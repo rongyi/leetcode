@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/magnetic-force-between-two-balls/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

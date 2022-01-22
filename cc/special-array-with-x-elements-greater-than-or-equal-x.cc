@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

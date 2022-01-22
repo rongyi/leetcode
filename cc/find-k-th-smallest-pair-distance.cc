@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/find-k-th-smallest-pair-distance/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   // return the k-th smallest distance among all the pairs

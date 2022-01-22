@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

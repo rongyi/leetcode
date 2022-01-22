@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/build-array-from-permutation/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

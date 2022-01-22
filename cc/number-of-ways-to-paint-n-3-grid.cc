@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

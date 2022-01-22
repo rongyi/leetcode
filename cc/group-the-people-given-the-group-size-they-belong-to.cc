@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

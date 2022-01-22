@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-word-in-dictionary-through-deleting/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

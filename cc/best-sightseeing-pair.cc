@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/best-sightseeing-pair/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

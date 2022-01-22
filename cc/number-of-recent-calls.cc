@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-recent-calls/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // 喷的特别惨的一道题
 class RecentCounter {

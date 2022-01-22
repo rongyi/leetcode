@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/throne-inheritance/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class ThroneInheritance {
 public:

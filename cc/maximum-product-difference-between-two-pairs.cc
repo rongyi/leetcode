@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-product-difference-between-two-pairs/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

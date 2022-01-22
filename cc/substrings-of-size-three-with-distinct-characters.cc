@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

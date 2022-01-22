@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/the-time-when-the-network-becomes-idle/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

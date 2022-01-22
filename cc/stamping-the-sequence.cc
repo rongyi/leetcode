@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/stamping-the-sequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

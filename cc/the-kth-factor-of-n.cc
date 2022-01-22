@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/the-kth-factor-of-n/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

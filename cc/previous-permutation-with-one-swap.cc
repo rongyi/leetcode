@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/previous-permutation-with-one-swap/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

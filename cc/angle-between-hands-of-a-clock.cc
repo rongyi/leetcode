@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/angle-between-hands-of-a-clock/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

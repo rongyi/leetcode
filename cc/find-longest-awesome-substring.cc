@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-longest-awesome-substring/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

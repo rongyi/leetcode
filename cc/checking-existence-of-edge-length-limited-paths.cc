@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<bool> distanceLimitedPathsExist(int n, vector<vector<int>> &es,

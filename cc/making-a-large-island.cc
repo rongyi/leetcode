@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/making-a-large-island/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

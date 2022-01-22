@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

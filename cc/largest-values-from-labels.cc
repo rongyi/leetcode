@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-values-from-labels/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

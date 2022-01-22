@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/array-with-elements-not-equal-to-average-of-neighbors/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<int> rearrangeArray(vector<int> &nums) {

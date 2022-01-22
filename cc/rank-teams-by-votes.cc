@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/rank-teams-by-votes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

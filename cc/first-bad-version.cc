@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/first-bad-version/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // Forward declaration of isBadVersion API.
 bool isBadVersion(int version);

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/unique-binary-search-trees/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int numTrees(int n) {

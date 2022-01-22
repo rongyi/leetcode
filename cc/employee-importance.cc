@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/employee-importance/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // Employee info
 class Employee {

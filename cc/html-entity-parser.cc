@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/html-entity-parser/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

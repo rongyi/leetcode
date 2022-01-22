@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/matrix-diagonal-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

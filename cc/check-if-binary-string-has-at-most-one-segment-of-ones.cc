@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-binary-string-has-at-most-one-segment-of-ones/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

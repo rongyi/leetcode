@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/long-pressed-name/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

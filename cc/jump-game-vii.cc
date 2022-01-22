@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/jump-game-vii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/surface-area-of-3d-shapes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

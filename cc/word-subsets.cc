@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/word-subsets/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

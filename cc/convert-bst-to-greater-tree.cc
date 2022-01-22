@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/convert-bst-to-greater-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

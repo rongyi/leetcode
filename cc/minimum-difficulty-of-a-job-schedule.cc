@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   // minimum sum partion problem

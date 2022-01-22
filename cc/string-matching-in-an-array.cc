@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/string-matching-in-an-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-string-with-a-given-numeric-value/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

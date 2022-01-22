@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   // 是连续的，所以看中间那块能有多短

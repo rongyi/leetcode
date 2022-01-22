@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/where-will-the-ball-fall/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

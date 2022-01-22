@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/stickers-to-spell-word/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

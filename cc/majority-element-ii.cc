@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/majority-element-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

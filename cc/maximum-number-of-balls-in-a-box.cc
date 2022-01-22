@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-balls-in-a-box/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/decrease-elements-to-make-array-zigzag/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

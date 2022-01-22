@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/max-chunks-to-make-sorted/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int maxChunksToSorted(vector<int> &arr) {

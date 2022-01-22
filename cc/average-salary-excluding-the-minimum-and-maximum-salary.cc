@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

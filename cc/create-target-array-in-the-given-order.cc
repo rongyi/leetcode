@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/create-target-array-in-the-given-order/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

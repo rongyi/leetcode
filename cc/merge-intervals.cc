@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/merge-intervals/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 
 class Solution {

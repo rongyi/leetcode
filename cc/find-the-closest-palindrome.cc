@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-closest-palindrome/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

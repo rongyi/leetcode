@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-degree-of-a-connected-trio-in-a-graph/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

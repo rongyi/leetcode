@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-servers-that-communicate/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

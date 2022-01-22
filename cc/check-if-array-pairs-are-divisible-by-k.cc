@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

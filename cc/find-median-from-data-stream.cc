@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-median-from-data-stream/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MedianFinder {
 public:

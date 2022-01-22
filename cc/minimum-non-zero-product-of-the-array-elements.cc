@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-non-zero-product-of-the-array-elements/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // https://leetcode.com/problems/minimum-non-zero-product-of-the-array-elements/discuss/1403913/Python-math-oneliner-with-proof-explained
 class Solution {

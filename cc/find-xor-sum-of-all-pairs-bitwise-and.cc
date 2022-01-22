@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-xor-sum-of-all-pairs-bitwise-and/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

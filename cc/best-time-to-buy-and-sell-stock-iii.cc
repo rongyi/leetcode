@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

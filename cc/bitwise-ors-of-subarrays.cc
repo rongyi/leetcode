@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/bitwise-ors-of-subarrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

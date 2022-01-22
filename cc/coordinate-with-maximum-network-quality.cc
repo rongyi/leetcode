@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/coordinate-with-maximum-network-quality/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

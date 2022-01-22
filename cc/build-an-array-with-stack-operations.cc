@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/build-an-array-with-stack-operations/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

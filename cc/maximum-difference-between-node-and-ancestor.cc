@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

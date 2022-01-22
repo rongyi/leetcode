@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

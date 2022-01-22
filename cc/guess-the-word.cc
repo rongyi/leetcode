@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/guess-the-word/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * // This is the Master's API interface.

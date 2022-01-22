@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-genetic-difference-query/
-#include "xxx.h"
+#include "xxx.hpp"
 
 struct TrieNode {
   TrieNode *child_[2] = {};

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/dota2-senate/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

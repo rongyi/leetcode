@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-students-doing-homework-at-a-given-time/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

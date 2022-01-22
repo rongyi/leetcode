@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-space-wasted-from-packaging/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

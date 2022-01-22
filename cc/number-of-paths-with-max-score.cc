@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-paths-with-max-score/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-groups-getting-fresh-donuts/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

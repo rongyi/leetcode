@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/subdomain-visit-count/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-segments-in-a-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

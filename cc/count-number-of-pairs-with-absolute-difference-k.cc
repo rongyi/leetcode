@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/student-attendance-record-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/perfect-rectangle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 struct pairhash { // double hash function for pair key
   template <typename T, typename U>

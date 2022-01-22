@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

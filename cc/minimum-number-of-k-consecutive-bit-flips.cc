@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

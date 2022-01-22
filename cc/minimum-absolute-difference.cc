@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-absolute-difference/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

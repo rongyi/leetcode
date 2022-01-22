@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/second-largest-digit-in-a-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

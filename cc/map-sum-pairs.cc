@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/map-sum-pairs/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MapSum {
 public:

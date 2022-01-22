@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

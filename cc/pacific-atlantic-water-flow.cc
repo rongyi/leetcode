@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/pacific-atlantic-water-flow/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // TODO: ADD cache for success node
 class Solution {

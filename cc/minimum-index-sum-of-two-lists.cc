@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-index-sum-of-two-lists/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

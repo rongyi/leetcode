@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/change-minimum-characters-to-satisfy-one-of-three-conditions/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

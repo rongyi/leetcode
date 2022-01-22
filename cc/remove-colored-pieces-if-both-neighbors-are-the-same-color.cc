@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

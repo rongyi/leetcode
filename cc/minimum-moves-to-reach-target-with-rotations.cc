@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-moves-to-reach-target-with-rotations/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

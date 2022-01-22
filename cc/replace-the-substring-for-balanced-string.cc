@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/replace-the-substring-for-balanced-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-profit-in-job-scheduling/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

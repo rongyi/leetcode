@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

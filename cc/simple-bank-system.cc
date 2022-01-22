@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/simple-bank-system/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Bank {
 public:

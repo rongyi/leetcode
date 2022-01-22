@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/ways-to-split-array-into-three-subarrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

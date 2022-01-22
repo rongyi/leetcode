@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

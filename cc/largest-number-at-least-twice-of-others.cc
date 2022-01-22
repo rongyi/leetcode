@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-number-at-least-twice-of-others/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

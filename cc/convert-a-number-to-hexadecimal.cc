@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/convert-a-number-to-hexadecimal/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

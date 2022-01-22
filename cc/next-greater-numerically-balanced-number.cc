@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/next-greater-numerically-balanced-number/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

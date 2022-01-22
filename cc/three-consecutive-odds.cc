@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/three-consecutive-odds/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

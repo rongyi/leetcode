@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-nodes-with-the-highest-score/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 

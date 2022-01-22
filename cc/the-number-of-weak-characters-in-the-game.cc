@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

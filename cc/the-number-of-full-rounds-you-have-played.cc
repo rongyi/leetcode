@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/the-number-of-full-rounds-you-have-played/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

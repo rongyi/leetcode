@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/merge-strings-alternately/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

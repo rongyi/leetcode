@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-twitter/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Twitter {
 public:

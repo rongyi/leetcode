@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

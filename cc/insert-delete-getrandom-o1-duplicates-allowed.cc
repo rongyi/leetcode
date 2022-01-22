@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class RandomizedCollection {
 public:

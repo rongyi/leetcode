@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

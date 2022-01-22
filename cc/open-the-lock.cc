@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/open-the-lock/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

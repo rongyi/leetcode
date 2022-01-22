@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/xor-queries-of-a-subarray/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

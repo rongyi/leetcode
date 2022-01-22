@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-good-ways-to-split-a-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

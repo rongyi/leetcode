@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-number-of-points-with-cost/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   long long maxPoints(vector<vector<int>> &points) {

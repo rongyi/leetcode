@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/path-with-maximum-gold/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

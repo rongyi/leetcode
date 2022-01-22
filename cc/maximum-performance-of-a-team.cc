@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-performance-of-a-team/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

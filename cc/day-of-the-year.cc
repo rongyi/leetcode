@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/day-of-the-year/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/destination-city/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

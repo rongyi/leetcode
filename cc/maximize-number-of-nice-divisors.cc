@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximize-number-of-nice-divisors/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
   using ll = long long;

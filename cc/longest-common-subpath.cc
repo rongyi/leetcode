@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/longest-common-subpath/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // So, the key point here is to check whether there is some common substrings
 // with length middle. A usual way is to adopt Hash. For my preference, I would

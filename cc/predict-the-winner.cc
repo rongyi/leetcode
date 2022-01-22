@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/predict-the-winner/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/word-break/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool wordBreak(string s, vector<string> &wordDict) {

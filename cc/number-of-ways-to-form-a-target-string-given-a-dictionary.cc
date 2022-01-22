@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

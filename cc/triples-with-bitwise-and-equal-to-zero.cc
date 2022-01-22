@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

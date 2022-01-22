@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/richest-customer-wealth/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

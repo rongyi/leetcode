@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-area-rectangle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

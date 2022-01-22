@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/eliminate-maximum-number-of-monsters/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

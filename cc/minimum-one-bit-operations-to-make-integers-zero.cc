@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/distinct-subsequences/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

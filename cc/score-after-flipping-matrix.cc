@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/score-after-flipping-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

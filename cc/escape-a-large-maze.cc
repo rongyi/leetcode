@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/escape-a-large-maze/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

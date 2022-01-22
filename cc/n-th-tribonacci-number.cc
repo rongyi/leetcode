@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/n-th-tribonacci-number/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

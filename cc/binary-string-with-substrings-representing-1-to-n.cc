@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-string-with-substrings-representing-1-to-n/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

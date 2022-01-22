@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/intersection-of-two-arrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

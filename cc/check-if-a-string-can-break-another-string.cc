@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-a-string-can-break-another-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-elements-to-add-to-form-a-given-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

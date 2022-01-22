@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/split-a-string-in-balanced-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

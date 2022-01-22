@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/moving-stones-until-consecutive-ii/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

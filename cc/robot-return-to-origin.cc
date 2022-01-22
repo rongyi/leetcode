@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/robot-return-to-origin/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

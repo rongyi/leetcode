@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/nth-digit/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

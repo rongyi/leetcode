@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/valid-parenthesis-string/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool checkValidString(string s) {

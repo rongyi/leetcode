@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-digit-one/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/rotate-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for singly-linked list.

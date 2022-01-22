@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/rectangle-overla/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool isRectangleOverlap(vector<int> &rec1, vector<int> &rec2) {

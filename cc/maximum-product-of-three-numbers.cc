@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-product-of-three-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

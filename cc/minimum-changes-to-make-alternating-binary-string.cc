@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-changes-to-make-alternating-binary-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

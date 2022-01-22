@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   // 出度入度来考虑

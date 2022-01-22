@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/snapshot-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class SnapshotArray {
 public:

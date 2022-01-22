@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-unique-good-subsequences/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

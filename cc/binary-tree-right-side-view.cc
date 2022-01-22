@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-tree-right-side-view/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

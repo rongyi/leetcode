@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

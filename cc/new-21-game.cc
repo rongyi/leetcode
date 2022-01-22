@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/new-21-game/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // https://leetcode.com/problems/new-21-game/discuss/132334/One-Pass-DP-O(N)
 class Solution {

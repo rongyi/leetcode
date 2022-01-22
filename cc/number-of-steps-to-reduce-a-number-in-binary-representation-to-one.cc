@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

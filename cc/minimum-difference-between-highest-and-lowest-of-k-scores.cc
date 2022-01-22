@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

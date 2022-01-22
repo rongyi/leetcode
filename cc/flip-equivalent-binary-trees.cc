@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/flip-equivalent-binary-trees/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

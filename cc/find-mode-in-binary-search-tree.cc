@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-mode-in-binary-search-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/kth-distinct-string-in-an-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

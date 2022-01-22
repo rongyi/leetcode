@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-index-with-equal-value/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

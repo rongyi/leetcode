@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/regions-cut-by-slashes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

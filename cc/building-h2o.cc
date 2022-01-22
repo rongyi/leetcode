@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/building-h2o/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 
 class H2O {

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/longest-subsequence-repeated-k-times/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   string longestSubsequenceRepeatedK(string &s, int k) {

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

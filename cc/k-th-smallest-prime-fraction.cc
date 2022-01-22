@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/k-th-smallest-prime-fraction/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

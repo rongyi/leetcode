@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/split-array-into-consecutive-subsequences/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/find-original-array-from-doubled-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

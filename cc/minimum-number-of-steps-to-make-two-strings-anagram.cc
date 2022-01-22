@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

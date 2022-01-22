@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-mountain-in-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

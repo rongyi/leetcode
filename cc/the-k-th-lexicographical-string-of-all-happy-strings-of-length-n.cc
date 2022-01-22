@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/the-k-th-lexicographical-string-of-all-happy-strings-of-length-n/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

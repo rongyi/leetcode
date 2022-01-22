@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/pascals-triangle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

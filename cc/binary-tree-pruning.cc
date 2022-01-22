@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/binary-tree-pruning/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

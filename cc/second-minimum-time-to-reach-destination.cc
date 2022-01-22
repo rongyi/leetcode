@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/second-minimum-time-to-reach-destination/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

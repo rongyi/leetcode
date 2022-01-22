@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximize-palindrome-length-from-subsequences/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

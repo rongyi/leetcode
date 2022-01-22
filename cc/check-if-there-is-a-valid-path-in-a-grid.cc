@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

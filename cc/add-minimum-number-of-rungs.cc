@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/add-minimum-number-of-rungs/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int addRungs(vector<int> &rungs, int dist) {

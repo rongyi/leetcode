@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-word-equals-summation-of-two-words/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

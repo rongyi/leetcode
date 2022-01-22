@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-score-from-removing-substrings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

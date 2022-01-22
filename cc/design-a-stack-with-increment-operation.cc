@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-a-stack-with-increment-operation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class CustomStack {
 public:

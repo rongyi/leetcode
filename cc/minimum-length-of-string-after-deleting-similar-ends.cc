@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

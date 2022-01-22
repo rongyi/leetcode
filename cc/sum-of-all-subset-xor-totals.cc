@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-all-subset-xor-totals/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

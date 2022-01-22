@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a binary tree node.

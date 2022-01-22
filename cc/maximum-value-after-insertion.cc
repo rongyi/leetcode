@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-value-after-insertion/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

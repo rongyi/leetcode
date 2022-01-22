@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-good-nodes-in-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

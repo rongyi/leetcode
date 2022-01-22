@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/add-two-numbers-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

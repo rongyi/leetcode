@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/implement-rand10-using-rand7/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // The rand7() API is already defined for you.
 // int rand7();

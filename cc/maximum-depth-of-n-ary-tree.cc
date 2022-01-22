@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /*
 // Definition for a Node.

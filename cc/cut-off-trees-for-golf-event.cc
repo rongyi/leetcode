@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/cut-off-trees-for-golf-event/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

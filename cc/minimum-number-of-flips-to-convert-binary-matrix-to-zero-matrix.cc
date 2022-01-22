@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/guess-number-higher-or-lower-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

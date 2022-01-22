@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

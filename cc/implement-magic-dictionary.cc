@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/implement-magic-dictionary/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MagicDictionary {
 public:

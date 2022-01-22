@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

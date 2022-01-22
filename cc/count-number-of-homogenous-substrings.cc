@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-number-of-homogenous-substrings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

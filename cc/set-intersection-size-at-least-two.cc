@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/set-intersection-size-at-least-two/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

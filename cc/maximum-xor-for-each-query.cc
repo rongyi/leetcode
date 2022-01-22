@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-xor-for-each-query/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

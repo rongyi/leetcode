@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 
 class Solution {

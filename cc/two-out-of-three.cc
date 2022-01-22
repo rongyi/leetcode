@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/two-out-of-three/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<int> twoOutOfThree(vector<int> &nums1, vector<int> &nums2,

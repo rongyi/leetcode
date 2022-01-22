@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/my-calendar-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MyCalendar {
   vector<pair<int, int>> books;

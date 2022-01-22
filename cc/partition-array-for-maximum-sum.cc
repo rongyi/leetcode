@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/partition-array-for-maximum-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

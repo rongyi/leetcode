@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sort-characters-by-frequency/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

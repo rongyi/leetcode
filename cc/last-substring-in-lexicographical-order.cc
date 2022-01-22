@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/last-substring-in-lexicographical-order/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

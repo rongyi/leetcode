@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/smallest-missing-genetic-value-in-each-subtree/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

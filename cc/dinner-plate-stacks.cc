@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/dinner-plate-stacks/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class DinnerPlates {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/short-encoding-of-words/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

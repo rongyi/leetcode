@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/reverse-prefix-of-word/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

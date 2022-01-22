@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/range-addition-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/find-the-middle-index-in-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

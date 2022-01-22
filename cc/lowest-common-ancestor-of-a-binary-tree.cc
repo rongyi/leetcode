@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

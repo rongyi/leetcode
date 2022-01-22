@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/swim-in-rising-water/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

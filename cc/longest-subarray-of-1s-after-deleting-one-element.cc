@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

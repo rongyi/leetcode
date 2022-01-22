@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/range-sum-query-mutable/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class NumArray {
 public:

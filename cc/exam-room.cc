@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/exam-room/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class ExamRoom {
 public:

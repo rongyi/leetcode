@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-1-bordered-square/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

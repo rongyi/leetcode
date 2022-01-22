@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/bulls-and-cows/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

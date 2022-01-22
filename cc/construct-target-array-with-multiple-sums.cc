@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/construct-target-array-with-multiple-sums/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

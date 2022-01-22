@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/random-pick-with-weight/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

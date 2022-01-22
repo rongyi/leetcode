@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-ways-to-make-array-with-product/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

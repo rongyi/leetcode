@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-string-with-swaps/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

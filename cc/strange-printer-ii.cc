@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/strange-printer-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

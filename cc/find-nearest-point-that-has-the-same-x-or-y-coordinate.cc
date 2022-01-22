@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

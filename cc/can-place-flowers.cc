@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/can-place-flowers/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool canPlaceFlowers(vector<int> &flowerbed, int target) {

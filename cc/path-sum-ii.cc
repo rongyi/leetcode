@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/path-sum-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

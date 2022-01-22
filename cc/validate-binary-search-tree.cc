@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/validate-binary-search-tree/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a binary tree node.

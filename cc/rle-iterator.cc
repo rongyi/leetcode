@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/rle-iterator/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class RLEIterator {
 public:

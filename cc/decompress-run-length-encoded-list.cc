@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/decompress-run-length-encoded-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

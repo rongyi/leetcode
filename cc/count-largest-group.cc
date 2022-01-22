@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-largest-group/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // clang-format off
 // Given an integer n. Each number from 1 to n is grouped according to the sum of its digits.

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/leetcode/scramble-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

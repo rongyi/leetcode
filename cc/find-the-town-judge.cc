@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-town-judge/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

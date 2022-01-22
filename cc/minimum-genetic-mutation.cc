@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-genetic-mutation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

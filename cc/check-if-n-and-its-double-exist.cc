@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-n-and-its-double-exist/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

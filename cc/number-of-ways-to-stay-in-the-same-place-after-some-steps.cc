@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

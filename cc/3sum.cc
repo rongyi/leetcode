@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/3sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<vector<int>> threeSum(vector<int> &nums) {

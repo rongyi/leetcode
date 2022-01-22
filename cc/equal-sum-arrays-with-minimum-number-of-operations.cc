@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/equal-sum-arrays-with-minimum-number-of-operations/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

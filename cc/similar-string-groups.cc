@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/similar-string-groups/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 namespace lc {
 class disjoint_set {

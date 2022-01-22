@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-hashmap/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MyHashMap {
 public:

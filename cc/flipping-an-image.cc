@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/flipping-an-image/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

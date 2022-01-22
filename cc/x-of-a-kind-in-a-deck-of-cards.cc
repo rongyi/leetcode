@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

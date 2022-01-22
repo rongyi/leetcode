@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/add-two-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for singly-linked list.

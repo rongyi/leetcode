@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/filling-bookcase-shelves/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

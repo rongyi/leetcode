@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for singly-linked list.

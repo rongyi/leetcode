@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/to-lower-case/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

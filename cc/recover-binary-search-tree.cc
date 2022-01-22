@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/recover-binary-search-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a binary tree node.

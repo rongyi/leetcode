@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/best-position-for-a-service-centre/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

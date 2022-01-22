@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/the-number-of-good-subsets/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

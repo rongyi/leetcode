@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/all-elements-in-two-binary-search-trees/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

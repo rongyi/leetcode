@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/available-captures-for-rook/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

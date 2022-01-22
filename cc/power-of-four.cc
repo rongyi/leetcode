@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/power-of-four/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

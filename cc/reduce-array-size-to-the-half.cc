@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/reduce-array-size-to-the-half/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

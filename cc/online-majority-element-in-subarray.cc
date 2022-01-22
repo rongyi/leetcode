@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/online-majority-element-in-subarray/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MajorityChecker {
 public:

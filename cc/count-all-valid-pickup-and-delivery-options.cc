@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

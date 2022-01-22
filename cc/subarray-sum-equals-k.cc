@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/subarray-sum-equals-k/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

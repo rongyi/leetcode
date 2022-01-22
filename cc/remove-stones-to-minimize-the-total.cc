@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/remove-stones-to-minimize-the-total/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

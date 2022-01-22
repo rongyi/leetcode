@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

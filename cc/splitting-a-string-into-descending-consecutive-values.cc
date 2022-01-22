@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/splitting-a-string-into-descending-consecutive-values/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

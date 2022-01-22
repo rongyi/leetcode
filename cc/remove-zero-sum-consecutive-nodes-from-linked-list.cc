@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

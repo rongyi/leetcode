@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-pairs-of-interchangeable-rectangles/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

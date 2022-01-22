@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

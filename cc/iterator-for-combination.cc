@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/iterator-for-combination/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class CombinationIterator {
 public:

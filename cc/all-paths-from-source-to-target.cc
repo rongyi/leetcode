@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/all-paths-from-source-to-target/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-two-integers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

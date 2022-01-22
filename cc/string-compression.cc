@@ -1,5 +1,5 @@
 // http://www.lintcode.com/zh-cn/problem/string-compression
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

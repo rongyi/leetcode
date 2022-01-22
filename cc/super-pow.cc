@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/super-pow/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

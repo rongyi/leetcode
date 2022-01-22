@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/kth-ancestor-of-a-tree-node/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class TreeAncestor {
 public:

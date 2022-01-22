@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-valid-words-for-each-puzzle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

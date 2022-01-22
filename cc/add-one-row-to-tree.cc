@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/add-one-row-to-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   TreeNode *addOneRow(TreeNode *root, int v, int d) {

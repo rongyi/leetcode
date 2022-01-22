@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

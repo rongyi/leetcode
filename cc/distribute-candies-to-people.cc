@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/distribute-candies-to-people/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/replace-words/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

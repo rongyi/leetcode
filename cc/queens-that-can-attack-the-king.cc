@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/queens-that-can-attack-the-king/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

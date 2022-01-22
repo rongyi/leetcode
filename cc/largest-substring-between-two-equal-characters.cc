@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-substring-between-two-equal-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

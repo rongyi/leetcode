@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/guess-number-higher-or-lower/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // Forward declaration of guess API.
 // @param num, your guess

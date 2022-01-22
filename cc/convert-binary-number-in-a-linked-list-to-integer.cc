@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

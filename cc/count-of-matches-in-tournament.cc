@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-of-matches-in-tournament/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

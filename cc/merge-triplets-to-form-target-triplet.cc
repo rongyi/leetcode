@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/merge-triplets-to-form-target-triplet/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

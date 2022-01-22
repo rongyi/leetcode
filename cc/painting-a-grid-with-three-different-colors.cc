@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/painting-a-grid-with-three-different-colors/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

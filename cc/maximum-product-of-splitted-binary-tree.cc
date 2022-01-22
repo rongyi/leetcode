@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

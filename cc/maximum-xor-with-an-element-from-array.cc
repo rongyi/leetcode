@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-xor-with-an-element-from-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 private:

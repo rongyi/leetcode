@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/leaf-similar-trees/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/string-without-aaa-or-bbb/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

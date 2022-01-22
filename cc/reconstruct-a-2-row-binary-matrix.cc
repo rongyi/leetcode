@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/reconstruct-a-2-row-binary-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

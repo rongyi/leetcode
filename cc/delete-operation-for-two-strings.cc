@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/delete-operation-for-two-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

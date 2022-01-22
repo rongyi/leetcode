@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/freedom-trail/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

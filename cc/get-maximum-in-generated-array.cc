@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/get-maximum-in-generated-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

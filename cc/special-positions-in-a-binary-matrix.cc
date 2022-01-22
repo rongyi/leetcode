@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/special-positions-in-a-binary-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

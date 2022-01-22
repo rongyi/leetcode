@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/leetcode/merge-k-sorted-lists/description/
-#include "xxx.h"
+#include "xxx.hpp"
 /**
  * Definition for singly-linked list.
  * struct ListNode {

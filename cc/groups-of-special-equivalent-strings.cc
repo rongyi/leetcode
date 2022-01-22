@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/groups-of-special-equivalent-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

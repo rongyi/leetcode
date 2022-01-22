@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/frog-position-after-t-seconds/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

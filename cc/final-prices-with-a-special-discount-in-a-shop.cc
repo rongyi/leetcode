@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

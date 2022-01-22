@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-compatibility-score-sum/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

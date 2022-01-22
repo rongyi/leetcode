@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/squares-of-a-sorted-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

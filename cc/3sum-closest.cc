@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/3sum-closest/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

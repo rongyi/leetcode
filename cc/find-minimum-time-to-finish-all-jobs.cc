@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-minimum-time-to-finish-all-jobs/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

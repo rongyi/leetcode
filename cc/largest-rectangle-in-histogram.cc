@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-rectangle-in-histogram/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

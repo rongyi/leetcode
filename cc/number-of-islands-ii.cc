@@ -1,5 +1,5 @@
 // https://www.lintcode.com/problem/number-of-islands-ii/description
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a point.

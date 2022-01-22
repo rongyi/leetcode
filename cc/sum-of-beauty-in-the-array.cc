@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sum-of-beauty-in-the-array/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

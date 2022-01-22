@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sliding-puzzle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

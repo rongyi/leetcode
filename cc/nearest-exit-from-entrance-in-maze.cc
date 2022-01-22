@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/
-#include "xxx.h"
+#include "xxx.hpp"
 
 using pii = pair<int, int>;
 class Solution {

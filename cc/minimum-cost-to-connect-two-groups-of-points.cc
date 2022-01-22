@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int connectTwoGroups(vector<vector<int>> &cost) {

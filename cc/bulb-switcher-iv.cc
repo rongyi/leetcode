@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/bulb-switcher-iv/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

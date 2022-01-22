@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-height-by-stacking-cuboids/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

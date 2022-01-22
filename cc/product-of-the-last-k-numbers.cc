@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/product-of-the-last-k-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class ProductOfNumbers {
 public:

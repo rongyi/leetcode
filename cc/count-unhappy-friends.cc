@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-unhappy-friends/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

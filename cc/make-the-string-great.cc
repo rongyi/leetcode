@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/make-the-string-great/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

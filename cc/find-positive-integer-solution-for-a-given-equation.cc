@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /*
  * // This is the custom function interface.

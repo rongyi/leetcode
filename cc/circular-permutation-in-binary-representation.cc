@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/circular-permutation-in-binary-representation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

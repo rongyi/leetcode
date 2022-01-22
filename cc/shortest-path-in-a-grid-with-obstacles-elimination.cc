@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

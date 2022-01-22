@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-even-numbers-after-queries/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

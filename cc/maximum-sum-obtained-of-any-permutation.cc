@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

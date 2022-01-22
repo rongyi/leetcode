@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-matching-subsequences/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int numMatchingSubseq(string S, vector<string>& words) {

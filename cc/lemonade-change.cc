@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/lemonade-change/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-for-tickets/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

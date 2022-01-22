@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

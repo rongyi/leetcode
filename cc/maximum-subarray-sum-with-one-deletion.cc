@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

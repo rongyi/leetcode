@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-initial-energy-to-finish-tasks/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

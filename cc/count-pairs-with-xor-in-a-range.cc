@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-pairs-with-xor-in-a-range/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

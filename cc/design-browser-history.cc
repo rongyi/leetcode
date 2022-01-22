@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-browser-history/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class BrowserHistory {
 public:

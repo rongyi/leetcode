@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/stream-of-characters/description/
 #include "cstring"
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Trie {
 public:

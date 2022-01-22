@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

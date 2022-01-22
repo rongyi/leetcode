@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/teemo-attacking/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

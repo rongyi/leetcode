@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-good-triplets/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

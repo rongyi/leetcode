@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-ways-to-build-rooms-in-an-ant-colony/
-#include "xxx.h"
+#include "xxx.hpp"
 using ll = long long;
 class Solution {
 public:

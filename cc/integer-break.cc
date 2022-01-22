@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/integer-break/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-numbers-with-unique-digits/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

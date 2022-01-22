@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

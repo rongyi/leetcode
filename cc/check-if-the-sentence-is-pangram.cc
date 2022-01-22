@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-the-sentence-is-pangram/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

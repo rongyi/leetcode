@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/check-if-move-is-legal/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

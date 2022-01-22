@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-word-is-valid-after-substitutions/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

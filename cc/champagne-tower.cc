@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/champagne-tower/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   // dp[i][j] 表示i层第j个酒杯摊到的酒杯

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

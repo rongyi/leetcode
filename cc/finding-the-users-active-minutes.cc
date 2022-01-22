@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/finding-the-users-active-minutes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

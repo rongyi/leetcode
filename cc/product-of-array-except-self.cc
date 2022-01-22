@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/product-of-array-except-self/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

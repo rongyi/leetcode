@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/falling-squares/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 private:

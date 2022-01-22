@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/keys-and-rooms/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

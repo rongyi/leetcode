@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

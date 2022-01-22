@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-valid-move-combinations-on-chessboard/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // dissed problem!
 // https://leetcode.com/problems/number-of-valid-move-combinations-on-chessboard/discuss/1549577/Dull-and-Painful

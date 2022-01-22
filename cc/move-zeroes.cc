@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/move-zeroes/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

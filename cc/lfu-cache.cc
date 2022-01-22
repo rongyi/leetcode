@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/lfu-cache/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class LFUCache {
 public:

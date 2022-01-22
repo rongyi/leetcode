@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/diagonal-traverse-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

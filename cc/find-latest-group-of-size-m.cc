@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-latest-group-of-size-m/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

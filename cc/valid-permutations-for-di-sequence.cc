@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/valid-permutations-for-di-sequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

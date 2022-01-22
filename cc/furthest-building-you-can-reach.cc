@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/furthest-building-you-can-reach/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

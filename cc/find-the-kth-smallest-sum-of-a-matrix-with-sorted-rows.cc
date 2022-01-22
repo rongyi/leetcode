@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

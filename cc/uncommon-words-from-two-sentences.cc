@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/uncommon-words-from-two-sentences/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

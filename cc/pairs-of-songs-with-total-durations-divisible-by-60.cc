@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

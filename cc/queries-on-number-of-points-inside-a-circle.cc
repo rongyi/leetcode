@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

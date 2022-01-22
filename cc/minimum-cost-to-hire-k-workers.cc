@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

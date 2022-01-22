@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

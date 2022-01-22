@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-subtrees-with-max-distance-between-cities/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

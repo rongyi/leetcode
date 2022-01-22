@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-distance-value-between-two-arrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

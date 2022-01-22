@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/min-cost-climbing-stairs/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

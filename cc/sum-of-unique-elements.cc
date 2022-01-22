@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-unique-elements/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

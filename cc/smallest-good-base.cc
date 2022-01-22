@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-good-base/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

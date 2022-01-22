@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/get-the-maximum-score/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

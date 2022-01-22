@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-distances-in-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

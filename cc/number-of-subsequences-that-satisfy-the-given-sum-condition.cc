@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

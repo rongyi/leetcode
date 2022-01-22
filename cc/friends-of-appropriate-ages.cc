@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/friends-of-appropriate-ages/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

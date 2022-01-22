@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/remove-all-occurrences-of-a-substring/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

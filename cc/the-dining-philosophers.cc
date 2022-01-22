@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/the-dining-philosophers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class DiningPhilosophers {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/solve-the-equation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
   struct Equation {

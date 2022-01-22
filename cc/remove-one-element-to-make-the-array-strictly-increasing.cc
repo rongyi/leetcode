@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-one-element-to-make-the-array-strictly-increasing/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool canBeIncreasing(vector<int> &nums) {

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/the-score-of-students-solving-math-expression
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

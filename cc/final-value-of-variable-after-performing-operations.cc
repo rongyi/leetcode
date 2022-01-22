@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

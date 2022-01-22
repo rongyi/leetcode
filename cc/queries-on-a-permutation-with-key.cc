@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/queries-on-a-permutation-with-key/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // 喷的很惨
 class Solution {

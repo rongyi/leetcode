@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/get-watched-videos-by-your-friends/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-multiple-of-three/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

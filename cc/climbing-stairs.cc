@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/climbing-stairs/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

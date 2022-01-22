@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/coloring-a-border/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

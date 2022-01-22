@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-distance-to-a-character/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

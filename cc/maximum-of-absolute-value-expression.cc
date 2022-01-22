@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-of-absolute-value-expression/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

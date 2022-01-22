@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/stone-game-vi/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

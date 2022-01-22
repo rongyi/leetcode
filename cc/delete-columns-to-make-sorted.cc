@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/delete-columns-to-make-sorted/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

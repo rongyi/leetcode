@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/number-of-valid-words-in-a-sentence/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

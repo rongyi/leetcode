@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

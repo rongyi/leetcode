@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-kth-bit-in-nth-binary-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

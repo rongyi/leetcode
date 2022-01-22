@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int maxNumEdgesToRemove(int n, vector<vector<int>> &edges) {

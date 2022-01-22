@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

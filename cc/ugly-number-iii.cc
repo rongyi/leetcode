@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/ugly-number-iii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int nthUglyNumber(int k, int A, int B, int C) {

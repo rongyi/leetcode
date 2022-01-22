@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-xor-sum-of-two-arrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

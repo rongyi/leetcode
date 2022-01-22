@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/mean-of-array-after-removing-some-elements/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

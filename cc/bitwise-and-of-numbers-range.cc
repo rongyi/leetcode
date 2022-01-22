@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/bitwise-and-of-numbers-range/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

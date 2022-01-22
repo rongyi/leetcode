@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

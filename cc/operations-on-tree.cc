@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/operations-on-tree/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class LockingTree {
 public:

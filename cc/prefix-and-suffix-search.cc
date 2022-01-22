@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/prefix-and-suffix-search/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Trie {
 public:

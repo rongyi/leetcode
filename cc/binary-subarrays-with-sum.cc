@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-subarrays-with-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

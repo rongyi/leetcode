@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/check-if-all-characters-have-equal-number-of-occurrences/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool areOccurrencesEqual(string s) {

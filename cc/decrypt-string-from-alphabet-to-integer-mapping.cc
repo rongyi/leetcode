@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

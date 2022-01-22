@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-time-visiting-all-points/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

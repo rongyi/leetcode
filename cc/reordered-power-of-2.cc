@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/reordered-power-of-2/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

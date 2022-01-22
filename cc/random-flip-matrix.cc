@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/random-flip-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution1 {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

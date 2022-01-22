@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class FindElements {
 public:

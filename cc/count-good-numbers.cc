@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-good-numbers/
-#include "xxx.h"
+#include "xxx.hpp"
 
 using ll = long long;
 class Solution {

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/apply-discount-every-n-orders/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Cashier {
 public:

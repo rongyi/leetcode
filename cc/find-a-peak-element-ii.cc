@@ -1,6 +1,6 @@
 // http://leetcode.com/problems/find-a-peak-element-ii/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

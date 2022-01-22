@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-score-words-formed-by-letters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

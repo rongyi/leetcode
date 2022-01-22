@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/design-hashset/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class MyHashSet {
 public:

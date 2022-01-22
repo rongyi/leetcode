@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/k-closest-points-to-origin/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

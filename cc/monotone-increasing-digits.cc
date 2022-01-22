@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/monotone-increasing-digits/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

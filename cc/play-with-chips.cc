@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/play-with-chips/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

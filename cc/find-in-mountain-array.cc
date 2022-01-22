@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-in-mountain-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * // This is the MountainArray's API interface.

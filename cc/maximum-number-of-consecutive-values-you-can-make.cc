@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-consecutive-values-you-can-make/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

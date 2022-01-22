@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/get-equal-substrings-within-budget/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

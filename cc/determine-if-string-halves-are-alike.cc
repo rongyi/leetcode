@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/determine-if-string-halves-are-alike/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

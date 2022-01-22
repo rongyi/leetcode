@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shuffle-the-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

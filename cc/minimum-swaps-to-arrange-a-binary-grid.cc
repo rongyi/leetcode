@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-swaps-to-arrange-a-binary-grid/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/positions-of-large-groups/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

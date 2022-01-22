@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-cost-to-change-the-final-value-of-expression/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-operations-to-reinitialize-a-permutation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

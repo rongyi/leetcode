@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/finding-pairs-with-a-certain-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class FindSumPairs {
 public:

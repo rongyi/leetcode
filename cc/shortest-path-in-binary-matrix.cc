@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-path-in-binary-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 #include <utility>
 
 class Solution {

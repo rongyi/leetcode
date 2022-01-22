@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/merge-bsts-to-create-single-bst/
-#include "xxx.h"
+#include "xxx.hpp"
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

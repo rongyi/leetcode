@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/network-delay-time/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

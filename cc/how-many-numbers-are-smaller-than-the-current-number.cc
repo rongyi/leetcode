@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

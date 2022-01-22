@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-number-with-alternating-bits/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

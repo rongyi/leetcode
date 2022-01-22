@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/break-a-palindrome/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

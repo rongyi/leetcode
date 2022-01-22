@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/perfect-number/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

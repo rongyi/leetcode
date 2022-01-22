@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

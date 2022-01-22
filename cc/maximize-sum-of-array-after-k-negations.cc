@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximize-sum-of-array-after-k-negations/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

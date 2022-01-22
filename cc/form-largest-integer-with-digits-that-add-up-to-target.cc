@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/form-largest-integer-with-digits-that-add-up-to-target/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

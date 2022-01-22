@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/concatenation-of-consecutive-binary-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

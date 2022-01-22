@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/132-pattern/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

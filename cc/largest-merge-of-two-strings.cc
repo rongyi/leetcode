@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-merge-of-two-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

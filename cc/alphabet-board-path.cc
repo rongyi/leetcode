@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/alphabet-board-path/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

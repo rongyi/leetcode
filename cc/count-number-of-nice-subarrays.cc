@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-number-of-nice-subarrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

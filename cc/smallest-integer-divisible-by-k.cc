@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-integer-divisible-by-k/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

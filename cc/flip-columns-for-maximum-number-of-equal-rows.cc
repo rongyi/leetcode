@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/flip-columns-for-maximum-number-of-equal-rows/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

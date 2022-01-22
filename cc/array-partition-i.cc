@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/array-partition-i/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

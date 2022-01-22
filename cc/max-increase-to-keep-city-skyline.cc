@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/max-increase-to-keep-city-skyline/description/
 
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

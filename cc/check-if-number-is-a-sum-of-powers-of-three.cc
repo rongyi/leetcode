@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

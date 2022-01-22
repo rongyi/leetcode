@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-all-odd-length-subarrays/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

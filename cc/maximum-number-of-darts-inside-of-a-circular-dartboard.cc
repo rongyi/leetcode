@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

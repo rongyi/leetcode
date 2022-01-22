@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/leetcode/integer-to-roman/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   string intToRoman(int n) {

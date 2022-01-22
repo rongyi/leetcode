@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/buddy-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool buddyStrings(string A, string B) {

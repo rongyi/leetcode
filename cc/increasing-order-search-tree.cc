@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/increasing-order-search-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for a binary tree node.

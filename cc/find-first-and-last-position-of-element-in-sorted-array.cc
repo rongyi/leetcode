@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   vector<int> searchRange(vector<int> &nums, int target) {

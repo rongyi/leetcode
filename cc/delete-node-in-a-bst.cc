@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/delete-node-in-a-bst/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

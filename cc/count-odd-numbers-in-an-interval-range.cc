@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-odd-numbers-in-an-interval-range/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

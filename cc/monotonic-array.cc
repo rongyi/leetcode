@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/monotonic-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool isMonotonic(vector<int> &A) {

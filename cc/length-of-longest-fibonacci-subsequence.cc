@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/length-of-longest-fibonacci-subsequence/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

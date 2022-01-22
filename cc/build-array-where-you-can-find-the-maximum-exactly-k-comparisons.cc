@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

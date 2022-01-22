@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/consecutive-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

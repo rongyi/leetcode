@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/stone-game-ix/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   bool stoneGameIX(vector<int> &stones) {

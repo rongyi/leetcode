@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

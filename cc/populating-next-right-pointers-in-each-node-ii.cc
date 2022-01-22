@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for binary tree with next pointer.

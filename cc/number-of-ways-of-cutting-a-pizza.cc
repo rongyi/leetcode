@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

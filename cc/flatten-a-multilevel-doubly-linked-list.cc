@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // Definition for a Node.
 class Node {

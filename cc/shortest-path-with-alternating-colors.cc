@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-path-with-alternating-colors/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

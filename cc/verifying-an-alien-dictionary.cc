@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/verifying-an-alien-dictionary/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

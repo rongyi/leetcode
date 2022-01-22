@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-a-value-of-a-mysterious-function-closest-to-target/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

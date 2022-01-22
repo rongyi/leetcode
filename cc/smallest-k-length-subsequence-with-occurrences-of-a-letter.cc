@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/smallest-k-length-subsequence-with-occurrences-of-a-letter/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // https://www.lintcode.com/problem/number-of-distinct-islands/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

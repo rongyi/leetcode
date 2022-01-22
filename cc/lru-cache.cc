@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/lru-cache/description/
-#include "xxx.h"
+#include "xxx.hpp"
 using itor = list<pair<int, int>>::iterator;
 
 class LRUCache {

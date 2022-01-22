@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/letter-tile-possibilities/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   Solution() {

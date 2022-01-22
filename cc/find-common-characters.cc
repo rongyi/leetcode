@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-common-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

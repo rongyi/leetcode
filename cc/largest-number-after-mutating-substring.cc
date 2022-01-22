@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/largest-number-after-mutating-substring/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

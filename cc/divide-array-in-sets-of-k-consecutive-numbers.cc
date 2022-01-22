@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

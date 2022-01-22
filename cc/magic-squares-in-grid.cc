@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/magic-squares-in-grid/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

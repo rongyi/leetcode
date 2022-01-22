@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-sets-of-k-non-overlapping-line-segments/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

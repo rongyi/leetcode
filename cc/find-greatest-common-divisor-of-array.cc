@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-greatest-common-divisor-of-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

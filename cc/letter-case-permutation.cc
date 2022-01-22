@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/letter-case-permutation/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

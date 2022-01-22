@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

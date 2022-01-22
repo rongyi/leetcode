@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

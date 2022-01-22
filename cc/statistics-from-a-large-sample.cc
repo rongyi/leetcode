@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/statistics-from-a-large-sample/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

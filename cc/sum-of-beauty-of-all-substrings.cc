@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-beauty-of-all-substrings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

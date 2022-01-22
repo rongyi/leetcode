@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/stock-price-fluctuation/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class StockPrice {
 public:

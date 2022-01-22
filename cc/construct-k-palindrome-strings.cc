@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/construct-k-palindrome-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

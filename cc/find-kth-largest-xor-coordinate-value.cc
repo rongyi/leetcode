@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-kth-largest-xor-coordinate-value/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

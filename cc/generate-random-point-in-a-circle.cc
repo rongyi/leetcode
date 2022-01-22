@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/generate-random-point-in-a-circle/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

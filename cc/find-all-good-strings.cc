@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-all-good-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // 一年多没有遇到这么难的题目
 class Solution {

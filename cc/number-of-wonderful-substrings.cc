@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-wonderful-substrings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

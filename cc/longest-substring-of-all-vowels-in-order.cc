@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-substring-of-all-vowels-in-order/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

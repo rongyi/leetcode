@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/max-area-of-island/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

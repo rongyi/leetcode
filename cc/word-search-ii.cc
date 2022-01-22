@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/word-search-ii/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // from file: ./implement-trie.cc
 namespace detail {

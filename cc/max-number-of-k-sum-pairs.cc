@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/max-number-of-k-sum-pairs/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

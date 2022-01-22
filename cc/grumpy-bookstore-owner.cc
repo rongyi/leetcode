@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/grumpy-bookstore-owner/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

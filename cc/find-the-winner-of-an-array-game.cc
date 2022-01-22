@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-winner-of-an-array-game/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

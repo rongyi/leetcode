@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/
-#include "xxx.h"
+#include "xxx.hpp"
 using Pair = pair<int, int>;
 
 class Solution {

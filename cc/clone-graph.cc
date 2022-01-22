@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/clone-graph/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 /**
  * Definition for undirected graph.

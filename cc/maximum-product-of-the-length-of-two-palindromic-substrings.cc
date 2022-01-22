@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/maximum-product-of-the-length-of-two-palindromic-substrings/
-#include "xxx.h"
+#include "xxx.hpp"
 
 using ll = long long;
 class Solution {

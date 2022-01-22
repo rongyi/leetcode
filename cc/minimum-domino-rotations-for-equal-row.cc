@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-domino-rotations-for-equal-row/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

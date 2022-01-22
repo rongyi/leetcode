@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/2-keys-keyboard/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

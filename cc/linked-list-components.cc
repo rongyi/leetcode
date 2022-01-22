@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/linked-list-components/description/
-#include "xxx.h"
+#include "xxx.hpp"
 /**
  * Definition for singly-linked list.
  * struct ListNode {

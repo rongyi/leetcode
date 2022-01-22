@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/different-ways-to-add-parentheses/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

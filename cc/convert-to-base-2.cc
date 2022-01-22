@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/convert-to-base-2/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

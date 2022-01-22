@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/largest-component-size-by-common-factor/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class UnionFindSet {
 public:

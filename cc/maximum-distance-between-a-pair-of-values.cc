@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-distance-between-a-pair-of-values/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

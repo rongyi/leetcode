@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/range-sum-of-bst/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

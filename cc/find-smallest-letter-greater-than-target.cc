@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

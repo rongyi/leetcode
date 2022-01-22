@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

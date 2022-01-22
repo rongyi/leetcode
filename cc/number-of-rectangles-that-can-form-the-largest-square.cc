@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/number-of-rectangles-that-can-form-the-largest-square/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

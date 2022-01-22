@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-items-matching-a-rule/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

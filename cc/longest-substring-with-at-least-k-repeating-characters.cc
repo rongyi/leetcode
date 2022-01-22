@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

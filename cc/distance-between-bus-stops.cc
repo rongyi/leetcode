@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/distance-between-bus-stops/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/count-sorted-vowel-strings/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

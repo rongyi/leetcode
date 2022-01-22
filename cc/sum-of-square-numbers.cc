@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sum-of-square-numbers/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

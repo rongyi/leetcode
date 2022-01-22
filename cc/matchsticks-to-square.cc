@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/matchsticks-to-square/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

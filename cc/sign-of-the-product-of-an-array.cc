@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/sign-of-the-product-of-an-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

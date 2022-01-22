@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/egg-drop-with-2-eggs-and-n-floors/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

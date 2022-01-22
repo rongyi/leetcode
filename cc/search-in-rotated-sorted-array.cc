@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/search-in-rotated-sorted-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 class Solution {
 public:
   int search(vector<int> &nums, int target) {

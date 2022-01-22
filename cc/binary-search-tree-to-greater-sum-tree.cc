@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

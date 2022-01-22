@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/shortest-path-to-get-all-keys/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 struct VisitRecord {
   pair<int, int> pos_;

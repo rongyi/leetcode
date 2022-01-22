@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/remove-sub-folders-from-the-filesystem/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

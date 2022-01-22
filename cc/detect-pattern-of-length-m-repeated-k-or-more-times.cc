@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

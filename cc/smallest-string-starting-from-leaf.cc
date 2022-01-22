@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/smallest-string-starting-from-leaf/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

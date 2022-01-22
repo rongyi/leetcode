@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

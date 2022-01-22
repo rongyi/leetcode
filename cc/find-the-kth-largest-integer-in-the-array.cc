@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

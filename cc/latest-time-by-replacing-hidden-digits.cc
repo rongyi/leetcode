@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/latest-time-by-replacing-hidden-digits/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

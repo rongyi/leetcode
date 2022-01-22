@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/uncrossed-lines/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/maximum-ice-cream-bars/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

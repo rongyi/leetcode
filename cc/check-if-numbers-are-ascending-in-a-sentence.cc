@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/check-if-numbers-are-ascending-in-a-sentence/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

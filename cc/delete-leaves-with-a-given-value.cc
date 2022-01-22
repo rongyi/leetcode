@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/delete-leaves-with-a-given-value/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

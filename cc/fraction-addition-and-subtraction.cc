@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/fraction-addition-and-subtraction/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:

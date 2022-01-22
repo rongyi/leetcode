@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/tweet-counts-per-frequency/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 // 喷的很惨
 class TweetCounts {

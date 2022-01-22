@@ -1,5 +1,5 @@
 // http://leetcode.com/problems/minimum-operations-to-make-array-equal/description/
-#include "xxx.h"
+#include "xxx.hpp"
 
 class Solution {
 public:
