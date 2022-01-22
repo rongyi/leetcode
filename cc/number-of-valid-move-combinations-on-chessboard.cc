@@ -31,6 +31,7 @@ public:
 
       // for every direction we try each step we *can* reach
       // the original place only count once for one direction
+      // after that, we don't count origin position
       for (int step = (ret == 0 ? 1 : 2); !blocked; ++step) {
         auto nx = i + (step - 1) * dirs_[d][0];
         auto ny = j + (step - 1) * dirs_[d][1];
@@ -52,8 +53,8 @@ public:
                      (b[prev][nx][ny] == step);
         }
         if (can_stop) {
-          // To indicate the final position, we will use a negative number of steps.
-          // cur stop at (nx, ny)
+          // To indicate the final position, we will use a negative number of
+          // steps. cur stop at (nx, ny)
           b[cur][nx][ny] = -step;
           ret += countCombinations(pieces, pos, cur + 1);
         }
