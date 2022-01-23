@@ -6,6 +6,7 @@ public:
   // bfs, three way: + - ^
   // we find the shortest path
   int minimumOperations(vector<int> &nums, int start, int goal) {
+    // or set?
     vector<bool> visited(1001, false);
 
     queue<int> q;
