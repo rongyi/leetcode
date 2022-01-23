@@ -27,6 +27,7 @@ public:
     if (i == s1.size() && j == s2.size()) {
       return diff == 0;
     }
+    // shift diff to postive namespace
     if (!visited[i][j][1000 + diff]) {
       visited[i][j][1000 + diff] = true;
       if (i < s1.size() && isdigit(s1[i])) {
