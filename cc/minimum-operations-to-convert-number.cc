@@ -3,14 +3,15 @@
 
 class Solution {
 public:
+  // bfs, three way: + - ^
+  // we find the shortest path
   int minimumOperations(vector<int> &nums, int start, int goal) {
-    set<int> visited;
+    vector<bool> visited(1001, false);
 
     queue<int> q;
     q.push(start);
 
     int layer = -1;
-    visited.insert(start);
     while (!q.empty()) {
       layer++;
 
@@ -21,29 +22,19 @@ public:
         if (cur == goal) {
           return layer;
         }
+        if (cur < 0 || cur > 1000 || visited[cur]) {
+          continue;
+        }
+        visited[cur] = true;
         // three modifiction
-        if (cur >= 0 && cur <= 1000) {
-          // then we try all numbers which is not in visited
-          for (auto num : nums) {
-            auto n1 = cur + num;
-            auto n2 = cur - num;
-            auto n3 = cur ^ num;
-            if (!visited.count(n1)) {
-              //cout << "1keeeeeep " << n1 << endl;
-              visited.insert(n1);
-              q.push(n1);
-            }
-            if (!visited.count(n2)) {
-              //cout << "2keeeeeep " << n2 << endl;
-              visited.insert(n2);
-              q.push(n2);
-            }
-            if (!visited.count(n3)) {
-              //cout << "3keeeeeep " << n3 << endl;
-              visited.insert(n3);
-              q.push(n3);
-            }
-          }
+        // then we try all numbers which is not in visited
+        for (auto num : nums) {
+          auto n1 = cur + num;
+          auto n2 = cur - num;
+          auto n3 = cur ^ num;
+          q.push(n1);
+          q.push(n2);
+          q.push(n3);
         }
       }
     }
