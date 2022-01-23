@@ -15,6 +15,9 @@ public:
     auto processDigits = [&](const string &s, int &p, int sign) -> bool {
       for (int val = 0; p < s.size() && isdigit(s[p]);) {
         val = val * 10 + (s[p] - '0');
+        // p point to i, when sign is negative
+        // p point to j when sign is postive
+        // so we increase pointer at here!
         p += 1;
         if (possiblyEquals(s1, s2, i, j, diff + val * sign)) {
           return true;
@@ -60,3 +63,7 @@ private:
   // we shift the negative value to 0 - 1000 range
   bool visited[41][41][2000] = {};
 };
+int main() {
+  Solution so;
+  cout << so.possiblyEquals("13", "xxxxxxxxxxxxx") << endl;
+}
