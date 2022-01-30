@@ -22,8 +22,10 @@ public:
       int dy = d[1];
       int nx = x_ + dx;
       int ny = y_ + dy;
+      // change direction?
       if (nx < 0 || ny < 0 || nx >= w_ || ny >= h_) {
         cur_dir_ = (cur_dir_ + 1) % 4;
+        // just change direction , no move yet, so no --k
       } else {
         x_ = nx;
         y_ = ny;
