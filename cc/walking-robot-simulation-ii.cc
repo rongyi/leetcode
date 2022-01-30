@@ -16,6 +16,7 @@ public:
         cur_dir_ = 3;
       }
     }
+    // step simulation
     while (k > 0) {
       auto &d = dirs_[cur_dir_];
       int dx = d[0];
