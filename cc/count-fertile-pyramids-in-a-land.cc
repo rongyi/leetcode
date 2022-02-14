@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/count-fertile-pyramids-in-a-land/
 #include "xxx.hpp"
 
+// https://leetcode.com/problems/count-fertile-pyramids-in-a-land/discuss/1598908/Simple-DP-Solution-with-Explanation-or-C%2B%2B-or-O(n-*-m)
 class Solution {
 public:
   int countPyramids(vector<vector<int>> &grid) {
