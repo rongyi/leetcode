@@ -6,6 +6,8 @@ public:
   int minCost(vector<int> &startPos, vector<int> &homePos,
               vector<int> &rowCosts, vector<int> &colCosts) {
     int ret = 0;
+
+    // robot will always go through those boudaries
     int dr = (startPos[0] < homePos[0]) ? 1 : -1;
     int dc = (startPos[1] < homePos[1]) ? 1 : -1;
     for (int r = startPos[0]; r != homePos[0]; r += dr) {
