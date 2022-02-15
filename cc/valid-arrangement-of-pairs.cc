@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/valid-arrangement-of-pairs/discuss/1618885/Iterative-and-Recursive
   // rearrange to makesure [a, b] [c, d] ==> (b == c) (last end == next start)
   vector<vector<int>> validArrangement(vector<vector<int>> &pairs) {
     unordered_multimap<int, int> m;
