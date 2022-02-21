@@ -3,4 +3,8 @@
 echo "g++ -g -std=c++17 `ls -t *.cc | head -1`"
 g++ -g -std=c++17 `ls -t *.cc | head -1`
 # running?
-gdb a.out
+if [[ $OSTYPE == 'darwin'* ]]; then
+  lldb a.out
+else 
+  gdb a.out
+fi
