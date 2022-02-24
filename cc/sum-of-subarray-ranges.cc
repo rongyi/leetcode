@@ -32,6 +32,7 @@ public:
     // pushed index, not value
     stack<int> s;
     for (int i = 0; i <= sz; ++i) {
+      // mono increase
       // When an element i is smaller than the element j on the top of the
       // stack, we have i - j larger elements after j. We pop element j from the
       // stack, and now a smaller element k is on top. So, we have j - k larger
@@ -43,11 +44,11 @@ public:
         int k = s.empty() ? -1 : s.top();
         ret -= (long long)nums[j] * (i - j) * (j - k);
       }
-      // nums[i] is the lowest in range
       s.push(i);
     }
 
     s = stack<int>();
+    // mono decrease
     for (int i = 0; i <= sz; ++i) {
       while (!s.empty() && nums[s.top()] < (i == sz ? 2e9 : nums[i])) {
         int j = s.top();
@@ -55,7 +56,6 @@ public:
         int k = s.empty() ? -1 : s.top();
         ret += (long long)nums[j] * (i - j) * (j - k);
       }
-      // nums[i] is the biggest in range
       s.push(i);
     }
 
