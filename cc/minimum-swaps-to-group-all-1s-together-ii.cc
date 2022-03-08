@@ -12,16 +12,18 @@ public:
     for (int i = 0; i < sz; ++i) {
       nums.push_back(nums[i]);
     }
+    // max 1 in a window
     int ones_in_win = 0;
-    int cur_win = 0;
+    // current 1 in a window
+    int cur_one_in_win = 0;
     for (int i = 0; i < sz * 2; ++i) {
       if (i >= ones && nums[i - ones] == 1) {
-        cur_win--;
+        cur_one_in_win--;
       }
       if (nums[i] == 1) {
-        cur_win++;
+        cur_one_in_win++;
       }
-      ones_in_win = max(ones_in_win, cur_win);
+      ones_in_win = max(ones_in_win, cur_one_in_win);
     }
 
     return ones - ones_in_win;
