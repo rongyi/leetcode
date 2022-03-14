@@ -21,7 +21,7 @@ private:
     }
     // pick
     long long score1 = qs[cur][0];
-    // ignore all thos in [cur, cur+ skip] included
+    // ignore all those in [cur, cur + skip] included
     score1 += dfs(qs, cur + qs[cur][1] + 1, cache);
 
     // don't pick
