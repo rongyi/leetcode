@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/count-good-triplets-in-an-array/discuss/1787085/BIT
   long long goodTriplets(vector<int> &nums1, vector<int> &nums2) {
     int sz = nums1.size();
     vector<int> idx(sz, 0);
@@ -27,6 +28,14 @@ public:
       add(mid, 1);
       // sz - 1 - mid is the right after mid in nums2
       // and we also need exclude the bigger one before i which is (i - smaller)
+      // don't get the (i - smaller) ?
+      // ok, i - smaller is the number which before i and is bigger than i
+      // e.g. num1 1 4 3 2 5
+      //      num2 1 2 3 4 5
+      //               ^
+      //               i
+      // smaller is 1: comon left of (1, 4) and (1, 2) ==> 1, count 1, not number 1
+      // bigger one (4, 5) but 4 is before i, so we exclude this one
       long long greater = sz - 1 - mid - (i - smaller);
       ret += smaller * greater;
     }
