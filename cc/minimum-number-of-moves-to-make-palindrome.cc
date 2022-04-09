@@ -11,6 +11,7 @@ public:
     int ret = 0;
     int center_odd = -1;
     while (l < r) {
+      // keep r fixed and find the one in l which is same as s[r]
       if (s[l] == s[r]) {
         l++;
         r--;
@@ -23,12 +24,14 @@ public:
         }
       }
 
-      // not found?
+      // not found? then this is the one in middle, mark this one
       if (k == r) {
         center_odd = r;
         r--;
         continue;
       }
+      // yes, find one
+      // swap between s[l].. s[k]
       for (int j = k; j > l; --j) {
         swap(s[j], s[j - 1]);
         ret++;
