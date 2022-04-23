@@ -79,3 +79,11 @@ private:
     return nodes[parent].longest_;
   }
 };
+
+int main(int argc, char *argv[]) {
+  Solution so;
+  string qc{"bcb"};
+  vector<int> qi{1, 3, 3};
+  so.longestRepeating("babacc", qc, qi);
+  return 0;
+}
