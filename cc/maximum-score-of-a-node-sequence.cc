@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/maximum-score-of-a-node-sequence/discuss/1954475/Top-3
   int maximumScore(vector<int> &scores, vector<vector<int>> &edges) {
     int ret = -1;
     int sz = scores.size();
