@@ -4,11 +4,32 @@
 class Encrypter {
 public:
   Encrypter(vector<char> &keys, vector<string> &values,
-            vector<string> &dictionary) {}
+            vector<string> &dictionary) {
+    for (int i = 0; i < keys.size(); ++i) {
+      expand_[keys[i]] = values[i];
+    }
+    for (auto &d : dictionary) {
+      ++enigma_count_[encrypt(d)];
+    }
+  }
 
-  string encrypt(string word1) {}
+  string encrypt(string word1) {
+    string ret;
+    for (auto c : word1) {
+      // this is for dictionary, word in dictionary may not in expand_
+      if (expand_.find(c) == expand_.end()) {
+        return "";
+      }
+      ret += expand_[c];
+    }
+    return ret;
+  }
 
-  int decrypt(string word2) {}
+  int decrypt(string word2) { return enigma_count_[word2]; }
+
+private:
+  map<char, string> expand_;
+  map<string, int> enigma_count_;
 };
 
 /**
