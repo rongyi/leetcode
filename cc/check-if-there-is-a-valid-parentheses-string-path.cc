@@ -12,6 +12,8 @@ public:
 
 private:
   bool dfs(vector<vector<char>> &grid, int x, int y, int balance) {
+    // ( +
+    // ) -
     if (grid[x][y] == '(') {
       balance += 1;
     } else {
