@@ -596,6 +596,9 @@ int main() {
   //   }
   //   cout << endl;
   // }
-  long long x = 2e9;
-  cout << x << endl;
+  //long long x = 2e9;
+  //cout << x << endl;
+  //
+  cout << (10 ?: -1) << endl;
+  cout << (false ?: -1) << endl;
 }
