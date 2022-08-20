@@ -5,13 +5,16 @@ class Solution {
 public:
   int idealArrays(int n, int maxValue) {
     comb_ = vector<vector<int>>(n, vector<int>(15, -1));
+    // dp[i][j]
+    // i: array length
+    // j: ending number
     vector<vector<int>> dp(maxValue + 1, vector<int>(15, 0));
     dp[1][1] = 1;
     for (int i = 2; i <= maxValue; ++i) {
       dp[i][1] = 1;
       for (int j = 1; j <= int(sqrt(i)); ++j) {
         int j2 = i / j;
-        if (j2 * j == i) {
+        if (j * j2 == i) {
           for (int k = 1; k < 14; ++k) {
             dp[i][k + 1] += dp[j][k];
           }
@@ -24,19 +27,19 @@ public:
       }
     }
 
-    vector<int> whole(15, 0);
+    vector<long long> whole(15, 0);
     for (int i = 1; i < 15; ++i) {
-      int w = 0;
+      long long w = 0;
       for (int j = 1; j <= maxValue; ++j) {
         w += dp[j][i];
       }
       whole[i] = w;
     }
-    int ret = 0;
-    for (int i = 1; i <= min(n, 14); ++i) {
-      ret = (0ll + ret + 1ll * choosenofk(n - 1, i - 1) * whole[i]) % mod_;
-    }
+    long long ret = 0;
 
+    for (int i = 1; i <= min(n, 14); ++i) {
+      ret = (ret + choosenofk(n - 1, i - 1) * whole[i]) % mod_;
+    }
     return ret;
   }
 
@@ -46,16 +49,13 @@ private:
       return comb_[n][k];
     }
     if (k == 0) {
-      comb_[n][k] = 1;
-      return comb_[n][k];
+      return comb_[n][k] = 1;
     }
     if (k == 1) {
-      comb_[n][k] = n;
-      return comb_[n][k];
+      return comb_[n][k] = n;
     }
     if (n == k) {
-      comb_[n][k] = 1;
-      return comb_[n][k];
+      return comb_[n][k] = 1;
     }
     comb_[n][k] =
         (0ll + choosenofk(n - 1, k - 1) + choosenofk(n - 1, k)) % mod_;
