@@ -20,6 +20,7 @@ public:
     for (int i = 1; i <= maxValue; ++i) {
       dp[1][i] = 1;
     }
+    // dp[i][j] = sum(dp[i - 1][k]) for all k that j % k == 0
     for (int i = 2; i <= min(n, 14); ++i) {
       for (int j = 1; j <= maxValue; ++j) {
         for (auto k : divisors[j]) {
