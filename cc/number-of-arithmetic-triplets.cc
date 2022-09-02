@@ -4,19 +4,16 @@
 class Solution {
 public:
   int arithmeticTriplets(vector<int> &nums, int diff) {
+    map<int, bool> cnt;
+    for (auto &num : nums) {
+      cnt[num] = true;
+    }
     int ret = 0;
-    for (int i = 0; i < nums.size(); ++i) {
-      int cur = nums[i];
-      int mid = cur + diff;
-      int right = mid + diff;
-      auto midit = lower_bound(nums.begin(), nums.end(), mid);
-      auto rightit = lower_bound(nums.begin(), nums.end(), right);
-      if (midit != nums.end() && *midit == mid && rightit != nums.end() &&
-          *rightit == right) {
+    for (auto &num : nums) {
+      if (cnt[num + diff] && cnt[num + 2 * diff]) {
         ret++;
       }
     }
-
     return ret;
   }
 };
