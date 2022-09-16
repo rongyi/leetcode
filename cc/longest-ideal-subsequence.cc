@@ -6,7 +6,7 @@ public:
   int longestIdealString(string s, int k) {
     int ret = 0;
     vector<int> dp(150, 0);
-    for (auto &c: s) {
+    for (auto &c : s) {
       // prev char
       for (int pc = c - k; pc <= c + k; ++pc) {
         dp[c] = max(dp[c], dp[pc]);
