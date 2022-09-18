@@ -12,5 +12,8 @@
   #+END_QUOTE
 
   git commit message写的很烂，不要学我。
-* TODO [/]
-  - [ ] make all comments in english
+
+
+* 烂笔头
+** topology sort
+   队列， indgress为0的开始，然后bfs
