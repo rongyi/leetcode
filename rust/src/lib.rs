@@ -132,6 +132,39 @@ mod l1012 {
         }
     }
 }
+mod l101202 {
+    use std::collections::VecDeque;
+
+    struct Solution;
+    impl Solution {
+        pub fn maximum_robots(charge_times: Vec<i32>, running_costs: Vec<i32>, budget: i64) -> i32 {
+            let mut q: VecDeque<i32> = VecDeque::new();
+            let mut i = 0;
+            let mut j = 0;
+            let sz: usize = charge_times.len();
+            let mut cost = 0i64;
+            while i < sz {
+                cost += running_costs[i] as i64;
+                while !q.is_empty() && q.back().unwrap() < &charge_times[i] {
+                    q.pop_back();
+                }
+                q.push_back(charge_times[i]);
+                if (cost * (i - j + 1) as i64 + (*q.front().unwrap()) as i64) > budget {
+                    cost -= running_costs[j] as i64;
+                    if q.front().unwrap() == &charge_times[j] {
+                        q.pop_front();
+                    }
+
+                    j += 1;
+                }
+
+                i += 1;
+            }
+
+            (sz - j) as i32
+        }
+    }
+}
 
 #[cfg(test)]
 mod tests {
