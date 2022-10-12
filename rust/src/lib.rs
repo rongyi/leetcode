@@ -166,6 +166,27 @@ mod l101202 {
     }
 }
 
+mod l101203 {
+    struct Solution;
+    impl Solution {
+        pub fn check_distances(s: String, distance: Vec<i32>) -> bool {
+            let mut processed: Vec<Option<usize>> = vec![None; 26];
+            for (i, c) in s.chars().enumerate() {
+                let idx: usize = (c as u8 - b'a') as usize;
+                if processed[idx].is_none() {
+                    processed[idx] = Some(i);
+                } else {
+                    let calced = i - processed[idx].unwrap() - 1;
+                    if calced as i32 != distance[idx] {
+                        return false;
+                    }
+                }
+            }
+            true
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
