@@ -104,6 +104,35 @@ mod lxxx {
     }
 }
 
+mod l1012 {
+    struct Solution;
+    impl Solution {
+        pub fn maximum_rows(matrix: Vec<Vec<i32>>, num_select: i32) -> i32 {
+            let n: usize = matrix[0].len();
+            let mut ret = 0;
+            for mask in 0..(1 << n as u32) {
+                if u32::count_ones(mask) > num_select as u32 {
+                    continue;
+                }
+                let mut cur = 0;
+                for row in &matrix {
+                    let mut j = 0;
+                    while j < n {
+                        if row[j] == 1 && ((1 << j) & mask) == 0 {
+                            break;
+                        }
+                        j += 1;
+                    }
+                    cur += if j == n { 1 } else { 0 };
+                }
+                ret = std::cmp::max::<i32>(ret, cur);
+            }
+
+            ret
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
