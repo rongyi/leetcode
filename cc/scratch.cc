@@ -601,4 +601,7 @@ int main() {
   //
   cout << (10 ?: -1) << endl;
   cout << (false ?: -1) << endl;
+
+
+  cout << string(6, 'a') << endl;
 }
