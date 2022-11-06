@@ -5,6 +5,28 @@ class Solution {
 public:
   vector<int> smallestSubarrays(vector<int> &nums) {
     int sz = nums.size();
+    vector<int> ret(sz, 0);
+    vector<int> pos_idx(32, 0);
+
+    for (int i = sz - 1; i >= 0; --i) {
+      int cur = nums[i];
+      for (int pos = 0; pos < 32; ++pos) {
+        if ((cur & (1 << pos)) != 0) {
+          pos_idx[pos] = i;
+        }
+      }
+      int mx = *max_element(pos_idx.begin(), pos_idx.end());
+      ret[i] = max(mx, i) - i + 1;
+    }
+
+    return ret;
+  }
+};
+
+class SolutionPassv1 {
+public:
+  vector<int> smallestSubarrays(vector<int> &nums) {
+    int sz = nums.size();
     vector<set<int>> pos_idx(32);
     for (int i = 0; i < sz; ++i) {
       int cur = nums[i];
@@ -18,14 +40,13 @@ public:
     vector<int> ret(sz, 0);
     for (int i = 0; i < sz; ++i) {
       int right_most = i;
-      // note the iteration
+      // note the iteration, pos
       for (int pos = 0; pos < 32; ++pos) {
         auto it = pos_idx[pos].lower_bound(i);
         if (it != pos_idx[pos].end()) {
           right_most = max(right_most, *it);
         }
       }
-      // cout << right_most << endl;
       ret[i] = right_most - i + 1;
     }
 
