@@ -3,6 +3,7 @@
 
 class Solution {
 public:
+  // https://leetcode.com/problems/number-of-pairs-satisfying-inequality/solutions/2646585/easy-merge-sort-based-solution-c/?orderBy=most_votes
   long long numberOfPairs(vector<int> &nums1, vector<int> &nums2, int diff) {
     ret_ = 0;
 
