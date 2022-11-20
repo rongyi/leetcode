@@ -22,6 +22,13 @@ public:
         max_index = i;
       }
       if (min_index != -1 && max_index != -1) {
+        // e.g. minK 3, maxK 5
+        // 3, 3, 4, 3, 4, 5
+        // start
+        //          min_index
+        //                 max_index
+        // range between [start, min_index] is all valid start
+        // to end range
         ret += (min(min_index, max_index) - start + 1);
       }
     }
