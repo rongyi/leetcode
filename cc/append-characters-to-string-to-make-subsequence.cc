@@ -7,14 +7,12 @@ public:
     int sz1 = s.size();
     int sz2 = t.size();
     int j = 0;
-    // just go for the subsequence
-    for (int i = 0; i < sz1 && j < sz2; i++) {
+    for (int i = 0; i < sz1 && j < sz2; ++i) {
       if (s[i] == t[j]) {
         j++;
       }
     }
 
-    // what left is we need to add
     return sz2 - j;
   }
 };
