@@ -4,28 +4,30 @@
 class Solution {
 public:
   int reverse(int x) {
-    long long i = x;
-    bool pos = true;
+    bool is_neg = false;
     if (x < 0) {
-      pos = false;
-      i *= -1;
+      if (x == numeric_limits<int>::min()) {
+        return 0;
+      }
+      is_neg = true;
+      x = -x;
     }
-    cout << i << endl;
-    long long ret = 0;
-    // auto max = numeric_limits<int>::max();
-    while (i) {
-      ret = ret * 10 + i % 10;
-      i /= 10;
+    int m = numeric_limits<int>::max();
+    int ret = 0;
+    while (x) {
+      int cur = x % 10;
+      if (ret < m / 10 || (ret == m / 10 && cur < m % 10)) {
+        ret = ret * 10 + cur;
+      } else {
+        return 0;
+      }
+      x /= 10;
     }
 
-    if (ret > numeric_limits<int>::max()) {
-      return 0;
+    if (is_neg) {
+      return -ret;
     }
-    if (pos) {
-      return ret;
-    }
-
-    return -ret;
+    return ret;
   }
 };
 
