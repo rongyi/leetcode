@@ -7,35 +7,33 @@ public:
     if (numRows == 1) {
       return s;
     }
-    const int len = s.size();
-    vector<vector<char>> help(numRows, vector<char>{});
+    int sz = s.size();
+    vector<string> rows(sz);
 
-    int row = 0;
-    int col = 0;
-    bool down = true;
-    for (int i = 0; i < len; ++i) {
-      if (down) {
-        help[row++].push_back(s[i]);
-        if (row == numRows) {
-          down = false;
-          col++;
-          row--;
+    int i = 0;
+    bool is_down = true;
+    int cur_row = 0;
+    while (i < sz) {
+      if (is_down) {
+        rows[cur_row++].push_back(s[i]);
+        if (cur_row == numRows) {
+          is_down = false;
+          cur_row = numRows - 2;
         }
       } else {
-        help[--row].push_back(s[i]);
-        if (row == 0) {
-          down = true;
-          row++;
+        rows[cur_row--].push_back(s[i]);
+        if (cur_row < 0) {
+          is_down = true;
+          cur_row = 1;
         }
       }
+      i++;
+    }
+    ostringstream ss;
+    for (auto &r: rows) {
+      ss << r;
     }
 
-    stringstream ss;
-    for (auto v: help) {
-      for (auto c : v) {
-        ss << c;
-      }
-    }
     return ss.str();
   }
 };

@@ -6,10 +6,10 @@ public:
   double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
     nums1.insert(nums1.end(), nums2.begin(), nums2.end());
     sort(nums1.begin(), nums1.end());
-    auto n = nums1.size();
-    if (n % 2 == 1) {
-      return nums1[n / 2];
+    int sz = nums1.size();
+    if (sz & 1) {
+      return nums1[sz / 2];
     }
-    return ((double)(nums1[n / 2]) + (double)(nums1[n / 2 - 1]))/ 2;
+    return ((double)nums1[sz / 2 - 1] + (double)nums1[sz / 2]) / 2.0;
   }
 };

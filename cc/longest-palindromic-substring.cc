@@ -4,34 +4,33 @@
 class Solution {
 public:
   string longestPalindrome(string s) {
-    const int n = s.size();
-    vector<vector<int>> dp(n, vector<int>(n, 0));
-    for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < n; ++j) {
-        if (i >= j) {
-          // 空字符串以及长度为1的都是回文
-          dp[i][j] = 1;
-        }
+    int sz = s.size();
+    // dp[i][j] is s[i..=j] palindromic?
+    vector<vector<int>> dp(sz, vector<int>(sz, 0));
+    for (int i = 0; i < sz; ++i) {
+      for (int j = 0; j <= i; ++j) {
+        // empty or s[i]
+        dp[i][j] = 1;
       }
     }
-    int maxlen = 1;
     int max_start = 0;
-
-    for (int l = 1; l < n; ++l) {
-      for (int i = 0; i + l < n; ++i) {
+    int max_len = 1;
+    for (int l = 1; l < sz; ++l) {
+      for (int i = 0; i + l < sz; ++i) {
         int j = i + l;
         if (s[i] == s[j]) {
           dp[i][j] = dp[i + 1][j - 1];
           if (dp[i][j] == 1) {
-            if (l + 1 > maxlen) {
-              maxlen = l + 1;
+            int val = l + 1;
+            if (val > max_len) {
+              max_len = val;
               max_start = i;
             }
           }
         }
       }
     }
-    return s.substr(max_start, maxlen);
+    return s.substr(max_start, max_len);
   }
 };
 
