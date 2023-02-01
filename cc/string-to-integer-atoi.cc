@@ -3,37 +3,37 @@
 
 class Solution {
 public:
-  int myAtoi(string str) {
-    const int n = str.size();
-    long long ret = 0;
+  int myAtoi(string s) {
+    int sz = s.size();
     int i = 0;
-    int sign = 1;
-    // ignore leading spaces
-    while (i < n && str[i] == ' ') {
-      ++i;
+    while (i < sz && s[i] == ' ') {
+      i++;
     }
-    if (i == n) {
+    if (i == sz) {
       return 0;
     }
-    // now we see sign '+' '-'
-    if (str[i] == '+') {
-      ++i;
-    } else if (str[i] == '-') {
-      ++i;
+    int sign = 1;
+    if (s[i] == '+') {
+      i++;
+    } else if (s[i] == '-') {
+      i++;
       sign = -1;
     }
 
-    while (i < n && str[i] >= '0' && str[i] <= '9') {
-      ret = ret * 10 + (str[i] - '0');
-      i++;
-      if (ret > numeric_limits<int>::max()) {
-        if (sign == 1) {
+    long long acc = 0;
+    for (; i < sz; i++) {
+      if (s[i] <= '9' && s[i] >= '0') {
+        acc = acc * 10 + (s[i] - '0');
+        if (sign * acc <= numeric_limits<int>::min()) {
+          return numeric_limits<int>::min();
+        } else if (sign * acc >= numeric_limits<int>::max()) {
           return numeric_limits<int>::max();
         }
-        return numeric_limits<int>::min();
+      } else {
+        break;
       }
     }
-    return (int)ret * sign;
+    return acc * sign;
   }
 };
 
