@@ -7,42 +7,34 @@ public:
     if (x < 0) {
       return false;
     }
-    if (x == 0) {
-      return true;
-    }
-    auto count = [](int i) {
-      int ret = 0;
-      while (i) {
-        ret++;
-        i /= 10;
-      }
-      return ret;
-    };
 
-    int dc = count(x);
-    int align = 1;
-    while (--dc) {
-      align *= 10;
-    }
-
+    long long shift = 1;
+    int cp = x;
     while (x) {
-      auto high = x / align;
-      auto low = x % 10;
-      if (high != low) {
+      shift *= 10;
+      x /= 10;
+    }
+    shift /= 10;
+
+    x = cp;
+    while (x) {
+      int l = x / shift;
+      int r = x % 10;
+      if (l != r) {
         return false;
       }
-      // 斩掉最高位，最低位
-      x %= align;
+      x %= shift;
       x /= 10;
 
-      align /= 100;
+      shift /= 100;
     }
+
     return true;
   }
 };
 
 int main() {
   Solution so;
-  auto ret = so.isPalindrome(0);
+  auto ret = so.isPalindrome(10);
   cout << ret << endl;
 }

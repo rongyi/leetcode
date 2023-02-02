@@ -3,32 +3,51 @@
 
 class Solution {
 public:
-  bool isMatch(string s, string p) { return is(s.c_str(), p.c_str()); }
+  bool isMatch(string s, string p) {
+    ssz_ = s.size();
+    psz_ = p.size();
+    dp_ = vector<vector<int>>(ssz_ + 1, vector<int>(psz_ + 1, -1));
+
+    return isMatch(s, 0, p, 0);
+  }
 
 private:
-  bool is(const char *s, const char *p) {
-    if (*p == '\0') {
-      return *s == '\0';
+  bool isMatch(string &s, int i, string &p, int j) {
+    if (dp_[i][j] != -1) {
+      return dp_[i][j];
     }
-    // no star, one by one exactly or dot match
-    if (*(p + 1) != '*') {
-      if (*p == *s || (*p == '.' && *s != '\0')) {
-        return is(s + 1, p + 1);
+    if (j == psz_) {
+      if (i == ssz_) {
+        dp_[i][j] = 1;
+      } else {
+        dp_[i][j] = 0;
       }
+      return dp_[i][j];
+    }
+    if (j + 1 < psz_ && p[j + 1] == '*') {
+      int val = isMatch(s, i, p, j + 2) ||
+                (i < ssz_ && (s[i] == p[j] || p[j] == '.') &&
+                 isMatch(s, i + 1, p, j));
+      dp_[i][j] = val;
+      if (val) {
+        return dp_[i][j];
+      }
+    }
+    if (i < ssz_ && (s[i] == p[j] || p[j] == '.')) {
+      int val = isMatch(s, i + 1, p, j + 1);
+      dp_[i][j] = val;
+      if (val) {
+        return dp_[i][j];
+      }
+    }
 
-      return false;
-    } else {
-      while (*p == *s || (*p == '.' && *s != '\0')) {
-        if (is(s, p + 2)) {
-          return true;
-        }
-        // 这里就是1个或者多个的匹配
-        s++;
-      }
-      // 直接跳过，也即使用*的0个匹配，遇到不等的，那就从上面跳出来，使用后续exp匹配了。
-      return is(s, p + 2);
-    }
+    return dp_[i][j] = 0;
   }
+
+private:
+  int ssz_;
+  int psz_;
+  vector<vector<int>> dp_;
 };
 
 int main() {
