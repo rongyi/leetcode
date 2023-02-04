@@ -4,18 +4,19 @@
 class Solution {
 public:
   int maxArea(vector<int> &height) {
-    const int n = height.size();
+    int sz = height.size();
+    int l = 0;
+    int r = sz - 1;
     int ret = 0;
-    int left = 0;
-    int right = n - 1;
-    while (left < right) {
-      ret = max(ret, min(height[left], height[right]) * (right - left));
-      if (height[left] < height[right]) {
-        left++;
+    while (l < r) {
+      ret = max(ret, min(height[l], height[r]) * (r - l));
+      if (height[l] < height[r]) {
+        l++;
       } else {
-        right--;
+        r--;
       }
     }
+
     return ret;
   }
 };

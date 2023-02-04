@@ -3,32 +3,20 @@
 
 class Solution {
 public:
-  string longestCommonPrefix(vector<string> &strs) {
-    if (strs.empty()) {
-      return "";
-    }
-
-    int minlen = numeric_limits<int>::max();
-    const int m = strs.size();
-    for (auto s : strs) {
-      minlen = min(minlen, (int)s.size());
+  string longestCommonPrefix(vector<string> &ss) {
+    int min_len = numeric_limits<int>::max();
+    for (auto &s : ss) {
+      min_len = min(min_len, (int)s.size());
     }
     int j = 0;
-    for (; j < minlen; ++j) {
-      for (int i = 1; i < m; ++i) {
-        if (strs[i][j] != strs[0][j]) {
-          goto outer;
+    for (; j < min_len; ++j) {
+      for (int i = 1; i < ss.size(); ++i) {
+        if (ss[i][j] != ss[0][j]) {
+          return ss[i].substr(0, j);
         }
       }
     }
-  outer:
-    return strs[0].substr(0, j);
+    return ss[0].substr(0, j);
   }
 };
 
-int main() {
-  Solution so;
-  vector<string> input{"flower","flow","flight"};
-  auto ret = so.longestCommonPrefix(input);
-  cout << ret << endl;
-}

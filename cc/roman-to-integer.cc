@@ -8,7 +8,7 @@ public:
    * @return an integer
    */
   int romanToInt(string &s) {
-    auto map = [](const char c) -> int {
+    auto rtoi = [](const char c) -> int {
       switch (c) {
       case 'I':
         return 1;
@@ -29,12 +29,45 @@ public:
       }
     };
     int ret = 0;
+    int sz = s.size();
 
-    for (int i = 0; i < s.size(); i++) {
-      if (i > 0 && map(s[i]) > map(s[i - 1])) {
-        ret += (map(s[i]) - 2 * map(s[i - 1]));
-      } else {
-        ret += map(s[i]);
+    for (int i = 0; i < sz; i++) {
+      switch (s[i]) {
+      case 'I':
+        if (i + 1 < sz && s[i + 1] == 'V') {
+          ret += 4;
+          i++;
+        } else if (i + 1 < sz && s[i + 1] == 'X') {
+          ret += 9;
+          i++;
+        } else {
+          ret += rtoi(s[i]);
+        }
+        break;
+      case 'X':
+        if (i + 1 < sz && s[i + 1] == 'L') {
+          ret += 40;
+          i++;
+        } else if (i + 1 < sz && s[i + 1] == 'C') {
+          ret += 90;
+          i++;
+        } else {
+          ret += rtoi(s[i]);
+        }
+        break;
+      case 'C':
+        if (i + 1 < sz && s[i + 1] == 'D') {
+          ret += 400;
+          i++;
+        } else if (i + 1 < sz && s[i + 1] == 'M') {
+          ret += 900;
+          i++;
+        } else {
+          ret += rtoi(s[i]);
+        }
+        break;
+      default:
+        ret += rtoi(s[i]);
       }
     }
 

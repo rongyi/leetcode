@@ -3,44 +3,30 @@
 class Solution {
 public:
   vector<vector<int>> threeSum(vector<int> &nums) {
-    const int n = nums.size();
-    vector<vector<int>> ret;
-    if (n < 3) {
-      return ret;
-    }
     sort(nums.begin(), nums.end());
-    auto last = n - 1;
-    const int target = 0;
+    int sz = nums.size();
 
-    for (int i = 0; i < last - 1; ++i) {
+    vector<vector<int>> ret;
+    for (int i = 0; i < sz; ++i) {
       if (i > 0 && nums[i] == nums[i - 1]) {
         continue;
       }
-      auto j = i + 1;
-      auto k = last;
+      int j = i + 1;
+      int k = sz - 1;
       while (j < k) {
-        auto cur = nums[i] + nums[j] + nums[k];
-        if (cur < target) {
-          ++j;
-
-          while (nums[j] == nums[j - 1] && j < k) {
-            ++j;
-          }
-        } else if (cur > target) {
-          --k;
-          while (nums[k] == nums[k + 1] && j < k) {
-            --k;
-          }
-        } else {
+        int cur = nums[i] + nums[j] + nums[k];
+        if (cur == 0) {
           ret.push_back({nums[i], nums[j], nums[k]});
-          ++j;
-          --k;
-          while (nums[j] == nums[j - 1] && j < k) {
-            ++j;
+          while (j < k && nums[j] == ret.back()[1]) {
+            j++;
           }
-          while (nums[k] == nums[k + 1] && j < k) {
-            --k;
+          while (j < k && nums[k] == ret.back()[2]) {
+            k--;
           }
+        } else if (cur > 0) {
+          k--;
+        } else {
+          j++;
         }
       }
     }
