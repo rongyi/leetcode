@@ -4,18 +4,16 @@
 class Solution {
 public:
   int removeDuplicates(vector<int> &nums) {
-
-    const int n = nums.size();
-    if (n <= 1) {
-      return n;
-    }
+    int sz = nums.size();
     // uniq index
     int ui = 1;
-    for (int i = 1; i < n; ++i) {
+
+    for (int i = 1; i < sz; ++i) {
       if (nums[i] != nums[ui - 1]) {
         nums[ui++] = nums[i];
       }
     }
+
     return ui;
   }
 };

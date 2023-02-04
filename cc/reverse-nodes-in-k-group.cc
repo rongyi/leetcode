@@ -12,76 +12,39 @@
 class Solution {
 public:
   ListNode *reverseKGroup(ListNode *head, int k) {
-    int l = len(head);
     if (k == 1) {
       return head;
     }
-    if (k == l) {
-      return reverse(head);
-    }
-    // int left = l - k;
-    // this is not a full group, we don't touch this kind of group
-    // only reverse full k group
-    if (l < k) {
+    if (head == nullptr) {
       return head;
     }
-
-    auto p = head;
     int i = k;
-    while (--i) {
+    ListNode *p = head;
+    ListNode *prev = nullptr;
+    while (p && i) {
+      prev = p;
       p = p->next;
+      i--;
     }
-    auto nexround = p->next;
-    // cut here
-    p->next = nullptr;
-    auto rvred_group = reverse(head);
-    auto end = rvred_group;
-
-    while (end->next) {
-      end = end->next;
+    if (i != 0) {
+      return head;
     }
-    end->next = reverseKGroup(nexround, k);
+    // full k group
+    ListNode *next_round = prev->next;
+    prev->next = nullptr;
 
-    return rvred_group;
-  }
+    ListNode ret(-1);
+    p = head;
+    ListNode *tail = head;
+    while (p) {
+      ListNode *tmp = p->next;
+      p->next = ret.next;
+      ret.next = p;
 
-private:
-  int len(ListNode *head) {
-    int ret = 0;
-    while (head) {
-      ++ret;
-      head = head->next;
+      p = tmp;
     }
-    return ret;
-  }
-  ListNode *reverse(ListNode *head) {
-    ListNode dummy(-1);
-    while (head) {
-      auto nexround = head->next;
-      // insert at header
-      auto p = dummy.next;
-      dummy.next = head;
-      head->next = p;
+    tail->next = reverseKGroup(next_round, k);
 
-      head = nexround;
-    }
-
-    return dummy.next;
+    return ret.next;
   }
 };
-int main() {
-  Solution so;
-  ListNode l1(1), l2(2), l3(3), l4(4), l5(5);
-  l1.next = &l2;
-  l2.next = &l3;
-  l3.next = &l4;
-  l4.next = &l5;
-  // auto ret = so.reverse(&l1);
-  // cout << ret->val << endl;
-  auto ret = so.reverseKGroup(&l1, 2);
-  while (ret) {
-    cout << ret->val << " ";
-    ret = ret->next;
-  }
-  cout << endl;
-}

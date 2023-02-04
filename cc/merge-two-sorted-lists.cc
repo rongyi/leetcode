@@ -9,31 +9,31 @@
  * };
  */
 
-
 class Solution {
 public:
   ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
-    ListNode dummy(-1);
-    ListNode *cur = &dummy;
-    auto p1 = l1;
-    auto p2 = l2;
-    while (p1 && p2) {
-      if (p1->val <= p2->val) {
-        cur->next = p1;
-        p1 = p1->next;
+    ListNode ret(-1);
+    ListNode *tail = &ret;
+
+    while (l1 && l2) {
+      if (l1->val <= l2->val) {
+        tail->next = l1;
+        l1 = l1->next;
       } else {
-        cur->next = p2;
-        p2 = p2->next;
+        tail->next = l2;
+        l2 = l2->next;
       }
-      cur = cur->next;
+      // update tail
+      tail = tail->next;
     }
-    if (p1) {
-      cur->next = p1;
+    // check left, either l1 or l2
+    if (l1) {
+      tail->next = l1;
     }
-    if (p2) {
-      cur->next = p2;
+    if (l2) {
+      tail->next = l2;
     }
 
-    return dummy.next;
+    return ret.next;
   }
 };

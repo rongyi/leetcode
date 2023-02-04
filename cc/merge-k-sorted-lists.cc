@@ -9,7 +9,6 @@
  * };
  */
 
-
 class Solution {
 public:
   ListNode *mergeKLists(vector<ListNode *> &lists) {
@@ -22,8 +21,9 @@ public:
     }
     return p;
   }
+
 private:
- ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
+  ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
     ListNode dummy(-1);
     ListNode *cur = &dummy;
     auto p1 = l1;

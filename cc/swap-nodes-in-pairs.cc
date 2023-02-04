@@ -6,32 +6,26 @@
 class Solution {
 public:
   ListNode *swapPairs(ListNode *head) {
-    if (!head) {
+    if (head == nullptr) {
       return nullptr;
     }
     if (head->next == nullptr) {
       return head;
     }
-    // now we have a pair
-    ListNode dummy(-1);
-    // save
-    auto nexround = head->next->next;
-    // the two
-    auto p = head;
-    auto q = head->next;
-    dummy.next = q;
-    q->next = p;
-    // we don't care the next is, this is recursive, yo!
-    p->next = swapPairs(nexround);
+    // two nodes
+    ListNode *next_round = head->next->next;
+    ListNode ret(-1);
+    ListNode *tail = &ret;
 
-    return dummy.next;
+    tail->next = head->next;
+    tail = tail->next;
+
+    tail->next = head;
+    tail = tail->next;
+    // head->next = nullptr;
+    tail->next = swapPairs(next_round);
+
+    return ret.next;
   }
 };
-int main() {
-  Solution so;
-  ListNode l1(1), l2(2), l3(3), l4(4);
-  l1.next = &l2;
-  l2.next = &l3;
-  l3.next = &l4;
-  so.swapPairs(&l1);
-}
+

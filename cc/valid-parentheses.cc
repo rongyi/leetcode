@@ -4,21 +4,22 @@
 class Solution {
 public:
   bool isValid(string s) {
-    const string left{"([{"};
-    const string right{")]}"};
-    stack<char> stk;
+    map<char, char> p;
+    p[')'] = '(';
+    p[']'] = '[';
+    p['}'] = '{';
+    vector<char> stk;
     for (auto c : s) {
       if (c == '(' || c == '[' || c == '{') {
-        stk.push(c);
+        stk.push_back(c);
       } else {
         if (stk.empty()) {
           return false;
         }
-        auto tmp = stk.top();
-        if (right.find(c) != left.find(tmp)) {
+        if (p[c] != stk.back()) {
           return false;
         }
-        stk.pop();
+        stk.pop_back();
       }
     }
 

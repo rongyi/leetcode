@@ -4,23 +4,25 @@
 class Solution {
 public:
   vector<string> generateParenthesis(int n) {
-    vector<string> ret;
-    string s{""};
-    rec(n, n, s, ret);
-    return ret;
+    cache_.clear();
+    recur(n, n, "");
+
+    return cache_;
   }
 
 private:
-  void rec(int left, int right, string cur, vector<string> &ret) {
-    if (left == 0 && right == 0) {
-      ret.push_back(cur);
+  void recur(int l, int r, string cur) {
+    if (l == 0 && r == 0) {
+      cache_.push_back(cur);
     }
-    if (left > 0) {
-      rec(left - 1, right, cur + "(", ret);
+    if (l > 0) {
+      recur(l - 1, r, cur + '(');
     }
-    // 表示 ')' 不可以先进来
-    if (right > 0 && left < right) {
-      rec(left, right - 1, cur + ")", ret);
+    if (r > 0 && l < r) {
+      recur(l, r - 1, cur + ')');
     }
   }
+
+private:
+  vector<string> cache_;
 };
