@@ -3,33 +3,32 @@
 class Solution {
 public:
   vector<int> findSubstring(string s, vector<string> &words) {
-    vector<int> ret;
-    const int n = words.size();
-    if (n == 0) {
-      return ret;
-    }
-    const int m = words[0].size();
-    const int len = s.size();
-    unordered_map<string, int> cnt;
-    for (auto &w : words) {
-      ++cnt[w];
+    int sz = s.size();
+    int blocks = words.size();
+    int wsz = words[0].size();
+    int chunksz = blocks * wsz;
+    map<string, int> cnt;
+    for (auto &p : words) {
+      cnt[p]++;
     }
 
-    for (int i = 0; i <= len - n * m; ++i) {
-      unordered_map<string, int> cur;
+    vector<int> ret;
+    for (int i = 0; i + chunksz - 1 < sz; i++) {
+      // current blocks
       int j = 0;
-      // n 是表示多少个单词
-      for (; j < n; ++j) {
-        auto tmp = s.substr(i + j * m, m);
-        if (cnt.find(tmp) == cnt.end()) {
+      map<string, int> cur_cnt;
+      for (; j < blocks; ++j) {
+        string cur = s.substr(i + j * wsz, wsz);
+        if (!cnt[cur]) {
           break;
         }
-        ++cur[tmp];
-        if (cur[tmp] > cnt[tmp]) {
+        cur_cnt[cur]++;
+        // too much
+        if (cur_cnt[cur] > cnt[cur]) {
           break;
         }
       }
-      if (j == n ) {
+      if (j == blocks) {
         ret.push_back(i);
       }
     }

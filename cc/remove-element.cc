@@ -4,12 +4,14 @@
 class Solution {
 public:
   int removeElement(vector<int> &nums, int val) {
-    int ui = 0;
-    for (int i = 0; i < nums.size(); i++) {
+    int sz = nums.size();
+    // delete index
+    int di = 0;
+    for (int i = 0; i < sz; ++i) {
       if (nums[i] != val) {
-        nums[ui++] = nums[i];
+        nums[di++] = nums[i];
       }
     }
-    return ui;
+    return di;
   }
 };

@@ -3,25 +3,22 @@
 class Solution {
 public:
   int longestValidParentheses(string s) {
-    stack<int> stk;
+    int sz = s.size();
+    vector<int> stk;
+    int valid_start = 0;
     int ret = 0;
-    int start = 0;
-    const int n = s.size();
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < sz; ++i) {
       if (s[i] == '(') {
-        stk.push(i);
+        stk.push_back(i);
       } else {
-        // this is not valid
         if (stk.empty()) {
-          start = i + 1;
+          valid_start = i + 1;
         } else {
-          stk.pop();
+          stk.pop_back();
           if (stk.empty()) {
-            // 处理单层括号的情况
-            ret = max(ret, i - start + 1);
+            ret = max(ret, i - valid_start + 1);
           } else {
-            // 处理括号嵌套情况
-            ret = max(ret, i - stk.top());
+            ret = max(ret, i - (stk.back() + 1) + 1);
           }
         }
       }
@@ -29,7 +26,3 @@ public:
     return ret;
   }
 };
-int main() {
-  Solution so;
-  so.longestValidParentheses(")()())");
-}
