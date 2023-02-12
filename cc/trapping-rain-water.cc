@@ -4,35 +4,29 @@
 class Solution {
 public:
   int trap(vector<int> &height) {
-    const int n = height.size();
-    if (n < 3) {
-      return 0;
-    }
-    vector<int> left(n, 0);
-    vector<int> right(n, 0);
+    int sz = height.size();
+    vector<int> l(sz, 0);
+    vector<int> r(sz, 0);
 
-    for (int i = 1; i < n; i++) {
-      left[i] = max(height[i - 1], left[i - 1]);
+    int val = 0;
+    for (int i = 0; i < sz - 1; i++) {
+      val = max(val, height[i]);
+      l[i + 1] = val;
     }
-    for (int i = n - 2; i >= 0; --i) {
-      right[i] = max(height[i + 1], right[i + 1]);
+    val = 0;
+    for (int i = sz - 1; i > 0; i--) {
+      val = max(val, height[i]);
+      r[i - 1] = val;
     }
-
-    int ret = 0;
-    for (int i = 1; i < n - 1; ++i) {
-      auto low = min(left[i], right[i]);
-      if (low > height[i]) {
-        ret += (low - height[i]);
+    int acc = 0;
+    for (int i = 1; i < sz - 1; i++) {
+      int diff = min(l[i], r[i]) - height[i];
+      if (diff > 0) {
+        acc += diff;
       }
     }
 
-    return ret;
+    return acc;
   }
 };
 
-int main() {
-  Solution so;
-  vector<int> input{2, 0, 2};
-  auto ret = so.trap(input);
-  cout << ret << endl;
-}

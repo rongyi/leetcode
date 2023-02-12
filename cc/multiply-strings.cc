@@ -4,99 +4,63 @@
 class Solution {
 public:
   string multiply(string num1, string num2) {
-    const int n = num2.size();
-    vector<string> mapmulti;
-    // 1234 * 2 ==>
-    // 1 * 2 then shift 000
-    // 2 * 2 then shift 00
-    // 3 * 2 then shift 0
-    // 4 * 2 then shift ''
-    // then add these string
-    for (int i = 0; i < n; ++i) {
-      auto curmul = multiplysingle(num1, num2[i]);
-      if (curmul == "") {
-        continue;
-      }
-      // should also add shift '0'
-      // 我们从最高位的num2开始计算，所以这里对应的在后面添0，个数看后面还有几个数字
-      curmul += string(n - i - 1, '0');
-
-      mapmulti.push_back(curmul);
-    }
-
-    if (mapmulti.size() == 0) {
+    if (num1 == "0" || num2 == "0") {
       return "0";
-    } else if (mapmulti.size() == 1) {
-      return mapmulti[0];
     }
-
-    // now reduce
-    string ret = mapmulti[0];
-    for (int i = 1; i < mapmulti.size(); ++i) {
-      ret = add(ret, mapmulti[i]);
+    int sz1 = num1.size();
+    int sz2 = num2.size();
+    string ret{};
+    for (int i = sz2 - 1, shift = 0; i >= 0; --i, shift++) {
+      string cur = multiplysingle(num1, num2[i], shift);
+      ret = add(ret, cur);
     }
-
     return ret;
   }
 
 private:
-  string multiplysingle(string num1, char num2) {
-    if (num2 == '0') {
-      return "";
-    }
-    const int n = num1.size();
+  string multiplysingle(string num1, char num2, int shift) {
+    int sz = num1.size();
+    ostringstream oss;
     int carry = 0;
-    stringstream ss;
-    for (int i = n - 1; i >= 0; --i) {
-      int mul = carry + (num1[i] - '0') * (num2 - '0');
+    int m2 = num2 - '0';
+    for (int i = sz - 1; i >= 0; i--) {
+      int cur = num1[i] - '0';
+      int mul = cur * m2 + carry;
       carry = mul / 10;
-      mul %= 10;
-      ss << mul;
+      oss << (mul % 10);
     }
-    if (carry > 0) {
-      ss << carry;
+    if (carry) {
+      oss << carry;
     }
-    auto ret = ss.str();
+    string ret = oss.str();
     reverse(ret.begin(), ret.end());
-    if (ret.size() > 0 && ret[0] == '0') {
-      return "";
-    }
 
-    return ret;
+    return ret + string(shift, '0');
   }
 
   string add(string num1, string num2) {
-    const int m = num1.size();
-    const int n = num2.size();
+    int sz1 = num1.size();
+    int sz2 = num2.size();
+    int carry = 0;
+
     reverse(num1.begin(), num1.end());
     reverse(num2.begin(), num2.end());
-
-    int carry = 0;
-    stringstream ss;
-    int i = 0;
-    for (; i < n && i < m; ++i) {
-      int sum = (num1[i] - '0') + (num2[i] - '0') + carry;
+    ostringstream oss;
+    for (int i = 0; i < max(sz1, sz2); i++) {
+      int sum = carry;
+      if (i < sz1) {
+        sum += (num1[i] - '0');
+      }
+      if (i < sz2) {
+        sum += (num2[i] - '0');
+      }
+      oss << (sum % 10);
       carry = sum / 10;
-      sum %= 10;
-      ss << sum;
     }
-    while (i < m) {
-      int sum = (num1[i++] - '0') + carry;
-      carry = sum / 10;
-      sum %= 10;
-      ss << sum;
+    if (carry) {
+      oss << carry;
     }
-    while (i < n) {
-      int sum = (num2[i++] - '0') + carry;
-      carry = sum / 10;
-      sum %= 10;
-      ss << sum;
-    }
-    if (carry > 0) {
-      ss << carry;
-    }
-
-    auto ret = ss.str();
+    string ret = oss.str();
     reverse(ret.begin(), ret.end());
     return ret;
   }

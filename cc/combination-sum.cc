@@ -4,34 +4,34 @@
 class Solution {
 public:
   vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
-    vector<int> cur_vec;
+    vector<int> cur_lst;
     vector<vector<int>> ret;
-    sort(candidates.begin(), candidates.end());
 
-    dfs(ret, candidates, cur_vec, 0, target);
+    dfs(candidates, 0, cur_lst, ret, target);
 
-    // erase duplicate
-    sort(ret.begin(), ret.end());
-    ret.erase(unique(ret.begin(), ret.end()), ret.end());
     return ret;
   }
 
 private:
-  void dfs(vector<vector<int>> &ret, vector<int> &candidates,
-           vector<int> &cur_vec, int cur_index, int target) {
+  void dfs(vector<int> &candidates, int idx, vector<int> &cur_lst,
+           vector<vector<int>> &ret, int target) {
     if (target < 0) {
       return;
-    } else if (target == 0) {
-      ret.push_back(cur_vec);
+    }
+    if (target == 0) {
+      ret.push_back(cur_lst);
       return;
     }
-
-    const int n = candidates.size();
-    for (int i = cur_index; i < n; i++) {
-      cur_vec.push_back(candidates[i]);
-      // 因为可以重复取，这里index其实没有往上加，往上加的地方在for里做掉了
-      dfs(ret, candidates, cur_vec, i, target - candidates[i]);
-      cur_vec.pop_back();
+    if (idx == candidates.size()) {
+      return;
     }
+    // don't take current
+    dfs(candidates, idx + 1, cur_lst, ret, target);
+
+    // take current
+    cur_lst.push_back(candidates[idx]);
+    dfs(candidates, idx, cur_lst, ret, target - candidates[idx]);
+    cur_lst.pop_back();
   }
 };
+

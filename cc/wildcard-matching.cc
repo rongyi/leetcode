@@ -3,6 +3,36 @@
 
 class Solution {
 public:
+  bool isMatch(string s, string p) {
+    int ssz = s.size();
+    int psz = p.size();
+    vector<vector<int>> dp(ssz + 1, vector<int>(psz + 1, 0));
+    dp[0][0] = 1;
+    // '*'
+    for (int j = 1; j <= psz && p[j - 1] == '*'; j++) {
+      dp[0][j] = dp[0][j - 1];
+    }
+    // *
+    // dp[i][j] when p[j - 1] == '*'
+    // dp[i][j - 1] -> dp[i][j]
+    // dp[i - 1][j] -> dp[i][j]
+    for (int i = 1; i <= ssz; i++) {
+      for (int j = 1; j <= psz; j++) {
+        if (p[j - 1] == '*') {
+          dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
+        } else {
+          dp[i][j] =
+              ((s[i - 1] == p[j - 1]) || p[j - 1] == '?') && dp[i - 1][j - 1];
+        }
+      }
+    }
+
+    return dp[ssz][psz];
+  }
+};
+
+class Solution2 {
+public:
   bool isMatch(string s, string p) { return matchChar(s.c_str(), p.c_str()); }
   bool matchChar(const char *s, const char *p) {
     const char *scur = s, *pcur = p, *sstar = nullptr, *pstar = nullptr;
@@ -11,8 +41,12 @@ public:
       if (*scur == *pcur || *pcur == '?') {
         ++scur;
         ++pcur;
-      } else if (*pcur == '*') { // 表示有*加持，这里的条件先后也是有讲究的，遇到一个*，之前的 *匹配过程就结束了，翻过去了
-        // 为了下一轮不再匹配 '*' 这个条件所以这里把pcur移走了，但是位置通过pstar保留了，所以这里下一轮不是问题
+      } else if (
+          *pcur ==
+          '*') { // 表示有*加持，这里的条件先后也是有讲究的，遇到一个*，之前的
+                 // *匹配过程就结束了，翻过去了
+        // 为了下一轮不再匹配 '*'
+        // 这个条件所以这里把pcur移走了，但是位置通过pstar保留了，所以这里下一轮不是问题
         pstar = pcur++;
         sstar = scur;
       } else if (pstar) {

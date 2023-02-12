@@ -4,25 +4,28 @@
 class Solution {
 public:
   int firstMissingPositive(vector<int> &nums) {
-    bucket_sort(nums);
-
-    const int n = nums.size();
-    for (int i = 0; i < n; i++) {
-      if (nums[i] != (i + 1))
-        return i + 1;
-    }
-    return n + 1;
-  }
-
-private:
-  void bucket_sort(vector<int> &A) {
-    const int n = A.size();
-    for (int i = 0; i < n; i++) {
-      while (A[i] != i + 1) {
-        if (A[i] <= 0 || A[i] > n || A[i] == A[A[i] - 1])
-          break;
-        swap(A[i], A[A[i] - 1]);
+    // 0 1 2 3 4
+    // 1 2 3 4 5
+    // i nums[i]
+    // i + 1 = nums[i]
+    // i = nums[i] - 1
+    // nums[i] = nums[nums[i] - 1]
+    // 0 1 2 3 4
+    // 5 1 3 4 2
+    // 2 1 3 4 5
+    // 1 2 3 4 5 sz + 1
+    // nums[i] != i + 1
+    int sz = nums.size();
+    for (int i = 0; i < sz; i++) {
+      while (nums[i] > 0 && nums[i] <= sz && nums[nums[i] - 1] != nums[i]) {
+        swap(nums[i], nums[nums[i] - 1]);
       }
     }
+    for (int i = 0; i < sz; i++) {
+      if (nums[i] != i + 1) {
+        return i + 1;
+      }
+    }
+    return sz + 1;
   }
 };
