@@ -4,16 +4,17 @@
 class Solution {
 public:
   vector<vector<string>> groupAnagrams(vector<string> &strs) {
-    unordered_map<string, vector<string>> dict;
-    for (auto s : strs) {
-      auto k = s;
+    map<string, vector<string>> group;
+    for (auto &w : strs) {
+      string k = w;
       sort(k.begin(), k.end());
-      dict[k].push_back(s);
+      group[k].push_back(w);
     }
     vector<vector<string>> ret;
-    for (auto kv : dict) {
+    for (auto &kv : group) {
       ret.push_back(kv.second);
     }
+
     return ret;
   }
 };
