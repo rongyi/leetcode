@@ -9,32 +9,34 @@ public:
     int n = matrix[0].size();
     int total = m * n;
 
+    int x = 0;
+    int y = 0;
+    int right_end = n;
+    int down_end = m;
+    int left_end = -1;
+    int up_end = 0;
+
     // 0 ->
     // 1 down
     // 2 <-
     // 3 up
     int direction = 0;
-    int right_end = n;
-    int down_end = m;
-    int left_end = -1;
-    int up_end = 1;
-    int x = 0;
-    int y = 0;
+
     while (ret.size() < total) {
       if (direction == 0) {
-        for (int j = y; j < right_end; j++) {
+        for (int j = y; j < right_end; ++j) {
           ret.push_back(matrix[x][j]);
         }
         right_end--;
-        y = right_end;
         x += 1;
+        y = right_end;
       } else if (direction == 1) {
-        for (int i = x; i < down_end; i++) {
+        for (int i = x; i < down_end; ++i) {
           ret.push_back(matrix[i][y]);
         }
         down_end--;
-        y -= 1;
         x = down_end;
+        y -= 1;
 
       } else if (direction == 2) {
         for (int j = y; j > left_end; --j) {
@@ -43,7 +45,6 @@ public:
         left_end++;
         x -= 1;
         y = left_end;
-
       } else {
         for (int i = x; i > up_end; --i) {
           ret.push_back(matrix[i][y]);
@@ -59,16 +60,3 @@ public:
     return ret;
   }
 };
-
-int main() {
-  Solution so;
-  // vector<vector<int>> input{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
-  // vector<vector<int>> input{{6, 9, 7}};
-  vector<vector<int>> input{{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
-                            {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}};
-  auto ret = so.spiralOrder(input);
-  for (auto i : ret) {
-    cout << i << " ";
-  }
-  cout << endl;
-}
