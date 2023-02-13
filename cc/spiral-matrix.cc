@@ -5,62 +5,55 @@ class Solution {
 public:
   vector<int> spiralOrder(vector<vector<int>> &matrix) {
     vector<int> ret;
-    const int m = matrix.size();
-    if (m == 0) {
-      return ret;
-    }
-    const int n = matrix[0].size();
+    int m = matrix.size();
+    int n = matrix[0].size();
+    int total = m * n;
 
-    auto beginx = 0;
-    auto endx = m - 1;
+    // 0 ->
+    // 1 down
+    // 2 <-
+    // 3 up
+    int direction = 0;
+    int right_end = n;
+    int down_end = m;
+    int left_end = -1;
+    int up_end = 1;
+    int x = 0;
+    int y = 0;
+    while (ret.size() < total) {
+      if (direction == 0) {
+        for (int j = y; j < right_end; j++) {
+          ret.push_back(matrix[x][j]);
+        }
+        right_end--;
+        y = right_end;
+        x += 1;
+      } else if (direction == 1) {
+        for (int i = x; i < down_end; i++) {
+          ret.push_back(matrix[i][y]);
+        }
+        down_end--;
+        y -= 1;
+        x = down_end;
 
-    auto beginy = 0;
-    auto endy = n - 1;
+      } else if (direction == 2) {
+        for (int j = y; j > left_end; --j) {
+          ret.push_back(matrix[x][j]);
+        }
+        left_end++;
+        x -= 1;
+        y = left_end;
 
-    //    ----------> ++beginx
-    // ++beginy
-    //   ^                |
-    //   |                |
-    //   |                |
-    //   |                |
-    //   |                v
-    // --endx<--------- --endy
+      } else {
+        for (int i = x; i > up_end; --i) {
+          ret.push_back(matrix[i][y]);
+        }
+        up_end++;
+        x = up_end;
+        y += 1;
+      }
 
-    // 这里有一个规律，无论横着，竖着，反着，正着都循环里边界都很固定，
-    // 个人觉得难点在更新边界，说明在更新部分
-    while (true) {
-      // left --> right
-      for (int j = beginy; j <= endy; ++j) {
-        ret.push_back(matrix[beginx][j]);
-      }
-      // 第一行走完了，后续的行操作都从下一行开始
-      if (++beginx > endx) {
-        break;
-      }
-      // top --> down
-      for (int i = beginx; i <= endx; ++i) {
-        ret.push_back(matrix[i][endy]);
-      }
-      // 最后一列走完，后续的列操作都到前面一列终止
-      if (--endy < beginy) {
-        break;
-      }
-      // right --> left
-      for (int j = endy; j >= beginy; --j) {
-        ret.push_back(matrix[endx][j]);
-      }
-      // 最后一行走完，行操作都到前面一行
-      if (--endx < beginx) {
-        break;
-      }
-      // down --> top
-      for (int i = endx; i >= beginx; --i) {
-        ret.push_back(matrix[i][beginy]);
-      }
-      // 第一列走完，后续列下一列开始
-      if (++beginy > endy) {
-        break;
-      }
+      direction = (direction + 1) % 4;
     }
 
     return ret;
