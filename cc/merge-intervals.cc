@@ -1,48 +1,25 @@
 // http://leetcode.com/problems/merge-intervals/description/
 #include "xxx.hpp"
 
-
 class Solution {
 public:
-  vector<Interval> merge(vector<Interval> &intervals) {
-    const int n = intervals.size();
-    if (n <= 1) {
-      return intervals;
-    }
+  vector<vector<int>> merge(vector<vector<int>> &intervals) {
+    sort(intervals.begin(), intervals.end());
+    vector<vector<int>> ret;
+    int prev_begin = intervals[0][0];
+    int prev_end = intervals[0][1];
 
-    sort(intervals.begin(), intervals.end(),
-         [](const Interval &left, const Interval &right) -> bool {
-           return left.start < right.start;
-         });
-    vector<Interval> ret;
-    ret.push_back(intervals[0]);
-    int ret_index = 0;
-
-    for (int i = 1; i < n; ++i) {
-      auto prev = ret[ret_index];
-      auto cur = intervals[i];
-      // no interaction, do nothing
-      cout << "prev end" << prev.end << endl;
-      if (cur.start > prev.end) {
-        ret.push_back(cur);
-        ret_index++;
+    for (int i = 1; i < intervals.size(); i++) {
+      if (intervals[i][0] > prev_end) {
+        ret.push_back({prev_begin, prev_end});
+        prev_begin = intervals[i][0];
+        prev_end = intervals[i][1];
       } else {
-        Interval newitv(prev.start, max(cur.end, prev.end));
-        ret.pop_back();
-        ret.push_back(newitv);
+        prev_end = max(prev_end, intervals[i][1]);
       }
     }
+    ret.push_back({prev_begin, prev_end});
 
     return ret;
   }
 };
-
-int main() {
-  Solution so;
-  vector<Interval> input{Interval(1, 4), Interval(0, 2), Interval(3, 5)};
-  auto ret = so.merge(input);
-  for (auto &itv : ret) {
-    cout << itv.start << " --> " << itv.end << endl;
-  }
-
-}
