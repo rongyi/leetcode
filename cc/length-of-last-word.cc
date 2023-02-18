@@ -3,32 +3,21 @@
 
 class Solution {
 public:
-  int lengthOfLastWord2(string s) {
-    auto j = s.find_last_not_of(' ');
-    if (j == string::npos) {
+  int lengthOfLastWord(string s) {
+    int sz = s.size();
+    int j = sz - 1;
+    for (; j >= 0 && s[j] == ' '; --j) {
+    }
+    if (j == -1) {
       return 0;
     }
-    auto i = s.find_last_of(' ', j);
-
-    return j - i;
-  }
-
-  int lengthOfLastWord(string str) {
-    const int n = str.size();
-    int ret = 0;
-    for (int i = 0; i < n;) {
-      if (str[i++] != ' ') {
-        ++ret;
-      } else if (i < n && str[i] == ' ') {
-        ret = 0;
+    int last_space = -1;
+    for (int i = 0; i < j; i++) {
+      if (s[i] == ' ') {
+        last_space = i;
       }
     }
-    return ret;
+    return j - last_space;
   }
 };
 
-int main() {
-  Solution so;
-  auto ret = so.lengthOfLastWord("a ");
-  cout << ret << endl;
-}

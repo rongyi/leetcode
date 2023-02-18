@@ -3,41 +3,44 @@
 
 class Solution {
 public:
-  // intervals is already sorted
-  vector<Interval> insert(vector<Interval> &intervals, Interval newInterval) {
-    intervals.push_back(newInterval);
-    return merge(intervals);
-  }
-
-private:
-  vector<Interval> merge(vector<Interval> &intervals) {
-    const int n = intervals.size();
-    if (n <= 1) {
-      return intervals;
+  vector<vector<int>> insert(vector<vector<int>> &intervals,
+                             vector<int> &newInterval) {
+    //         |---|
+    // |--| |-|
+    //           |-----|
+    //                |---|
+    int sz = intervals.size();
+    int i = 0;
+    vector<vector<int>> ret;
+    while (i < sz && intervals[i][1] < newInterval[0]) {
+      ret.push_back(intervals[i]);
+      i++;
     }
-
-    sort(intervals.begin(), intervals.end(),
-         [](const Interval &left, const Interval &right) -> bool {
-           return left.start < right.start;
-         });
-    vector<Interval> ret;
-    ret.push_back(intervals[0]);
-    int ret_index = 0;
-
-    for (int i = 1; i < n; ++i) {
-      auto prev = ret[ret_index];
-      auto cur = intervals[i];
-      // no interaction, do nothing
-      if (cur.start > prev.end) {
-        ret.push_back(cur);
-        ret_index++;
+    if (i == sz) {
+      ret.push_back(newInterval);
+      return ret;
+    }
+    int prev_begin = -1;
+    int prev_end = -1;
+    if (intervals[i][0] > newInterval[1]) {
+      prev_begin = newInterval[0];
+      prev_end = newInterval[1];
+    } else {
+      prev_begin = min(newInterval[0], intervals[i][0]);
+      prev_end = max(newInterval[1], intervals[i][1]);
+      i++;
+    }
+    for (; i < sz; i++) {
+      if (intervals[i][0] > prev_end) {
+        ret.push_back({prev_begin, prev_end});
+        prev_begin = intervals[i][0];
+        prev_end = intervals[i][1];
       } else {
-        Interval newitv(prev.start, max(cur.end, prev.end));
-        ret.pop_back();
-        ret.push_back(newitv);
+        prev_end = max(prev_end, intervals[i][1]);
       }
     }
-
+    ret.push_back({prev_begin, prev_end});
     return ret;
   }
 };
+

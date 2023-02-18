@@ -15,9 +15,14 @@ public:
         prev_begin = intervals[i][0];
         prev_end = intervals[i][1];
       } else {
+        // |-----|
+        //     |-----|
+        // |-----|
+        //    |-|
         prev_end = max(prev_end, intervals[i][1]);
       }
     }
+
     ret.push_back({prev_begin, prev_end});
 
     return ret;
