@@ -4,15 +4,15 @@
 class Solution {
 public:
   ListNode *rotateRight(ListNode *head, int k) {
-    if (!head) {
+    int sz = len(head);
+    if (sz == 0) {
       return nullptr;
     }
-    int sz = len(head);
     k %= sz;
-    // fast path
     if (k == 0) {
       return head;
     }
+    // start from head
     int step = sz - k;
     ListNode *prev = nullptr;
     ListNode *p = head;
@@ -21,8 +21,8 @@ public:
       p = p->next;
     }
     ListNode *new_head = p;
-    // cut from here
     prev->next = nullptr;
+
     while (p->next) {
       p = p->next;
     }
@@ -32,11 +32,11 @@ public:
   }
 
 private:
-  int len(ListNode *head) {
+  int len(ListNode *p) {
     int ret = 0;
-    while (head) {
+    while (p) {
+      p = p->next;
       ret++;
-      head = head->next;
     }
 
     return ret;

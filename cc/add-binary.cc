@@ -4,39 +4,30 @@
 class Solution {
 public:
   string addBinary(string a, string b) {
-    const int m = a.size();
-    const int n = b.size();
     reverse(a.begin(), a.end());
     reverse(b.begin(), b.end());
+    ostringstream oss;
+    int m = a.size();
+    int n = b.size();
 
-    vector<char> ret;
-    int carry = 0;
-    int i = 0;
-    for (i = 0; i < min(m, n); i++) {
-      auto sum = carry + (a[i] - '0') + (b[i] - '0');
-      carry = sum / 2;
-      sum %= 2;
-      ret.push_back(sum + '0');
+    int c = 0;
+    for (int i = 0; i < max(m, n); i++) {
+      int sum = c;
+      if (i < m) {
+        sum += (a[i] - '0');
+      }
+      if (i < n) {
+        sum += (b[i] - '0');
+      }
+      oss << (sum % 2);
+      c = sum / 2;
     }
-
-    // add left, either a or b
-    for (; i < m; ++i) {
-      auto sum = carry + (a[i] - '0');
-      carry = sum / 2;
-      sum %= 2;
-      ret.push_back(sum + '0');
+    if (c) {
+      oss << c;
     }
-
-    for (; i < n; ++i) {
-      auto sum = carry + (b[i] - '0');
-      carry = sum / 2;
-      sum %= 2;
-      ret.push_back(sum + '0');
-    }
-    if (carry) {
-      ret.push_back('1');
-    }
+    string ret = oss.str();
     reverse(ret.begin(), ret.end());
-    return string(ret.begin(), ret.end());
+
+    return ret;
   }
 };

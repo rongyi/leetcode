@@ -7,16 +7,19 @@ public:
     if (x <= 1) {
       return x;
     }
-    int left = 0;
-    int right = x;
-    while (left < right) {
-      int mid = left + (right - left) / 2;
-      if (x / mid >= mid) {
-        left = mid + 1;
+    int l = 0;
+    int r = x;
+    while (l <= r) {
+      int m = l + (r - l) / 2;
+      if (x / m == m) {
+        return m;
+      } else if (x / m < m) {
+        r = m - 1;
       } else {
-        right = mid;
+        l = m + 1;
       }
     }
-    return right - 1;
+
+    return r;
   }
 };

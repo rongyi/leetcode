@@ -3,36 +3,54 @@
 
 class Solution {
 public:
-  // 这道题被喷的非常厉害，细节题，确实没什么含量
   bool isNumber(string s) {
-    bool num = false, numAfterE = true, dot = false, exp = false, sign = false;
-
-    const int n = s.size();
-
-    for (int i = 0; i < n; i++) {
-      if (s[i] == ' ') {
-        if (i < n - 1 && s[i + 1] != ' ' && (num || dot || exp || sign))
-          return false;
-      } else if (s[i] == '+' || s[i] == '-') {
-        if (i > 0 && s[i - 1] != 'e' && s[i - 1] != ' ')
-          return false;
-        sign = true;
-      } else if (s[i] >= '0' && s[i] <= '9') {
-        num = true;
-        numAfterE = true;
-      } else if (s[i] == '.') {
-        if (dot || exp)
-          return false;
-        dot = true;
-      } else if (s[i] == 'e') {
-        if (exp || !num)
-          return false;
-        exp = true;
-        numAfterE = false;
+    int sz = s.size();
+    int i = 0;
+    while (i < sz && s[i] == ' ') {
+      i++;
+    }
+    if (i == sz) {
+      return false;
+    }
+    if (s[i] == '+' || s[i] == '-') {
+      i++;
+    }
+    int dotcnt = 0;
+    int digcnt = 0;
+    for (; i < sz && (s[i] == '.' || (s[i] <= '9' && s[i] >= '0')); i++) {
+      if (s[i] == '.') {
+        dotcnt++;
       } else {
+        digcnt++;
+      }
+    }
+    if (dotcnt > 1 || digcnt < 1) {
+      return false;
+    }
+    // option e
+    if (s[i] == 'e' || s[i] == 'E') {
+      i++;
+
+      if (s[i] == '+' || s[i] == '-') {
+        i++;
+      }
+      digcnt = 0;
+      for (; i < sz && (s[i] <= '9' && s[i] >= '0'); i++) {
+        digcnt++;
+      }
+      if (digcnt == 0) {
         return false;
       }
     }
-    return num && numAfterE;
+    for (; i < sz && s[i] == ' '; i++) {
+    }
+
+    return i == sz;
   }
 };
+
+int main(int argc, char *argv[]) {
+  Solution so;
+  so.isNumber("1E9");
+  return 0;
+}
