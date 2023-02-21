@@ -5,15 +5,16 @@
 class Solution {
 public:
   int climbStairs(int n) {
-    // fibonacci yo!
+    // f(n) = f(n - 1) + f(n - 2)
     int prev = 1;
     int cur = 1;
-    int ret = 1;
-    for (int i = 2; i <= n; ++i) {
-      ret = prev + cur;
+    int sum = cur;
+    for (int i = 2; i <= n; i++) {
+      sum = prev + cur;
       prev = cur;
-      cur = ret;
+      cur = sum;
     }
-    return ret;
+
+    return sum;
   }
 };
