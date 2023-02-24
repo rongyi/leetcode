@@ -15,36 +15,19 @@ public:
     if (!head) {
       return nullptr;
     }
-    // just make it different with the first node;
-    auto val = head->val - 1;
-    ListNode dummy(val);
-    auto *cur = &dummy;
+    ListNode ret(233);
+    ListNode *tail = &ret;
 
-    auto p = head;
-    while (p) {
-      // met a uniq element
-      if (cur->val != p->val) {
-        cur->next = p;
-        cur = cur->next;
-        p = p->next;
-      } else {
-        auto n = p->next;
-        p->next = nullptr;
-        p = n;
+    while (head) {
+      if (head->val != tail->val) {
+        tail->next = head;
+        tail = tail->next;
       }
+      head = head->next;
     }
-    // seal the last
-    cur->next = nullptr;
-    return dummy.next;
+    tail->next = nullptr;
+
+    return ret.next;
   }
 };
 
-int main() {
-  Solution so;
-  ListNode l1(1), l2(1), l3(2), l4(3), l5(3);
-  l1.next = &l2;
-  l2.next = &l3;
-  l3.next = &l4;
-  l4.next = &l5;
-  so.deleteDuplicates(&l1);
-}

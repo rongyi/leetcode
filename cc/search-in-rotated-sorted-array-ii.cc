@@ -24,7 +24,7 @@ public:
         } else {
           last = mid;
         }
-      } else {                  // they are equal, just ignore
+      } else { // they are equal, just ignore
         first++;
       }
     }

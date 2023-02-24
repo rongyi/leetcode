@@ -6,27 +6,27 @@ public:
   vector<vector<int>> combine(int n, int k) {
     vector<vector<int>> ret;
     vector<int> cur;
-    combine(ret, cur, 1, n, k);
+    recur(n, 1, k, ret, cur);
 
     return ret;
   }
 
 private:
-  void combine(vector<vector<int>> &ret, vector<int> cur, int index, int n,
-               int k) {
+  void recur(int n, int idx, int k, vector<vector<int>> &ret,
+             vector<int> &cur) {
     if (cur.size() == k) {
       ret.push_back(cur);
       return;
     }
-
-    if (index > n) {
+    if (idx > n) {
       return;
     }
-    // don't pick current node
-    combine(ret, cur, index + 1, n, k);
+    // don't pick current
+    recur(n, idx + 1, k, ret, cur);
 
-    // pick current node
-    cur.push_back(index);
-    combine(ret, cur, index + 1, n, k);
+    // pick current
+    cur.push_back(idx);
+    recur(n, idx + 1, k, ret, cur);
+    cur.pop_back();
   }
 };

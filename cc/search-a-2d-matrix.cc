@@ -3,37 +3,24 @@
 
 class Solution {
 public:
-  // 本质上所有数字放在一行还是有序的，所以还是二叉查找的另一种说法
   bool searchMatrix(vector<vector<int>> &matrix, int target) {
-
-    const int m = matrix.size();
-    if (m == 0) {
-      return false;
-    }
-    const int n = matrix[0].size();
-    int left = 0;
-    int right = m * n;
-    while (left < right) {
-      auto mid = left + (right - left) / 2;
-      // 每一行有n个，那么排在第几行？
-      auto row = mid / n;
-      auto col = mid % n;
-      if (target == matrix[row][col]) {
+    int m = matrix.size();
+    int n = matrix[0].size();
+    int l = 0;
+    int r = m * n - 1;
+    while (l <= r) {
+      auto mid = l + (r - l) / 2;
+      int i = mid / n;
+      int j = mid % n;
+      if (matrix[i][j] == target) {
         return true;
-      } else if (target > matrix[row][col]) {
-        left = mid + 1;
+      } else if (matrix[i][j] < target) {
+        l = mid + 1;
       } else {
-        right = mid;
+        r = mid - 1;
       }
     }
-
     return false;
   }
 };
 
-int main() {
-  Solution so;
-  vector<vector<int>> input{{1, 3, 5}};
-  auto ret = so.searchMatrix(input, 0);
-  cout << ret << endl;
-}
