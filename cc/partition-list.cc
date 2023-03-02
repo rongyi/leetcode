@@ -11,26 +11,25 @@
 class Solution {
 public:
   ListNode *partition(ListNode *head, int x) {
-    // split with two group, and then chain greater group after little than group
     ListNode lt(-1);
-    ListNode gt(-1);
+    ListNode ge(-1);
 
-    auto lcur = &lt;
-    auto gcur = &gt;
+    ListNode *ltail = &lt;
+    ListNode *gtail = &ge;
+
     while (head) {
       if (head->val < x) {
-        lcur->next = head;
-        lcur = lcur->next;
+        ltail->next = head;
+        ltail = ltail->next;
       } else {
-        gcur->next = head;
-        gcur = gcur->next;
+        gtail->next = head;
+        gtail = gtail->next;
       }
+
       head = head->next;
     }
-    // seal
-    gcur->next = nullptr;
-    // chain together
-    lcur->next = gt.next;
+    gtail->next = nullptr;
+    ltail->next = ge.next;
 
     return lt.next;
   }

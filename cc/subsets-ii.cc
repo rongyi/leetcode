@@ -7,36 +7,26 @@ public:
     sort(nums.begin(), nums.end());
     vector<vector<int>> ret;
     vector<int> cur;
-    dfs(nums, 0, cur, ret);
+    recur(nums, 0, cur, ret);
+
     return ret;
   }
 
 public:
-  void dfs(vector<int> &nums, int index, vector<int> &cur,
-           vector<vector<int>> &ret) {
+  void recur(vector<int> &nums, int index, vector<int> &cur,
+             vector<vector<int>> &ret) {
     ret.push_back(cur);
-    for (int i = index; i < nums.size(); ++i) {
+    for (int i = index; i < nums.size(); i++) {
       if (i != index && nums[i] == nums[i - 1]) {
         continue;
       }
-      // 取当前节点
+      // take
       cur.push_back(nums[i]);
-      dfs(nums, i + 1, cur, ret);
 
-      // 不取当前节点，直接for循环下一个
+      recur(nums, i + 1, cur, ret);
       cur.pop_back();
+      // not take
     }
   }
 };
 
-int main() {
-  Solution so;
-  vector<int> input{1, 2, 2};
-  auto ret = so.subsetsWithDup(input);
-  for (auto &v : ret) {
-    for (auto i : v) {
-      cout << i << " ";
-    }
-    cout << endl;
-  }
-}

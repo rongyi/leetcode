@@ -4,38 +4,43 @@
 class Solution {
 public:
   int maximalRectangle(vector<vector<char>> &matrix) {
-    const int m = matrix.size();
-
-    int ret = 0;
-    vector<int> histogram;
-    for (int i = 0; i < m; ++i) {
-      histogram.resize(matrix[i].size());
-      for (int j = 0; j < matrix[i].size(); ++j) {
-        histogram[j] = (matrix[i][j] == '0') ? 0 : 1 + histogram[j];
+    int m = matrix.size();
+    int n = matrix[0].size();
+    vector<int> heights(n + 1, 0);
+    int ret = largestRectangleArea(heights);
+    for (int i = 0; i < m; i++) {
+      for (int j = 0; j < n; j++) {
+        if (matrix[i][j] == '1') {
+          heights[j] += 1;
+        } else {
+          heights[j] = 0;
+        }
       }
-      ret = max(ret, largestRectangleArea(histogram));
+      ret = max(ret, largestRectangleArea(heights));
     }
-
     return ret;
   }
 
 private:
   int largestRectangleArea(vector<int> &heights) {
-    auto ret = 0;
-    heights.push_back(0);
-    const int n = heights.size();
-    stack<int> stk;
-    for (int i = 0; i < n;) {
-      if (stk.empty() || heights[stk.top()] < heights[i]) {
-        stk.push(i++);
+
+    int sz = heights.size();
+    int ret = 0;
+    vector<int> stk;
+    for (int i = 0; i < sz;) {
+      if (stk.empty() || heights[stk.back()] < heights[i]) {
+        stk.push_back(i);
+        i++;
       } else {
-        auto idx = stk.top();
-        stk.pop();
-        auto w = stk.empty() ? i : i - stk.top() - 1;
-        ret = max(ret, w * heights[idx]);
+        int idx = stk.back();
+        stk.pop_back();
+        if (stk.empty()) {
+          ret = max(ret, i * heights[idx]);
+        } else {
+          ret = max(ret, (i - stk.back() - 1) * heights[idx]);
+        }
       }
     }
-
     return ret;
   }
 };

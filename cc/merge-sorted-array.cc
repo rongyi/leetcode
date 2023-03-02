@@ -4,29 +4,18 @@
 class Solution {
 public:
   void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
-    auto cp1 = nums1;
-
-    auto idx = 0;
-    int i = 0;
-    int j = 0;
-    for (; i < m && j < n;) {
-      if (cp1[i] < nums2[j]) {
-        nums1[idx++] = cp1[i];
-        i++;
+    int k = m + n - 1;
+    int i = m - 1;
+    int j = n - 1;
+    while (i >= 0 && j >= 0) {
+      if (nums1[i] < nums2[j]) {
+        nums1[k--] = nums2[j--];
       } else {
-        nums1[idx++] = nums2[j];
-        j++;
+        nums1[k--] = nums1[i--];
       }
     }
-    if (i < m) {
-      for (; i < m; ++i) {
-        nums1[idx++] = cp1[i];
-      }
-    }
-    if (j < n) {
-      for (; j < n; ++j) {
-        nums1[idx++] = nums2[j];
-      }
+    while (j>=0) {
+      nums1[k--] = nums2[j--];
     }
   }
 };
