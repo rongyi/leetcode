@@ -3,47 +3,33 @@
 
 class Solution {
 public:
-  vector<TreeNode *> generateTrees(int n) {
-    if (n == 0) {
-      return vector<TreeNode *>{};
-    }
-    // 层序遍历输出
-    return do_gen(1, n);
-  }
+  vector<TreeNode *> generateTrees(int n) { return do_gen(1, n); }
 
 private:
-  vector<TreeNode *> do_gen(int ld, int rd) {
+  vector<TreeNode *> do_gen(int from, int to) {
+    if (from > to) {
+      return {nullptr};
+    }
+    if (from == to) {
+      return {new TreeNode(from)};
+    }
     vector<TreeNode *> ret;
-    if (ld == rd) {
-      TreeNode *tmp = new TreeNode(ld);
-      ret.push_back(tmp);
-      return ret;
-    }
-    if (ld > rd) {
-      ret.push_back(nullptr);
-      return ret;
-    }
 
-    // 和上一题类似，左子树分配0到n - 1 ,右子树分配 0 到 n - 1
-    for (int i = ld; i <= rd; ++i) {
-      vector<TreeNode *> left = do_gen(ld, i - 1);
-      vector<TreeNode *> right = do_gen(i + 1, rd);
+    for (int i = from; i <= to; i++) {
+      auto lefts = do_gen(from, i - 1);
+      auto rights = do_gen(i + 1, to);
 
-      // 这里的两个for就类似上一题的乘积
-      for (auto lx : left) {
-        for (auto rx : right) {
-          TreeNode *tmp = new TreeNode(i);
-          tmp->left = lx;
-          tmp->right = rx;
-          ret.push_back(tmp);
+      for (auto &left : lefts) {
+        for (auto &right : rights) {
+          TreeNode *cur = new TreeNode(i);
+          cur->left = left;
+          cur->right = right;
+          ret.push_back(cur);
         }
       }
     }
+
     return ret;
   }
 };
 
-int main() {
-  Solution so;
-  so.generateTrees(1);
-}

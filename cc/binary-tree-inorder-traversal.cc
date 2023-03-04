@@ -12,37 +12,28 @@
  */
 class Solution {
 public:
-  vector<int> inorderTraversalRecursive(TreeNode *root) {
-    vector<int> ret;
-    action(root, ret);
-    return ret;
-  }
   vector<int> inorderTraversal(TreeNode *root) {
-    stack<TreeNode *> stk;
-    TreeNode *p = root;
     vector<int> ret;
-    while (!stk.empty() || p != nullptr) {
-      if (p != nullptr) {
-        stk.push(p);
-        p = p->left;
-      } else {
-        p = stk.top();
-        stk.pop();
-        ret.push_back(p->val);
-        p = p->right;
-      }
-    }
+    inorderTraversal(root, ret);
     return ret;
   }
 
 private:
-  void action(TreeNode *root, vector<int> &ret) {
-    if (!root) {
-      return;
-    }
+  void inorderTraversal(TreeNode *root, vector<int> &ret) {
+    stack<TreeNode *> stk;
 
-    action(root->left, ret);
-    ret.push_back(root->val);
-    action(root->right, ret);
+    TreeNode *cur = root;
+
+    while (cur != nullptr || !stk.empty()) {
+      if (cur) {
+        stk.push(cur);
+        cur = cur->left;
+      } else {
+        cur = stk.top();
+        stk.pop();
+        ret.push_back(cur->val);
+        cur = cur->right;
+      }
+    }
   }
 };

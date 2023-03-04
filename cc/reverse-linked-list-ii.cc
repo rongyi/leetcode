@@ -12,29 +12,30 @@
 class Solution {
 public:
   ListNode *reverseBetween(ListNode *head, int m, int n) {
-    if (!head) {
-      return nullptr;
-    }
-    ListNode dummy(-1);
-    dummy.next = head;
-    ListNode *prev = &dummy;
-    for (int i = 0; i < m - 1; ++i) {
+    ListNode ret(-1);
+    ret.next = head;
+    ListNode *prev = &ret;
+
+    int i = 0;
+    for (; i < m - 1; i++) {
       prev = prev->next;
     }
-    ListNode *const head2 = prev;
-    // 三个循环迭代
-    prev = head2->next;
-    ListNode *cur = prev->next;
-    // head2 -> prev -> cur
-    // 采用头插法置换
-    for (int i = m; i < n; ++i) {
-      prev->next = cur->next;
-      cur->next = head2->next;
-      head2->next = cur;
+    ListNode *tail = prev->next;
+    ListNode *p = prev->next;
+    ListNode *next = nullptr;
 
-      cur = prev->next;
+    while (i < n && p) {
+      next = p->next;
+      p->next = prev->next;
+      prev->next = p;
+
+      p = next;
+      i++;
+    }
+    if (tail) {
+      tail->next = next;
     }
 
-    return dummy.next;
+    return ret.next;
   }
 };
