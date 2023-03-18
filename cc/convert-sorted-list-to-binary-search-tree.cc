@@ -4,31 +4,27 @@
 class Solution {
 public:
   TreeNode *sortedListToBST(ListNode *head) {
-    int len = 0;
-    auto *p = head;
-    while (p) {
-      len++;
-      p = p->next;
-    }
-
-    return construct(head, 0, len - 1);
-  }
-
-private:
-  TreeNode *construct(ListNode *&list, int start, int end) {
-    if (start > end) {
+    if (!head) {
       return nullptr;
     }
-    auto mid = start + (end - start) / 2;
-    TreeNode *left_child = construct(list, start, mid - 1);
-    TreeNode *parent = new TreeNode(list->val);
+    if (!head->next) {
+      return new TreeNode(head->val);
+    }
 
-    parent->left = left_child;
+    ListNode *slow = head;
+    ListNode *fast = slow->next;
+    while (fast->next && fast->next->next) {
+      fast = fast->next->next;
+      slow = slow->next;
+    }
 
-    // 相当于 left = mid + 1
-    list = list->next;
-    parent->right = construct(list, mid + 1, end);
+    ListNode *mid = slow->next;
+    slow->next = nullptr;
 
-    return parent;
+    TreeNode *ret = new TreeNode(mid->val);
+    ret->left = sortedListToBST(head);
+    ret->right = sortedListToBST(mid->next);
+
+    return ret;
   }
 };

@@ -5,31 +5,23 @@ class Solution {
 public:
   vector<vector<int>> pathSum(TreeNode *root, int sum) {
     vector<vector<int>> ret;
-    if (!root) {
-      return ret;
-    }
-    vector<int> cur;
-    dfs(root, ret, cur, sum);
 
+    dfs(root, ret, {}, sum, 0);
     return ret;
   }
+
 private:
   void dfs(TreeNode *root, vector<vector<int>> &ret, vector<int> cur,
-           const int target) {
+           const int target, int acc) {
     if (!root) {
-      return;
-    }
-    if (!root->left && !root->right) {
-      // don't forget the last leaf node!
-      cur.push_back(root->val);
-      auto cur_sum = accumulate(cur.begin(), cur.end(), 0);
-      if (cur_sum == target) {
-        ret.push_back(cur);
-      }
       return;
     }
     cur.push_back(root->val);
-    dfs(root->left, ret, cur, target);
-    dfs(root->right, ret, cur, target);
+    acc += root->val;
+    if (acc == target && root->left == nullptr && root->right == nullptr) {
+      ret.push_back(cur);
+    }
+    dfs(root->left, ret, cur, target, acc);
+    dfs(root->right, ret, cur, target, acc);
   }
 };

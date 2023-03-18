@@ -18,6 +18,7 @@ public:
     }
     int ret = numeric_limits<int>::max();
     dfs(root, ret, 1);
+
     return ret;
   }
 
@@ -25,10 +26,8 @@ public:
     if (!root) {
       return;
     }
-    // a leaf, and check
-    if (!root->left && !root->right) {
+    if (root->left == nullptr && root->right == nullptr) {
       ret = min(ret, cur);
-      return;
     }
     dfs(root->left, ret, cur + 1);
     dfs(root->right, ret, cur + 1);

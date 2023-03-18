@@ -14,26 +14,23 @@ class Solution {
 public:
   vector<vector<int>> levelOrderBottom(TreeNode *root) {
     vector<vector<int>> ret;
-    if (!root) {
-      return ret;
-    }
-    queue<TreeNode *> q;
-    q.push(root);
-    while (!q.empty()) {
-      vector<int> cur;
-      int cur_cnt = q.size();
-      for (int i = 0; i < cur_cnt; ++i) {
-        cur.push_back(q.front()->val);
-        if (q.front()->left) {
-          q.push(q.front()->left);
-        }
-        if (q.front()->right) {
-          q.push(q.front()->right);
-        }
-        q.pop();
-      }
-      ret.insert(ret.begin(), cur);
-    }
+
+    recur(root, ret, 1);
+    reverse(ret.begin(), ret.end());
+
     return ret;
+  }
+
+private:
+  void recur(TreeNode *cur, vector<vector<int>> &ret, int level) {
+    if (!cur) {
+      return;
+    }
+    if (ret.size() < level) {
+      ret.push_back({});
+    }
+    ret[level - 1].push_back(cur->val);
+    recur(cur->left, ret, level + 1);
+    recur(cur->right, ret, level + 1);
   }
 };

@@ -4,32 +4,33 @@
 class Solution {
 public:
   TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
-    if (preorder.empty() || preorder.size() != inorder.size()) {
-      return nullptr;
-    }
-    TreeNode *root;
-    dobuild(root, preorder, inorder, inorder.size(), 0, 0);
-    return root;
+    root_idx_ = 0;
+
+    return do_build(preorder, inorder, 0, inorder.size() - 1);
   }
 
 private:
-  void dobuild(TreeNode *&root, vector<int> &preorder, vector<int> &inorder,
-               int size, int pidx, int iidx) {
-    if (iidx >= size) {
-      return;
+  TreeNode *do_build(vector<int> &preorder, vector<int> &inorder, int l,
+                     int r) {
+    if (l > r) {
+      return nullptr;
     }
-    root = new TreeNode(preorder[pidx]);
-    int cur_in;
-    for (int i = 0; i < size; i++) {
-      if (inorder[i] == preorder[pidx]) {
-        cur_in = i;
+
+    int i = l;
+    for (; i <= r; i++) {
+      if (inorder[i] == preorder[root_idx_]) {
         break;
       }
     }
 
-    dobuild(root->left, preorder, inorder, cur_in, pidx + 1, iidx);
+    root_idx_++;
+    TreeNode *cur = new TreeNode(inorder[i]);
+    cur->left = do_build(preorder, inorder, l, i - 1);
+    cur->right = do_build(preorder, inorder, i + 1, r);
 
-    dobuild(root->right, preorder, inorder, size, pidx + cur_in - iidx + 1,
-            cur_in + 1);
+    return cur;
   }
+
+private:
+  int root_idx_;
 };

@@ -14,7 +14,6 @@ class Solution {
 public:
   vector<vector<int>> levelOrder(TreeNode *root) {
     vector<vector<int>> ret;
-
     dolevel(root, ret, 1);
 
     return ret;
@@ -25,12 +24,11 @@ private:
     if (!root) {
       return;
     }
-
     if (ret.size() < level) {
       ret.push_back({});
     }
-
     ret[level - 1].push_back(root->val);
+
     dolevel(root->left, ret, level + 1);
     dolevel(root->right, ret, level + 1);
   }

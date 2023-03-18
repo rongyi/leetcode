@@ -1,39 +1,37 @@
 // http://leetcode.com/problems/recover-binary-search-tree/description/
 #include "xxx.hpp"
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
 class Solution {
 public:
   void recoverTree(TreeNode *root) {
-    vector<TreeNode *> ps;
-    vector<int> vs;
-
-    inorder(root, ps, vs);
-    sort(vs.begin(), vs.end());
-
-    for (int i = 0; i < ps.size(); ++i) {
-      ps[i]->val = vs[i];
-    }
+    prev_ = new TreeNode(numeric_limits<int>::min());
+    inorder(root);
+    swap(first_->val, second_->val);
   }
 
 private:
-  void inorder(TreeNode *root, vector<TreeNode *> &ps, vector<int> &vs) {
-    if (!root) {
+  void inorder(TreeNode *cur) {
+    if (!cur) {
       return;
     }
-    inorder(root->left, ps, vs);
+    inorder(cur->left);
+    if (first_ == nullptr && cur->val < prev_->val) {
+      first_ = prev_;
+    }
+    if (first_ != nullptr && cur->val < prev_->val) {
+      second_ = cur;
+    }
 
-    ps.push_back(root);
-    vs.push_back(root->val);
-
-    inorder(root->right, ps, vs);
+    prev_ = cur;
+    inorder(cur->right);
   }
+
+private:
+  // [1, 2, 3, 4, 5]
+  // [1, 4, 3, 2, 5]
+  //     ^
+  //           ^
+  TreeNode *prev_;
+  TreeNode *first_;
+  TreeNode *second_;
 };

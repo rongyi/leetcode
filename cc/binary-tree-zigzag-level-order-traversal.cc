@@ -5,37 +5,27 @@ class Solution {
 public:
   vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
     vector<vector<int>> ret;
-    if (!root) {
-      return ret;
-    }
-    queue<TreeNode *> q;
-    q.push(root);
-    bool is_insert = false;
-    while (!q.empty()) {
-      vector<int> cur;
-      auto len = q.size();
-      // for every level
-      for (int i = 0; i < len; ++i) {
-        // zigzag action
-        if (is_insert) {
-          cur.insert(cur.begin(), q.front()->val);
-        } else {
-          cur.push_back(q.front()->val);
-        }
-
-        if (q.front()->left) {
-          q.push(q.front()->left);
-        }
-        if (q.front()->right) {
-          q.push(q.front()->right);
-        }
-        // consume this node
-        q.pop();
-      }
-      is_insert = !is_insert;
-      ret.push_back(cur);
-    }
+    dolevel(root, ret, 1, true);
 
     return ret;
+  }
+
+private:
+  void dolevel(TreeNode *root, vector<vector<int>> &ret, int level,
+               bool from_left) {
+    if (!root) {
+      return;
+    }
+    if (ret.size() < level) {
+      ret.push_back({});
+    }
+    if (from_left) {
+      ret[level - 1].push_back(root->val);
+    } else {
+      ret[level - 1].insert(ret[level - 1].begin(), root->val);
+    }
+
+    dolevel(root->left, ret, level + 1, !from_left);
+    dolevel(root->right, ret, level + 1, !from_left);
   }
 };

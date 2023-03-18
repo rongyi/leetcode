@@ -7,20 +7,27 @@ public:
     if (!root) {
       return false;
     }
-    unordered_set<int> sums;
-    dfs(root, sums, 0);
-    return sums.find(sum) != sums.end();
+    found_ = false;
+
+    dfs(root, sum, 0);
+
+    return found_;
   }
-  void dfs(TreeNode *root, unordered_set<int> &sums, int cur) {
+
+private:
+  void dfs(TreeNode *root, int sum, int cur) {
     if (!root) {
       return;
     }
-    // check a leaf
-    if (!root->left && !root->right) {
-      sums.insert(cur + root->val);
+    cur += root->val;
+    if (cur == sum && root->left == nullptr && root->right == nullptr) {
+      found_ = true;
       return;
     }
-    dfs(root->left, sums, cur + root->val);
-    dfs(root->right, sums, cur + root->val);
+    dfs(root->left, sum, cur);
+    dfs(root->right, sum, cur);
   }
+
+private:
+  bool found_;
 };

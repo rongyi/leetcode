@@ -3,27 +3,16 @@
 
 class Solution {
 public:
-  vector<vector<int>> generate(int numRows) {
-    vector<vector<int>> ret;
-    if (numRows == 0) {
-      return ret;
-    }
-    ret.push_back({1});
-    if (numRows == 1) {
-      return ret;
-    }
-    ret.push_back({1, 1});
-    if (numRows == 2) {
-      return ret;
-    }
-    for (int i = 2; i < numRows; ++i) {
-      vector<int> cur(i + 1, 0);
-      cur[0]=  1;
-      cur[i] = 1;
-      for (int j = 1; j < i; ++j) {
-        cur[j] = ret[i - 1][j] + ret[i - 1][j - 1];
+  vector<vector<int>> generate(int rows) {
+    vector<vector<int>> ret{{1}};
+    for (int i = 2; i <= rows; i++) {
+      vector<int> &prev = ret[i - 2];
+      vector<int> cur_row{1};
+      for (int j = 1; j < prev.size(); j++) {
+        cur_row.push_back(prev[j] + prev[j - 1]);
       }
-      ret.push_back(cur);
+      cur_row.push_back(1);
+      ret.push_back(cur_row);
     }
 
     return ret;

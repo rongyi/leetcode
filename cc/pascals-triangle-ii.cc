@@ -4,20 +4,17 @@
 class Solution {
 public:
   vector<int> getRow(int rowIndex) {
-    vector<int> row(rowIndex + 1, 1);
-    // consider this:
-    //  1 3 3 1 0
-    //+ 0 1 3 3 1
-    // --------------
-    //= 1 4 6 4 1
-    for (int i = 1; i <= rowIndex; ++i) {
-      int prev = 1;
-      for (int j = 1; j < i; j++) {
-        auto tmp = row[j];
-        row[j] += prev;
-        prev = tmp;
+    vector<int> prev{1};
+    for (int i = 1; i <= rowIndex; i++) {
+      vector<int> row{1};
+      for (int j = 1; j < prev.size(); j++) {
+        row.push_back(prev[j - 1] + prev[j]);
       }
+
+      row.push_back(1);
+      prev.swap(row);
     }
-    return row;
+
+    return prev;
   }
 };

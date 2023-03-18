@@ -16,8 +16,9 @@ public:
     if (!root) {
       return 0;
     }
-    auto left = maxDepth(root->left);
-    auto right = maxDepth(root->right);
-    return max(left, right) + 1;
+    int l = maxDepth(root->left);
+    int r = maxDepth(root->right);
+
+    return max(l, r) + 1;
   }
 };

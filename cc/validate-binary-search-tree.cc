@@ -2,30 +2,21 @@
 
 #include "xxx.hpp"
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
 class Solution {
 public:
   bool isValidBST(TreeNode *root) {
-    long long left = numeric_limits<long long>::min();
-    long long right = numeric_limits<long long>::max();
-    return pressure(root, left, right);
+    return recur(root, numeric_limits<long long>::min(),
+                 numeric_limits<long long>::max());
   }
 
 private:
-  bool pressure(TreeNode *root, long long left, long long right) {
-    if (!root) {
+  bool recur(TreeNode *cur, long long l, long long r) {
+    if (!cur) {
       return true;
     }
-    return root->val < right && root->val > left &&
-           pressure(root->left, left, root->val) &&
-           pressure(root->right, root->val, right);
+    if (cur->val < r && cur->val > l) {
+      return recur(cur->left, l, cur->val) && recur(cur->right, cur->val, r);
+    }
+    return false;
   }
 };

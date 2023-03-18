@@ -1,33 +1,29 @@
 // http://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/
 #include "xxx.hpp"
 
-
 class Solution {
 public:
-
-  void connect(TreeLinkNode *root) {
+  Node *connect(Node *root) {
     if (!root) {
-      return;
+      return nullptr;
     }
-    TreeLinkNode dummy(-1);
+    Node ret(-1);
+    // for next level
+    Node *tail = &ret;
 
-    TreeLinkNode *cur = nullptr;
-    TreeLinkNode *prev = &dummy;
-
-    // 在这里过桥，桥在上一层遍历时被修好
-    for (cur = root; cur; cur = cur->next) {
+    for (Node *cur = root; cur; cur = cur->next) {
       if (cur->left) {
-        // 这里修桥，为下一层遍历准备
-        prev->next = cur->left;
-        prev = prev->next;
+        tail->next = cur->left;
+        tail = tail->next;
       }
       if (cur->right) {
-        // 这里修桥
-        prev->next = cur->right;
-        prev = prev->next;
+        tail->next = cur->right;
+        tail = tail->next;
       }
     }
-    // 显然就是下一层的第一个节点
-    connect(dummy.next);
+
+    connect(ret.next);
+
+    return root;
   }
 };
