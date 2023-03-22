@@ -4,37 +4,25 @@
 class Solution {
 public:
   bool isPalindrome(string s) {
-    const int m = s.size();
-    if (m == 0) {
-      return true;
-    }
-
-    int left = 0;
-    int right = m - 1;
-    while (left < right) {
-      auto l = tolower(s[left]);
-      auto r = tolower(s[right]);
-      if (!isalnum(l)) {
-        left++;
+    int sz = s.size();
+    int i = 0;
+    int j = sz - 1;
+    while (i < j) {
+      if (!isalnum(s[i])) {
+        i++;
         continue;
       }
-      if (!isalnum(r)) {
-        right--;
+      if (!isalnum(s[j])) {
+        j--;
         continue;
       }
-      if (l != r) {
-        // cout << char(l) << " " << char(r) << endl;
+      if (tolower(s[i]) != tolower(s[j])) {
         return false;
       }
-      left++;
-      right--;
+      i++;
+      j--;
     }
+
     return true;
   }
 };
-
-int main() {
-  Solution so;
-  auto ret = so.isPalindrome("0P");
-  cout << ret << endl;
-}

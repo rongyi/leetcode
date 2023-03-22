@@ -4,27 +4,28 @@
 class Solution {
 public:
   int longestConsecutive(vector<int> &nums) {
+    set<int> uniq(nums.begin(), nums.end());
     int ret = 0;
-    unordered_set<int> dict;
-    for (auto i : nums) {
-      dict.insert(i);
-    }
 
-    for (int i = 0; i < nums.size(); ++i) {
-      int cur_range = 0;
-      if (dict.find(nums[i]) != dict.end()) {
-        cur_range++;
-        dict.erase(nums[i]);
+    for (int i = 0; i < nums.size(); i++) {
+      if (uniq.count(nums[i])) {
+        uniq.erase(nums[i]);
+        int cur_seq = 1;
+        int j = nums[i];
+
+        while (uniq.count(--j)) {
+          uniq.erase(j);
+          cur_seq++;
+        }
+
+        j = nums[i];
+        while (uniq.count(++j)) {
+          uniq.erase(j);
+          cur_seq++;
+        }
+
+        ret = max(cur_seq, ret);
       }
-      for (int j = nums[i] + 1; dict.find(j) != dict.end(); ++j) {
-        cur_range++;
-        dict.erase(j);
-      }
-      for (int j = nums[i] - 1; dict.find(j) != dict.end(); --j) {
-        cur_range++;
-        dict.erase(j);
-      }
-      ret = max(cur_range, ret);
     }
 
     return ret;

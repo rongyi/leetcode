@@ -3,87 +3,69 @@
 
 class Solution {
 public:
-  vector<vector<string>> findLadders(string beginWord, string endWord,
-                                     vector<string> &wordList) {
+  vector<vector<string>> findLadders(string w1, string w2,
+                                     vector<string> &dict) {
+    set<string> words(dict.begin(), dict.end());
 
-    unordered_set<string> wset;
-    for (auto w : wordList) {
-      wset.insert(w);
+    queue<string> q;
+    q.push(w1);
+
+    map<string, int> depth_cache;
+    depth_cache[w1] = 1;
+
+    while (!q.empty()) {
+      auto cur = q.front();
+      q.pop();
+      for (auto &n : collect(cur, words)) {
+        q.push(n);
+        if (!depth_cache.count(n)) {
+          depth_cache[n] = depth_cache[cur] + 1;
+        }
+      }
     }
     vector<vector<string>> ret;
-    if (wset.find(endWord) == wset.end()) {
-      return ret;
+    if (depth_cache.count(w2)) {
+      dfs(w1, w2, depth_cache, ret, {});
     }
-    unordered_map<string, int> distance_map;
-    mkDistanceMap(beginWord, endWord, wset, distance_map);
-    vector<string> cur;
-
-    dfs(ret, cur, distance_map, endWord, beginWord);
-
     return ret;
   }
 
 private:
-  void dfs(vector<vector<string>> &ret, vector<string> &cur,
-           unordered_map<string, int> &distance_map, string &start,
-           string &end) {
-
-    if (start == end) {
-      vector<string> vec = cur;
-      vec.push_back(end);
-      std::reverse(vec.begin(), vec.end());
-      ret.push_back(vec);
-
-      return;
-    }
-    cur.push_back(start);
-    // a shadow start
-    string starts = start;
-    for (unsigned i = 0; i < starts.size(); i++) {
-      char c = starts[i];
+  vector<string> collect(string s, set<string> &dict) {
+    vector<string> ret;
+    for (int i = 0; i < s.size(); i++) {
+      string cp = s;
       for (int j = 0; j < 26; j++) {
-        starts[i] = 'a' + j;
-        if (distance_map.find(starts) != distance_map.end() &&
-            distance_map[starts] == distance_map[start] - 1) {
-          dfs(ret, cur, distance_map, starts, end);
+        if (cp[i] == 'a' + j) {
+          continue;
+        }
+        cp[i] = 'a' + j;
+        if (dict.count(cp)) {
+          ret.push_back(cp);
+          dict.erase(cp);
         }
       }
-      starts[i] = c;
     }
 
-    cur.pop_back();
+    return ret;
   }
+  void dfs(string &w1, string cur_end, map<string, int> &dc,
+           vector<vector<string>> &ret, vector<string> curpath) {
+    curpath.push_back(cur_end);
+    if (cur_end == w1) {
+      reverse(curpath.begin(), curpath.end());
+      ret.push_back(curpath);
+      return;
+    }
+    int d = dc[cur_end];
 
-  void mkDistanceMap(string start, string end, unordered_set<string> &dict,
-                     unordered_map<string, int> &distance_map) {
-    distance_map.insert(std::make_pair(start, 1));
-    queue<string> q;
-    q.push(start);
-
-    while (!q.empty()) {
-      string s = q.front();
-      q.pop();
-
-      string s2 = s;
-
-      for (unsigned i = 0; i < s2.size(); i++) {
-        char c = s2[i];
-        for (int j = 0; j < 26; j++) {
-          s2[i] = 'a' + j;
-
-          if (s2 == end) {
-            distance_map.insert(std::make_pair(s2, distance_map[s] + 1));
-            return;
-          }
-          if (dict.find(s2) != dict.end() &&
-              distance_map.find(s2) == distance_map.end()) {
-            q.push(s2);
-            distance_map.insert(std::make_pair(s2, distance_map[s] + 1));
-          }
+    for (int i = 0; i < w1.size(); i++) {
+      string cp = cur_end;
+      for (int j = 0; j < 26; j++) {
+        cp[i] = 'a' + j;
+        if (dc.count(cp) && dc[cp] == d - 1) {
+          dfs(w1, cp, dc, ret, curpath);
         }
-
-        // restore
-        s2[i] = c;
       }
     }
   }
