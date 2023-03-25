@@ -1,33 +1,47 @@
 // http://leetcode.com/problems/clone-graph/description/
-#include "xxx.hpp"
+// #include "xxx.hpp"
+#include <map>
+#include <vector>
+using namespace std;
 
-/**
- * Definition for undirected graph.
- */
+// Definition for a Node.
+class Node {
+public:
+  int val;
+  vector<Node *> neighbors;
+  Node() {
+    val = 0;
+    neighbors = vector<Node *>();
+  }
+  Node(int _val) {
+    val = _val;
+    neighbors = vector<Node *>();
+  }
+  Node(int _val, vector<Node *> _neighbors) {
+    val = _val;
+    neighbors = _neighbors;
+  }
+};
+
 class Solution {
 public:
-  UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
-    unordered_map<int, UndirectedGraphNode*> cache;
-    return doClone(node, cache);
-  }
-private:
-  UndirectedGraphNode* doClone(UndirectedGraphNode *node, unordered_map<int, UndirectedGraphNode*> &cache) {
+  Node *cloneGraph(Node *node) {
     if (!node) {
       return nullptr;
     }
-    if (cache.find(node->label) != cache.end()) {
-      return cache[node->label];
+    if (cache_.count(node->val)) {
+      return cache_[node->val];
     }
+    Node *cp = new Node(node->val);
+    cache_[node->val] = cp;
 
-    // copy action
-    UndirectedGraphNode *cp = new UndirectedGraphNode(node->label);
-    cache.insert(make_pair(node->label, cp));
-    for (auto cur_neb : node->neighbors) {
-      UndirectedGraphNode *cp_nei = doClone(cur_neb, cache);
-
-      cp->neighbors.push_back(cp_nei);
+    for (int i = 0; i < node->neighbors.size(); i++) {
+      cp->neighbors.push_back(cloneGraph(node->neighbors[i]));
     }
 
     return cp;
   }
+
+private:
+  map<int, Node *> cache_;
 };

@@ -6,7 +6,6 @@ public:
   vector<vector<string>> partition(string s) {
     vector<vector<string>> ret;
     vector<string> cur;
-
     dfs(s, ret, cur);
 
     return ret;
@@ -18,26 +17,21 @@ private:
       ret.push_back(cur);
       return;
     }
-    for (int i = 1; i <= s.size(); i++) {
-      string tmp = s.substr(0, i);
-      if (isParlidrome(tmp)) {
-        cur.push_back(tmp);
-        dfs(s.substr(i), ret, cur);
+    for (int l = 1; l <= s.size(); l++) {
+      string cut = s.substr(0, l);
+      if (isParlidrome(cut)) {
+        cur.push_back(cut);
+        dfs(s.substr(l), ret, cur);
         cur.pop_back();
       }
     }
   }
-  bool isParlidrome(const string s) {
-    if (s.empty() || s.size() == 1) {
-      return true;
-    }
-
-    const int len = s.size();
-    for (int i = 0; i < len / 2; i++) {
-      if (s[i] != s[len - i - 1])
+  bool isParlidrome(string &s) {
+    for (int i = 0, j = s.size() - 1; i < j; i++, j--) {
+      if (s[i] != s[j]) {
         return false;
+      }
     }
-
     return true;
   }
 };

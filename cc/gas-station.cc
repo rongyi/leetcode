@@ -4,20 +4,21 @@
 class Solution {
 public:
   int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
-    int start = -1;
-    int sum = 0;
-    int cur = 0;
-    for (int i = 0; i < gas.size(); i++) {
-      cur += gas[i] - cost[i];
+    int sz = gas.size();
+    int total_tank = 0;
+    int start = 0;
+    int cur_tank = 0;
 
-      // 不管从哪里开始兜一圈的油耗总和不变，
-      sum += gas[i] - cost[i];
-      // 表示从前面某个点开始到当前节点“够不着”
-      if (cur < 0) {
-        start = i;
-        cur = 0;
+    for (int i = 0; i < sz; i++) {
+      total_tank += gas[i] - cost[i];
+
+      cur_tank += gas[i] - cost[i];
+
+      if (cur_tank < 0) {
+        cur_tank = 0;
+        start = i + 1;
       }
     }
-    return sum >= 0 ? start + 1 : -1;
+    return total_tank >= 0 ? start : -1;
   }
 };

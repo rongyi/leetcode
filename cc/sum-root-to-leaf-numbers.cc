@@ -4,30 +4,23 @@
 class Solution {
 public:
   int sumNumbers(TreeNode *root) {
-    if (!root) {
-      return 0;
-    }
+    vector<int> lc;
 
-    vector<int> leaf_collector;
-    dfs(root, 0, leaf_collector);
+    recur(root, 0, lc);
 
-    return accumulate(leaf_collector.begin(), leaf_collector.end(), 0);
+    return accumulate(lc.begin(), lc.end(), 0);
   }
 
 private:
-  void dfs(TreeNode *root, int cur_sum, vector<int> &leaf_collector) {
+  void recur(TreeNode *root, int cur_sum, vector<int> &lc) {
     if (!root) {
       return;
     }
     if (!root->left && !root->right) {
-      leaf_collector.push_back(cur_sum * 10 + root->val);
+      lc.push_back(cur_sum * 10 + root->val);
       return;
     }
-    if (root->left) {
-      dfs(root->left, cur_sum * 10 + root->val, leaf_collector);
-    }
-    if (root->right) {
-      dfs(root->right, cur_sum * 10 + root->val, leaf_collector);
-    }
+    recur(root->left, cur_sum * 10 + root->val, lc);
+    recur(root->right, cur_sum * 10 + root->val, lc);
   }
 };
