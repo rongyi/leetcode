@@ -1,61 +1,79 @@
 // http://leetcode.com/problems/copy-list-with-random-pointer/description/
-#include "xxx.hpp"
+#include <map>
+using namespace std;
 
-/**
- * Definition for singly-linked list with a random pointer.
- * struct RandomListNode {
- *     int label;
- *     RandomListNode *next, *random;
- *     RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
- * };
- */
-
-struct RandomListNode {
-  int label;
-  RandomListNode *next, *random;
-  RandomListNode(int x) : label(x), next(nullptr), random(nullptr) {}
-};
-class Solution {
+class Node {
 public:
-  RandomListNode *copyRandomList(RandomListNode *head) {
-    if (!head) {
-      return nullptr;
-    }
-    auto *p = head;
-    // 分配的也都串在一起，这样就能把random也给算出来
-    while (p) {
-      auto *next = p->next;
-      // 分配并串在一起
-      RandomListNode *new_node = new RandomListNode(p->label);
-      new_node->next = next;
-      p->next = new_node;
+  int val;
+  Node *next;
+  Node *random;
 
-      p = next;
+  Node(int _val) {
+    val = _val;
+    next = nullptr;
+    random = nullptr;
+  }
+};
+
+class Solution2 {
+public:
+  Node *copyRandomList(Node *head) {
+    Node ret(-1);
+    Node *p = head;
+    Node *prev = nullptr;
+
+    while (p) {
+      Node *cp = new Node(p->val);
+      prev = p;
+      p = p->next;
+
+      prev->next = cp;
+      cp->next = p;
     }
-    RandomListNode dummy(-1);
-    RandomListNode *cur = &dummy;
     p = head;
-    // 要先串起来random然后再split，因为有可能后面的random指到前面来呀
     while (p) {
       if (p->random) {
         p->next->random = p->random->next;
       }
+
       p = p->next->next;
     }
-
     p = head;
+    Node *tail = &ret;
     while (p) {
-      auto *next = p->next->next;
-
-      // split
-      cur->next = p->next;
-      cur = cur->next;
-      // omit the malloc node
-      p->next = next;
-
-      p = next;
+      tail->next = p->next;
+      tail = tail->next;
+      p->next = tail->next;
+      p = p->next;
     }
 
-    return dummy.next;
+    return ret.next;
+  }
+};
+
+class Solution {
+public:
+  Node *copyRandomList(Node *head) {
+    Node ret(-1);
+    map<Node *, Node *> cache;
+    cache[nullptr] = nullptr;
+
+    Node *p = head;
+    Node *tail = &ret;
+    while (p) {
+      tail->next = new Node(p->val);
+      tail = tail->next;
+      cache[p] = tail;
+      p = p->next;
+    }
+    p = head;
+    tail = &ret;
+    while (p) {
+      tail->next->random = cache[p->random];
+      tail = tail->next;
+      p = p->next;
+    }
+
+    return ret.next;
   }
 };
