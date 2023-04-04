@@ -1,53 +1,40 @@
 // http://leetcode.com/problems/lru-cache/description/
 #include "xxx.hpp"
-using itor = list<pair<int, int>>::iterator;
-
 class LRUCache {
 public:
-  LRUCache(int capacity) : capacity_(capacity) {}
+  LRUCache(int capacity) : cap_(capacity) {}
 
   int get(int key) {
-    if (index_.find(key) == index_.end()) {
+    if (!pos_.count(key)) {
       return -1;
     }
-    // else we put this value to beginning before return
-    auto cur = index_[key];
-    vec_.splice(vec_.begin(), vec_, cur);
-    index_[key] = vec_.begin();
+    auto it = pos_[key];
+    int val = it->second;
 
-    return vec_.begin()->second;
+    vals_.erase(it);
+    vals_.push_front({key, val});
+    pos_[key] = vals_.begin();
+
+    return val;
   }
 
   void put(int key, int value) {
-    // fresh new element
-    if (index_.find(key) == index_.end()) {
-      // before insert we should check capacity
-      if (vec_.size() == capacity_) {
-        // 需要删除的key是最后一个
-        index_.erase(vec_.back().first);
-        vec_.pop_back();
-      }
-      vec_.push_front(make_pair(key, value));
-      index_[key] = vec_.begin();
-    } else {
-      // move this item to begin
-      // update first
-      *index_[key] = make_pair(key, value);
-      vec_.splice(vec_.begin(), vec_, index_[key]);
-      index_[key] = vec_.begin();
+    if (pos_.count(key)) {
+      vals_.erase(pos_[key]);
+    }
+    vals_.push_front({key, value});
+    pos_[key] = vals_.begin();
+
+    // shrink
+    if (vals_.size() > cap_) {
+      pos_.erase(vals_.back().first);
+      vals_.pop_back();
     }
   }
 
 private:
-  int capacity_;
-  list<pair<int, int>> vec_;
-  // map is faster than unordered_map?
-  map<int, itor> index_;
+  int cap_;
+  map<int, list<pair<int, int>>::iterator> pos_;
+  list<pair<int, int>> vals_;
 };
 
-/**
- * Your LRUCache object will be instantiated and called as such:
- * LRUCache obj = new LRUCache(capacity);
- * int param_1 = obj.get(key);
- * obj.put(key,value);
- */

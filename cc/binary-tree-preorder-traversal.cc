@@ -4,22 +4,20 @@
 class Solution {
 public:
   vector<int> preorderTraversal(TreeNode *root) {
+    stack<TreeNode *> s;
     vector<int> ret;
-    if (!root) {
-      return ret;
+    if (root) {
+      s.push(root);
     }
-    stack<TreeNode *> stk;
-    stk.push(root);
-    while (!stk.empty()) {
-      auto p = stk.top();
-      stk.pop();
-      ret.push_back(p->val);
-
-      if (p->right) {
-        stk.push(p->right);
+    while (!s.empty()) {
+      auto cur = s.top();
+      s.pop();
+      ret.push_back(cur->val);
+      if (cur->right) {
+        s.push(cur->right);
       }
-      if (p->left) {
-        stk.push(p->left);
+      if (cur->left) {
+        s.push(cur->left);
       }
     }
 

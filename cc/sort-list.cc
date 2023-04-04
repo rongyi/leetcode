@@ -1,81 +1,61 @@
 // http://leetcode.com/problems/sort-list/description/
 #include "xxx.hpp"
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
-  // 这个就是上面插入排序的方法，但是绝大部分的提交都比这个快
-  ListNode *sortListV1(ListNode *head) {
-    if (!head) {
-      return nullptr;
-    }
-
-    ListNode dummy(-1);
-    ListNode *cur = &dummy;
-    auto *p = head;
-    while (p) {
-      auto *next = p->next;
-      cur = &dummy;
-      while (cur->next && cur->next->val < p->val) {
-        cur = cur->next;
-      }
-      // chain together
-      p->next = cur->next;
-      cur->next = p;
-
-      p = next;
-    }
-
-    return dummy.next;
-  }
-
   ListNode *sortList(ListNode *head) {
-    if (head == nullptr || head->next == nullptr) {
+    if (!head || !head->next) {
       return head;
     }
-    ListNode *fast = head;
     ListNode *slow = head;
-    while (fast->next && fast->next->next) {
-      fast = fast->next->next;
+    ListNode *fast = head;
+    ListNode *prev = nullptr;
+    while (fast && fast->next) {
+      prev = slow;
       slow = slow->next;
+      fast = fast->next->next;
     }
-    // unchain
-    fast = slow->next;
-    slow->next = nullptr;
+    ListNode *l1 = head;
+    ListNode *l2 = prev->next;
+    prev->next = nullptr;
+    ListNode *sl1 = sortList(l1);
+    ListNode *sl2 = sortList(l2);
 
-    ListNode *l1 = sortList(head);
-    ListNode *l2 = sortList(fast);
-
-    return merge(l1, l2);
+    return merge(sl1, sl2);
   }
 
 private:
   ListNode *merge(ListNode *l1, ListNode *l2) {
-    if (!l1) {
-      return l2;
-    } else if (!l2) {
-      return l1;
-    } else if (!l1 && !l2) {
-      return nullptr;
-    }
-
-    ListNode dummy(-1);
-    ListNode *p = &dummy;
-
-    while (l1 && l2) {
-      if (l1->val < l2->val) {
-        p->next = l1;
+    ListNode ret(-1);
+    ListNode *tail = &ret;
+    while (l1 || l2) {
+      if (l1 && l2) {
+        if (l1->val < l2->val) {
+          tail->next = l1;
+          l1 = l1->next;
+        } else {
+          tail->next = l2;
+          l2 = l2->next;
+        }
+      } else if (l1) {
+        tail->next = l1;
         l1 = l1->next;
       } else {
-        p->next = l2;
+        tail->next = l2;
         l2 = l2->next;
       }
-      p = p->next;
+
+      tail = tail->next;
     }
-    if (l1) {
-      p->next = l1;
-    } else if (l2) {
-      p->next = l2;
-    }
-    return dummy.next;
+    return ret.next;
   }
 };

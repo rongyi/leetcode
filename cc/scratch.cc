@@ -599,9 +599,17 @@ int main() {
   //long long x = 2e9;
   //cout << x << endl;
   //
-  cout << (10 ?: -1) << endl;
-  cout << (false ?: -1) << endl;
+  //cout << (10 ?: -1) << endl;
+  //cout << (false ?: -1) << endl;
 
 
-  cout << string(6, 'a') << endl;
+  //cout << string(6, 'a') << endl;
+  cout << "--" << endl;
+  for (int i = 1; i < 100; i++) {
+    int v = 7 * i;
+    if ((v % 3) == 1 && (v % 5) == 1) {
+      cout << v << endl;
+      break;
+    }
+  }
 }
