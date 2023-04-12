@@ -4,29 +4,10 @@
 class Solution {
 public:
   void rotate(vector<int> &nums, int k) {
-    const int n = nums.size();
-    if (n == 0) {
-      return;
-    }
-    k %= n;
-    if (k == 0) {
-      return;
-    }
-    for (int i = n - k, compensate = 0; i < n; ++i) {
-      nums.insert(nums.begin() + compensate, nums[i + compensate]);
-      compensate++;
-    }
-    nums.resize(n);
+    int sz = nums.size();
+    k %= sz;
+    reverse(nums.begin(), nums.end());
+    reverse(nums.begin(), nums.begin() + k);
+    reverse(nums.begin() + k, nums.end());
   }
 };
-
-int main() {
-  Solution so;
-  vector<int> input{1, 2, 3, 4, 5, 6, 7};
-
-  so.rotate(input, 3);
-  for (auto i : input) {
-    cout << i << " ";
-  }
-  cout << endl;
-}

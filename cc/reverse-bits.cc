@@ -4,12 +4,11 @@
 class Solution {
 public:
   uint32_t reverseBits(uint32_t n) {
-    int ret = 0;
-    int shift = 31;
-    while (n) {
-      ret |= ((n & 0x1) << shift--);
-      n >>= 1;
+    uint32_t ret = 0;
+    for (int i = 0; i < 32; i++) {
+      ret |= ((n & (1 << i)) != 0) << (32 - i - 1);
     }
+
     return ret;
   }
 };
