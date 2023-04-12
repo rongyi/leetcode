@@ -3,32 +3,17 @@
 
 class Solution {
 public:
-  // 实际就是进制的转换
   string convertToTitle(int n) {
-    if (n == 0) {
-      return 0;
+    string ret;
+    n--;
+    while (n >= 26) {
+      ret += 'A' + (n % 26);
+      n = n / 26 - 1;
     }
-    vector<char> table(26, '0');
-    for (int i = 0; i < 26; i++) {
-      table[i] = 'A' + i;
-    }
-    stringstream ss;
-    while (n) {
-      auto real = n - 1;
-      auto cur = real % 26;
-      cout << cur << endl;
-      ss << table[cur];
-      n = real / 26;
-    }
-    auto ret = ss.str();
+    ret += 'A' + n;
+
     reverse(ret.begin(), ret.end());
 
     return ret;
   }
 };
-
-int main() {
-  Solution so;
-  auto ret = so.convertToTitle(27);
-  cout << ret << endl;
-}

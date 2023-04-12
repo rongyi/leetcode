@@ -3,23 +3,21 @@
 
 class Solution {
 public:
-  // 其实人家考察的是选举算法，这么写没什么意思
   int majorityElement(vector<int> &nums) {
-    const int n = nums.size() / 2;
-    unordered_map<int, int> count;
-
-    for (auto i : nums) {
-      ++count[i];
-      if (count[i] > n) {
-        return i;
+    int sz = nums.size();
+    int candidate = nums[0];
+    int cnt = 1;
+    for (int i = 1; i < sz; i++) {
+      if (nums[i] == candidate) {
+        cnt++;
+      } else {
+        cnt--;
+      }
+      if (cnt == 0) {
+        candidate = nums[i];
+        cnt = 1;
       }
     }
-
-    for (auto kv : count) {
-      if (count[kv.first] > n) {
-        return kv.first;
-      }
-    }
-    return -1;
+    return candidate;
   }
 };

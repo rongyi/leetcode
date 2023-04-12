@@ -1,40 +1,51 @@
 // http://leetcode.com/problems/binary-search-tree-iterator/description/
 #include "xxx.hpp"
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
+ * };
+ */
 
 class BSTIterator {
 public:
   BSTIterator(TreeNode *root) {
     while (root) {
-      s_.push(root);
+      stk_.push(root);
       root = root->left;
     }
   }
 
-  /** @return whether we have a next smallest number */
-  bool hasNext() {
-    return !s_.empty();
-  }
-
-  /** @return the next smallest number */
   int next() {
-    TreeNode *cur = s_.top();
-    s_.pop();
-    TreeNode *ret = cur;
+    auto *cur = stk_.top();
+    stk_.pop();
+    int val = cur->val;
     if (cur->right) {
       cur = cur->right;
       while (cur) {
-        s_.push(cur);
+        stk_.push(cur);
         cur = cur->left;
       }
     }
-    return ret->val;
+
+    return val;
   }
+
+  bool hasNext() { return !stk_.empty(); }
+
 private:
-  stack<TreeNode *> s_;
+  stack<TreeNode *> stk_;
 };
 
 /**
- * Your BSTIterator will be called like this:
- * BSTIterator i = BSTIterator(root);
- * while (i.hasNext()) cout << i.next();
+ * Your BSTIterator object will be instantiated and called as such:
+ * BSTIterator* obj = new BSTIterator(root);
+ * int param_1 = obj->next();
+ * bool param_2 = obj->hasNext();
  */

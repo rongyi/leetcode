@@ -3,54 +3,28 @@
 
 class Solution {
 public:
-  void reverseWords(string &s) {
-    if (s.empty()) {
-      return;
-    }
-    stack<string> stk;
+  string reverseWords(string &s) {
+    int sz = s.size();
+    reverse(s.begin(), s.end());
 
-    // trim leading and trailing spaces
-    int i = 0;
-    int j = s.size() - 1;
-    while (s[i] == ' ') {
-      i++;
-    }
-    while (s[j] == ' ') {
-      j--;
-    }
-
-    int prev = i;
-    for (; i < j;) {
-      auto cur = s[i];
-      if (cur == ' ') {
-        stk.push(s.substr(prev, i - prev));
-        while (s[i] == ' ') {
-          i++;
+    int valid_end = 0;
+    for (int i = 0; i < sz; i++) {
+      if (s[i] != ' ') {
+        if (valid_end != 0) {
+          s[valid_end++] = ' ';
         }
-        prev = i;
-      } else {
-        i++;
+        int j = i;
+        while (j < sz && s[j] != ' ') {
+          s[valid_end++] = s[j++];
+        }
+        reverse(s.begin() + valid_end - (j - i), s.begin() + valid_end);
+
+        i = j;
       }
     }
-    stk.push(s.substr(prev, j - prev + 1));
+    s.erase(s.begin() + valid_end, s.end());
 
-    stringstream ss;
-    while (!stk.empty()) {
-      ss << stk.top() << " ";
-      stk.pop();
-    }
-
-
-
-    auto ret = ss.str();
-    ret = ret.substr(0, ret.size() - 1);
-    s.replace(s.begin(), s.end(), ret);
+    return s;
   }
 };
 
-int main() {
-  Solution so;
-  string input{"1 "};
-  so.reverseWords(input);
-  cout << input << endl;
-}

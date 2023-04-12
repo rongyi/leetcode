@@ -4,12 +4,17 @@
 class Solution {
 public:
   int findPeakElement(vector<int> &nums) {
-    // 看成是一个递增序列，如果出现下坡，则前面这个是最大值
-    for (int i = 1; i < nums.size(); i++) {
-      if (nums[i] < nums[i - 1]) {
-        return i - 1;
+    int l = 0;
+    int r = nums.size() - 1;
+    while (l < r) {
+      auto mid = l + (r - l) / 2;
+      if (nums[mid] < nums[mid + 1]) {
+        l = mid + 1;
+      } else {
+        r = mid;
       }
     }
-    return nums.size() - 1;
+
+    return l;
   }
 };

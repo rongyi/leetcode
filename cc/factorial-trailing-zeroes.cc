@@ -5,10 +5,10 @@ class Solution {
 public:
   int trailingZeroes(int n) {
     int ret = 0;
-    while (n) {
-      ret += n / 5;
-      n /= 5;
+    for (long long c = n, d = 5; c / d > 0; d *= 5) {
+      ret += c / d;
     }
+
     return ret;
   }
 };

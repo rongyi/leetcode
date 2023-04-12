@@ -20,9 +20,3 @@ public:
     return ret[0] == '0' ? "0" : ret;
   }
 };
-int main() {
-  Solution so;
-  vector<int> input{10, 2};
-  auto ret = so.largestNumber(input);
-  cout << ret << endl;
-}

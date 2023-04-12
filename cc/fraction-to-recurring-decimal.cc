@@ -3,42 +3,39 @@
 
 class Solution {
 public:
-  string fractionToDecimal(int numerator, int denominator) {
-    if (numerator == 0) {
+  string fractionToDecimal(int num, int div) {
+    if (num == 0) {
       return "0";
     }
     string ret;
-
-    if (numerator < 0 ^ denominator < 0) {
-      ret += '-';
+    if ((num < 0) ^ (div < 0)) {
+      ret.push_back('-');
     }
-    // make it in large range
-    long long n = numerator;
-    n = llabs(n);
-    long long d = denominator;
-    d = llabs(d);
-
+    long long n = num;
+    n = abs(n);
+    long long d = div;
+    d = abs(div);
     ret += to_string(n / d);
-    long long int r = n % d;
-    if (r == 0) {
+    if ((n % d) == 0) {
       return ret;
-    } else {
-      ret += '.';
     }
-    // fraction part
-    unordered_map<int, int> cache;
-    while (r) {
-      if (cache.find(r) != cache.end()) {
-        ret.insert(cache[r], 1, '(');
-        ret += ')';
-        break;
-      }
-      cache[r] = ret.size();
+    ret.push_back('.');
 
-      r *= 10;
-      ret += to_string(r / d);
-      r = r % d;
+    long long rem = n % d;
+    map<long long, int> pos;
+    while (rem) {
+      if (pos.count(rem)) {
+        ret.insert(pos[rem], "(");
+        ret.push_back(')');
+        return ret;
+      }
+
+      pos[rem] = ret.size();
+      rem *= 10;
+      ret += to_string(rem / d);
+      rem %= d;
     }
+
     return ret;
   }
 };
