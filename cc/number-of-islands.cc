@@ -3,55 +3,36 @@
 
 class Solution {
 public:
-  /**
-   * @param grid: a list of lists of integers
-   * @return: return an integer, denote the number of distinct islands
-   */
   int numIslands(vector<vector<char>> &grid) {
-    if (grid.empty()) {
-      return 0;
-    }
+    int m = grid.size();
+    int n = grid[0].size();
     int ret = 0;
-    m_ = grid.size();
-    n_ = grid[0].size();
-
-    for (int i = 0; i < m_; ++i) {
-      for (int j = 0; j < n_; ++j) {
-        if (grid[i][j] == '1') {
-          ++ret;
-          dfs(grid, i, j);
+    vector<vector<int>> dirs{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    for (int i = 0; i < m; i++) {
+      for (int j = 0; j < n; j++) {
+        if (grid[i][j] == '0') {
+          continue;
+        }
+        ret++;
+        grid[i][j] = '0';
+        queue<pair<int, int>> q;
+        q.push({i, j});
+        while (!q.empty()) {
+          auto [x, y] = q.front();
+          q.pop();
+          for (int d = 0; d < 4; d++) {
+            auto nx = x + dirs[d][0];
+            auto ny = y + dirs[d][1];
+            if (nx < 0 || nx >= m || ny < 0 || ny >= n || grid[nx][ny] == '0') {
+              continue;
+            }
+            grid[nx][ny] = '0';
+            q.push({nx, ny});
+          }
         }
       }
     }
+
     return ret;
   }
-
-private:
-  void dfs(vector<vector<char>> &grid, int i, int j) {
-    if (i < 0 || i >= m_ || j < 0 || j >= n_) {
-      return;
-    }
-    if (grid[i][j] == '1') {
-      grid[i][j] = '0';
-      dfs(grid, i + 1, j);
-      dfs(grid, i - 1, j);
-      dfs(grid, i, j + 1);
-      dfs(grid, i, j - 1);
-    }
-  }
-
-private:
-  int m_;
-  int n_;
 };
-
-int main() {
-  vector<vector<bool>> input = {{1, 1, 0, 0, 0},
-                               {0, 1, 0, 0, 1},
-                               {0, 0, 0, 1, 1},
-                               {0, 0, 0, 0, 0},
-                               {0, 0, 0, 0, 1}};
-  Solution so;
-  auto ret = so.numIslands(input);
-  cout << ret << endl;
-}
