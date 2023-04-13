@@ -4,12 +4,11 @@
 class Solution {
 public:
   int rangeBitwiseAnd(int m, int n) {
-    int shift = 0;
-    while (m != n) {
-      m >>= 1;
-      n >>= 1;
-      shift++;
+    // a and b will not bigger than a or b
+    while (m < n) {
+      n = n & (n - 1);
     }
-    return m << shift;
+
+    return n;
   }
 };

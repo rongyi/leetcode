@@ -1,41 +1,30 @@
 // http://leetcode.com/problems/remove-linked-list-elements/description/
 #include "xxx.hpp"
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
   ListNode *removeElements(ListNode *head, int val) {
-    if (!head) {
-      return nullptr;
+    ListNode ret(-1);
+    ListNode *tail = &ret;
+    while (head) {
+      if (head->val != val) {
+        tail->next = head;
+        tail = tail->next;
+      }
+      head = head->next;
     }
+    // don't forget the seal
+    tail->next = nullptr;
 
-    ListNode dummy(-1);
-    dummy.next = head;
-    ListNode *cur = &dummy;
-    while (cur->next && cur->next->val != val) {
-      cur = cur->next;
-    }
-    // now cur->next is the target to delete
-    ListNode *target = cur->next;
-    // the target maybe nullptr
-    if (target) {
-      cur->next = target->next;
-      target->next = nullptr;
-    }
-
-    // recursive the problem
-    cur->next = removeElements(cur->next, val);
-
-    // delete(target);
-    return dummy.next;
+    return ret.next;
   }
 };
-
-int main() {
-  Solution so;
-  ListNode l1(1), l2(1);
-  l1.next = &l2;
-  auto head = so.removeElements(&l1, 1);
-  if (!head) {
-    cout << "right" << endl;
-  }
-}

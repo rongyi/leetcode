@@ -4,28 +4,28 @@
 class Solution {
 public:
   bool isHappy(int n) {
-    if (n == 1) {
-      return true;
-    }
-    unordered_set<int> cache;
+    int slow = n;
+    int fast = n;
     while (true) {
-      auto next = happy(n);
-      if (cache.find(next) != cache.end()) {
-        return next == 1;
+      slow = nextNum(slow);
+      fast = nextNum(fast);
+      fast = nextNum(fast);
+      if (slow == fast) {
+        break;
       }
-      n = next;
-      cache.insert(next);
     }
-    return false;
+
+    return slow == 1;
   }
-  int happy(int n) {
+
+private:
+  int nextNum(int n) {
     int sum = 0;
     while (n) {
-      auto d = n % 10;
+      int d = n % 10;
       sum += d * d;
       n /= 10;
     }
-
     return sum;
   }
 };
