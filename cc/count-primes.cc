@@ -4,21 +4,22 @@
 class Solution {
 public:
   int countPrimes(int n) {
-    int ret = 0;
-    for (int i = 2; i < n; ++i) {
-      if (isPrime(i)) {
-        ret++;
+    vector<int> seen(n, false);
+
+    int cnt = 0;
+    for (long long i = 2; i < n; i++) {
+      if (seen[i]) {
+        continue;
+      }
+      cnt++;
+      // why i * i not i * 2?
+      // because when you arrive to i check
+      // all the number i * 2/ i * 3 / i * (i - 1) are been checked
+      // because they are divisible by 2 3 .... (i - 1)
+      for (long long j = i * i; j < n; j += i) {
+        seen[j] = 1;
       }
     }
-    return ret;
-  }
-private:
-  bool isPrime(int n) {
-    for (int i = 2; i * i <= n; i++) {
-      if (n % i == 0) {
-        return false;
-      }
-    }
-    return true;
+    return cnt;
   }
 };
