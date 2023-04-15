@@ -3,23 +3,23 @@
 
 class Solution {
 public:
-  int minSubArrayLen(int s, vector<int> &nums) {
-    int ret = numeric_limits<int>::max();
+  int minSubArrayLen(int target, vector<int> &nums) {
     int sum = 0;
-    int left = 0;
-    // 先撒
-    for (int i = 0; i < nums.size(); i++) {
-      sum += nums[i];
-      // shrink the left
-      // 收口
-      if (sum >= s) {
-        while(left <= i && sum >= s) {
-          ret = min(ret, i - left + 1);
-          sum -= nums[left++];
-        }
+    int sz = nums.size();
+    int ret = numeric_limits<int>::max();
+    for (int j = 0, i = 0; j < sz; j++) {
+      // right expand
+      sum += nums[j];
+      // left shrink
+      while (sum >= target) {
+        ret = min(ret, j - i + 1);
+        sum -= nums[i++];
       }
     }
 
-    return ret == numeric_limits<int>::max() ? 0 : ret;
+    if (ret == numeric_limits<int>::max()) {
+      return 0;
+    }
+    return ret;
   }
 };

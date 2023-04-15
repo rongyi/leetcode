@@ -3,34 +3,42 @@
 
 class Solution {
 public:
-  vector<int> findOrder(int numCourses, vector<pair<int, int>> &prerequisites) {
-    vector<int> ret;
-    vector<vector<int>> graph(numCourses, vector<int>(0));
-    vector<int> in(numCourses, 0);
-    for (auto &e : prerequisites) {
-      graph[e.second].push_back(e.first);
-      ++in[e.first];
-    }
-    // 具体细节参见 course schedule i
-    std::queue<int> q;
-    for (int i = 0; i < numCourses; ++i) {
-      if (in[i] == 0)
-        q.push(i);
+  // signature is changed at 2023, last commit is at 2018
+  vector<int> findOrder(int sz, vector<vector<int>> &prerequisites) {
+    map<int, vector<int>> graph;
+    vector<int> in(sz, 0);
+    for (auto &preq : prerequisites) {
+      // in degress increment for first
+      in[preq[0]]++;
+      graph[preq[1]].push_back(preq[0]);
     }
 
-    while (!q.empty()) {
-      int n = q.front();
-      ret.push_back(n);
-      q.pop();
-      for (auto &e : graph[n]) {
-        --in[e];
-        if (in[e] == 0)
-          q.push(e);
+    // using queue for this
+    queue<int> q;
+    for (int i = 0; i < sz; i++) {
+      if (in[i] == 0) {
+        q.push(i);
       }
     }
-    if (ret.size() != numCourses)
-      ret.clear();
 
-    return ret;
+    vector<int> order;
+    while (!q.empty()) {
+      auto cur = q.front();
+      order.push_back(cur);
+      q.pop();
+
+      for (auto &neib : graph[cur]) {
+        in[neib]--;
+        if (in[neib] == 0) {
+          q.push(neib);
+        }
+      }
+    }
+
+    if (order.size() != sz) {
+      return {};
+    }
+
+    return order;
   }
 };
