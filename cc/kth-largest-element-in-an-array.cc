@@ -3,18 +3,17 @@
 
 class Solution {
 public:
-  // 考察大顶堆、小顶堆的问题
   int findKthLargest(vector<int> &nums, int k) {
-    priority_queue<int, vector<int>, less<int>> q;
-    for (auto i : nums) {
-      q.push(i);
+    priority_queue<int> q;
+    for (auto &num : nums) {
+      q.push(num);
     }
-    // to make top from 0
-    k--;
-    while (k) {
+    int cur = -1;
+    while (k--) {
+      cur = q.top();
       q.pop();
-      k--;
     }
-    return q.top();
+
+    return cur;
   }
 };
