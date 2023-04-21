@@ -15,7 +15,7 @@ public:
 private:
   void dfs(int k, int target, int index, vector<int> &cur,
            vector<vector<int>> &ret) {
-    // 加速条件
+    // prune
     if (target < 0 || cur.size() > k) {
       return;
     }
