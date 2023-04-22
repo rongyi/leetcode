@@ -1,7 +1,39 @@
 // http://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
 #include "xxx.hpp"
 
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
 class Solution {
+public:
+  TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
+    if (!root) {
+      return nullptr;
+    }
+    if (p == root || q == root) {
+      return root;
+    }
+    auto *left = lowestCommonAncestor(root->left, p, q);
+    auto *right = lowestCommonAncestor(root->right, p, q);
+    if (left && right) {
+      return root;
+    }
+    if (left) {
+      return left;
+    }
+
+    return right;
+  }
+
+};
+
+class Solution2 {
 public:
   // 与之前题目不一样的是： 这只是二叉树，而不是BST
   // 这个方法能过但是时间比较惨，倒数
@@ -41,6 +73,7 @@ public:
 
     return left;
   }
+
 private:
   // target is not null
   void find(TreeNode *root, TreeNode *p, TreeNode *q, bool &pfound,
