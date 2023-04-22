@@ -7,24 +7,25 @@ public:
     if (!root) {
       return 0;
     }
+    // check left and right height, if they are equal
+    // then the total nodes is 2 ^(h) - 1;
+    TreeNode *p = root;
     int hl = 0;
-    int hr = 0;
-
-    TreeNode *pl = root;
-    while (pl) {
+    while (p) {
       hl++;
-      pl = pl->left;
+      p = p->left;
     }
 
-    TreeNode *pr = root;
-    while (pr) {
+    p = root;
+    int hr = 0;
+    while (p) {
       hr++;
-      pr = pr->right;
+      p = p->right;
     }
-    // perfect tree
     if (hl == hr) {
-      return pow(2, hl) - 1;
+      return (1 << hr) - 1;
     }
+
     return 1 + countNodes(root->left) + countNodes(root->right);
   }
 };

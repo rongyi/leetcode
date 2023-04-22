@@ -1,51 +1,37 @@
 // http://leetcode.com/problems/summary-ranges/description/
 #include "xxx.hpp"
 
-// 就是概括一下区间，这里的summary时是总结不是和
-
 class Solution {
 public:
   vector<string> summaryRanges(vector<int> &nums) {
-    // remember the index
-    unordered_map<long long, int> uniq;
-    for (int i = 0; i < nums.size(); i++) {
-      uniq[nums[i]] = i;
+    int sz = nums.size();
+    if (sz == 0) {
+      return {};
     }
+    int start = nums[0];
     vector<string> ret;
-
-    for (int i = 0; i < nums.size();) {
-      auto cur = nums[i];
-      auto u = upperof(cur, uniq);
-      if (u == cur) {
-        ret.push_back(to_string(cur));
+    for (int i = 1, l = 1; i < sz; i++) {
+      // there's a gap
+      if (nums[i] != nums[i - 1] + 1) {
+        // single case
+        if (l == 1) {
+          ret.push_back(to_string(start));
+        } else {
+          ret.push_back(to_string(start) + "->" + to_string(nums[i - 1]));
+        }
+        start = nums[i];
+        l = 1;
       } else {
-        ret.push_back(to_string(cur) + "->" + to_string(u));
+        l++;
       }
-      i = uniq[u] + 1;
     }
-
-    return ret;
-  }
-
-private:
-  // 测试case有放最大值，让你溢出循环酸爽一下，用long long规避
-  int upperof(long long i, unordered_map<long long, int> &uniq) {
-    long long ret = i;
-    while (uniq.find(ret) != uniq.end()) {
-      ret++;
+    // the last case
+    if (start == nums[sz - 1]) {
+      ret.push_back(to_string(start));
+    } else {
+      ret.push_back(to_string(start) + "->" + to_string(nums[sz - 1]));
     }
-    ret--;
 
     return ret;
   }
 };
-
-int main() {
-  Solution so;
-  vector<int> input{-2147483648,-2147483647,2147483647};
-  auto ret = so.summaryRanges(input);
-  for (auto s : ret) {
-    cout << s << " ";
-  }
-  cout << endl;
-}

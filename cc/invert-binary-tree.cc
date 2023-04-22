@@ -7,12 +7,11 @@ public:
     if (!root) {
       return nullptr;
     }
-    auto *tmp = root->left;
-    root->left = root->right;
-    root->right = tmp;
+    TreeNode *l = root->left;
+    TreeNode *r = root->right;
 
-    invertTree(root->left);
-    invertTree(root->right);
+    root->left = invertTree(r);
+    root->right = invertTree(l);
 
     return root;
   }
