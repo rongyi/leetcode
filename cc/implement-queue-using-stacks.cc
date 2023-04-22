@@ -3,47 +3,49 @@
 
 class MyQueue {
 public:
-  /** Initialize your data structure here. */
   MyQueue() {}
 
-  /** Push element x to the back of queue. */
-  void push(int x) {
-    left_.push(x);
-  }
+  void push(int x) { stk1_.push(x); }
 
-  /** Removes the element from in front of queue and returns that element. */
   int pop() {
-    auto i = peek();
-    right_.pop();
-
-    return i;
-  }
-
-  /** Get the front element. */
-  int peek() {
-    if (right_.empty()) {
-      while (!left_.empty()) {
-        right_.push(left_.top());
-        left_.pop();
+    if (stk2_.empty()) {
+      while (!stk1_.empty()) {
+        stk2_.push(stk1_.top());
+        stk1_.pop();
       }
     }
-    return right_.top();
+
+    int val = stk2_.top();
+    stk2_.pop();
+
+    return val;
   }
 
-  /** Returns whether the queue is empty. */
-  bool empty() {
-    return left_.empty() && right_.empty();
+  int peek() {
+    if (stk2_.empty()) {
+      while (!stk1_.empty()) {
+        stk2_.push(stk1_.top());
+        stk1_.pop();
+      }
+    }
+
+    return stk2_.top();
   }
+
+  bool empty() { return stk1_.empty() && stk2_.empty(); }
+
 private:
-  stack<int> left_;
-  stack<int> right_;
+  // for push
+  stack<int> stk1_;
+  // for pop
+  stack<int> stk2_;
 };
 
 /**
  * Your MyQueue object will be instantiated and called as such:
- * MyQueue obj = new MyQueue();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.peek();
- * bool param_4 = obj.empty();
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
  */
