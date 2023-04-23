@@ -1,14 +1,20 @@
 // http://leetcode.com/problems/palindrome-linked-list/description/
 #include "xxx.hpp"
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 
 class Solution {
 public:
-  // 只能swap咯，没办法的事情
+  // only way to swap the nest value to here
+  // and delete the next value
   void deleteNode(ListNode *node) {
-    auto *next = node->next;
-    node->val = next->val;
-    // now we delete next
-    node->next = next->next;
-    next->next = nullptr;
+    node->val = node->next->val;
+    node->next = node->next->next;
   }
 };
