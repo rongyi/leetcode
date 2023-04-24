@@ -4,28 +4,26 @@
 class Solution {
 public:
   bool searchMatrix(vector<vector<int>> &matrix, int target) {
-    const int m = matrix.size();
-    if (m == 0) {
-      return false;
-    }
-
-    const int n = matrix[0].size();
-    if (n == 0) {
-      return false;
-    }
-    // 这题没办法折半的，只能在O(n)的基础上快一点，一旦比一行的最小的还小，那肯定不在这一行上
-    // 最小值在左上角， 最大值在右下角
-    if (target < matrix[0][0] || target > matrix[m - 1][n - 1]) {
-      return false;
-    }
-    for (int i = m - 1, j = 0; i >= 0 && j < n;) {
+    int m = matrix.size();
+    int n = matrix[0].size();
+    int i = 0;
+    int j = n - 1;
+    while (i < m && j >= 0) {
       if (matrix[i][j] == target) {
         return true;
       }
-      if (matrix[i][j] < target) {
-        j++;
+      // current matrix[i][j] is the minimum for
+      // current column j, so every nums below current
+      // column is bigger than target, we don't need
+      // to search this column
+      // just cut of this column
+      if (target < matrix[i][j]) {
+        j--;
       } else {
-        i--;
+        // matrix[i][j] is the biggest numer in current row
+        // if target still bigger than this one
+        // then current row is no need to serach
+        i++;
       }
     }
     return false;

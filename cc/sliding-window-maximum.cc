@@ -4,21 +4,21 @@
 class Solution {
 public:
   vector<int> maxSlidingWindow(vector<int> &nums, int k) {
-    deque<int> dq;
+    map<int, int> cnt;
     vector<int> ret;
+    // yes, it can pass
     for (int i = 0; i < nums.size(); i++) {
-      // 窗口大小为K，保证最大值都是在窗口K中
-      if (!dq.empty() && dq.front() == i - k) {
-        dq.pop_front();
+      if (i >= k) {
+        cnt[nums[i - k]]--;
+        if (cnt[nums[i - k]] == 0) {
+          cnt.erase(nums[i - k]);
+        }
       }
-      // 队列里比当前准备进来的小都给老子滚蛋
-      while (!dq.empty() && nums[dq.back()] < nums[i]) {
-        dq.pop_back();
-      }
-      dq.push_back(i);
+
+      cnt[nums[i]]++;
 
       if (i >= k - 1) {
-        ret.push_back(nums[dq.front()]);
+        ret.push_back(cnt.rbegin()->first);
       }
     }
 
