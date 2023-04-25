@@ -14,9 +14,11 @@ public:
     while (num % 3 == 0) {
       num /= 3;
     }
-    while (num % 5 ==0) {
+
+    while (num % 5 == 0) {
       num /= 5;
     }
+
     return num == 1;
   }
 };
