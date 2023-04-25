@@ -3,36 +3,37 @@
 
 class Solution {
 public:
-  vector<int> diffWaysToCompute(string input) {
-    if (memo_.find(input) != memo_.end()) {
-      return memo_[input];
+  vector<int> diffWaysToCompute(string s) {
+    if (cache_.count(s)) {
+      return cache_[s];
     }
     vector<int> ret;
-    for (int i = 0; i < input.size(); i++) {
-      auto c = input[i];
-      if (c == '+' || c == '-' || c == '*') {
-        auto left = diffWaysToCompute(input.substr(0, i));
-        // rest
-        auto right = diffWaysToCompute(input.substr(i + 1));
-        for (auto op1 : left) {
-          for (auto op2 : right) {
-            if (c == '+') {
+    for (int i = 0; i < s.size(); i++) {
+      if (s[i] == '+' || s[i] == '-' || s[i] == '*') {
+        auto l = diffWaysToCompute(s.substr(0, i));
+        auto r = diffWaysToCompute(s.substr(i + 1));
+        for (auto &op1 : l) {
+          for (auto &op2 : r) {
+            if (s[i] == '+') {
               ret.push_back(op1 + op2);
-            } else if (c == '-') {
+            } else if (s[i] == '-') {
               ret.push_back(op1 - op2);
-            } else if (c == '*') {
+            } else {
               ret.push_back(op1 * op2);
             }
           }
         }
       }
     }
+    // just number, no operator contained
     if (ret.empty()) {
-      ret.push_back(stoi(input));
+      ret.push_back(stoi(s));
     }
-    memo_[input] = ret;
+
+    cache_[s] = ret;
     return ret;
   }
+
 private:
-  unordered_map<string, vector<int>> memo_;
+  map<string, vector<int>> cache_;
 };

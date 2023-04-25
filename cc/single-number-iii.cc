@@ -4,34 +4,32 @@
 class Solution {
 public:
   vector<int> singleNumber(vector<int> &nums) {
-    auto pivot = simple(nums);
-    // ret这个值现在就是这两个不同的值异或的结果，从里面找一位出来然后
-    // 以此标记为把数组分为两个，这样问题就化简为之前一个数组中出现一次的那种了
+    auto accxor = [](vector<int> &n) -> int {
+      auto ret = 0;
+      for (auto &i : n) {
+        ret ^= i;
+      }
+      return ret;
+    };
+    // 1. xor them all!
+    int split = accxor(nums);
     int i = 0;
-    for (; i < sizeof(int) * 8; i++) {
-      if ((pivot >> i) & 0x1) {
+    for (; i < 32; i++) {
+      if ((split & (1 << i)) != 0) {
         break;
       }
     }
-    // 现在以i位开始劈开
-    vector<int> nums1;
-    vector<int> nums2;
-    for (auto num : nums) {
-      if ((num >> i) & 0x1) {
-        nums1.push_back(num);
+    // we get the first postion which two number are different
+    vector<int> g1;
+    vector<int> g2;
+    for (auto &num : nums) {
+      if ((num & (1 << i)) != 0) {
+        g1.push_back(num);
       } else {
-        nums2.push_back(num);
+        g2.push_back(num);
       }
     }
-    return vector<int>{simple(nums1), simple(nums2)};
-  }
-private:
-  // sometimes naiive
-  int simple(vector<int> &nums) {
-    int ret = 0;
-    for (auto i : nums){
-      ret ^= i;
-    }
-    return ret;
+
+    return {accxor(g1), accxor(g2)};
   }
 };

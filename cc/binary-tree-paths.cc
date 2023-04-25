@@ -4,46 +4,25 @@
 class Solution {
 public:
   vector<string> binaryTreePaths(TreeNode *root) {
-    vector<vector<int>> ls;
-    vector<int> cur;
-    dfs(root, ls, cur);
-    vector<string> ret;
-    for (auto &l : ls) {
-      // cout << l.size() << endl;
-      ret.push_back(mapvector(l));
-    }
-    return ret;
+    vector<string> output;
+    recur(root, "", output);
+
+    return output;
   }
 
 private:
-  string mapvector(vector<int> &lst) {
-    if (lst.empty()) {
-      return "";
-    }
-    stringstream ss;
-    for (int i = 0; i < lst.size(); i++) {
-      ss << lst[i];
-      ss << "->";
-    }
-
-    auto ret = ss.str();
-    // drop the last '>'
-    ret.pop_back();
-    // drop the last '-'
-    ret.pop_back();
-
-    return ret;
-  }
-  void dfs(TreeNode *root, vector<vector<int>> &ret, vector<int> cur) {
-    if (!root) {
+  void recur(TreeNode *cur, string path, vector<string> &ret) {
+    if (!cur) {
       return;
     }
-    cur.push_back(root->val);
-    if (!root->left && !root->right) {
-      ret.push_back(cur);
+    path += to_string(cur->val);
+    if (!cur->left && !cur->right) {
+      ret.push_back(path);
       return;
     }
-    dfs(root->left, ret, cur);
-    dfs(root->right, ret, cur);
+
+    path += "->";
+    recur(cur->left, path, ret);
+    recur(cur->right, path, ret);
   }
 };
