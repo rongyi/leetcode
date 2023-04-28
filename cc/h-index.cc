@@ -3,24 +3,23 @@
 
 class Solution {
 public:
-  // https://leetcode.com/problems/h-index/discuss/70768/Java-bucket-sort-O(n)-solution-with-detail-explanation
   int hIndex(vector<int> &citations) {
-    const int n = citations.size();
-    // 先作个统计
-    vector<int> hindex(n + 1, 0);
-    for (auto i : citations) {
-      if (i >= n) {
-        hindex[n]++;
+    int sz = citations.size();
+    // if one paper's citation is too big, we put it
+    // in the last index;
+    vector<int> ref_cnt(sz + 1, 0);
+    for (auto &c : citations) {
+      if (c >= sz) {
+        ref_cnt[sz]++;
       } else {
-        hindex[i]++;
+        ref_cnt[c]++;
       }
     }
-
-    // 从后往前
-    int total = 0;
-    for (int i = n; i >= 0; i--) {
-      total += hindex[i];
-      if (total >= i) {
+    // h index means: h paper each citation >= h
+    int paper_cnt = 0;
+    for (int i = sz; i >= 0; i--) {
+      paper_cnt += ref_cnt[i];
+      if (paper_cnt >= i) {
         return i;
       }
     }

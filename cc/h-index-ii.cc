@@ -9,17 +9,25 @@ public:
   // case 3: citations[mid] < len-mid, we should continue searching in the right side
   // clang-format on
   int hIndex(vector<int> &citations) {
-    int left = 0, len = citations.size(), right = len - 1, mid;
-    while (left <= right) {
-      mid = left + (right - left) / 2;
-      if (citations[mid] == (len - mid)) {
-        return citations[mid];
-      } else if (citations[mid] > (len - mid)) {
-        right = mid - 1;
+    int sz = citations.size();
+    int l = 0;
+    int r = sz - 1;
+
+    while (l <= r) {
+      int mid = l + (r - l) / 2;
+      int paper_cnt = sz - mid;
+      if (paper_cnt == citations[mid]) {
+        return paper_cnt;
+      } else if (paper_cnt < citations[mid]) {
+        // means we should increase paper
+        // or lower citation bar
+        // we go left
+        r = mid - 1;
       } else {
-        left = mid + 1;
+        l = mid + 1;
       }
     }
-    return len - (right + 1);
+
+    return sz - (r + 1);
   }
 };

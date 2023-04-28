@@ -4,14 +4,17 @@
 class Solution {
 public:
   string numberToWords(int num) {
-    if (num == 0)
+    if (num == 0) {
       return "Zero";
-    for (auto it = nums.begin();; ++it)
-      if (num / it->first > 0)
+    }
+    for (auto it = nums.begin();; ++it) {
+      if (num / it->first > 0) {
         return (num >= 100 ? numberToWords(num / it->first) + " " : "") +
                it->second +
                (num % it->first == 0 ? ""
                                      : " " + numberToWords(num % it->first));
+      }
+    }
   }
 
 public:

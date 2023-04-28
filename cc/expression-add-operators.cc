@@ -3,38 +3,47 @@
 
 class Solution {
 public:
-  // https://leetcode.com/problems/expression-add-operators/discuss/71898/17-lines-solution-dfs-(C%2B%2B)
-  vector<string> addOperators(string nums, int target) {
+  vector<string> addOperators(string num, int target) {
     vector<string> ret;
-
-    dfs(nums, target, 0, 0, 0, "", ret);
+    recur(num, target, 0, 0, 0, "", ret);
 
     return ret;
   }
-  void dfs(string &s, const int target, int pos, long cur_sum, long last_stage,
-           string cur_ops, vector<string> &ret) {
-    if (pos == s.size() && cur_sum == target) {
-      ret.push_back(cur_ops);
+
+  void recur(string &input, int target, int pos, long long cur_eval,
+             long long prev, string cur, vector<string> &ret) {
+    // output
+    if (pos == input.size()) {
+      if (cur_eval == target) {
+        ret.push_back(cur);
+      }
       return;
     }
-    for (int i = 1; i <= s.size() - pos; i++) {
-      string tmp = s.substr(pos, i);
-      if (i > 1 && tmp[0] == '0') {
-        continue;
+    string cur_num_str;
+    long long cur_num = 0;
+
+    for (int i = pos; i < input.size(); i++) {
+      // invalid input case, ignore leading zero
+      if (i > pos && input[pos] == '0') {
+        break;
       }
-      long n = stol(tmp);
+      cur_num_str += input[i];
+      cur_num = cur_num * 10 + (input[i] - '0');
+
+      // three operator action
+      // but before that we should consider the initial case i.e.
+      // start from 0
       if (pos == 0) {
-        dfs(s, target, i, n, n, tmp, ret);
-        continue;
+        recur(input, target, i + 1, cur_num, cur_num, cur + cur_num_str, ret);
+      } else {
+
+        recur(input, target, i + 1, cur_eval + cur_num, cur_num,
+              cur + "+" + cur_num_str, ret);
+        recur(input, target, i + 1, cur_eval - cur_num, cur_num,
+              cur + "-" + cur_num_str, ret);
+        recur(input, target, i + 1, cur_eval - prev + prev * cur_num,
+              prev * cur_num, cur + "*" + cur_num_str, ret);
       }
-      dfs(s, target, pos + i, cur_sum + n, n, cur_ops + "+" + tmp, ret);
-      dfs(s, target, pos + i, cur_sum - n, -n, cur_ops + "-" + tmp, ret);
-      // 这里的计算，我是没想出来
-      // 1+2*7
-      // 乘号这里 cur_sum = 3, last_stage = 2，算这个值为(3 - 2) + 2 * 7
-      // 1 + 2 * 7 * 8算到第二个乘号这里
-      // cur_sum = 15, last_stage = 14 ==> (15 - 14) + 14 * 8
-      dfs(s, target, pos + i, cur_sum - last_stage + last_stage * n, last_stage * n, cur_ops + "*" + tmp, ret);
     }
   }
 };
