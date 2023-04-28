@@ -231,11 +231,11 @@ int main() {
   // >= 28里面找最小的
   // >=
   itlow = myset.lower_bound(21);
-  cout << *itlow << endl;         // 30
+  cout << *itlow << endl; // 30
   // 大于81的第一个
   // >
   itup = myset.upper_bound(80);
-  cout << *itup << endl;          // 90
+  cout << *itup << endl; // 90
 
   // myset.erase(itlow, itup); // 10 20 70 80 90
 
@@ -596,20 +596,22 @@ int main() {
   //   }
   //   cout << endl;
   // }
-  //long long x = 2e9;
-  //cout << x << endl;
+  // long long x = 2e9;
+  // cout << x << endl;
   //
-  //cout << (10 ?: -1) << endl;
-  //cout << (false ?: -1) << endl;
+  // cout << (10 ?: -1) << endl;
+  // cout << (false ?: -1) << endl;
 
-
-  //cout << string(6, 'a') << endl;
-  cout << "--" << endl;
-  for (int i = 1; i < 100; i++) {
-    int v = 7 * i;
-    if ((v % 3) == 1 && (v % 5) == 1) {
-      cout << v << endl;
-      break;
-    }
-  }
+  // cout << string(6, 'a') << endl;
+  // cout << "--" << endl;
+  // for (int i = 1; i < 100; i++) {
+  // int v = 7 * i;
+  // if ((v % 3) == 1 && (v % 5) == 1) {
+  // cout << v << endl;
+  // break;
+  //}
+  //}
+  int a = 1;
+  int *p = &a;
+  printf("%p\n", p);
 }
