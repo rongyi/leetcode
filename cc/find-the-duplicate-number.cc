@@ -3,14 +3,20 @@
 
 class Solution {
 public:
-  // There is only one duplicate number in the array, but it could be repeated more than once.
   int findDuplicate(vector<int> &nums) {
-    sort(nums.begin(), nums.end());
-    for (int i = 1; i < nums.size(); i++) {
-      if (nums[i] == nums[i - 1]) {
-        return nums[i];
-      }
+    // same as linked list cycle
+    int slow = nums[0];
+    int fast = nums[nums[0]];
+    while (slow != fast) {
+      slow = nums[slow];
+      fast = nums[nums[fast]];
     }
-    return -1;
+    fast = 0;
+    while (slow != fast) {
+      fast = nums[fast];
+      slow = nums[slow];
+    }
+
+    return slow;
   }
 };
