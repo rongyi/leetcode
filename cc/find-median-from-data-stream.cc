@@ -30,7 +30,11 @@ public:
   }
 
 private:
+  // put smaller value in this queue, we can take bigger one in long(N)
   priority_queue<int> max_queue_;
+  // put bigger value in min queue, and we can take smaller one in log(n)
+  // and we resize two queue to same size(at out best, so one queue may bigger with one size) 
+  // and we can get middle value from this two queue
   priority_queue<int, vector<int>, greater<int>> min_queue_;
 };
 
