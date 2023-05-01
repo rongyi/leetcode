@@ -34,9 +34,3 @@ private:
   priority_queue<int, vector<int>, greater<int>> min_queue_;
 };
 
-/**
- * Your MedianFinder object will be instantiated and called as such:
- * MedianFinder* obj = new MedianFinder();
- * obj->addNum(num);
- * double param_2 = obj->findMedian();
- */
