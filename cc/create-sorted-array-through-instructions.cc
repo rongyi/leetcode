@@ -21,6 +21,8 @@ private:
   void update(int x) {
     while (x < 100001) {
       data_[x]++;
+      // lowbit(x) e.g. 10010 & (011101 + 1 -> 01110)
+      // -> 10
       x += x & -x;
     }
   }
