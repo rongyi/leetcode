@@ -5,6 +5,12 @@ struct Bit {
   // 1 indexed
   Bit(int n) { prefix_bit_ = vector<int>(n, 0); }
   void update(int idx, int val) {
+    // wtf is i & (-i) ?
+    // 1000100 get the lowbit of 1000100 ? -> 100
+    // 1. 1000100 -> 0111011
+    // 2. + 1 -> 0111100
+    // 3. & origin -> 0111100 & 1000100 -> 100
+    // the 1. & 2. combine is neg = (complement - 1) + 1
     for (int i = idx; i < prefix_bit_.size(); i += i & (-i)) {
       prefix_bit_[i] += val;
     }
