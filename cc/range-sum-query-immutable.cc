@@ -3,35 +3,24 @@
 
 class NumArray {
 public:
-  NumArray(vector<int> nums) {
-    int cur = 0;
-    sum_.resize(nums.size());
-    for (int i = 0; i < nums.size(); i++) {
-      cur += nums[i];
-      sum_[i] = cur;
+  NumArray(vector<int> &nums) {
+    int sz = nums.size();
+    prefix_.resize(sz + 1);
+    for (int i = 0; i < sz; i++) {
+      prefix_[i + 1] = prefix_[i] + nums[i];
     }
   }
 
-  int sumRange(int i, int j) {
-    if (i <= 0) {
-      return sum_[j];
-    }
-    return sum_[j] - sum_[i - 1];
+  int sumRange(int left, int right) {
+    return prefix_[right + 1] - prefix_[left];
   }
 
 private:
-  vector<int> sum_;
+  vector<int> prefix_;
 };
 
 /**
  * Your NumArray object will be instantiated and called as such:
- * NumArray obj = new NumArray(nums);
- * int param_1 = obj.sumRange(i,j);
+ * NumArray* obj = new NumArray(nums);
+ * int param_1 = obj->sumRange(left,right);
  */
-
-int main() {
-  vector<int> input{-2, 0, 3, -5, 2, -1};
-  NumArray so(input);
-  auto ret = so.sumRange(0, 2);
-  cout << ret << endl;
-}
