@@ -21,3 +21,10 @@ public:
     return ret;
   }
 };
+
+int main(int argc, char *argv[]) {
+  Solution so;
+  vector<int> input{10, 9, 2, 5, 3, 7, 101, 18};
+  so.lengthOfLIS(input);
+  return 0;
+}

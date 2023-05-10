@@ -1,5 +1,10 @@
 #include "xxx.hpp"
 
+struct test {
+  int flag_;
+  char buf[];
+};
+
 uint32_t toint(string &ip) {
   uint32_t sum = 0;
   uint32_t field = 0;
@@ -611,7 +616,6 @@ int main() {
   // break;
   //}
   //}
-  int a = 1;
-  int *p = &a;
-  printf("%p\n", p);
+  test t;
+  printf("%p, %p\n", &t.flag_, &(t.buf[-1]));
 }

@@ -22,6 +22,7 @@ public:
 
     for (auto kv : sset) {
       if (gset.find(kv.first) != gset.end()) {
+        // pick the smallest
         misorder += min(kv.second, gset[kv.first]);
       }
     }
