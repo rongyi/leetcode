@@ -4,32 +4,32 @@
 class Solution {
 public:
   string removeDuplicateLetters(string s) {
-    unordered_map<char, int> count;
-    unordered_map<char, bool> used;
-    for (auto c : s) {
-      count[c]++;
-      used[c] = false;
+    map<char, int> cnt;
+    map<char, bool> used;
+    for (auto &c : s) {
+      cnt[c]++;
     }
+    string ret;
 
-    string ret{};
-    for (auto c : s) {
-      // 遇到一个，就递减一个
-      count[c]--;
-
-      // 当前使用过这个字符了
+    for (auto &c : s) {
+      cnt[c]--;
       if (used[c]) {
         continue;
       }
-      // 如果逆序了，而且这个字符后面还有，那么可以滚蛋了
-      while (!ret.empty() && c < ret.back() && count[ret.back()] > 0) {
+
+      // "big" char insert first, we pop them out
+      // when there are still same char outthere, so
+      // we can insert them latter
+      while (!ret.empty() && ret.back() > c && cnt[ret.back()] > 0) {
         used[ret.back()] = false;
         ret.pop_back();
       }
 
-      ret.push_back(c);
       used[c] = true;
+      ret.push_back(c);
     }
 
     return ret;
   }
 };
+
