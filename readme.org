@@ -17,3 +17,4 @@
 * 烂笔头
 ** topology sort
    队列， indgress为0的开始，然后bfs
+** merge sort可以用来求一个数列中右边小于自己的个数: https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
