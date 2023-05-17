@@ -13,6 +13,7 @@ public:
     if (n % 3 != 0) {
       return false;
     }
+
     return isPowerOfThree(n / 3);
   }
 };

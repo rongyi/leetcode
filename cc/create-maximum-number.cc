@@ -13,19 +13,23 @@ public:
 
     return ret;
   }
-  // 在nums数组中取k个数，并且保证有序
+
+  // select k number from nums and preserve the relative order
   vector<int> selectK(vector<int> nums, int k) {
     int drop = nums.size() - k;
     vector<int> ret;
     for (auto num : nums) {
-      // 如果我有机会删除一些数字，而且还遇到比自己更优秀的进来了，那就把机会让给更优秀的吧
-      while (drop && ret.size() && ret.back() < num) {
+      // if we meet a bigger one and have chance to have this bigger number
+      // we take this bigger one, and our drop change decrese as well
+      while (!ret.empty() && drop > 0 && ret.back() < num) {
         ret.pop_back();
         drop--;
       }
+
       ret.push_back(num);
     }
-    // 如果nums本身就是降序则这里会把整个数组都插入进来，所以这里取前k个值
+    // if the nums is already decrease order
+    // we chop the end out
     ret.resize(k);
 
     return ret;
@@ -33,20 +37,22 @@ public:
 
   vector<int> merge(vector<int> nums1, vector<int> nums2) {
     vector<int> ret;
+
     while (nums1.size() + nums2.size()) {
-      vector<int> &now = nums1 > nums2 ? nums1 : nums2;
-      ret.push_back(now[0]);
-      now.erase(now.begin());
+      vector<int> &cur = nums1 > nums2 ? nums1 : nums2;
+      ret.push_back(cur[0]);
+      cur.erase(cur.begin());
     }
 
     return ret;
   }
 };
+
 int main() {
   Solution so;
-  vector<int> input{4, 3, 1, 9};
+  vector<int> input{3, 4, 6, 5};
 
-  auto ret = so.selectK(input, 3);
+  auto ret = so.selectK(input, 2);
   for (auto i : ret) {
     cout << i << " ";
   }

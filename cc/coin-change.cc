@@ -4,20 +4,26 @@
 class Solution {
 public:
   int coinChange(vector<int> &coins, int amount) {
-    // 自己最一开始的思路
     vector<int> dp(amount + 1, numeric_limits<int>::max());
+    // state transition initial state
+    // we need 0 coin to get 0 amount
     dp[0] = 0;
 
     for (int i = 1; i <= amount; i++) {
-      for (auto c : coins) {
-        // 表示i i - c这块找不开，所以基于这个点往后推得也找不开，所以直接不看了
+      for (auto &c : coins) {
+        // ok, a valid transition
         if (i - c >= 0 && dp[i - c] != numeric_limits<int>::max()) {
+          // transition formula
           dp[i] = min(dp[i], dp[i - c] + 1);
         }
       }
     }
 
-    return dp[amount] == numeric_limits<int>::max() ? -1 : dp[amount];
+    if (dp[amount] == numeric_limits<int>::max()) {
+      return -1;
+    }
+
+    return dp[amount];
   }
 };
 
