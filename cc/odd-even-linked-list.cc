@@ -9,21 +9,21 @@ public:
     }
     // save odd
     ListNode d1(-1);
-    ListNode *cur1 = &d1;
+    ListNode *tail1 = &d1;
     // save even
     ListNode d2(-2);
-    ListNode *cur2 = &d2;
+    ListNode *tail2 = &d2;
 
     ListNode *p = head;
     while (p) {
       auto *next = p->next;
       // chain odd
-      cur1->next = p;
-      cur1 = cur1->next;
+      tail1->next = p;
+      tail1 = tail1->next;
 
       // chain even
-      cur2->next = next;
-      cur2 = cur2->next;
+      tail2->next = next;
+      tail2 = tail2->next;
 
       if (next) {
         p = next->next;
@@ -32,7 +32,7 @@ public:
         break;
       }
     }
-    cur1->next = d2.next;
+    tail1->next = d2.next;
 
     return d1.next;
   }

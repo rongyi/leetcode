@@ -5,11 +5,8 @@ class Solution {
 public:
   int longestIncreasingPath(vector<vector<int>> &matrix) {
     m_ = matrix.size();
-    if (m_ == 0) {
-      return 0;
-    }
-    directions_ = vector<vector<int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
     n_ = matrix[0].size();
+    directions_ = vector<vector<int>>{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
     // path cache
     path_ = vector<vector<int>>(m_, vector<int>(n_, -1));
 
@@ -30,12 +27,12 @@ private:
     if (path_[i][j] != -1) {
       return path_[i][j];
     }
-    // conainer only itself
+    // contain only itself: one size path
     path_[i][j] = 1;
     for (int d = 0; d < directions_.size(); d++) {
       auto ni = i + directions_[d][0];
       auto nj = j + directions_[d][1];
-      // out of boundry or just smaller than the origin
+      // out of boundry or just smaller than or eq to the origin
       // 要求纯递增，所以相等也要排除
       if (ni < 0 || ni >= m_ || nj < 0 || nj >= n_ ||
           matrix[ni][nj] <= matrix[i][j]) {
