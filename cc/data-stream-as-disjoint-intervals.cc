@@ -1,7 +1,6 @@
 // http://leetcode.com/problems/data-stream-as-disjoint-intervals/description/
 #include "xxx.hpp"
 
-
 class SummaryRanges {
 public:
   /** Initialize your data structure here. */
@@ -19,8 +18,8 @@ public:
     do_merge(val);
   }
 
-  vector<Interval> getIntervals() {
-    vector<Interval> ret;
+  vector<vector<int>> getIntervals() {
+    vector<vector<int>> ret;
     for (auto &kv : store_) {
       ret.push_back({kv.first, kv.second});
     }
@@ -33,9 +32,11 @@ private:
     auto cur = prev(it, 1);
     // cur -> (0, 7)
     // it -> (8, 8)
+    // left side merge
     if (cur != store_.end() && cur->second - it->first >= -1) {
       cur->second = max(cur->second, it->second);
       store_.erase(it->first);
+      // update it for right side merge
       it = cur;
     }
     // now it -> (0, 8)

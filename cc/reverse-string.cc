@@ -3,11 +3,10 @@
 
 class Solution {
 public:
-  string reverseString(string s) {
-    const int n = s.size();
-    for (int i = 0; i < n / 2; ++i) {
-      swap(s[i], s[n - i - 1]);
+  void reverseString(vector<char> &s) {
+    int sz = s.size();
+    for (int i = 0; i < sz / 2; ++i) {
+      swap(s[i], s[sz - i - 1]);
     }
-    return s;
   }
 };

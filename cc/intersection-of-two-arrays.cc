@@ -17,7 +17,7 @@ public:
     vector<int> ret;
     // intersection
     for (auto k : s1) {
-      if (s2.find(k) != s2.end()) {
+      if (s2.count(k)) {
         ret.push_back(k);
       }
     }

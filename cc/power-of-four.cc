@@ -17,6 +17,7 @@ public:
     if (num % 4 != 0) {
       return false;
     }
+
     return isPowerOfFour(num / 4);
   }
 };

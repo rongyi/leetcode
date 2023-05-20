@@ -10,6 +10,7 @@ public:
     }
     return ret;
   }
+
 private:
   int cb(int n) {
     int ret = 0;

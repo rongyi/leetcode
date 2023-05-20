@@ -4,16 +4,17 @@
 class Solution {
 public:
   string reverseVowels(string s) {
-    const unordered_set<char> key{'a', 'o', 'e', 'i', 'u', 'A', 'O', 'E', 'I', 'U'};
-    const int n = s.size();
+    const unordered_set<char> key{'a', 'o', 'e', 'i', 'u',
+                                  'A', 'O', 'E', 'I', 'U'};
+    int sz = s.size();
     int i = 0;
-    int j = n - 1;
+    int j = sz - 1;
     while (i < j) {
-      if (key.find(s[i]) == key.end()) {
+      if (!key.count(s[i])) {
         i++;
         continue;
       }
-      if (key.find(s[j]) == key.end()) {
+      if (!key.count(s[j])) {
         --j;
         continue;
       }
@@ -24,6 +25,7 @@ public:
       i++;
       --j;
     }
+
     return s;
   }
 };
