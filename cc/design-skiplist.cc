@@ -53,10 +53,11 @@ public:
       insert_up = (rand() & 1) == 0;
     }
 
+    // a new head_ is needed
     // head_ ---> newnode(num)
     //   |           |
     //   v           v
-    //  old_head    down_node
+    //  old_head ->  down_node
     if (insert_up) {
       head_ = new Node(new Node(nullptr, down_node, num), head_, 0);
     }

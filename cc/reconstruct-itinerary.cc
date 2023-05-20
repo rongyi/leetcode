@@ -5,9 +5,9 @@
 // https://leetcode.com/problems/reconstruct-itinerary/discuss/78768/Short-Ruby-Python-Java-C%2B%2B
 class Solution {
 public:
-  vector<string> findItinerary(vector<pair<string, string>> tickets) {
-    for (auto kv : tickets) {
-      cache_[kv.first].insert(kv.second);
+  vector<string> findItinerary(vector<vector<string>> tickets) {
+    for (auto &kv : tickets) {
+      cache_[kv[0]].insert(kv[1]);
     }
     visit("JFK");
 

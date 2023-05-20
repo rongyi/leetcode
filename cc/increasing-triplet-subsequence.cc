@@ -9,6 +9,7 @@ public:
       return false;
     }
     // 缓存两个小的，如果再遇到比这两个大的那就有三个了。
+    // smaller2    smaller1    i
     int small1 = numeric_limits<int>::max();
     int small2 = numeric_limits<int>::max();
     for (auto i : nums) {
