@@ -18,3 +18,9 @@
 ** topology sort
    队列， indgress为0的开始，然后bfs
 ** merge sort可以用来求一个数列中右边小于自己的个数: https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
+** hanmilton 最短路径
+   f[i][j] 表示end在j这个点上，经过了那些点的二进制状态值为i的最短距离
+   比如说有n个顶点，那么((1 << N) - 1) 就是代表所有的点都经过。初始状态在0点上也就是最低位为1，也就是值为1，以此类推。
+   状态转移方程：
+   从k这个点过来到j，而且状态值里j位要清掉，每个点只能走一次。
+   f[i][j] = min(f[i xor (1 << j)][k] + weight[k][j], f[i][j]); k就是 i xor(1 << j)这个状态里的对应位为1的那些节点，而且可以通j
