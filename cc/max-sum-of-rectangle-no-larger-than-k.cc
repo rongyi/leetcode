@@ -4,14 +4,8 @@
 class Solution {
 public:
   int maxSumSubmatrix(vector<vector<int>> &matrix, int k) {
-    const int m = matrix.size();
-    if (m == 0) {
-      return 0;
-    }
-    const int n = matrix[0].size();
-    if (n == 0) {
-      return 0;
-    }
+    int m = matrix.size();
+    int n = matrix[0].size();
     // 小于k的最大值，所以这里选最小的
     int ret = numeric_limits<int>::min();
     int sum[m][n];
@@ -78,8 +72,9 @@ public:
           sum[j] += matrix[j][c];
           cursum += sum[j];
           auto it = os.lower_bound(cursum - k);
-          if (it != os.end())
+          if (it != os.end()) {
             maxsk = max(maxsk, cursum - *it);
+          }
           os.insert(cursum);
         }
       }
