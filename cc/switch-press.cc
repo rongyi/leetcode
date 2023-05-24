@@ -1,5 +1,7 @@
 #include "xxx.hpp"
 
+// this is not a leetcode problem, its the answer for book 《编程竞赛进阶指南》
+// I'll put to a seperate repo one day
 class Solution {
 public:
   bool check(vector<vector<int>> &matrix) {
