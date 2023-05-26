@@ -152,6 +152,32 @@ int get(int prevN, int i) {
 int set(int currRow, int value) { return (currRow * 3 + value) % 243; }
 } // namespace rongyi
 
+namespace permutation {
+int order[20];
+int visit[20];
+
+int n = 10;
+void cal(int k) {
+  if (k == n + 1) {
+    for (int i = 1; i <= n; i++) {
+      cout << order[i] << " ";
+    }
+    cout << endl;
+    return;
+  }
+  for (int i = 1; i <= n; i++) {
+    if (visit[i]) {
+      continue;
+    }
+    visit[i] = 1;
+    order[k] = i;
+    cal(k + 1);
+    visit[i] = 0;
+    order[k] = 0;
+  }
+}
+
+} // namespace permutation
 int main() {
   // Solution so;
   // vector<vector<int>> input{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
@@ -616,6 +642,8 @@ int main() {
   // break;
   //}
   //}
-  test t;
-  printf("%p, %p\n", &t.flag_, &(t.buf[-1]));
+  // test t;
+  // printf("%p, %p\n", &t.flag_, &(t.buf[-1]));
+  //
+  permutation::cal(1);
 }
