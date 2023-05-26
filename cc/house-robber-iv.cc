@@ -17,6 +17,7 @@ public:
 
     return l;
   }
+
 private:
   // check num in nums <=val which can not be neibor
   // and the total number <= k
