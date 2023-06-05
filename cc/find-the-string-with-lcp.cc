@@ -28,9 +28,18 @@ public:
 
     for (int i = 0; i < sz; i++) {
       for (int j = 0; j < sz; ++j) {
-        int v = i + 1 < sz && j + 1 < sz ? lcp[i + 1][j + 1] : 0;
-        v = guess[i] == guess[j] ? v + 1 : 0;
-        if (lcp[i][j] != v) {
+        // next val exist?
+        // else 0
+        int next_val = 0;
+        if (i + 1 < sz && j + 1 < sz) {
+          next_val = lcp[i + 1][j + 1];
+        }
+        int expect = 0;
+        if (guess[i] == guess[j]) {
+          expect = next_val + 1;
+        }
+
+        if (lcp[i][j] != expect) {
           return "";
         }
       }
