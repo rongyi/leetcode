@@ -14,7 +14,7 @@ public:
       cnt++;
       // why i * i not i * 2?
       // because when you arrive to i check
-      // all the number i * 2/ i * 3 / i * (i - 1) are been checked
+      // all the number i * 2, i * 3, i * (i - 1) are been checked
       // because they are divisible by 2 3 .... (i - 1)
       for (long long j = i * i; j < n; j += i) {
         seen[j] = 1;
