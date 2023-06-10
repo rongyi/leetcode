@@ -9,10 +9,13 @@ public:
     // If element i shares the same prime as element j, we cannot split the
     // array in [i, j) interval.
     int line[10001] = {};
+    // mark the index for the first time occ of prime key
+    // {primefactor, index}
     map<int, int> fidx;
     for (int i = 0; i < sz; i++) {
       for (auto p : getFactors(nums[i])) {
-        // line sweep,
+        // line sweep, mark the prime interval
+        // [first, last)
         if (fidx.count(p) == 0) {
           fidx[p] = i;
         }
@@ -61,3 +64,9 @@ private:
   // prime factors from 1 .. maxvalue
   vector<int> spf_;
 };
+
+int main() {
+  vector<int> input{1, 2, 3, 4};
+  partial_sum(input.begin(), input.end(), input.begin());
+  cout << "here" << endl;
+}
