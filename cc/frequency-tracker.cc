@@ -41,7 +41,14 @@ public:
   bool hasFrequency(int frequency) { return freq_cnt_.count(frequency); }
 
 private:
+  // number frequency record
   map<int, int> num_freq_;
+  // for each frequency in value part of num_freq_
+  // we record this frequency's frequency
+  // e.g.
+  // num_freq_ has {3, 1}, {2, 1}, {4, 1}
+  // freq_cnt_ should be: {1, 3}
+  // means 3 number has frequency of 1
   map<int, int> freq_cnt_;
 };
 
