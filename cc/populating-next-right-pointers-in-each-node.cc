@@ -22,6 +22,7 @@ public:
       }
     }
 
+    // chain the next level, start from the left mode node
     connect(ret.next);
 
     return root;

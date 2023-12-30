@@ -2,6 +2,7 @@
 #include "xxx.hpp"
 class Solution {
 public:
+  // this can not pass @ 20231129, see rust version for detail
   vector<int> findSubstring(string s, vector<string> &words) {
     int sz = s.size();
     int blocks = words.size();
