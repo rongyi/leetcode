@@ -44,7 +44,7 @@ private:
       return;
     }
 
-    for (int i = 0; i < s.size(); i++) {
+    for (int i = 0; i < pos; i++) {
       if (dp[pos][i]) {
         string cur = s.substr(i, pos - i);
 

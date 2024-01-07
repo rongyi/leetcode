@@ -10,6 +10,7 @@ public:
     queue<string> q;
     q.push(w1);
 
+    // using bfs to get the depth
     map<string, int> depth_cache;
     depth_cache[w1] = 1;
 
@@ -25,6 +26,8 @@ public:
     }
     vector<vector<string>> ret;
     if (depth_cache.count(w2)) {
+      // and dfs to get the result in reverse way
+      // from target to begin
       dfs(w1, w2, depth_cache, ret, {});
     }
     return ret;
