@@ -3,37 +3,28 @@
 
 class Solution {
 public:
-  // 这其实是数学问题，找到循环的规律即可
   int superPow(int a, vector<int> &b) {
-    if (a == 1) {
+    int ret = 1;
+    for (int i = 0; i < b.size(); i++) {
+      ret = pow(ret, 10) * pow(a, b[i]) % 1337;
+    }
+    return ret;
+  }
+  int pow(int a, int b) {
+    if (b == 0) {
       return 1;
     }
-    if (a == 1337) {
-      return 0;
-    }
-    a %= 1337;
+    int ret = 1;
+    int base = a % 1337;
+    int exponent = b;
 
-    int count = 1;
-    int rem = a;
-    unordered_map<int, int> cache;
-    while (true) {
-      cache[count] = rem;
-      count++;
-      rem *= a;
-      rem %= 1337;
-      if (rem == a) {
-        break;
+    while (exponent > 0) {
+      if (exponent % 2 == 1) {
+        ret = (ret * base) % 1337;
       }
+      base = (base * base) % 1337;
+      exponent /= 2;
     }
-    int cycle = cache.size();
-
-    int val = 0;
-    int size = b.size();
-    for (int i = 0; i < size; i++) {
-      val = val * 10 + b[i];
-      val = val % cycle;
-    }
-
-    return cache[val];
+    return ret;
   }
 };

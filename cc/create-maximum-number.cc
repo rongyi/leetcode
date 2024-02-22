@@ -50,11 +50,12 @@ public:
 
 int main() {
   Solution so;
-  vector<int> input{3, 4, 6, 5};
+  vector<int> input1{6, 7};
+  vector<int> input2{6, 0, 4};
 
-  auto ret = so.selectK(input, 2);
-  for (auto i : ret) {
-    cout << i << " ";
+  auto m = so.merge(input1, input2);
+  for (auto i:m) {
+	  cout << i << endl;
   }
-  cout << endl;
+		 
 }

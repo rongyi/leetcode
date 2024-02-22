@@ -645,5 +645,12 @@ int main() {
   // test t;
   // printf("%p, %p\n", &t.flag_, &(t.buf[-1]));
   //
-  permutation::cal(1);
+  vector<int> a = {1, 2, 3, 3};
+  vector<int> b = {1, 2, 3};
+  if (a < b) {
+	  cout << "<<<" << endl;
+  } else {
+	  cout << "left bigger" << endl;
+  }
+
 }
