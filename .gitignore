@@ -13,3 +13,4 @@ a.out
 a.out.*
 /cc/.ccls
 /cc/.ccls-cache
+.DS_Store

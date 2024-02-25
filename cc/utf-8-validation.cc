@@ -25,7 +25,7 @@ public:
       }
       // then check the rest all 10
       for (int j = i + 1; j < i + one_len; j++) {
-        if ((input[j] & 0x80) != 0x80) {
+        if ((input[j] & 0xc0) != 0x80) {
           return false;
         }
       }
