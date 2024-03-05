@@ -4,6 +4,7 @@
 class Solution {
 public:
   // https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/91103/C%2B%2B-O(n)-solution-explanation-added
+  // TODO: use trie
   int findMaximumXOR(vector<int> &nums) {
     const int n = nums.size();
     if (n == 0 || n == 1) {
