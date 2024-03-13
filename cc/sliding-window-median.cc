@@ -1,5 +1,6 @@
 // http://leetcode.com/problems/sliding-window-median/description/
 #include "xxx.hpp"
+#include <functional>
 
 class Solution {
 public:
@@ -94,9 +95,15 @@ public:
 int main() {
   Solution so;
   // so.test();
-  vector<int> input{1, 3, -1, -3, 5, 3, 6, 7};
-  auto ret = so.medianSlidingWindow(input, 3);
-  for (auto d : ret) {
-    cout << d << endl;
-  }
+  // vector<int> input{1, 3, -1, -3, 5, 3, 6, 7};
+  // auto ret = so.medianSlidingWindow(input, 3);
+  // for (auto d : ret) {
+  //   cout << d << endl;
+  // }
+  Solution::Heap<greater<int>> min_heap;
+  min_heap.Add(1);
+  min_heap.Add(2);
+  min_heap.Add(3);
+  int val = min_heap.Pop();
+  cout << val << endl;
 }
