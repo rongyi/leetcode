@@ -4,10 +4,6 @@
 class Solution {
 public:
   string findLongestWord(string s, vector<string> &d) {
-    unordered_set<char> l;
-    for (auto c : s) {
-      l.insert(c);
-    }
     sort(d.begin(), d.end(), [](string &l, string &r) -> bool {
       if (l.size() != r.size()) {
         return l.size() > r.size();
