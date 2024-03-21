@@ -5,7 +5,7 @@ class Solution {
 public:
   int countArrangement(int n) {
     int ret = 0;
-    vector<bool> visited(n, false);
+    vector<bool> visited(n + 1, false);
     vector<int> cur;
     dfs(n, cur, visited, ret);
 
