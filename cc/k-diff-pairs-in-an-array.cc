@@ -4,38 +4,24 @@
 class Solution {
 public:
   int findPairs(vector<int> &nums, int k) {
-    if (k < 0) {
-      return 0;
-    }
     unordered_map<int, int> count;
     for (auto i : nums) {
       count[i]++;
     }
-    if (k == 0) {
-      int ret = 0;
-      for (auto kv : count) {
-        if (kv.second > 1) {
-          ret++;
+    int ret = 0;
+    for (auto &kv : count) {
+      if (k == 0) {
+        if (kv.second >= 2) {
+          ret += 1;
+        }
+      } else {
+        if (count.count(kv.first + k)) {
+          ret += 1;
         }
       }
-      return ret;
     }
 
-    set<pair<int, int>> uniq;
-    for (auto i : nums) {
-      auto it = count.find(i + k);
-      if (it == count.end()) {
-        continue;
-      }
-      uniq.insert({min(i, it->first), max(i, it->first)});
-
-      it = count.find(i - k);
-      if (it == count.end()) {
-        continue;
-      }
-      uniq.insert({min(i, it->first), max(i, it->first)});
-    }
-    return uniq.size();
+    return ret;
   }
 };
 
