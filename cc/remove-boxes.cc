@@ -25,6 +25,8 @@ private:
     if (dp[i][j][k] > 0) {
       return dp[i][j][k];
     }
+    int l_origin = i;
+    int k_origin = k;
     // find the clour is same as boxes[i] and make them together to delete
     for (; i + 1 <= j && boxes[i + 1] == boxes[i]; i++, k++) {
       ;
@@ -33,12 +35,12 @@ private:
     int ret = (k + 1) * (k + 1) + remove(boxes, i + 1, j, 0, dp);
     for (int m = i + 1; m <= j; m++) {
       if (boxes[m] == boxes[i]) {
-        ret = max(ret, remove(boxes, i + 1, m - 1, 0, dp) +
-                           remove(boxes, m, j, k + 1, dp));
+        ret = max(ret, remove(boxes, m, j, k + 1, dp) +
+                           remove(boxes, i + 1, m - 1, 0, dp));
       }
     }
 
-    dp[i][j][k] = ret;
+    dp[l_origin][j][k_origin] = ret;
 
     return ret;
   }
