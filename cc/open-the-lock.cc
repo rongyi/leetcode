@@ -7,6 +7,9 @@ public:
   // shortest path from the initial node to the target.
   int openLock(vector<string> &deadends, string target) {
     string init{"0000"};
+    if (init == target) {
+      return 0;
+    }
     unordered_set<string> visited;
     unordered_set<string> dds(deadends.begin(), deadends.end());
 

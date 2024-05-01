@@ -11,7 +11,7 @@ public:
     // tail标记的是以i结尾的至少三连的数列的个数
     unordered_map<int, int> tail;
     for (auto num : nums) {
-      if (!count[num]) {
+      if (count[num] <= 0) {
         continue;
       }
       count[num]--;
@@ -22,7 +22,7 @@ public:
         // 走到4的时候消耗掉一个队列就要减一下，第二个4的时候好判断
         tail[num - 1]--;
         tail[num]++;
-      } else if (count[num + 1] && count[num + 2]) {
+      } else if (count[num + 1] > 0 && count[num + 2] > 0) {
         count[num + 1]--;
         count[num + 2]--;
         tail[num + 2]++;

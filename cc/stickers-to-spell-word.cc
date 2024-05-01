@@ -17,6 +17,7 @@ public:
     unordered_map<string, int> dp;
     // empty string need no stickers
     dp[""] = 0;
+
     return recur(dp, scount, target);
   }
 
@@ -37,7 +38,7 @@ private:
 
     // using stickers
     for (int i = 0; i < n; i++) {
-      // optimization
+      // not optimization, a nessary guard
       if (scount[i][target[0] - 'a'] == 0) {
         continue;
       }
