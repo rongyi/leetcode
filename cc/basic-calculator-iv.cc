@@ -113,7 +113,9 @@ public:
     }
     if (v.back().empty())
       v.pop_back();
-    // for (auto s : v) cout << s << endl;
+
+    for (auto s : v)
+      cout << s << endl;
 
     // store evalvars in a hash table
     unordered_map<string, int> m;
@@ -134,6 +136,7 @@ public:
     stack<string> st;
     st.push("(");
     vector<string> u;
+
     for (auto &s : v) {
       if (isNumber(s) || isVariable(s)) {
         u.push_back(s);
@@ -154,7 +157,9 @@ public:
         st.push(s);
       }
     }
-    // for (auto s : u) cout << s << endl;
+    cout << "---" << endl;
+    for (auto s : u)
+      cout << s << endl;
 
     // calculate the RPN
     // each element in the stack is, for example, [[12, a, b, b] + [-2333, b, c]
@@ -175,6 +180,7 @@ public:
       }
     }
 
+
     // convert to vector<string>
     // the result is, for example, ["12*a*b*b", "-2333*b*c", ......, "233"]
     auto r = ste.top();
@@ -191,3 +197,10 @@ public:
     return result;
   }
 };
+
+int main() {
+  Solution so;
+  vector<string> input1{"e"};
+  vector<int> input2{1};
+  so.basicCalculatorIV("e + 8 - a + 5", input1, input2);
+}
