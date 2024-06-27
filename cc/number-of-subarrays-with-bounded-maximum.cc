@@ -3,25 +3,23 @@
 
 class Solution {
 public:
-  int numSubarrayBoundedMax(vector<int> &A, int L, int R) {
+  int numSubarrayBoundedMax(vector<int> &nums, int left, int right) {
+    return count(nums, right) - count(nums, left - 1);
+  }
+
+  int count(vector<int> &nums, int bound) {
     int ret = 0;
-    const int n = A.size();
-    for (int i = 0; i < n; i++) {
-      if (A[i] > R) {
-        continue;
+    int acc = 0;
+    for (auto &num : nums) {
+      if (num <= bound) {
+        acc += 1;
+      } else {
+        acc = 0;
       }
-      int cur_max = numeric_limits<int>::min();
-      for (int j = i; j < n; j++) {
-        cur_max = max(cur_max, A[j]);
-        if (cur_max > R) {
-          break;
-        }
-        if (cur_max >= L) {
-          ++ret;
-        }
-      }
+      ret += acc;
     }
 
     return ret;
   }
 };
+
