@@ -8,7 +8,7 @@ public:
     vector<long> cur(10, 1);
     vector<long> next(cur);
     for (int i = 2; i <= N; i++) {
-      // 吓一跳合法的范围在main里有计算
+      // 下一跳合法的范围在main里有计算
       next[0] = (cur[4] + cur[6]) % mod;
       next[1] = (cur[6] + cur[8]) % mod;
       next[2] = (cur[7] + cur[9]) % mod;
