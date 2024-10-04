@@ -8,7 +8,7 @@ public:
     // 1. 1 + 1 + 1 ... ==> target, 其中 1又可以是 x / x 所以总共是target + target - 1
     //                                           产生1的除有这么多|       |中间的加号
     // 2. x - (1 + 1 ...) == target ==> 1的个数是 x - target, 所以总共是 (x - target) + (x - target) - 1 + 1
-    //                                                              产生1的除       中间的1          |  前面那个减号
+    //                                                              产生1的除       中间的加号          |  前面那个减号
     if (target < x) {
       return min(target * 2 - 1, (x - target) * 2);
     }

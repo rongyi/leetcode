@@ -25,7 +25,7 @@ public:
           continue;
         }
         // 遇到一个节点前面有空洞，立即返回
-        // 或者前一行有hole，然后现在到这一行发现有飞空节点了，赶紧撤
+        // 或者前一行有hole，然后现在到这一行发现有非空节点了，赶紧撤
         if (has_hole || prev_hole) {
           return false;
         }
