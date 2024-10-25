@@ -10,18 +10,18 @@ public:
     }
     int part = 0;
     int sum = 0;
-    for (auto num : A) {
-      sum += num;
+    for (int i = 0; i < A.size(); i+= 1) {
+      sum += A[i];
       if (sum == total / 3) {
         ++part;
         sum = 0;
       }
+      if (part == 2 && i != A.size() - 1) {
+        return true;
+      }
+      
     }
-    if (total == 0) {
-      return part >= 3;
-    }
-
-    return part == 3;
+    return false;
   }
 };
 
