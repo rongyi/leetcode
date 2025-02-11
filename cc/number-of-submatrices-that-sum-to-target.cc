@@ -25,7 +25,7 @@ public:
         count[0] = 1;
         int cur_sum = 0;
         for (int k = 0; k < m; ++k) {
-          // 如果左边的轴不是第一列，那么对应的检出prefix sum
+          // 如果左边的轴不是第一列，那么对应的减去prefix sum
           cur_sum += matrix[k][j] - (i > 0 ? matrix[k][i - 1] : 0);
           ret += count[cur_sum - target];
           ++count[cur_sum];

@@ -43,7 +43,7 @@ public:
 
     return ret;
   }
-  // BFS will not work, see here:
+  // DFS will not work, see here:
   // https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/discuss/490555/The-Reason-of-DFS-Not-Working-(Explain-Graph-and-Example)
   int findTheCity2(int n, vector<vector<int>> &edges, int distanceThreshold) {
     for (auto &v : edges) {

@@ -54,7 +54,8 @@ public:
     }
 
     // a new head_ is needed
-    // head_ ---> newnode(num)
+    // outer created node
+    // head_ ---> newnode(num)(the inner newly created node)
     //   |           |
     //   v           v
     //  old_head ->  down_node
