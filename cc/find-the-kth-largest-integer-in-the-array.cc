@@ -4,7 +4,7 @@
 class Solution {
 public:
   string kthLargestNumber(vector<string> &snums, int k) {
-    // don't use stoi, the string is to much fucking long
+    // don't use stoi, the string is too fucking long
     sort(snums.begin(), snums.end(), [](auto l, auto r) {
       // longer is bigger
       if (l.size() != r.size()) {

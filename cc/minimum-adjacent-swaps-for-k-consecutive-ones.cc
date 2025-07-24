@@ -14,7 +14,7 @@ public:
       }
     }
     vector<long> prefix(n + 1, 0);
-    int ret = numeric_limits<int>::max();
+    long ret = numeric_limits<long>::max();
     // 左右两个pointer
     int i = 0;
     for (int j = 0; j < ones.size(); ++j) {
@@ -23,9 +23,9 @@ public:
       if (j + 1 < k) {
         continue;
       }
-      int mid = i + (j - i) / 2;
-      int move = 0;
-      int save = 0;
+      long mid = i + (j - i) / 2;
+      long move = 0;
+      long save = 0;
       // 奇数场景
       if (k % 2) {
         move = prefix[j + 1] - prefix[mid + 1] - prefix[mid] + prefix[i];
