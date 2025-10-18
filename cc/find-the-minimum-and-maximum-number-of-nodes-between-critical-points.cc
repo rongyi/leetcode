@@ -15,7 +15,6 @@ class Solution {
 public:
   vector<int> nodesBetweenCriticalPoints(ListNode *head) {
     vector<int> critical_indexs;
-    ;
     int prev = head->val;
     ListNode *cur = head->next;
     int cur_index = 1;

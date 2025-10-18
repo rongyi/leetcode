@@ -15,7 +15,6 @@ public:
     // childrens include it self
     vector<int> childrens(sz, 0);
 
-    vector<int> visited(sz, 0);
     for (auto &next : neibs[0]) {
       dfs(next, 0, childrens, neibs);
     }

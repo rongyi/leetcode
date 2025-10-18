@@ -8,11 +8,16 @@ public:
     auto countless = [&](int val) -> long long {
       int sz = nums.size();
       long long ret = 0;
-      for (int i = 0, j = sz - 1; i < j; i++) {
-        while (i < j && nums[i] + nums[j] > val) {
-          j--;
+      int l = 0;
+      int r = sz - 1;
+      while (l < r) {
+        long long cur_sum = 0ll + nums[l] + nums[r];
+        if (cur_sum > val) {
+          r -= 1;
+        } else {
+          ret += (r - l);
+          l += 1;
         }
-        ret += j - i;
       }
 
       return ret;

@@ -5,9 +5,9 @@ class Solution {
 public:
   int longestPath(vector<int> &parent, string s) {
     int sz = parent.size();
-    // onlly one node
+    // only one edge
     int ret = 1;
-    // start from leave, i.e. this value is 0
+    // start from leaf, i.e. this value is 0
     vector<int> child_count(sz, 0);
     vector<int> top1(sz, 1);
     vector<int> top2(sz, 1);
